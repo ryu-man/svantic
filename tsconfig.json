@@ -1,0 +1,14 @@
+{
+  "extends": "@tsconfig/svelte/tsconfig.json",
+
+  "include": ["src/**/*"],
+  "exclude": ["node_modules/*", "__sapper__/*", "public/*"],
+  "compilerOptions": {
+    "rootDir": "src",
+    "allowJs": true,
+    "baseUrl": ".",
+    "noEmitOnError": false,
+    "noEmit": true,
+    "types":["jquery", "semantic-ui","svelte"]
+  }
+}

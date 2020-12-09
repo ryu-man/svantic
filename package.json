@@ -1,0 +1,56 @@
+{
+  "name": "sveltic",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "svelte": "./src/index.js",
+  "types": "@types/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "@types"
+  ],
+  "scripts": {
+    "tsc": "tsc --sourceMap false",
+    "tsc:w": "tsc -w",
+    "tsc:d": "tsc -d --declarationDir @types/ --emitDeclarationOnly --declarationMap --rootDir src/ --noEmitOnError  false",
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public",
+    "validate": "svelte-check",
+    "pretty": "prettier --write \"src/**/*.{svelte,js,ts}\"",
+    "test": "jest",
+    "fomantic-build": "gulp build -f fomantic/gulpfile.js"
+  },
+  "devDependencies": {
+    "@rollup/plugin-alias": "^3.1.1",
+    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "@rollup/plugin-typescript": "^6.1.0",
+    "@testing-library/svelte": "^3.0.0",
+    "@tsconfig/svelte": "^1.0.0",
+    "@types/jquery": "^3.5.1",
+    "@types/semantic-ui": "^2.2.7",
+    "autoprefixer": "^10.0.4",
+    "jest": "^26.5.3",
+    "node-sass": "^5.0.0",
+    "npm-check": "^5.9.2",
+    "postcss-import": "^13.0.0",
+    "postcss-load-config": "^3.0.0",
+    "rollup": "^2.28.2",
+    "rollup-plugin-css-only": "^3.0.0",
+    "rollup-plugin-external-globals": "^0.6.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "svelte": "3.31.0",
+    "svelte-check": "^1.0.52",
+    "svelte-preprocess": "^4.3.2",
+    "tslib": "^2.0.0",
+    "typescript": "^4.0.2"
+  },
+  "dependencies": {
+    "fomantic-ui": "^2.8.7",
+    "sirv-cli": "^1.0.0"
+  }
+}

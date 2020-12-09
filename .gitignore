@@ -1,0 +1,12 @@
+/node_modules/
+/public/
+/dist/
+/@types/
+fomantic
+.todo
+.DS_Store
+.todo
+package-lock.json
+semantic.json
+semantic
+.vscode

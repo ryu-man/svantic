@@ -1,0 +1,13 @@
+{
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "svelteSortOrder": "scripts-markup-styles",
+    "svelteStrictMode": true,
+    "svelteBracketNewLine": true,
+    "svelteAllowShorthand": true,
+    "prettier.eslintIntegration": true,
+    "editor.formatOnSave": true
+  }
+  
