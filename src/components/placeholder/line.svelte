@@ -8,12 +8,11 @@
 </script>
 
 <div
-  class="line"
   class:short
   class:medium
   class:very
   class:full
   class:long
   class:fluid
+  class="line"
 ></div>
-

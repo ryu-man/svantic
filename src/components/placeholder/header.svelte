@@ -1,13 +1,11 @@
 <script>
+  import { css } from '../../utils'
+  let _class
+  export {_class as class}
   export let style = {}
 </script>
 
-<div
-  class="header"
-  style="{Object.entries(style)
-    .map((e) => `${e[0]}:${e[1]}`)
-    .join(';')}"
->
+<div use:css="{style}" class="header {_class}">
   <slot>
     <!-- optional fallback -->
   </slot>

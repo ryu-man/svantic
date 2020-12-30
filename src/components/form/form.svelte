@@ -1,6 +1,6 @@
-<script lang="ts">
+<script>
   import { register } from '../../utils/events'
-  import { css } from '../../utils/css'
+  import { css } from '../../utils'
 
   let _class = ''
   export let style = {}
@@ -11,7 +11,7 @@
   export let on = {}
   export { _class as class }
 
-  function init(node: HTMLElement) {
+  function init(node) {
     css(node, style)
     const unregister = register(node, on)
     return {
@@ -24,10 +24,10 @@
 
 <form
   use:init
-  class="{_class} {state} {size} ui form"
   class:inverted
   class:equal
   class:width="{equal}"
+  class="{state} {size} ui form {_class}"
 >
   <slot>
     <!-- optional fallback -->

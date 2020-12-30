@@ -1,5 +1,5 @@
-<script lang="ts">
-  import { register, css } from '../../utils'
+<script>
+  import { register, css, classNames } from '../../utils'
 
   export let type = ''
   export let attached = ''
@@ -31,13 +31,6 @@
 <!-- svelte-ignore a11y-missing-attribute -->
 <a
   use:init
-  class="{_class}
-    {size}
-    {attached}
-    {floating}
-    {aligned}
-    {color}
-    {type} ui label"
   class:attached
   class:basic
   class:horizontal
@@ -45,6 +38,7 @@
   class:aligned
   class:circular
   class:inverted
+  class="{classNames(size, color, [attached, 'attached'], [floating, 'floating'], [aligned, 'aligned'], type, 'ui label', _class)}"
 >
   <slot>
     <!-- optional fallback -->

@@ -1,20 +1,14 @@
 <script>
+  import { css } from '../../utils'
+
   let _class = ''
+  export { _class as class }
   export let style = {}
 
-  export { _class as class }
 </script>
 
-<div
-  class="{_class} ui blurring"
-  style="{Object.entries(style)
-    .map((e) => `${e[0]}:${e[1]}`)
-    .join(';')}"
->
+<div use:css="{style}" class="ui blurring {_class}">
   <slot>
     <!-- optional fallback -->
   </slot>
 </div>
-
-<style>
-</style>

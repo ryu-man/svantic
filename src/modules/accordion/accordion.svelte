@@ -1,27 +1,27 @@
-<script lang="ts">
-  import { css } from '../../utils/css'
+<script>
+  import { css } from '../../utils'
   import { register } from '../../utils/events'
+  import Controller from './controller'
 
-  let _class: string = ''
-  export let fluid: boolean = false
-  export let styled: boolean = false
-  export let inverted: boolean = false
+  let _class = ''
+  export let fluid = false
+  export let styled = false
+  export let inverted = false
   export let style = {}
-  export let on: {} = {}
+  export let on = {}
+  export let onMount
 
-  export let onmount: (controller: Controller) => void = (_) => {}
-
-  function init(node: HTMLElement, params?: {}) {
+  function init(node) {
     // the node has been mounted in the DOM
     css(node, style)
     const unregister = register(node, on)
-    // let controller = new Controller(node)
-    // onmount(controller)
+    let controller = new Controller(node)
+    onMount?.(controller)
     return {
       // the node has been removed from the DOM
       destroy() {
         unregister()
-        // controller = null
+        controller = null
       }
     }
   }
@@ -29,16 +29,16 @@
 
 <div
   use:init
-  class="{_class} ui accordion"
   class:styled
   class:fluid
   class:inverted
+  class="ui accordion {_class}"
 >
   <slot>
     <!-- optional fallback -->
   </slot>
 </div>
 
-<style>
-  /* @import './accordion.css'; */
+<style global>
+  @import '../../../fomantic/dist/components/accordion.css';
 </style>

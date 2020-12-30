@@ -21,12 +21,12 @@
 </script>
 
 {#if icon}
-  <div use:init class="ui black ribbon label" class:icon class:left class:right>
+  <div use:init class:icon class:left class:right class="ui black ribbon label">
     <slot />
   </div>
 {:else}
   <!-- svelte-ignore a11y-missing-attribute -->
-  <a use:init class="ui ribbon label {_class}" class:left class:right>
+  <a use:init class:left class:right class="ui ribbon label {_class}">
     <slot>
       <!-- optional fallback -->
     </slot>

@@ -1,5 +1,5 @@
-<script lang="ts">
-  import { css, register } from '../../utils'
+<script>
+  import { classNames, css, register } from '../../utils'
 
   let _class = ''
   export let aligned = ''
@@ -14,11 +14,11 @@
   export let relaxed = false
   export let divided = false
   export let celled = false
-  export let style: {} = {}
-  export let on: {} = {}
+  export let style= {}
+  export let on= {}
   export { _class as class }
 
-  function init(node: HTMLElement, params?: {}) {
+  function init(node) {
     css(node, style)
     const unregister = register(node, on)
     return {
@@ -31,7 +31,6 @@
 
 <div
   use:init
-  class="ui list {`${_class} ${floated && floated + 'floated'} ${aligned && aligned + ' aligned'}`}"
   class:link
   class:celled
   class:ordered
@@ -42,6 +41,7 @@
   class:animated
   class:selection
   class:horizontal
+  class="{classNames([floated, 'floated'], [aligned, 'aligned', 'ui list', _class])}"
 >
   <slot>
     <!-- optional fallback -->

@@ -1,5 +1,8 @@
 <script>
+  import { classNames, css } from '../../utils'
+
   let _class = ''
+  export { _class as class }
   export let style = {}
   //fade
   //move
@@ -14,23 +17,18 @@
   //disabled
   export let state = ''
   export let instant = false
-
-  export { _class as class }
-
-  function init(node) {
-    css(node, style)
-  }
 </script>
 
 <div
-  use:init
-  class=" ui reveal {_class} {type} {direction} {state}"
+  use:css="{style}"
   class:instant
+  class="{classNames(state, direction, type, 'ui reaveal', _class)}"
 >
   <slot>
     <!-- optional fallback -->
   </slot>
 </div>
+
 <style global>
   @import '../../../fomantic/dist/components/reveal.css';
 </style>

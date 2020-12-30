@@ -1,5 +1,5 @@
-<script lang="ts">
-  import { css } from '../../utils/css'
+<script>
+  import { css } from '../../utils'
 
   export let style = {}
   export let type = ''
@@ -12,19 +12,19 @@
   let _class = ''
   export { _class as class }
 
-  function init(node: HTMLElement) {
+  function init(node) {
     css(node, style)
   }
 </script>
 
 <div
   use:init
-  class="{_class} {type} {aligned && `${aligned}`} ui divider"
   class:clearing
   class:section
   class:hidden
   class:fitted
   class:inverted
+  class="{type} {aligned && `${aligned}`} ui divider {_class}"
 >
   <slot>
     <!-- optional fallback -->

@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { css } from '../../utils'
 
   let _class = ''
@@ -8,7 +8,7 @@
   export { _class as class }
 </script>
 
-<div use:css="{style}" class="{_class} item" class:center data-tab={data}>
+<div use:css="{style}" class:center class="item {_class}" data-tab="{data}">
   <slot>
     <!-- optional fallback -->
   </slot>

@@ -1,5 +1,5 @@
-<script lang="ts">
-  import { css, register } from '../../utils'
+<script>
+  import { classNames, css, register } from '../../utils'
 
   let _class = ''
   export let type = ''
@@ -21,11 +21,11 @@
   export let blurring = false
   export let dimmable = false
   export let dimmed = false
-  export let style: {} = {}
-  export let on: {} = {}
+  export let style = {}
+  export let on = {}
   export { _class as class }
 
-  function init(node: HTMLElement, params?: {}) {
+  function init(node) {
     // the node has been mounted in the DOM
     css(node, style)
     const unregister = register(node, on)
@@ -41,14 +41,6 @@
 
 <div
   use:init
-  class="ui segment {_class}
-    {emphasis}
-    {type}
-    {state}
-    {floated + ' floated'}
-    {attached + ' attached'}
-    {aligned + ' aligned'}
-    {color}"
   class:tall
   class:double
   class:inverted
@@ -61,6 +53,7 @@
   class:blurring
   class:dimmable
   class:dimmed
+  class="{classNames(state, color, emphasis, type, [floated, 'floated'], [attached, 'attached'], [aligned, 'aligned'], 'ui segment', _class)}"
 >
   <slot>
     <!-- optional fallback -->

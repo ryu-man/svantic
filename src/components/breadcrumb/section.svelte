@@ -1,18 +1,17 @@
-<script lang="ts">
+<script>
   import { register } from '../../utils/events'
-  import { css } from '../../utils/css'
+  import { css } from '../../utils'
 
-  let _class: string = ''
+  let _class = ''
   export let style = {}
   export { _class as class }
   export let active = false
   export let on = {}
 
-  function init(node: HTMLElement, params?: {}) {
+  function init(node) {
     css(node, style)
     const unregister = register(node, on)
     return {
-      update() {},
       destroy() {
         unregister()
       }
@@ -20,12 +19,8 @@
   }
 </script>
 
-<div class="{_class} section" class:active>
+<div use:init class:active class="section {_class} " >
   <slot>
     <!-- optional fallback -->
   </slot>
 </div>
-
-<style>
-  /* your styles go here */
-</style>

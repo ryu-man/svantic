@@ -1,11 +1,11 @@
-<script lang="ts">
+<script>
   import { css } from '../../utils'
 
-  let _class: string = ''
-  export let completed: boolean = false
-  export let active: boolean = false
-  export let link: boolean = false
-  export let disabled: boolean = false
+  let _class = ''
+  export let completed = false
+  export let active = false
+  export let link = false
+  export let disabled = false
   export let style = {}
   export { _class as class }
 </script>
@@ -13,7 +13,7 @@
 <!-- svelte-ignore a11y-missing-attribute -->
 <a
   use:css="{style}"
-  class=" ui step {_class}"
+  class="ui step {_class}"
   class:completed
   class:active
   class:link

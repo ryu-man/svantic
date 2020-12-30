@@ -5,13 +5,9 @@
   export let style = {}
   export { _class as class }
 
-  function init(node) {
-    // the node has been mounted in the DOM
-    css(node, style)
-  }
 </script>
 
-<div class="{_class} side">
+<div use:css={style} class="side {_class}">
   <slot>
     <!-- optional fallback -->
   </slot>

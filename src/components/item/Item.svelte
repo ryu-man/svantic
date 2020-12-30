@@ -1,8 +1,8 @@
-<script lang="ts">
-  import { css } from '../../utils/css'
+<script>
+  import { css } from '../../utils'
   let _class = ''
-  export let style: {} = {}
-  export let imageSrc: string = ''
+  export let style= {}
+  export let imageSrc = ''
   export { _class as class }
 </script>
 

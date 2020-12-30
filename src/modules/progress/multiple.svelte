@@ -1,29 +1,16 @@
-<script lang="ts">
-  import { css } from '../../utils/css'
-  import { register } from '../../utils/events'
+<script>
+  import { css } from '../../utils'
 
-  let _class: string = ''
-  export let total: number = 100
-  export let percents: Array<number> = []
-  export let style: {} = {}
-  export let on: {} = {}
+  let _class = ''
   export { _class as class }
-
-  function init(node: HTMLElement, params?: {}) {
-    // the node has been mounted in the DOM
-    css(node, style)
-    const unregister = register(node, on)
-    return {
-      // the node has been removed from the DOM
-      destroy() {
-        unregister()
-      }
-    }
-  }
+  export let total = 100
+  export let percents = []
+  export let style = {}
 </script>
 
 <div
-  class="{_class} ui multiple progress"
+  use:css="{style}"
+  class="ui multiple progress {_class}"
   data-total="{total}"
   data-percent="{percents.join(',')}"
 >
@@ -32,6 +19,6 @@
   </slot>
 </div>
 
-<style>
-  /* @import './progress.css';*/
+<style global>
+  @import '../../../fomantic/dist/components/progress.css';
 </style>

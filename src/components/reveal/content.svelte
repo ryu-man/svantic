@@ -1,21 +1,16 @@
 <script>
+  import { css } from '../../utils'
+
   let _class = ''
+  export { _class as class }
   export let style = {}
   //visible
   //hidden
   export let state = ''
-  export { _class as class }
-
-  function init(node) {
-    css(node, style)
-  }
 </script>
 
-<div
-  class="{_class} {state} content"
->
+<div use:css="{style}" class="{state} content {_class} ">
   <slot>
     <!-- optional fallback -->
   </slot>
 </div>
-

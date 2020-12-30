@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { register } from '../../utils/events'
 
   let _class = ''
@@ -15,7 +15,7 @@
   export let on = {}
   export { _class as class }
 
-  function init(node: HTMLElement, params?: {}) {
+  function init(node) {
     const unregister = register(node, on)
     return {
       update(params) {},

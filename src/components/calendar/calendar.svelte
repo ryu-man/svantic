@@ -1,18 +1,18 @@
-<script lang="ts">
+<script>
   import { register } from '../../utils/events.js'
-  import { css } from '../../utils/css'
+  import { css } from '../../utils'
   import Controller from './controller'
 
-  let _class: string = ''
-  export let icon: string = 'left'
-  export let disabled: boolean = false
+  let _class = ''
+  export let icon = 'left'
+  export let disabled = false
   export let style = {}
-  export let on: {} = {}
+  export let on= {}
 
   export let onmount: (controller: Controller) => void = () => {}
   export { _class as class }
 
-  function init(node: HTMLElement, _params?: {}) {
+  function init(node) {
     css(node, style)
     const unregister = register(node, on)
     let controller = new Controller(node)

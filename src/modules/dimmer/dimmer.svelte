@@ -1,73 +1,57 @@
-<script lang="ts">
-  import { register } from '../../utils/events.js'
-  import { css } from '../../utils/css'
+<script>
+  import { css, classNames } from '../../utils'
 
-
-  let _class: string = ''
+  let _class = ''
   export let style = {}
   //content
   //page
-  export let type: string = ''
+  export let type = ''
   // active
   // disabled
-  export let state: string = ''
+  export let state = ''
   // top
   // bottom
   // center
-  export let aligned: string = ''
+  export let aligned = ''
   // medium
   // light
   // very light
-  export let shades: string = ''
+  export let shades = ''
   // bottom
   // center
   // top
-  export let partial: string = ''
-  export let inverted: boolean = false
-  export let on = {}
+  export let partial = ''
+  export let inverted = false
   export { _class as class }
 
-  export let onmount = (controller) => {}
+  export let onMount
 
-  function init(node: HTMLElement, params?: {}) {
+  function init(node) {
     css(node, style)
-    /* const unregister = register(node, on)
+
     let controller = new Controller(node)
-    onmount(controller)
-    return {
-      update() {},
-      destroy() {
-        unregister()
-        controller = null
-      }
-    } */
+    onMount?.(controller)
   }
 </script>
 
 <div
   use:init
-  class="{_class} {shades} {partial} {aligned} {state} {type} ui dimmer"
-  class:aligned="{aligned != ''}"
   class:inverted
+  class="{classNames(shades, partial, state, type[(aligned, 'aligned')], 'ui dimmer', _class)}"
 >
   {#if type == 'content'}
-    <div
-      class="content"
-      style="{Object.entries(style)
-        .map((e) => `${e[0]}:${e[1]}`)
-        .join(';')}"
-    >
+    <div class="content">
       <slot>
         <!-- optional fallback -->
       </slot>
     </div>
-  
+
     <slot>
       <!-- optional fallback -->
     </slot>
   {/if}
 </div>
 
-<style>
-  /* @import './dimmer.css';*/
+<style global>
+  @import '../../../fomantic/dist/components/dimmer.css';
 </style>

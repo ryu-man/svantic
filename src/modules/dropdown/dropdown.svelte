@@ -1,13 +1,11 @@
-<script lang="ts">
-  import { css } from '../../utils/css'
-  import { register } from '../../utils/events'
-  import { classNames } from '../../utils'
+<script>
+  import { css, classNames } from '../../utils'
   import Controller from './controller'
 
   let _class = ''
   export let size = ''
   export let wide = ''
-  export let type: string | string[] = ''
+  export let type = ''
   export let state = ''
   export let speed = ''
   export let height = ''
@@ -31,21 +29,15 @@
   export let style = {}
   // export let on = {}
   export { _class as class }
-  export let onmount: (controller: Controller) => void = (_) => {}
+  export let onMount
 
   $: _type = type instanceof Array ? type.join(' ') : type
 
-  function init(node: HTMLElement) {
+  function init(node) {
     css(node, style)
     node.classList.add('ui', 'dropdown')
-    /* const unregister = register(node, on) */
     let controller = new Controller(node)
-    onmount(controller)
-    return {
-      destroy() {
-        // unregister()
-      }
-    }
+    onMount?.(controller)
   }
 </script>
 
@@ -53,18 +45,6 @@
   <select
     use:init
     multiple="{type.includes('multiple')}"
-    class="{classNames([
-      _class,
-      height,
-      column && `${column} column`,
-      speed,
-      loaderStyle,
-      wide,
-      _type,
-      state,
-      size,
-      menuDirection
-    ])}"
     class:top
     class:link
     class:item
@@ -77,6 +57,19 @@
     class:compact
     class:inverted
     class:scrolling
+    class="{classNames(
+      height,
+      column,
+      speed,
+      loaderStyle,
+      wide,
+      _type,
+      state,
+      size,
+      menuDirection,
+      'ui dropdown',
+      _class
+    )}"
   >
     <slot>
       <!-- optional fallback -->
@@ -84,21 +77,33 @@
   </select>
 {:else}
   <div
-      use:init
-      class={classNames([_class, height, column && `${column} column`, speed, loaderStyle, wide, _type, state, size, menuDirection])}
-      class:top
-      class:link
-      class:item
-      class:left
-      class:long
-      class:right
-      class:fluid
-      class:label
-      class:bottom
-      class:compact
-      class:inverted
-      class:scrolling
-    >
+    use:init
+    class:top
+    class:link
+    class:item
+    class:left
+    class:long
+    class:right
+    class:fluid
+    class:label
+    class:bottom
+    class:compact
+    class:inverted
+    class:scrolling
+    class="{classNames(
+      height,
+      column,
+      speed,
+      loaderStyle,
+      wide,
+      _type,
+      state,
+      size,
+      menuDirection,
+      'ui dropdown',
+      _class
+    )}"
+  >
     <slot>
       <!-- optional fallback -->
     </slot>

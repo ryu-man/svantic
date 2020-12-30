@@ -1,21 +1,21 @@
-<script lang="ts">
-  import { css } from '../../utils'
+<script>
+  import { classNames, css } from '../../utils'
 
   export let _class = ''
-  export let attached: string = ''
+  export { _class as class }
+  export let attached = ''
   export let loading = false
   export let segment = false
   export let active = false
-  export let style: {} = {}
-  export { _class as class }
+  export let style = {}
 </script>
 
 <div
   use:css="{style}"
-  class="ui tabular menu {_class} {attached && `${attached} attached`}"
   class:loading
   class:segment
   class:active
+  class="{classNames([attached, 'attached'], 'ui tabular menu', _class)}"
 >
   <slot name="item">
     <!-- optional fallback -->

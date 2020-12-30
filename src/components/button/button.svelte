@@ -1,31 +1,30 @@
-<script lang="ts">
+<script>
   import { register } from '../../utils/events'
-  import { css } from '../../utils/css'
+  import { css } from '../../utils'
 
-
-  let _class: string = ''
+  let _class = ''
   export { _class as class }
-  export let size: string = ''
-  export let type: string = ''
-  export let color: string = ''
-  export let state: string = ''
-  export let social: string = ''
-  export let floated: string = ''
-  export let attached: string = ''
-  export let fade: boolean = false
-  export let icon: boolean = false
-  export let fluid: boolean = false
-  export let toggle: boolean = false
-  export let compact: boolean = false
-  export let circular: boolean = false
-  export let positive: boolean = false
-  export let negative: boolean = false
-  export let inverted: boolean = false
-  export let vertical: boolean = false
-  export let style: {} = {}
+  export let size = ''
+  export let type = ''
+  export let color = ''
+  export let state = ''
+  export let social = ''
+  export let floated = ''
+  export let attached = ''
+  export let fade = false
+  export let icon = false
+  export let fluid = false
+  export let toggle = false
+  export let compact = false
+  export let circular = false
+  export let positive = false
+  export let negative = false
+  export let inverted = false
+  export let vertical = false
+  export let style= {}
   export let on = {}
 
-  function init(node: HTMLElement) {
+  function init(node) {
     css(node, style)
     const unregister = register(node, on)
     return {
@@ -38,14 +37,6 @@
 
 <div
   use:init
-  class="{_class}
-    {type}
-    {state}
-    {social}
-    {size}
-    {floated && `${floated} floated`}
-    {attached && `${attached} attached`}
-    {color} ui button"
   class:fade
   class:icon
   class:fluid
@@ -56,6 +47,14 @@
   class:negative
   class:inverted
   class:vertical
+  class="{_class}
+    {type}
+    {state}
+    {social}
+    {size}
+    {floated && `${floated} floated`}
+    {attached && `${attached} attached`}
+    {color} ui button"
 >
   <slot>
     <!-- optional fallback -->

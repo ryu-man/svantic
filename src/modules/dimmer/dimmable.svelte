@@ -1,16 +1,12 @@
-<script lang="ts">
-  import { css } from '../../utils/css'
+<script>
+  import { css } from '../../utils'
 
   let _class = ''
-  export let style = {}
   export { _class as class }
-
-  function init(node: HTMLElement, params?: {}) {
-    css(node, style)
-  }
+  export let style = {}
 </script>
 
-<div class="{_class} ui dimmable dimmed">
+<div use:css="{style}" class="ui dimmable dimmed {_class} ">
   <div class="ui simple dimmer"></div>
   <slot>
     <!-- optional fallback -->

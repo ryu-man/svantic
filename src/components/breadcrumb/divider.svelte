@@ -1,22 +1,13 @@
-<script lang="ts">
-  import { css } from '../../utils/css'
+<script>
+  import { css } from '../../utils'
 
-  let _class: string = ''
-  export let style = {}
+  let _class = ''
   export { _class as class }
-
-  function init(node: HTMLElement, params?: {}) {
-    // the node has been mounted in the DOM
-    css(node, style)
-  }
+  export let style = {}
 </script>
 
-<div use:init class="{_class} divider">
+<div use:css="{style}" class="divider {_class}">
   <slot>
     <!-- optional fallback -->
   </slot>
 </div>
-
-<style>
-  /* your styles go here */
-</style>

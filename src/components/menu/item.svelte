@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { css, register } from '../../utils'
 
   export let active = false
@@ -22,7 +22,7 @@
 </script>
 
 <!-- svelte-ignore a11y-missing-attribute -->
-<a use:init class="item {_class}" class:active class:horizontally class:fitted>
+<a use:init  class:active class:horizontally class:fitted class="item {_class}">
   <slot>
     <!-- optional fallback -->
   </slot>

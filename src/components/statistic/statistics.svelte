@@ -1,5 +1,5 @@
 <script>
-  import { css } from '../../utils/css'
+  import { css, classNames } from '../../utils'
 
   let _class = ''
   export { _class as class }
@@ -9,7 +9,7 @@
 
 <div
   use:css="{style}"
-  class="{`ui statistics ${_class} ${columns && columns}`}"
+  class="{classNames([columns, 'columns'], 'ui statistics', _class)}"
 >
   <slot>
     <!-- optional fallback -->

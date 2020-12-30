@@ -1,17 +1,18 @@
-<script lang="ts">
-  import { css } from '../../utils/css'
+<script>
+  import { css } from '../../utils'
   import { register } from '../../utils/events'
 
   let _class = ''
+  export { _class as class }
   export let side = ''
   export let internal = false
   export let dividing = false
   export let attached = false
   export let close = false
-  export let style: {} = {}
-  export let on: {} = {}
-  export { _class as class }
-  function init(node: HTMLElement, params?: {}) {
+  export let style= {}
+  export let on= {}
+
+  function init(node) {
     // the node has been mounted in the DOM
     css(node, style)
     const unregister = register(node, on)
@@ -26,16 +27,18 @@
 </script>
 
 <div
-  class=" ui rail {_class} {side}"
+  use:init
   class:internal
   class:dividing
   class:attached
   class:close
+  class=" {side} ui rail {_class}"
 >
   <slot>
     <!-- optional fallback -->
   </slot>
 </div>
+
 <style global>
   @import '../../../fomantic/dist/components/rail.css';
 </style>

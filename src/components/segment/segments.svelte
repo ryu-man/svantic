@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { css } from '../../utils'
 
   export let type = ''
@@ -6,13 +6,13 @@
   let _class = ''
   export { _class as class }
 
-  function init(node: HTMLElement, params?: {}) {
+  function init(node) {
     // the node has been mounted in the DOM
     css(node, style)
   }
 </script>
 
-<div class="{_class} {type} ui segments">
+<div use:init class="{_class} {type} ui segments">
   <slot>
     <!-- optional fallback -->
   </slot>

@@ -22,5 +22,5 @@
 </a>
 
 <style global>
-  @import '../../../fomantic/dist/components/tag.css';
+  @import '../../../fomantic/dist/components/label.css';
 </style>

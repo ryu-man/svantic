@@ -1,5 +1,5 @@
-<script lang="ts">
-  import { register } from '../../utils/events'
+<script>
+  import { register } from '../../utils'
 
   export let state = ''
   export let link = false
@@ -8,7 +8,8 @@
   let _class = ''
   export { _class as class }
 
-  function init(node: HTMLElement, params?: {}) {
+  function init(node) {
+    css(node, style)
     const unregister = register(node, on)
     return {
       update(params) {},
@@ -21,10 +22,7 @@
 
 <div
   use:init
-  class="{_class} {state} ui step"
-  style="{Object.entries(style)
-    .map((e) => `${e[0]}:${e[1]}`)
-    .join(';')}"
+  class="ui step {state} {_class}"
   class:link
 >
   <slot>
@@ -33,5 +31,5 @@
 </div>
 
 <style>
-  /* @import './step.css';*/
+   @import '../../../fomantic/dist/components/step.css';
 </style>

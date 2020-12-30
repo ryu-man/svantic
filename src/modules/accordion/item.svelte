@@ -1,18 +1,14 @@
-<script lang="ts">
-  import { css } from '../../utils/css'
+<script>
+  import { css } from '../../utils'
   export let style
-  function init(node: HTMLElement, params?: {}) {
-    // the node has been mounted in the DOM
-    css(node, style)
-  }
 </script>
 
-<div use:init class="active title">
+<div class="active title">
   <slot name="title">
     <!-- optional fallback -->
   </slot>
 </div>
-<div use:init class="active content">
+<div class="active content">
   <slot name="content">
     <!-- optional fallback -->
   </slot>

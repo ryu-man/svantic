@@ -1,6 +1,6 @@
-<script lang="ts">
+<script>
   import { register } from '../../utils/events'
-  import { css } from '../../utils/css'
+  import { css } from '../../utils'
 
   let _class = ''
   export let style = {}
@@ -8,7 +8,7 @@
   export { _class as class }
   export let on = {}
 
-  function init(node: HTMLElement, params?: {}) {
+  function init(node) {
     css(node, style)
     const unregister = register(node, on)
     return {
@@ -21,13 +21,12 @@
   }
 </script>
 
-<!-- svelte-ignore a11y-missing-attribute -->
-<div class="{_class} {size} ui breadcrumb">
+<div class="{size} ui breadcrumb {_class}">
   <slot>
     
   </slot>
 </div>
 
-<style>
+<style global>
   @import '../../../fomantic/dist/components/breadcrumb.css';
 </style>

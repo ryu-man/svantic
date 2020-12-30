@@ -1,6 +1,5 @@
-<script lang="ts">
-  import { css } from '../../utils/css'
-  import { register } from '../../utils/events'
+<script>
+  import { classNames, css } from '../../utils'
 
   let _class = ''
   export let type = ''
@@ -10,29 +9,18 @@
   export let inline = false
   export let center = false
   export let inverted = false
-  export let icon: boolean = false
+  export let icon = false
   export let style = {}
-  export let on: {} = {}
   export { _class as class }
-
-  function init(node: HTMLElement, params?: {}) {
-    css(node, style)
-    const unregister = register(node, on)
-    return {
-      destroy() {
-        unregister()
-      }
-    }
-  }
 </script>
 
 <div
-  use:init
-  class=" ui loader {_class} {type} {state} {animationStyle} {speed}"
+  use:css="{style}"
   class:inline
   class:center
   class:inverted
   class:icon
+  class="{classNames(type, state, animationStyle, speed, 'ui loader', _class)}"
 >
   <slot>
     <!-- optional fallback -->

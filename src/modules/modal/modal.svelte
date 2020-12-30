@@ -1,29 +1,25 @@
-<script lang="ts">
-  import { css } from '../../utils/css'
-  import { register } from '../../utils/events'
+<script>
+  import { css } from '../../utils'
   import Controller from './controller'
 
   export let size = ''
-  export let basic: boolean = false
-  export let active: boolean = false
-  export let overlay: boolean = false
-  export let inverted: boolean = false
-  export let fullscreen: boolean = false
-  export let on = {}
+  export let basic = false
+  export let active = false
+  export let overlay = false
+  export let inverted = false
+  export let fullscreen = false
   export let style = {}
   let _class = ''
   export { _class as class }
 
-  export let onmount: (controller: Controller) => void = () => {}
+  export let onMount
 
-  function init(node: HTMLElement, params?: {}) {
+  function init(node) {
     css(node, style)
     let controller = new Controller(node)
-    const unregister = register(node, on)
-    onmount(controller)
+    onMount?.(controller)
     return {
       destroy() {
-        unregister()
         controller = null
       }
     }
@@ -32,12 +28,12 @@
 
 <div
   use:init
-  class="{_class} {size} ui modal"
   class:basic
   class:active
   class:inverted
   class:overlay
   class:fullscreen
+  class="{size} ui modal {_class}"
 >
   <slot />
 </div>

@@ -5,12 +5,22 @@ export function css(node, style) {
     });
 }
 export function register(node, events) {
-    const eventKeys = Object.keys(events);
-    eventKeys.forEach((key) => node.addEventListener(key, events[key]));
+    const eventTypes = Object.keys(events);
+    eventTypes.forEach((key) => node.addEventListener(key, events[key]));
     return () => {
-        eventKeys.forEach((key) => node.removeEventListener(key, events[key]));
+        eventTypes.forEach((key) => node.removeEventListener(key, events[key]));
     };
 }
-export function classNames(names) {
-    return names.filter((o) => o).join(' ');
+export function classNames(...args) {
+    return args.filter((o) => o).map(o => {
+        if (Array.isArray(o)) {
+            const [cond, ...rest] = o
+            if (cond) {
+                return `${cond} ${rest.join(' ')}`
+            } else {
+                return ''
+            }
+        }
+        return o
+    }).join(' ');
 }

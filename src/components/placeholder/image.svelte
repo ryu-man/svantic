@@ -1,19 +1,12 @@
 <script>
+  import { css } from '../../utils'
+
   export let header = false
   export let square = false
   export let style = {}
-
-  function init(node) {
-    css(node, style)
-  }
 </script>
 
-<div
-use:init
-  class="image"
-  class:header
-  class:square
->
+<div use:css="{style}" class:header class:square class="image">
   <slot>
     <!-- optional fallback -->
   </slot>

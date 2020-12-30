@@ -1,44 +1,29 @@
-<script lang="ts">
-  import { css } from '../../utils/css'
-  import { register } from '../../utils/events'
+<script>
+  import { css, classNames } from '../../utils'
 
-  let _class: string = ''
-  export let type: string = ''
-  export let column: string = ''
-  export let line: boolean = false
-  export let basic: boolean = false
-  export let fixed: boolean = false
-  export let padded: boolean = false
-  export let celled: boolean = false
-  export let single: boolean = false
-  export let compact: boolean = false
-  export let striped: boolean = false
-  export let sortable: boolean = false
-  export let inverted: boolean = false
-  export let veryBasic: boolean = false
-  export let collapsing: boolean = false
-  export let selectable: boolean = false
-  export let unstackable: boolean = false
-  export let on: {} = {}
-  export let style: {} = {}
+  let _class = ''
+  export let type = ''
+  export let column = ''
+  export let line = false
+  export let basic = false
+  export let fixed = false
+  export let padded = false
+  export let celled = false
+  export let single = false
+  export let compact = false
+  export let striped = false
+  export let sortable = false
+  export let inverted = false
+  export let veryBasic = false
+  export let collapsing = false
+  export let selectable = false
+  export let unstackable = false
+  export let style = {}
   export { _class as class }
-
-  function init(node: HTMLElement, params?: {}) {
-    // the node has been mounted in the DOM
-    css(node, style)
-    const unregister = register(node, on)
-    return {
-      // the node has been removed from the DOM
-      destroy() {
-        unregister()
-      }
-    }
-  }
 </script>
 
 <table
-  use:init
-  class="ui table {_class} {type} {column && `${column} column`} {veryBasic && 'very'} {(veryBasic || basic) && 'basic'} {type}"
+  use:css="{style}"
   class:celled
   class:compact
   class:striped
@@ -51,6 +36,9 @@
   class:fixed
   class:single
   class:line
+  class:very="{veryBasic}"
+  class:basic="{basic || veryBasic}"
+  class="{classNames(type, [column, 'column'], 'ui table', _class)}"
 >
   <slot>
     <!-- optional fallback -->

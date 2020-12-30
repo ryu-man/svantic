@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { css } from '../../utils'
 
   let _class = ''
@@ -8,7 +8,7 @@
 
 <div
 use:css = {style}
-  class="{_class} ui sticky"
+  class="ui sticky {_class}"
   
 >
   <slot>

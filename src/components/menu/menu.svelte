@@ -1,9 +1,9 @@
-<script lang="ts">
-  import { css } from '../../utils'
+<script>
+  import { classNames, css } from '../../utils'
 
   let _class = ''
   export let style = {}
-  export let type: string | string[] = ''
+  export let type = ''
   export let wide = ''
   export let size = ''
   export let item = false
@@ -17,15 +17,10 @@
   export let labeled = false
   export let borderless = false
   export { _class as class }
-
-  function init(node: HTMLElement) {
-    css(node, style)
-  }
 </script>
 
 <div
-  use:init
-  class="ui menu {_class} {type} {attached && `${attached} attached`} {wide} {size}"
+  use:css="{style}"
   class:item
   class:fluid
   class:compact
@@ -35,6 +30,7 @@
   class:icon
   class:labeled
   class:borderless
+  class="{classNames(type, [attached, 'attached'], wide, size, 'ui menu', _class)}"
 >
   <slot />
 </div>

@@ -1,25 +1,24 @@
-<script lang="ts">
-  import { css } from '../../utils'
-  let _class: string = ''
-  export let type: string = ''
-  export let side: string = ''
-  export let size: string = ''
-  export let wide: string = ''
-  export let attached: string = ''
-  export let ordered: boolean = false
-  export let vertical: boolean = false
-  export let tablet: boolean = false
-  export let stackable: boolean = false
-  export let fluid: boolean = false
-  export let unstackable: boolean = false
-  export let inverted: boolean = false
+<script>
+  import { classNames, css } from '../../utils'
+  let _class = ''
+  export let type = ''
+  export let side = ''
+  export let size = ''
+  export let wide = ''
+  export let attached = ''
+  export let ordered = false
+  export let vertical = false
+  export let tablet = false
+  export let stackable = false
+  export let fluid = false
+  export let unstackable = false
+  export let inverted = false
   export { _class as class }
   export let style = {}
 </script>
 
 <div
   use:css="{style}"
-  class=" ui steps {_class} {type} {side} {size} {wide} {attached}"
   class:ordered
   class:vertical
   class:tablet
@@ -28,6 +27,7 @@
   class:unstackable
   class:attached
   class:inverted
+  class="{classNames(type, side, size, wide, [attached, 'attached'], 'ui steps', _class)}"
 >
   <slot>
     <!-- optional fallback -->

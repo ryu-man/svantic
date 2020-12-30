@@ -1,22 +1,22 @@
-<script lang="ts">
-  import { css } from '../../utils/css'
+<script>
+  import { css,classNames } from '../../utils'
 
-  export let _class: string = ''
-  export let attached: string
-  export let active: boolean = false
-  export let segment: boolean = false
-  export let data: string = ''
-  export let style: {} = {}
+  export let _class = ''
   export { _class as class }
+  export let attached
+  export let active = false
+  export let segment = false
+  export let data = ''
+  export let style = {}
 </script>
 
 <div
   use:css="{style}"
-  class=" ui tab {_class} {attached && `${attached} attached`}"
   class:attached
   class:active
   class:segment
   data-tab="{data}"
+  class="{classNames([attached, 'attached'], 'ui tab', _class)}"
 >
   <slot>
     <!-- optional fallback -->

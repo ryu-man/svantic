@@ -1,5 +1,5 @@
 <script>
-  import { css, register } from '../../utils'
+  import { classNames, css, register } from '../../utils'
 
   export let style = {}
   export let size = ''
@@ -10,27 +10,15 @@
   export let inverted = false
   let _class = ''
   export { _class as class }
-  export let on = {}
-
-  function init(node) {
-    css(node, style)
-    const unregister = register(node, on)
-
-    return {
-      destroy() {
-        unregister()
-      }
-    }
-  }
 </script>
 
 <div
-  use:init
-  class="{_class} {size} {color} ui labels"
+  use:css="{style}"
   class:basic
   class:tag
   class:circular
   class:inverted
+  class="{classNames(size, color, 'ui labels', _class)}"
 >
   <slot>
     <!-- optional fallback -->

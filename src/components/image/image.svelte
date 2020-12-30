@@ -1,6 +1,5 @@
-<script lang="ts">
-  import { css } from '../../utils/css'
-  import { register } from '../../utils/events'
+<script>
+  import { css, register, classNames } from '../../utils'
 
   export let src = ''
   export let alt = ''
@@ -21,7 +20,7 @@
   let _class = ''
   export { _class as class }
 
-  function init(node: HTMLElement, _params?: {}) {
+  function init(node) {
     css(node, style)
     const unregister = register(node, on)
     return {
@@ -34,11 +33,6 @@
 
 <img
   use:init
-  class="{_class}
-    {state}
-    {floated + ' floated'}
-    {aligned + ' aligned'}
-    {size} ui image"
   class:avatar
   class:bordered
   class:fluid
@@ -47,6 +41,7 @@
   class:middle
   class:centered
   class:space
+  class="{classNames(state, size, [floated, 'floated'], [aligned, 'aligned'], 'ui image', _class)}"
   src="{src}"
   alt="{alt}"
 />

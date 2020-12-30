@@ -6,7 +6,7 @@
   export { _class as class }
 </script>
 
-<a class="{_class} ui image" href="{link}"> <img src="{src}" alt="{alt}" /> </a>
+<a class="ui image {_class}" href="{link}"> <img src="{src}" alt="{alt}" > </a>
 
 <style global>
   @import '../../../fomantic/dist/components/image.css';

@@ -1,6 +1,6 @@
-<script lang="ts">
+<script>
   import { register } from '../../utils/events'
-  import { css } from '../../utils/css'
+  import { css } from '../../utils'
 
   let _class = ''
   export let style = {}
@@ -8,14 +8,12 @@
 
   export { _class as class }
 
-  function init(node: HTMLElement, params?: {}) {
+  function init(node) {
     css(node, style)
     const unregister = register(node, on)
     return {
-      update(params) {},
       destroy() {
         unregister()
-        console.log('Button has been destroyed')
       }
     }
   }

@@ -8,10 +8,7 @@ export default class PopupController {
         this.selection = this.jQuery(this.target);
         this.selection.popup(this.settings);
     }
-    init() {
-        this.selection.popup(this.settings);
-        return this;
-    }
+    
     setSettings(settings) {
         this.settings = settings;
         this.selection.popup(this.settings);

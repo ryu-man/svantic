@@ -1,7 +1,7 @@
-<script lang="ts">
-  import { css, register } from '../../utils'
+<script>
+  import { classNames, css, register } from '../../utils'
 
-  export let type:string | string[] = ''
+  export let type = ''
   export let size = ''
   export let state = ''
   export let context = ''
@@ -13,7 +13,7 @@
   let _class = ''
   export { _class as class }
 
-  function init(node: HTMLElement, params?: {}) {
+  function init(node) {
     css(node, style)
     const unregister = register(node, on)
     return {
@@ -26,14 +26,9 @@
 
 <div
   use:init
-  class="ui message {_class}
-    {attached + `${attached} attached`}
-    {type}
-    {context}
-    {state}
-    {size}"
   class:compact
   class:floating
+  class="{classNames(type, context, state, size, [attached, 'attached'], 'ui message', _class)}"
 >
   <slot>
     <!-- optional fallback -->

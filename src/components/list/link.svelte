@@ -1,12 +1,12 @@
-<script lang="ts">
+<script>
   import { css, register } from '../../utils'
 
   let _class = ''
   export let style = {}
-  export let on: {} = {}
+  export let on= {}
   export { _class as class }
 
-  function init(node: HTMLElement, params?: {}) {
+  function init(node) {
     css(node, style)
     const unregister = register(node, on)
     return {

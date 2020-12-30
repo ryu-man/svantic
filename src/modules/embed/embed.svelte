@@ -1,7 +1,5 @@
-<script lang="ts">
-  import { css } from '../../utils/css'
-
-  import { register } from '../../utils/events'
+<script>
+  import { css, register, } from '../../utils'
   import Controller from './controller'
 
   let _class = ''
@@ -9,7 +7,7 @@
   export let style = {}
   export let data = {}
   export let on = {}
-  export let onmount = (controller: Controller) => {}
+  export let onMount
 
   let _data = {
     source: '',
@@ -18,15 +16,14 @@
     ...data
   }
 
-  function init(node: HTMLElement) {
+  function init(node) {
     const unregister = register(node, on)
     let controller = new Controller(node)
-    onmount(controller)
+    onMount?.(controller)
     return {
       update() {},
       destroy() {
         unregister()
-        console.log('Button has been destroyed')
         controller = null
       }
     }

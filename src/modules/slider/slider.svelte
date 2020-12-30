@@ -1,6 +1,5 @@
-<script lang="ts">
-  import { css } from '../../utils/css'
-  import { register } from '../../utils/events'
+<script>
+  import { css, register, classNames } from '../../utils'
   import Controller from './controller'
 
   let _class = ''
@@ -15,12 +14,12 @@
   export let style = {}
   export { _class as class }
 
-  export let onmount = (controller: Controller) => {}
-  function init(node: HTMLElement, params?: {}) {
+  export let onMount
+  function init(node, params) {
     css(node, style)
     const unregister = register(node, on)
     let controller = new Controller(node)
-    onmount(controller)
+    onMount?.(controller, node)
     return {
       destroy() {
         unregister()
@@ -32,10 +31,10 @@
 
 <div
   use:init
-  class="{_class} {type} {color} {size} {state} ui slider"
   class:inverted
   class:reversed
   class:vertical
+  class="{classNames(state, color, size, type, 'ui slide', _class)}"
 >
   <slot>
     <!-- optional fallback -->

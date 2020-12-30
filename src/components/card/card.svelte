@@ -1,31 +1,31 @@
-<script lang="ts">
+<script>
   import { register } from '../../utils/events'
-  import { css } from '../../utils/css'
+  import { css } from '../../utils'
 
   let _class = ''
   export let link = ''
-  export let type: string = 'card'
-  export let color: string = ''
-  export let column: string = ''
-  export let floated: string = ''
-  export let fluid: boolean = false
-  export let raised: boolean = false
-  export let inverted: boolean = false
-  export let centered: boolean = false
-  export let doubling: boolean = false
-  export let stackable: boolean = false
-  export let horizontal: boolean = false
+  export let type = 'card'
+  export let color = ''
+  export let column = ''
+  export let floated = ''
+  export let fluid = false
+  export let raised = false
+  export let inverted = false
+  export let centered = false
+  export let doubling = false
+  export let stackable = false
+  export let horizontal = false
   export let on = {}
-  export let style: {}
+  export let style = {}
   export { _class as class }
 
-  let attrs = link == '' ? {} : { href: link }
+  let attrs = {}
+  link && (attrs = { href: link })
 
-  function init(node: HTMLElement, params?: {}) {
+  function init(node) {
     css(node, style)
     const unregister = register(node, on)
     return {
-      update() {},
       destroy() {
         unregister()
       }
@@ -35,9 +35,6 @@
 
 <div
   use:init
-  class="{_class} {color} {column} {floated + ' floated'} ui {type}"
-  {...attrs}
-  class:floated
   class:fluid
   class:horizontal
   class:raised
@@ -45,6 +42,8 @@
   class:inverted
   class:stackable
   class:doubling
+  class="{color} {column} {floated && `${floated} floated`}  ui {type} {_class}"
+  {...attrs}
 >
   <slot>
     <!-- optional fallback -->
