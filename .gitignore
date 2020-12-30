@@ -1,13 +1,9 @@
 /node_modules/
 /public/
 /dist/
-/@types/
-fomantic
 .todo
 .DS_Store
 .todo
 *.log
 package-lock.json
-semantic.json
-semantic
 .vscode
