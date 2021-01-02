@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/statistic.css'
   import { css, classNames } from '../../utils'
 
   let _class = ''
@@ -15,7 +16,3 @@
     <!-- optional fallback -->
   </slot>
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/statistic.css';
-</style>

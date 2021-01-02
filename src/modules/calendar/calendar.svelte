@@ -1,22 +1,22 @@
 <script>
-  import { register } from '../../utils/events.js'
-  import { css } from '../../utils'
+  import '../../../fomantic/dist/components/calendar.css'
+  import { css, register } from '../../utils'
   import Controller from './controller'
 
   let _class = ''
   export let icon = 'left'
   export let disabled = false
   export let style = {}
-  export let on= {}
+  export let on = {}
 
-  export let onmount: (controller: Controller) => void = () => {}
+  export let onMount
   export { _class as class }
 
   function init(node) {
     css(node, style)
     const unregister = register(node, on)
     let controller = new Controller(node)
-    onmount(controller)
+    onMount?.(controller)
     return {
       update() {},
       destroy() {
@@ -27,11 +27,7 @@
   }
 </script>
 
-<div
-  use:init
-  class="{_class} ui calendar"
-  class:disabled
->
+<div use:init class="{_class} ui calendar" class:disabled>
   <div class="ui input {icon + ' icon'}">
     <slot name="icon">
       <!-- optional fallback -->
@@ -39,7 +35,3 @@
     <input type="text" placeholder="Date/Time" />
   </div>
 </div>
-
-<style>
-  /* @import './calendar.css';*/
-</style>

@@ -1,5 +1,7 @@
 <script>
+  import '../../../fomantic/dist/components/step.css'
   import { classNames, css } from '../../utils'
+
   let _class = ''
   export let type = ''
   export let side = ''
@@ -33,7 +35,3 @@
     <!-- optional fallback -->
   </slot>
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/step.css';
-</style>

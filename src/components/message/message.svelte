@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/message.css'
   import { classNames, css, register } from '../../utils'
 
   export let type = ''
@@ -34,7 +35,3 @@
     <!-- optional fallback -->
   </slot>
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/message.css';
-</style>

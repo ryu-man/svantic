@@ -1,4 +1,6 @@
 <script>
+  import '../../../fomantic/dist/components/label.css'
+  
   import { css, register } from '../../utils'
 
   let _class = ''
@@ -34,6 +36,3 @@
   <!-- else content here -->
 {/if}
 
-<style global>
-  @import '../../../fomantic/dist/components/label.css';
-</style>

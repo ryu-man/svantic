@@ -1,8 +1,10 @@
 <script>
+  import '../../../fomantic/dist/components/dropdown.css'
   import { css, classNames } from '../../utils'
   import Controller from './controller'
-
+  
   let _class = ''
+  export let style = {}
   export let size = ''
   export let wide = ''
   export let type = ''
@@ -24,10 +26,7 @@
   export let compact = false
   export let inverted = false
   export let scrolling = false
-  export let select = false
   export let element = 'div'
-  export let style = {}
-  // export let on = {}
   export { _class as class }
   export let onMount
 
@@ -41,7 +40,7 @@
   }
 </script>
 
-{#if select}
+{#if element!== 'div'}
   <select
     use:init
     multiple="{type.includes('multiple')}"
@@ -109,7 +108,3 @@
     </slot>
   </div>
 {/if}
-
-<style global>
-  @import '../../../fomantic/dist/components/dropdown.css';
-</style>

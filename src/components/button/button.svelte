@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/button.css'
   import { register } from '../../utils/events'
   import { css } from '../../utils'
 
@@ -60,7 +61,3 @@
     <!-- optional fallback -->
   </slot>
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/button.css';
-</style>

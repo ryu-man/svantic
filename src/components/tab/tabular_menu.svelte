@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/tab.css'
   import { classNames, css } from '../../utils'
 
   export let _class = ''
@@ -25,6 +26,3 @@
   <!-- optional fallback -->
 </slot>
 
-<style global>
-  @import '../../../fomantic/dist/components/tab.css';
-</style>

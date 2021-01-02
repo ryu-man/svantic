@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/toast.css'
   import { css, register } from '../../utils'
   import Controller from './controller'
 
@@ -30,7 +31,3 @@
 <div use:init class:icon class="{color} ui {type} {_class}">
   <slot />
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/toast.css';
-</style>

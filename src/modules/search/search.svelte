@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/search.css'
   import { css, register, classNames } from '../../utils'
   import Controller from './controller'
 
@@ -50,7 +51,3 @@
   </slot>
   <div class="results"></div>
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/search.css';
-</style>

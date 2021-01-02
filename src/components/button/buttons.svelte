@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/button.css'
   import { css } from '../../utils'
 
   export let color = ''
@@ -12,7 +13,3 @@
     <!-- optional fallback -->
   </slot>
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/button.css';
-</style>

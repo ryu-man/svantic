@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/step.css'
   import { register } from '../../utils'
 
   export let state = ''
@@ -29,7 +30,3 @@
     <!-- optional fallback -->
   </slot>
 </div>
-
-<style>
-   @import '../../../fomantic/dist/components/step.css';
-</style>

@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/progress.css'
   import { classNames,css } from '../../utils'
   import Controller from './controller'
 
@@ -41,7 +42,3 @@
     <!-- optional fallback -->
   </slot>
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/progress.css';
-</style>

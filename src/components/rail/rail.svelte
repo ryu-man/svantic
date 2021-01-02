@@ -1,6 +1,6 @@
 <script>
-  import { css } from '../../utils'
-  import { register } from '../../utils/events'
+  import '../../../fomantic/dist/components/rail.css'
+  import { css, register } from '../../utils'
 
   let _class = ''
   export { _class as class }
@@ -38,7 +38,3 @@
     <!-- optional fallback -->
   </slot>
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/rail.css';
-</style>

@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/segment.css'
   import { css } from '../../utils'
 
   export let type = ''
@@ -18,6 +19,3 @@
   </slot>
 </div>
 
-<style global>
-  @import '../../../fomantic/dist/components/segment.css';
-</style>

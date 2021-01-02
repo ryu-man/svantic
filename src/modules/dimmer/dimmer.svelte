@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/dimmer.css'
   import { css, classNames } from '../../utils'
 
   let _class = ''
@@ -51,7 +52,3 @@
     </slot>
   {/if}
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/dimmer.css';
-</style>

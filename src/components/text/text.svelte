@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/text.css'
   import { css } from '../../utils'
 
   let _class = ''
@@ -11,8 +12,3 @@
     <!-- optional fallback -->
   </slot>
 </span>
-
-
-<style global>
-  @import '../../../fomantic/dist/components/text.css';
-</style>

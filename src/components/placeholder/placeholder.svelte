@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/placeholder.css'
   import { css } from '../../utils'
 
   let _class = ''
@@ -12,7 +13,3 @@
     <!-- optional fallback -->
   </slot>
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/placeholder.css';
-</style>

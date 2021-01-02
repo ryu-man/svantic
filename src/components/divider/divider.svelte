@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/divider.css'
   import { css } from '../../utils'
 
   export let style = {}

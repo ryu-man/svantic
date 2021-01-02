@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/icon.css'
   import { css, register } from '../../utils'
 
   export let name = ''
@@ -47,7 +48,3 @@
     {flipped && flipped + ' flipped'}
     {name} icon"
 ></i>
-
-<style global>
-  @import '../../../fomantic/dist/components/icon.css';
-</style>

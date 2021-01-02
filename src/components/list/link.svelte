@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/list.css'
   import { css, register } from '../../utils'
 
   let _class = ''
@@ -24,6 +25,3 @@
   </slot>
 </a>
 
-<style global>
-  @import '../../../fomantic/dist/components/list.css';
-</style>

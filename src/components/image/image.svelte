@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/image.css'
   import { css, register, classNames } from '../../utils'
 
   export let src = ''
@@ -48,7 +49,3 @@
 <slot>
   <!-- optional fallback -->
 </slot>
-
-<style global>
-  @import '../../../fomantic/dist/components/image.css';
-</style>

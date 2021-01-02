@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/reveal.css'
   import { classNames, css } from '../../utils'
 
   let _class = ''
@@ -29,6 +30,3 @@
   </slot>
 </div>
 
-<style global>
-  @import '../../../fomantic/dist/components/reveal.css';
-</style>

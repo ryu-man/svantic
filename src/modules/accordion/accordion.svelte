@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/accordion.css'
   import { css } from '../../utils'
   import { register } from '../../utils/events'
   import Controller from './controller'
@@ -38,7 +39,3 @@
     <!-- optional fallback -->
   </slot>
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/accordion.css';
-</style>

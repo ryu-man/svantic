@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/header.css'
   import { css, register } from '../../utils'
 
   let _class = ''
@@ -22,7 +23,3 @@
     <!-- optional fallback -->
   </slot>
 </h4>
-
-<style global>
-  @import '../../../fomantic/dist/components/header.css';
-</style>

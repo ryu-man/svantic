@@ -1,11 +1,12 @@
 <script>
+  import '../../../fomantic/dist/components/calendar.css'
   import { register } from '../../utils/events.js'
   import { css } from '../../utils'
   import Controller from './calendar.js'
 
   let _class = ''
   export let style = {}
-  export let onmount: (controller: Controller) => void = () => {}
+  export let onMount
   export let on = {}
   export { _class as class }
 
@@ -13,7 +14,7 @@
     css(node, style)
     const unregister = register(node, on)
     let controller = new Controller(node)
-    onmount(controller)
+    onMount?.(controller)
     return {
       update(params) {},
       destroy() {
@@ -32,7 +33,3 @@
     .map((e) => `${e[0]}:${e[1]}`)
     .join(';')}"
 ></div>
-
-<style>
-  /* @import './calendar.css';*/
-</style>

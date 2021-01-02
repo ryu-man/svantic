@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/progress.css'
   import { css } from '../../utils'
 
   let _class = ''
@@ -18,7 +19,3 @@
     <!-- optional fallback -->
   </slot>
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/progress.css';
-</style>

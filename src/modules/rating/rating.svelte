@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/rating.css'
   import { css } from '../../utils'
   import Controller from './controller'
 
@@ -32,12 +33,6 @@
   use:init
   class:disabled
   class="{color} {size} ui rating {_class}"
-  
-  data-rating = {rating}
+  data-rating="{rating}"
   data-max-rating="{maxRating}"
 ></div>
-
-<style>
-  /* your styles go here */
-  /* @import './rating.css';*/
-</style>

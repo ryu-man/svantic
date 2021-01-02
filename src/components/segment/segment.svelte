@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/segment.css'
   import { classNames, css, register } from '../../utils'
 
   let _class = ''
@@ -59,7 +60,3 @@
     <!-- optional fallback -->
   </slot>
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/segment.css';
-</style>

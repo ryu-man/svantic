@@ -1,6 +1,6 @@
 <script>
+  import '../../../fomantic/dist/components/image.css'
   import { css } from '../../utils'
-  import { register } from '../../utils/events'
 
   export let size = ''
   export let style = {}
@@ -14,7 +14,3 @@
     <!-- optional fallback -->
   </slot>
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/image.css';
-</style>

@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/input.css'
   import { classNames, css, register } from '../../utils'
 
   let _class = ''
@@ -52,7 +53,3 @@
     <!-- optional fallback -->
   </slot>
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/input.css';
-</style>

@@ -1,6 +1,6 @@
 <script>
-  import { register } from '../../utils/events'
-  import { css } from '../../utils'
+  import '../../../fomantic/dist/components/form.css'
+  import { css, register } from '../../utils'
 
   let _class = ''
   export let style = {}

@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/label.css'
   import { css, register, classNames } from '../../utils'
 
   export let type = ''
@@ -40,7 +41,3 @@
     <!-- optional fallback -->
   </slot>
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/label.css';
-</style>

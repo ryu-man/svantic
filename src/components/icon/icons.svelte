@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/header.css'
   import { css } from '../../utils'
 
   export let size = ''
@@ -12,7 +13,3 @@
     <!-- optional fallback -->
   </slot>
 </i>
-
-<style global>
-  @import '../../../fomantic/dist/components/icon.css';
-</style>

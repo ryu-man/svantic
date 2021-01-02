@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/sticky.css'
   import { css } from '../../utils'
 
   let _class = ''
@@ -15,7 +16,3 @@ use:css = {style}
     <!-- optional fallback -->
   </slot>
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/sticky.css';
-</style>

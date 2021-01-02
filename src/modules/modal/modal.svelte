@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/modal.css'
   import { css } from '../../utils'
   import Controller from './controller'
 
@@ -38,6 +39,3 @@
   <slot />
 </div>
 
-<style global>
-  @import '../../../fomantic/dist/components/modal.css';
-</style>

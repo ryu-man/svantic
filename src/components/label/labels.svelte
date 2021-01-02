@@ -1,5 +1,6 @@
 <script>
-  import { classNames, css, register } from '../../utils'
+  import '../../../fomantic/dist/components/label.css'
+  import { classNames, css } from '../../utils'
 
   export let style = {}
   export let size = ''
@@ -24,7 +25,3 @@
     <!-- optional fallback -->
   </slot>
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/label.css';
-</style>
