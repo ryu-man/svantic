@@ -14,7 +14,7 @@ interface DimmerProps extends SharedProps {
     shades?: Shade;
     partial?: Partial;
     inverted?: boolean;
-    onmount?: (controller: any) => void;
+    onMount?: (controller: any) => void;
 }
 /**
  * Sveltic Dimmer

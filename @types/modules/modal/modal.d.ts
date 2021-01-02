@@ -9,7 +9,7 @@ interface ModalProps extends SharedProps {
     overlay?: boolean;
     inverted?: boolean;
     fullscreen?: boolean;
-    onmount?: (controller: Controller) => void;
+    onMount?: (controller: Controller) => void;
 }
 /**
  * Sveltic Modal

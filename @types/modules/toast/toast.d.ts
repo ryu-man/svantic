@@ -8,7 +8,7 @@ interface ToastProps extends SharedProps {
   type?: Type
   color?: Color
   icon?: boolean
-  onmount?: (controller: Controller) => void
+  onMount?: (controller: Controller) => void
 }
 /**
  * Sveltic Toast

@@ -13,7 +13,7 @@ interface SearchProps extends SharedProps {
     aligned?: Align;
     speed?: Speed;
     animation?: Animation;
-    onmount?: (controller: SearchController) => void;
+    onMount?: (controller: SearchController) => void;
 }
 /**
  * Sveltic Search

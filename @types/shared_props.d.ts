@@ -5,7 +5,6 @@ export interface SharedProps {
   class?: string
   style?: Style
   dimmable?: boolean
-  on?: DOMEvents<HTMLElement>
 }
 // declare type Event = HTMLElementEventMap[keyof HTMLElementEventMap]
 declare type EventHandler<E = Event, T = HTMLElement> = (
