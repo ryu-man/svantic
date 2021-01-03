@@ -2,7 +2,7 @@
   import '../../../fomantic/dist/components/calendar.css'
   import { register } from '../../utils/events.js'
   import { css } from '../../utils'
-  import Controller from './calendar.js'
+  import Controller from './controller.js'
 
   let _class = ''
   export let style = {}
