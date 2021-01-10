@@ -16,8 +16,10 @@ declare type Type =
   | 'inline'
   | 'pointing'
   | 'simple'
+  | ''
+
 declare type State = 'active' | 'disabled' | 'loading' | 'error'
-declare type Height = 'long' | 'very long' | ''
+declare type Height = 'long' | 'very long'
 
 interface DropdownProps extends SharedProps {
   size?: Size
@@ -46,11 +48,11 @@ interface DropdownProps extends SharedProps {
   inverted?: boolean
   secondary?: boolean
   scrolling?: boolean
-  element?: "div"|"select"
+  element?: 'div' | 'select'
   onMount?: (controller: DropdownController) => void
 }
 /**
- * Sveltic Dropdown
+ * Vomantic Dropdown
  */
 declare class Dropdown extends SvelteComponentTyped<DropdownProps> {}
 export default Dropdown

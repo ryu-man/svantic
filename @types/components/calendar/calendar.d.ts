@@ -5,7 +5,7 @@ interface CalendarProps extends SharedProps {
     disabled?: boolean;
 }
 /**
- * Sveltic Calendar
+ * Vomantic Calendar
  */
 declare class Calendar extends SvelteComponentTyped<CalendarProps> {
 }

@@ -10,7 +10,7 @@ interface LabelsProps extends SharedProps {
     inverted?: boolean;
 }
 /**
- * Sveltic Labels
+ * Vomantic Labels
  */
 declare class Labels extends SvelteComponentTyped<LabelsProps> {
 }

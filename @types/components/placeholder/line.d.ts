@@ -6,7 +6,7 @@ interface PlaceholderLineProps extends SharedProps {
     inverted?: boolean;
 }
 /**
- * Sveltic Placeholder Line
+ * Vomantic Placeholder Line
  */
 declare class PlaceholderLine extends SvelteComponentTyped<PlaceholderLineProps> {}
 export default PlaceholderLine;

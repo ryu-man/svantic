@@ -13,7 +13,7 @@ interface SliderProps extends SharedProps {
     vertical?: boolean;
 }
 /**
- * Sveltic Slider
+ * Vomantic Slider
  */
 declare class Slider extends SvelteComponentTyped<SliderProps> {
 }

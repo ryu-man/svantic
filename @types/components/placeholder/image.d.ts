@@ -6,7 +6,7 @@ interface PlaceholderImageProps extends SharedProps {
     inverted?: boolean;
 }
 /**
- * Sveltic Placeholder Image
+ * Vomantic Placeholder Image
  */
 declare class PlaceholderImage extends SvelteComponentTyped<PlaceholderImageProps> {}
 export default PlaceholderImage;

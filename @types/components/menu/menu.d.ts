@@ -18,7 +18,7 @@ interface MenuProps extends SharedProps {
     borderless?: boolean;
 }
 /**
- * Sveltic Menu
+ * Vomantic Menu
  */
 declare class Menu extends SvelteComponentTyped<MenuProps> {
 }

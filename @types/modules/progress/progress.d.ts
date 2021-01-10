@@ -30,6 +30,6 @@ interface ProgressProps extends SharedProps {
 }
 
 /**
- * Sveltic Progress
+ * Vomantic Progress
  */
 export default class Progress extends SvelteComponentTyped<ProgressProps> {}

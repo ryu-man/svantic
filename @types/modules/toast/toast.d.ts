@@ -11,7 +11,7 @@ interface ToastProps extends SharedProps {
   onMount?: (controller: Controller) => void
 }
 /**
- * Sveltic Toast
+ * Vomantic Toast
  */
 declare class Toast extends SvelteComponentTyped<ToastProps> {}
 export default Toast

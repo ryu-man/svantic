@@ -1,6 +1,6 @@
 import Label from './label';
 /**
- * Sveltic LabelLink
+ * Vomantic LabelLink
  */
 declare class LabelLink extends Label {
 }

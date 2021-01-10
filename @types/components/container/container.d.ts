@@ -21,7 +21,7 @@ interface ContainerProps extends SharedProps {
     style?: Style;
 }
 /**
- * Sveltic Container
+ * Vomantic Container
  */
 declare class Container extends SvelteComponentTyped<ContainerProps> {
 }

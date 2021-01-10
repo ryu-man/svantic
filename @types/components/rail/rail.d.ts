@@ -11,7 +11,7 @@ interface RailProps extends SharedProps {
     close?: boolean;
 }
 /**
- * Sveltic Rail
+ * Vomantic Rail
  */
 declare class Rail extends SvelteComponentTyped<RailProps> {
 }

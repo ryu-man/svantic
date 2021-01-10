@@ -12,7 +12,7 @@ interface FormProps extends SharedProps {
     equal?: boolean;
 }
 /**
- * Sveltic Form
+ * Vomantic Form
  */
 declare class Form extends SvelteComponentTyped<FormProps> {
 }

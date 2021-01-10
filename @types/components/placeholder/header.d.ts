@@ -6,7 +6,7 @@ interface PlaceholderHeaderProps extends SharedProps {
     inverted?: boolean;
 }
 /**
- * Sveltic Placeholder Header
+ * Vomantic Placeholder Header
  */
 declare class PlaceholderHeader extends SvelteComponentTyped<PlaceholderHeaderProps> {}
 export default PlaceholderHeader;

@@ -21,7 +21,7 @@ interface ShapeProps extends SharedProps {
     style?: Style;
 }
 /**
- * Sveltic Shape
+ * Vomantic Shape
  */
 declare class Shape extends SvelteComponentTyped<ShapeProps> {
 }

@@ -19,7 +19,7 @@ interface ListProps extends SharedProps {
     style?: Style;
 }
 /**
- * Sveltic List
+ * Vomantic List
  */
 declare class List extends SvelteComponentTyped<ListProps> {
 }

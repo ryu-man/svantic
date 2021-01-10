@@ -6,7 +6,7 @@ interface MenuProps extends SharedProps {
     fitted?: boolean;
 }
 /**
- * Sveltic Menu
+ * Vomantic Menu
  */
 declare class Menu extends SvelteComponentTyped<MenuProps> {
 }

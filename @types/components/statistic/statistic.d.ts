@@ -15,6 +15,6 @@ interface StatisticProps extends SharedProps {
   horizontal?: boolean
 }
 /**
- * Sveltic Statistic
+ * Vomantic Statistic
  */
 export default  class Statistic extends SvelteComponentTyped<StatisticProps> {}

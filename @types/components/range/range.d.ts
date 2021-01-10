@@ -18,7 +18,7 @@ interface RangeProps extends SharedProps {
     icon?: boolean;
 }
 /**
- * Sveltic Range
+ * Vomantic Range
  */
 declare class Range extends SvelteComponentTyped<RangeProps> {
 }

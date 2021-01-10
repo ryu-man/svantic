@@ -21,7 +21,7 @@ interface GridProps extends SharedProps {
     style?: Style;
 }
 /**
- * Sveltic Grid
+ * Vomantic Grid
  */
 declare class Grid extends SvelteComponentTyped<GridProps> {
 }

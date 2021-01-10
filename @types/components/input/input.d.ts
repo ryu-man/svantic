@@ -23,7 +23,7 @@ interface InputProps extends SharedProps {
     transparent?: boolean;
 }
 /**
- * Sveltic Input
+ * Vomantic Input
  *
  */
 declare class Input extends SvelteComponentTyped<InputProps>{

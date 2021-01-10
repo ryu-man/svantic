@@ -19,7 +19,7 @@ interface TableProps extends SharedProps {
     unstackable?: boolean;
 }
 /**
- * Sveltic Table
+ * Vomantic Table
  */
 declare class Table extends SvelteComponentTyped<TableProps> {
 }

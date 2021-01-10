@@ -17,7 +17,7 @@ interface DimmerProps extends SharedProps {
     onMount?: (controller: any) => void;
 }
 /**
- * Sveltic Dimmer
+ * Vomantic Dimmer
  */
 declare class Dimmer extends SvelteComponentTyped<DimmerProps> {
 }

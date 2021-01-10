@@ -22,7 +22,7 @@ interface AccordionProps extends SharedProps {
     style?: Style;
 }
 /**
- * Sveltic Accordion
+ * Vomantic Accordion
  */
 declare class Accordion extends SvelteComponentTyped<AccordionProps> {
 }

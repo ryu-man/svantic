@@ -19,7 +19,7 @@ interface CardProps extends SharedProps {
     doubling?: boolean;
 }
 /**
- * Sveltic Card
+ * Vomantic Card
  */
 declare class Card extends SvelteComponentTyped<CardProps> {
 }

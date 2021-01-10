@@ -25,7 +25,7 @@ interface SegmentProps extends SharedProps {
     dimmed?: boolean;
 }
 /**
- * Sveltic Segment
+ * Vomantic Segment
  */
 declare class Segment extends SvelteComponentTyped<SegmentProps> {
 }

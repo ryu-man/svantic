@@ -21,7 +21,7 @@ interface PopupProps extends SharedProps {
     style?: Style;
 }
 /**
- * Sveltic Popup
+ * Vomantic Popup
  */
 declare class Popup extends SvelteComponentTyped<PopupProps> {
 }

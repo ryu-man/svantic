@@ -21,7 +21,7 @@ interface BreadcrumbProps extends SharedProps {
     style?: Style;
 }
 /**
- * Sveltic Breadcrumb
+ * Vomantic Breadcrumb
  */
 declare class Breadcrumb extends SvelteComponentTyped<BreadcrumbProps> {
 }

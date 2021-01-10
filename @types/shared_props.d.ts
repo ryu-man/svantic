@@ -28,7 +28,7 @@ declare type AnimationEventHandler<T> = EventHandler<AnimationEvent, T>
 declare type TransitionEventHandler<T> = EventHandler<TransitionEvent, T>
 declare type MessageEventHandler<T> = EventHandler<MessageEvent, T>
 
-interface DOMEvents<T> {
+export interface DOMEvents<T> {
   copy?: ClipboardEventHandler<T>
   cut?: ClipboardEventHandler<T>
   paste?: ClipboardEventHandler<T>

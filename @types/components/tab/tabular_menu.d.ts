@@ -10,7 +10,7 @@ interface TabularMenuProps extends SharedProps {
     active?: boolean;
 }
 /**
- * Sveltic TabularMenu
+ * Vomantic TabularMenu
  */
 declare class TabularMenu extends SvelteComponentTyped<TabularMenuProps> {
 }

@@ -21,7 +21,7 @@ interface FlagProps extends SharedProps {
     style?: Style;
 }
 /**
- * Sveltic Flag
+ * Vomantic Flag
  */
 declare class Flag extends SvelteComponentTyped<FlagProps> {
 }

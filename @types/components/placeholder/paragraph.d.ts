@@ -6,7 +6,7 @@ interface PlaceholderParagraphProps extends SharedProps {
     inverted?: boolean;
 }
 /**
- * Sveltic Placeholder Paragraph
+ * Vomantic Placeholder Paragraph
  */
 declare class PlaceholderParagraph extends SvelteComponentTyped<PlaceholderParagraphProps> {}
 export default PlaceholderParagraph;

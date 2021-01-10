@@ -15,6 +15,6 @@ interface RatingProps {
   onMount?: (controller: Controller) => void
 }
 /**
- * Sveltic Rating
+ * Vomantic Rating
  */
 export default class Rating extends SvelteComponentTyped<RatingProps> {}

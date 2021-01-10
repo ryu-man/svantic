@@ -5,7 +5,7 @@ interface ImagesProps extends SharedProps {
     size?: Size;
 }
 /**
- * Sveltic Images
+ * Vomantic Images
  */
 declare class Images extends SvelteComponentTyped<ImagesProps> {
 }

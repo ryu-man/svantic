@@ -21,7 +21,7 @@ interface NagProps extends SharedProps {
     style?: Style;
 }
 /**
- * Sveltic Nag
+ * Vomantic Nag
  */
 declare class Nag extends SvelteComponentTyped<NagProps> {
 }

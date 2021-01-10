@@ -12,7 +12,7 @@ interface ModalProps extends SharedProps {
     onMount?: (controller: Controller) => void;
 }
 /**
- * Sveltic Modal
+ * Vomantic Modal
  */
 declare class Modal extends SvelteComponentTyped<ModalProps> {
 }

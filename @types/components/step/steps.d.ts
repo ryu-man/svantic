@@ -12,7 +12,7 @@ interface StepsProps extends SharedProps {
     style?: Style;
 }
 /**
- * Sveltic Steps
+ * Vomantic Steps
  */
 declare class Steps extends SvelteComponentTyped<StepsProps> {
 }

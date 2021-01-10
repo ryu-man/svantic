@@ -21,7 +21,7 @@ interface TextProps extends SharedProps {
     style?: Style;
 }
 /**
- * Sveltic Text
+ * Vomantic Text
  */
 declare class Text extends SvelteComponentTyped<TextProps> {
 }

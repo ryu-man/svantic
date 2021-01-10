@@ -11,7 +11,7 @@ interface FieldsProps extends SharedProps {
     grouped?: boolean;
 }
 /**
- * Sveltic Fields
+ * Vomantic Fields
  */
 declare class Fields extends SvelteComponentTyped<FieldsProps> {
 }

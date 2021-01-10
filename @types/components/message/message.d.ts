@@ -14,7 +14,7 @@ interface MessageProps extends SharedProps {
     compact?: boolean;
 }
 /**
- * Sveltic Message
+ * Vomantic Message
  */
 declare class Message extends SvelteComponentTyped<MessageProps> {
 }

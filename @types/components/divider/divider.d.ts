@@ -12,7 +12,7 @@ interface DividerProps extends SharedProps {
     inverted?: boolean;
 }
 /**
- * Sveltic Divider
+ * Vomantic Divider
  */
 declare class Divider extends SvelteComponentTyped<DividerProps> {
 }

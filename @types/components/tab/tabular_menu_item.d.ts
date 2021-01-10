@@ -6,7 +6,7 @@ interface TabularMenuItemProps extends SharedProps {
     style?: Style;
 }
 /**
- * Sveltic TabularMenuItem
+ * Vomantic TabularMenuItem
  */
 declare class TabularMenuItem extends SvelteComponentTyped<TabularMenuItemProps> {
 }

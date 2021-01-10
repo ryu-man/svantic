@@ -21,7 +21,7 @@ interface HeaderProps extends SharedProps {
     style?: Style;
 }
 /**
- * Sveltic Header
+ * Vomantic Header
  */
 declare class Header extends SvelteComponentTyped<HeaderProps> {
 }

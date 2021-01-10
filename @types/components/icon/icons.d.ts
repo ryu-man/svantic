@@ -5,7 +5,7 @@ interface IconProps extends SharedProps {
     size?: Size;
 }
 /**
- * Sveltic Icon
+ * Vomantic Icon
  */
 declare class Icon extends SvelteComponentTyped<IconProps> {
 }

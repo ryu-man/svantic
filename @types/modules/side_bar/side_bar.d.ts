@@ -12,7 +12,7 @@ interface SidebarProps extends SharedProps {
     vertical?: boolean;
 }
 /**
- * Sveltic Sidebar
+ * Vomantic Sidebar
  */
 declare class Sidebar extends SvelteComponentTyped<SidebarProps> {
 }

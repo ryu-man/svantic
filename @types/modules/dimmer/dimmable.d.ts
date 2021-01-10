@@ -3,7 +3,7 @@ import type { SharedProps } from '../../shared_props';
 interface DimmableProps extends SharedProps {
 }
 /**
- * Sveltic Dimmable
+ * Vomantic Dimmable
  */
 declare class Dimmable extends SvelteComponentTyped<DimmableProps> {
 }

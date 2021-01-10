@@ -10,7 +10,7 @@ interface TabProps extends SharedProps {
     tab: string;
 }
 /**
- * Sveltic Tab
+ * Vomantic Tab
  */
 declare class Tab extends SvelteComponentTyped<TabProps> {
 }

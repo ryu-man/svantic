@@ -18,7 +18,7 @@ interface EmbedProps extends SharedProps {
     icon?: boolean;
 }
 /**
- * Sveltic Embed
+ * Vomantic Embed
  */
 declare class Embed extends SvelteComponentTyped<EmbedProps> {
 }

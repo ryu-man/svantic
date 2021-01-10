@@ -16,7 +16,7 @@ interface SearchProps extends SharedProps {
     onMount?: (controller: SearchController) => void;
 }
 /**
- * Sveltic Search
+ * Vomantic Search
  */
 declare class Search extends SvelteComponentTyped<SearchProps> {
 }

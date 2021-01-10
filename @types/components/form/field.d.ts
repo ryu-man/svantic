@@ -13,7 +13,7 @@ interface FieldProps extends SharedProps {
     required?: boolean;
 }
 /**
- * Sveltic Field
+ * Vomantic Field
  */
 declare class Field extends SvelteComponentTyped<FieldProps> {
 }

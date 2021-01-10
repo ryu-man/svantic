@@ -21,7 +21,7 @@ interface FeedProps extends SharedProps {
     style?: Style;
 }
 /**
- * Sveltic Feed
+ * Vomantic Feed
  */
 declare class Feed extends SvelteComponentTyped<FeedProps> {
 }

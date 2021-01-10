@@ -14,7 +14,7 @@ interface LoaderProps extends SharedProps {
     icon?: boolean;
 }
 /**
- * Sveltic Loader
+ * Vomantic Loader
  */
 declare class Loader extends SvelteComponentTyped<LoaderProps> {
 }

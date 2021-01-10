@@ -19,7 +19,7 @@ interface ImageProps extends SharedProps {
     space?: boolean;
 }
 /**
- * Sveltic Image
+ * Vomantic Image
  */
 declare class Image extends SvelteComponentTyped<ImageProps> {
 }

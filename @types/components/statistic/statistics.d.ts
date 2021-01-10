@@ -9,7 +9,7 @@ interface StatisticProps extends SharedProps {
     columns?:Wide
 }
 /**
- * Sveltic Statistics
+ * Vomantic Statistics
  */
 declare class Statistics extends SvelteComponentTyped<StatisticProps> {
 }

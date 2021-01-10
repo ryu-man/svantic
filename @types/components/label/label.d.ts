@@ -1,7 +1,9 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import type { Attach, Align, Color, Size } from '../../variations';
-import type { SharedProps } from '../../shared_props';
+import type { DOMEvents, SharedProps } from '../../shared_props';
+
 declare type Type = 'ribbon' | 'tag' | 'right corner' | 'left corner' | 'pointing' | 'left pointing' | 'right pointing' | 'below pointing' | 'image' | 'horizontal' | 'floating' | 'left floating' | 'bottom floating';
+
 interface LabelProps extends SharedProps {
     type?: Type;
     attached?: Attach;
@@ -13,9 +15,10 @@ interface LabelProps extends SharedProps {
     inverted?: boolean;
     horizontal?: boolean;
     circular?: boolean;
+    on?: DOMEvents<HTMLDivElement>
 }
 /**
- * Sveltic Label
+ * Vomantic Label
  */
 declare class Label extends SvelteComponentTyped<LabelProps> {
 }

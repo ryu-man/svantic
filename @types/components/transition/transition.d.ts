@@ -21,7 +21,7 @@ interface ButtonProps extends SharedProps {
     style?: Style;
 }
 /**
- * Sveltic Button
+ * Vomantic Button
  */
 declare class Button extends SvelteComponentTyped<ButtonProps> {
 }
