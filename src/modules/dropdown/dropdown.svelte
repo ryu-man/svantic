@@ -2,7 +2,7 @@
   import '../../../fomantic/dist/components/dropdown.css'
   import { css, classNames } from '../../utils'
   import Controller from './controller'
-  
+
   let _class = ''
   export let style = {}
   export let size = ''
@@ -30,17 +30,16 @@
   export { _class as class }
   export let onMount
 
-  $: _type = type instanceof Array ? type.join(' ') : type
+  $: _type = type?.join?.(' ') ?? type
 
   function init(node) {
     css(node, style)
-    node.classList.add('ui', 'dropdown')
     let controller = new Controller(node)
     onMount?.(controller)
   }
 </script>
 
-{#if element!== 'div'}
+{#if element !== 'div'}
   <select
     use:init
     multiple="{type.includes('multiple')}"
@@ -56,19 +55,7 @@
     class:compact
     class:inverted
     class:scrolling
-    class="{classNames(
-      height,
-      column,
-      speed,
-      loaderStyle,
-      wide,
-      _type,
-      state,
-      size,
-      menuDirection,
-      'ui dropdown',
-      _class
-    )}"
+    class="{classNames(height, column, speed, loaderStyle, wide, _type, state, size, menuDirection, 'ui dropdown', _class)}"
   >
     <slot>
       <!-- optional fallback -->
@@ -89,19 +76,7 @@
     class:compact
     class:inverted
     class:scrolling
-    class="{classNames(
-      height,
-      column,
-      speed,
-      loaderStyle,
-      wide,
-      _type,
-      state,
-      size,
-      menuDirection,
-      'ui dropdown',
-      _class
-    )}"
+    class="{classNames(height, column, speed, loaderStyle, wide, _type, state, size, menuDirection, 'ui dropdown', _class)}"
   >
     <slot>
       <!-- optional fallback -->

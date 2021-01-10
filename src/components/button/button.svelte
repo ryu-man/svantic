@@ -1,7 +1,6 @@
 <script>
   import '../../../fomantic/dist/components/button.css'
-  import { register } from '../../utils/events'
-  import { css } from '../../utils'
+  import { classNames, css, register } from '../../utils'
 
   let _class = ''
   export { _class as class }
@@ -22,8 +21,10 @@
   export let negative = false
   export let inverted = false
   export let vertical = false
-  export let style= {}
+  export let style = {}
   export let on = {}
+
+  $: _type = type?.join?.(' ') ?? type
 
   function init(node) {
     css(node, style)
@@ -48,14 +49,7 @@
   class:negative
   class:inverted
   class:vertical
-  class="{_class}
-    {type}
-    {state}
-    {social}
-    {size}
-    {floated && `${floated} floated`}
-    {attached && `${attached} attached`}
-    {color} ui button"
+  class="{classNames(size, state, social, color, [floated, 'floated'], [attached, 'attached'], 'ui button', _class)}"
 >
   <slot>
     <!-- optional fallback -->
