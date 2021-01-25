@@ -1,5 +1,5 @@
 <script>
-  import '../../../fomantic/dist/components/progress.css'
+
   import { css } from '../../utils'
 
   let _class = ''
