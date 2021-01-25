@@ -1,4 +1,8 @@
 <script>
+  import { classNames } from 'src/utils'
+
+  let _class = ''
+  export { _class as class }
   export let short = false
   export let medium = false
   export let full = false
@@ -14,5 +18,5 @@
   class:full
   class:long
   class:fluid
-  class="line"
+  class="{classNames('line', _class)}"
 ></div>
