@@ -14,9 +14,12 @@ export function register(node, events) {
 export function classNames(...args) {
     return args.filter((o) => o).map(o => {
         if (Array.isArray(o)) {
-            const [cond, ...rest] = o
-            if (cond) {
-                return `${cond} ${rest.join(' ')}`
+            const [arg1, arg2] = o
+            if (arg1) {
+                if (typeof arg1 === typeof true) {
+                    return arg2
+                }
+                return `${arg1} ${arg2}`
             } else {
                 return ''
             }
