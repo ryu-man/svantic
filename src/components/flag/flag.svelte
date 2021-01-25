@@ -1,7 +1,9 @@
 <script>
   import '../../../fomantic/dist/components/flag.css'
+  import { classNames } from '../../utils'
+
   let _class = ''
-  export let iso_code = ''
+  export let isoCode = ''
 </script>
 
-<i class="{_class} {iso_code} flag"></i>
+<i class="{classNames(isoCode, 'flag', _class)}"></i>
