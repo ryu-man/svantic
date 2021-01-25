@@ -33,7 +33,3 @@
     <!-- optional fallback -->
   </slot>
 </form>
-
-<style global>
-  @import '../../../fomantic/dist/components/form.css';
-</style>

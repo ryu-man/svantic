@@ -1,12 +1,13 @@
 <script>
   import '../../../fomantic/dist/components/container.css'
-  import { css, register } from '../../utils'
+  import { css, register, classNames } from '../../utils'
 
   let _class = ''
-  export let style = {}
-  export let on = {}
-
   export { _class as class }
+  export let style = {}
+  export let aligned
+  export let fluid = false
+  export let on = {}
 
   function init(node) {
     css(node, style)
@@ -19,12 +20,10 @@
   }
 </script>
 
-<div use:init class="ui container {_class}">
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+<div
+  use:init
+  class:fluid
+  class="{classNames([aligned, 'aligned'], 'ui container', _class)}"
+>
+  <slot />
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/container.css';
-</style>

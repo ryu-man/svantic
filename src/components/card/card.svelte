@@ -46,11 +46,5 @@
   class="{color} {column} {floated && `${floated} floated`}  ui {type} {_class}"
   {...attrs}
 >
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+  <slot />
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/card.css';
-</style>

@@ -1,6 +1,7 @@
 <script>
   import '../../../fomantic/dist/components/item.css'
   import { css } from '../../utils'
+  
   let _class = ''
   export let style= {}
   export let imageSrc = ''
@@ -37,7 +38,3 @@
     </div>
   </div>
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/item.css';
-</style>

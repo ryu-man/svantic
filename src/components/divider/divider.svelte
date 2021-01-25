@@ -27,11 +27,5 @@
   class:inverted
   class="{type} {aligned && `${aligned}`} ui divider {_class}"
 >
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+  <slot />
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/divider.css';
-</style>

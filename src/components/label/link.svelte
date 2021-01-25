@@ -44,7 +44,3 @@
     <!-- optional fallback -->
   </slot>
 </a>
-
-<style global>
-  @import '../../../fomantic/dist/components/label.css';
-</style>
