@@ -1,14 +1,11 @@
 <script>
-  import { css } from '../../utils'
+  import { classNames, css } from '../../utils'
 
   let _class = ''
   export let style = {}
   export { _class as class }
-
 </script>
 
-<div use:css={style} class="side {_class}">
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+<div use:css="{style}" class="{classNames("side", _class)}">
+  <slot />
 </div>
