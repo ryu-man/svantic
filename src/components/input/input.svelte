@@ -18,7 +18,7 @@
   export { _class as class }
 
   function init(node) {
-    css(node,style)
+    css(node, style)
     const unregister = register(node, on)
     return {
       destroy() {
@@ -46,10 +46,7 @@
   )}"
 >
   <slot>
-    <!-- optional fallback -->
     <input type="text" />
   </slot>
-  <slot name="label">
-    <!-- optional fallback -->
-  </slot>
+  <slot name="label" />
 </div>

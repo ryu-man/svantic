@@ -9,7 +9,5 @@
 </script>
 
 <div use:css="{style}" class:inverted class="ui placeholder {_class}">
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+  <slot />
 </div>

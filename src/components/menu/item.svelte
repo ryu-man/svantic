@@ -23,7 +23,5 @@
 
 <!-- svelte-ignore a11y-missing-attribute -->
 <a use:init  class:active class:horizontally class:fitted class="item {_class}">
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+  <slot />
 </a>

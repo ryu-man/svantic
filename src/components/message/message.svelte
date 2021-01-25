@@ -31,7 +31,5 @@
   class:floating
   class="{classNames(type, context, state, size, [attached, 'attached'], 'ui message', _class)}"
 >
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+  <slot />
 </div>

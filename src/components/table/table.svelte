@@ -39,9 +39,7 @@
   class:line
   class:very="{veryBasic}"
   class:basic="{basic || veryBasic}"
-  class="{classNames(type, [column, 'column'], 'ui table', _class)}"
+  class="{classNames(type, [column, 'column'],'ui table',_class)}"
 >
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+  <slot />
 </table>

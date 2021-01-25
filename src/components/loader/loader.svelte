@@ -23,7 +23,5 @@
   class:icon
   class="{classNames(type, state, animationStyle, speed, 'ui loader', _class)}"
 >
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+  <slot />
 </div>
