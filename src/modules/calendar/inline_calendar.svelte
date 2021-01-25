@@ -25,11 +25,4 @@
   }
 </script>
 
-<div
-  use:init
-  class="{_class} ui calendar"
-  id="inline_calendar"
-  style="{Object.entries(style)
-    .map((e) => `${e[0]}:${e[1]}`)
-    .join(';')}"
-></div>
+<div use:init class="ui calendar {_class}" id="inline_calendar"></div>
