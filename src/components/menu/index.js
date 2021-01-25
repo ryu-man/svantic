@@ -1,7 +1,7 @@
 import { default as Menu } from './menu.svelte'
-import { default as MenuItem } from './item.svelte'
+import { default as Item } from './item.svelte'
 
-Menu.item = MenuItem
+Menu.Item = Item
 
-export {Menu, MenuItem}
+export {Menu, Item}
 export default Menu
