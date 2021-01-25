@@ -12,7 +12,6 @@
   export let floated = ''
   export let attached = ''
   export let fade = false
-  export let icon = false
   export let fluid = false
   export let toggle = false
   export let compact = false
@@ -40,7 +39,6 @@
 <div
   use:init
   class:fade
-  class:icon
   class:fluid
   class:toggle
   class:compact
@@ -49,9 +47,17 @@
   class:negative
   class:inverted
   class:vertical
-  class="{classNames(size, state, social, color, [floated, 'floated'], [attached, 'attached'], 'ui button', _class)}"
+  class="{classNames(
+    size,
+    state,
+    social,
+    color,
+    [floated, 'floated'],
+    [attached, 'attached'],
+    _type,
+    'ui button',
+    _class
+  )}"
 >
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+  <slot />
 </div>
