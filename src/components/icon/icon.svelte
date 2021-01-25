@@ -1,6 +1,5 @@
 <script>
-  import '../../../fomantic/dist/components/icon.css'
-  import { css, register } from '../../utils'
+  import { css, register, classNames } from '../../utils'
 
   export let name = ''
   export let size = ''
@@ -40,11 +39,14 @@
   class:inverted
   class:bordered
   class:circular
-  class="{_class}
-    {size}
-    {state}
-    {color}
-    {rotated && rotated + ' rotated'}
-    {flipped && flipped + ' flipped'}
-    {name} icon"
+  class="{classNames(
+    size,
+    color,
+    state,
+    [rotated, 'rotated'],
+    [flipped, 'flipped'],
+    name,
+    'icon',
+    _class
+  )}"
 ></i>

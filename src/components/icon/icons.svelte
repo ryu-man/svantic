@@ -1,6 +1,5 @@
 <script>
-  import '../../../fomantic/dist/components/header.css'
-  import { css } from '../../utils'
+  import { css, classNames } from '../../utils'
 
   export let size = ''
   export let style = {}
@@ -8,8 +7,6 @@
   export { _class as class }
 </script>
 
-<i use:css="{style}" class="{size} icons {_class}">
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+<i use:css="{style}" class="{classNames(size,'icons',_class)}">
+  <slot />
 </i>
