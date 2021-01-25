@@ -1,5 +1,4 @@
 <script>
-  import '../../../fomantic/dist/components/list.css'
   import { css, register } from '../../utils'
 
   let _class = ''

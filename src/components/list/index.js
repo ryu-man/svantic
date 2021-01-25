@@ -1,7 +1,9 @@
-import { default as ListLink } from './link.svelte'
+import '../../../fomantic/dist/components/list.css'
+
+import { default as Link } from './link.svelte'
 import { default as List } from './list.svelte'
 
-List.link = ListLink
+List.link = Link
 
-export {List, ListLink}
+export {List}
 export default List
