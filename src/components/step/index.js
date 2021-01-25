@@ -1,8 +1,10 @@
+import '../../../fomantic/dist/components/step.css'
+
 import { default as Step } from './step.svelte'
-import { default as StepLink } from './link.svelte'
+import { default as Link } from './link.svelte'
 import { default as Steps } from './steps.svelte'
 
-Step.link = StepLink
+Step.Link = Link
 
-export {Step, StepLink, Steps}
+export {Step, Link, Steps}
 export default Step

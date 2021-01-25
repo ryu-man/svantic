@@ -1,5 +1,4 @@
 <script>
-  import '../../../fomantic/dist/components/step.css'
   import { register } from '../../utils'
 
   export let state = ''

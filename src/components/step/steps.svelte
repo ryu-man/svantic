@@ -1,5 +1,5 @@
 <script>
-  import '../../../fomantic/dist/components/step.css'
+
   import { classNames, css } from '../../utils'
 
   let _class = ''
