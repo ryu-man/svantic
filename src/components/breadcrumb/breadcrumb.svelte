@@ -1,7 +1,9 @@
 <script>
+  import '../../../fomantic/dist/components/breadcrumb.css';
   import { register } from '../../utils/events'
   import { css } from '../../utils'
 
+  
   let _class = ''
   export let style = {}
   export let size
@@ -26,7 +28,3 @@
     
   </slot>
 </div>
-
-<style global>
-  @import '../../../fomantic/dist/components/breadcrumb.css';
-</style>
