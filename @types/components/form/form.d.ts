@@ -2,6 +2,8 @@ import { SvelteComponentTyped} from 'svelte/internal';
 import { Style } from '../../style';
 import { Size } from '../../variations';
 import { SharedProps } from '../../shared_props';
+import Field from './field'
+import Fields from './fields'
 declare type State = 'info' | 'warning' | 'error' | 'success' | 'loading';
 interface FormProps extends SharedProps {
     class?: string;
@@ -15,5 +17,7 @@ interface FormProps extends SharedProps {
  * Vomantic Form
  */
 declare class Form extends SvelteComponentTyped<FormProps> {
+    static Field: new()=> Field
+    static Fields: new()=> Fields
 }
 export default Form;

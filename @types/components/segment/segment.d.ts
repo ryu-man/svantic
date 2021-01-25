@@ -9,7 +9,7 @@ interface SegmentProps extends SharedProps {
     state?: State;
     floated?: Float;
     attached?: Attach;
-    aligned: Align;
+    aligned?: Align;
     color?: Color;
     emphasis?: Emphasis;
     tall?: boolean;
@@ -23,6 +23,7 @@ interface SegmentProps extends SharedProps {
     basic?: boolean;
     blurring?: boolean;
     dimmed?: boolean;
+    container ?:boolean
 }
 /**
  * Vomantic Segment

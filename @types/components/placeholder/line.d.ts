@@ -1,12 +1,15 @@
-import { Style } from '../../style';
 import { SharedProps } from '../../shared_props';
 import { SvelteComponentTyped} from 'svelte';
 
-interface PlaceholderLineProps extends SharedProps {
-    inverted?: boolean;
+interface LineProps extends SharedProps {
+    short ?: boolean
+    medium ?: boolean
+    full ?: boolean
+    long ?: boolean
+    very ?: boolean
+    fluid ?: boolean
 }
 /**
  * Vomantic Placeholder Line
  */
-declare class PlaceholderLine extends SvelteComponentTyped<PlaceholderLineProps> {}
-export default PlaceholderLine;
+export default class Line extends SvelteComponentTyped<LineProps> {}

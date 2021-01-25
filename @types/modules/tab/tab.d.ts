@@ -1,9 +1,7 @@
 import { SvelteComponentTyped} from 'svelte/internal';
-import { Style } from '../../style';
 import { SharedProps } from '../../shared_props';
+
 interface TabProps extends SharedProps {
-    class?: string;
-    style?: Style;
     attached: string;
     active: boolean;
     segment: boolean;
@@ -12,6 +10,4 @@ interface TabProps extends SharedProps {
 /**
  * Vomantic Tab
  */
-declare class Tab extends SvelteComponentTyped<TabProps> {
-}
-export default Tab;
+export default class Tab extends SvelteComponentTyped<TabProps> {}

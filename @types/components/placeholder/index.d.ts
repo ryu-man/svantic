@@ -1,5 +1,8 @@
-export { default as Placeholder } from "./placeholder";
-export { default as Header } from "./header";
-export { default as Image } from "./image";
-export { default as Paragraph } from "./paragragh";
-export { default as Line } from "./line";
+import { default as Placeholder } from './placeholder'
+import { default as Header } from './header'
+import { default as Image } from './image'
+import { default as Paragraph } from './paragraph'
+import { default as Line } from './line'
+
+export { Placeholder, Header, Image, Paragraph, Line }
+export default Placeholder

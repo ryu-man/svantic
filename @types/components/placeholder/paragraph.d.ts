@@ -1,12 +1,10 @@
-import { Style } from '../../style';
 import { SharedProps } from '../../shared_props';
 import { SvelteComponentTyped} from 'svelte';
 
-interface PlaceholderParagraphProps extends SharedProps {
+interface ParagraphProps extends SharedProps {
     inverted?: boolean;
 }
 /**
  * Vomantic Placeholder Paragraph
  */
-declare class PlaceholderParagraph extends SvelteComponentTyped<PlaceholderParagraphProps> {}
-export default PlaceholderParagraph;
+export default class Paragraph extends SvelteComponentTyped<ParagraphProps> {}

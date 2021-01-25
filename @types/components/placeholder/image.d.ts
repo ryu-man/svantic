@@ -1,12 +1,12 @@
-import { Style } from '../../style';
-import { SharedProps } from '../../shared_props';
-import { SvelteComponentTyped} from 'svelte';
+import { SharedProps } from '../../shared_props'
+import { SvelteComponentTyped } from 'svelte'
 
-interface PlaceholderImageProps extends SharedProps {
-    inverted?: boolean;
+interface ImageProps extends SharedProps {
+  header?: boolean
+  square?: boolean
 }
 /**
  * Vomantic Placeholder Image
  */
-declare class PlaceholderImage extends SvelteComponentTyped<PlaceholderImageProps> {}
-export default PlaceholderImage;
+declare class Image extends SvelteComponentTyped<ImageProps> {}
+export default Image

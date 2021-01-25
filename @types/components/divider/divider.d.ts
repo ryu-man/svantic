@@ -14,6 +14,4 @@ interface DividerProps extends SharedProps {
 /**
  * Vomantic Divider
  */
-declare class Divider extends SvelteComponentTyped<DividerProps> {
-}
-export default Divider;
+export default class Divider extends SvelteComponentTyped<DividerProps> {}

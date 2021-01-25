@@ -1,6 +1,7 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import { Style } from '../../style';
 import { SharedProps } from '../../shared_props';
+import Side from './side';
 interface ShapeProps extends SharedProps {
     class?: string;
     active?: boolean;
@@ -24,5 +25,6 @@ interface ShapeProps extends SharedProps {
  * Vomantic Shape
  */
 declare class Shape extends SvelteComponentTyped<ShapeProps> {
+    static Side: new ()=> Side
 }
 export default Shape;

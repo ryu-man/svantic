@@ -2,6 +2,7 @@ import { SvelteComponentTyped} from 'svelte/internal';
 import { Style } from '../../style';
 import { Wide } from '../../variations';
 import { SharedProps } from '../../shared_props';
+
 declare type Type = 'ordered' | 'vertical';
 declare type Side = 'up' | 'right' | 'bottom' | 'left';
 interface StepsProps extends SharedProps {
@@ -14,6 +15,5 @@ interface StepsProps extends SharedProps {
 /**
  * Vomantic Steps
  */
-declare class Steps extends SvelteComponentTyped<StepsProps> {
+export default class Steps extends SvelteComponentTyped<StepsProps> {
 }
-export default Steps;

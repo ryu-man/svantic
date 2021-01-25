@@ -1,7 +1,8 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import type { Style } from '../../style';
 import type { SharedProps } from '../../shared_props';
-interface NagProps extends SharedProps {
+
+interface SectionProps extends SharedProps {
     class?: string;
     active?: boolean;
     disabled?: boolean;
@@ -21,8 +22,6 @@ interface NagProps extends SharedProps {
     style?: Style;
 }
 /**
- * Vomantic Nag
+ * Vomantic Section
  */
-declare class Nag extends SvelteComponentTyped<NagProps> {
-}
-export default Nag;
+export default class Section extends SvelteComponentTyped<SectionProps> {}

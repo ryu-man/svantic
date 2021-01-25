@@ -1,6 +1,9 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import type { Style } from '../../style';
 import type { SharedProps } from '../../shared_props';
+import Section from './section'
+import Divider from './divider'
+
 interface BreadcrumbProps extends SharedProps {
     class?: string;
     active?: boolean;
@@ -23,6 +26,6 @@ interface BreadcrumbProps extends SharedProps {
 /**
  * Vomantic Breadcrumb
  */
-declare class Breadcrumb extends SvelteComponentTyped<BreadcrumbProps> {
+export default class Breadcrumb extends SvelteComponentTyped<BreadcrumbProps> {
+    static Section:new ()=>Section
 }
-export default Breadcrumb;

@@ -1,6 +1,9 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import { Style } from '../../style';
 import { SharedProps } from '../../shared_props';
+import Item from './item';
+import Tab from './tab';
+
 interface TabularMenuProps extends SharedProps {
     class?: string;
     style?: Style;
@@ -12,6 +15,7 @@ interface TabularMenuProps extends SharedProps {
 /**
  * Vomantic TabularMenu
  */
-declare class TabularMenu extends SvelteComponentTyped<TabularMenuProps> {
+export default class TabularMenu extends SvelteComponentTyped<TabularMenuProps> {
+    static Item: new ()=> Item
+    static Tab: new ()=> Tab
 }
-export default TabularMenu;

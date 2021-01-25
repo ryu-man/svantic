@@ -23,6 +23,4 @@ interface TextProps extends SharedProps {
 /**
  * Vomantic Text
  */
-declare class Text extends SvelteComponentTyped<TextProps> {
-}
-export default Text;
+export default class Text extends SvelteComponentTyped<TextProps> {}

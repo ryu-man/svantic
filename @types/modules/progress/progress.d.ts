@@ -17,15 +17,15 @@ type State =
 
 interface ProgressProps extends SharedProps {
   class?: string
-  type: Type
-  attached: Attach
-  speed: Speed
-  state: State
-  size: Size
-  color: Color
-  value: number
-  total: number
-  inverted: boolean
+  type?: Type
+  attached?: Attach
+  speed?: Speed
+  state?: State
+  size?: Size
+  color?: Color
+  value?: number
+  total?: number
+  inverted?: boolean
   style?: Style
 }
 

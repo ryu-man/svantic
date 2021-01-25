@@ -1,6 +1,7 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import { Style } from '../../style';
 import { SharedProps } from '../../shared_props';
+
 declare type State = 'completed' | 'active' | 'disabled';
 interface StepProps extends SharedProps {
     class?: string;
@@ -10,6 +11,5 @@ interface StepProps extends SharedProps {
 /**
  * Vomantic Step
  */
-declare class Step extends SvelteComponentTyped<StepProps> {
+export default class Step extends SvelteComponentTyped<StepProps> {
 }
-export default Step;
