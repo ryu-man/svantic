@@ -1,5 +1,4 @@
 <script>
-  import '../../../fomantic/dist/components/image.css'
   import { css, register, classNames } from '../../utils'
 
   export let src = ''
@@ -46,6 +45,5 @@
   src="{src}"
   alt="{alt}"
 />
-<slot>
-  <!-- optional fallback -->
-</slot>
+<slot/>
+ 

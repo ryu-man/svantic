@@ -1,8 +1,10 @@
+import '../../../fomantic/dist/components/image.css'
+
 import { default as Image } from './image.svelte'
 import { default as ImageLink } from './link.svelte'
 import { default as Images } from './images.svelte'
 
- Image.link = ImageLink
- 
- export {Image, ImageLink, Images}
- export default Image
+Image.Link = ImageLink
+
+export { Image, Images }
+export default Image
