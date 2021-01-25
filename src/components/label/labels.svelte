@@ -1,5 +1,4 @@
 <script>
-  import '../../../fomantic/dist/components/label.css'
   import { classNames, css } from '../../utils'
 
   export let style = {}

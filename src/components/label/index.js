@@ -1,13 +1,15 @@
+import '../../../fomantic/dist/components/label.css'
+
 import { default as Tag } from './tag.svelte'
 import { default as Ribbon } from './ribbon.svelte'
 import { default as Link } from './link.svelte'
 import { default as Label } from './label.svelte'
-export { default as Labels } from './labels.svelte'
+import { default as Labels } from './labels.svelte'
 
 
-Label.tag = Tag
-Label.ribbon = Ribbon
-Label.link = Link
+Label.Tag = Tag
+Label.Ribbon = Ribbon
+Label.Link = Link
 
-export { Tag, Ribbon, Link, Label }
+export { Label,Labels, Tag, Link, Ribbon }
 export default Label

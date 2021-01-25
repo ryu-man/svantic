@@ -1,6 +1,4 @@
 <script>
-  import '../../../fomantic/dist/components/label.css'
-  
   import { css, register } from '../../utils'
 
   let _class = ''
