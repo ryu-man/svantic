@@ -1,2 +1,4 @@
+import '../../../fomantic/dist/components/segment.css'
+
 export { default as Segment } from './segment.svelte'
-//export{Segment}
+export { default as Segments } from './segments.svelte'

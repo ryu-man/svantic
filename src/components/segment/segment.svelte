@@ -1,5 +1,4 @@
 <script>
-  import '../../../fomantic/dist/components/segment.css'
   import { classNames, css, register } from '../../utils'
 
   let _class = ''
@@ -22,6 +21,7 @@
   export let blurring = false
   export let dimmable = false
   export let dimmed = false
+  export let container = false
   export let style = {}
   export let on = {}
   export { _class as class }
@@ -55,6 +55,7 @@
   class:dimmable
   class:dimmed
   class="{classNames(state, color, emphasis, type, [floated, 'floated'], [attached, 'attached'], [aligned, 'aligned'], 'ui segment', _class)}"
+  class:container
 >
   <slot>
     <!-- optional fallback -->
