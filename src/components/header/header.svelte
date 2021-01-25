@@ -1,5 +1,4 @@
 <script>
-  import '../../../fomantic/dist/components/header.css'
   import { register } from '../../utils/events'
 
   let _class = ''
@@ -17,6 +16,7 @@
   export { _class as class }
 
   function init(node) {
+    css(node, style)
     const unregister = register(node, on)
     return {
       update(params) {},
@@ -39,9 +39,6 @@
   class:floated="{floated != ''}"
   class:aligned="{aligned != ''}"
   class:inverted
-  style="{Object.entries(style)
-    .map((e) => `${e[0]}:${e[1]}`)
-    .join(';')}"
 >
   <slot>
     <!-- optional fallback -->
