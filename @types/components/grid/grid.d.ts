@@ -1,28 +1,34 @@
-import { SvelteComponentTyped} from 'svelte/internal';
-import { Style } from '../../style';
-import { SharedProps } from '../../shared_props';
+import { SvelteComponentTyped } from 'svelte/internal'
+import { Style } from '../../style'
+import { SharedProps } from '../../shared_props'
+import { Wide } from '../../variations'
+
+type GridType =
+  | 'divided'
+  | 'vertically divided'
+  | 'celled'
+  | 'internally celled'
+type Reversed = `${'computer' | 'mobile' | 'tablet'}${' vertically' | ''}`
+export type GridWide = `${Wide}${' computer' | ' mobile' | ' tablet' | ''}`
+export type Visibility = `${
+  | 'computer'
+  | 'mobile'
+  | 'tablet'
+  | 'large screen'
+  | 'wide screen'}${' only' | ''}`
 interface GridProps extends SharedProps {
-    class?: string;
-    active?: boolean;
-    disabled?: boolean;
-    fluid?: boolean;
-    circular?: boolean;
-    loading?: boolean;
-    primary?: boolean;
-    secondary?: boolean;
-    compact?: boolean;
-    basic?: boolean;
-    toggle?: boolean;
-    positive?: boolean;
-    negative?: boolean;
-    tertiary?: boolean;
-    inverted?: boolean;
-    icon?: boolean;
-    style?: Style;
+  class?: string
+  style?: Style
+  type?: GridType
+  relaxed?: boolean
+  padded?: boolean
+  equal?: boolean
+  container?: boolean
+  stackable?: boolean
+  reversed?: Reversed
 }
 /**
  * Vomantic Grid
  */
-declare class Grid extends SvelteComponentTyped<GridProps> {
-}
-export default Grid;
+declare class Grid extends SvelteComponentTyped<GridProps> {}
+export default Grid
