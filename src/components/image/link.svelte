@@ -1,5 +1,4 @@
 <script>
-  import '../../../fomantic/dist/components/image.css'
 
   let _class = ''
   export let src = ''
