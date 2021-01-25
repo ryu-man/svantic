@@ -1,5 +1,5 @@
 export declare type Size = 'mini' | 'tiny' | 'small' | 'large' | 'big' | 'huge' | 'massive';
-export declare type Wide = 'two' | 'three' | 'four' | 'five' | 'six';
+export declare type Wide = 'two' | 'three' | 'four' | 'five' | 'six' |'seven' |'eight' |'nine' |'ten' |'eleven' |'twelve' |'thirteen' | 'fourteen' |'fifteen' | 'sixteen';
 export declare type State = 'disabled' | 'loading';
 export declare type Rotate = 'counterclockwise' | 'clockwise';
 export declare type Flip = 'horizontally' | 'vertically';
