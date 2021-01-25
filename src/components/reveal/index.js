@@ -1,6 +1,7 @@
 import { default as Reveal } from './reveal.svelte'
-import { default as RevealContent } from './content.svelte'
+import { default as Content } from './content.svelte'
 
-Reveal.content = RevealContent
+Reveal.Content = Content
 
-export {Reveal, RevealContent}
+export {Reveal, Content}
+export default Reveal
