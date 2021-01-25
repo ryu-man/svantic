@@ -1,5 +1,4 @@
 <script>
-  import '../../../fomantic/dist/components/statistic.css'
   import { css, classNames } from '../../utils'
 
   let _class = ''
@@ -12,7 +11,5 @@
   use:css="{style}"
   class="{classNames([columns, 'columns'], 'ui statistics', _class)}"
 >
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+  <slot/>
 </div>
