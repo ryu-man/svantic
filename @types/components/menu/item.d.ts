@@ -1,13 +1,14 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import type { SharedProps } from '../../shared_props';
-interface MenuProps extends SharedProps {
+
+interface ItemProps extends SharedProps {
     active?: boolean;
     horizontally?: boolean;
     fitted?: boolean;
 }
 /**
- * Vomantic Menu
+ * Vomantic Menu Item
  */
-declare class Menu extends SvelteComponentTyped<MenuProps> {
+declare class Item extends SvelteComponentTyped<ItemProps> {
 }
-export default Menu;
+export default Item;
