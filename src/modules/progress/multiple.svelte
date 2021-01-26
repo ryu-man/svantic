@@ -1,6 +1,5 @@
 <script>
-
-  import { css } from '../../utils'
+  import { css, classNames } from '../../utils'
 
   let _class = ''
   export { _class as class }
@@ -11,7 +10,7 @@
 
 <div
   use:css="{style}"
-  class="ui multiple progress {_class}"
+  class="{classNames('ui multiple progress', _class)}"
   data-total="{total}"
   data-percent="{percents.join(',')}"
 >

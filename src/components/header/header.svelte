@@ -1,5 +1,5 @@
 <script>
-  import { register } from '../../utils/events'
+  import { register, css, classNames } from '../../utils'
 
   let _class = ''
   export let style = {}
@@ -19,7 +19,6 @@
     css(node, style)
     const unregister = register(node, on)
     return {
-      update(params) {},
       destroy() {
         unregister()
       }
@@ -29,7 +28,13 @@
 
 <div
   use:init
-  class="{_class} {attached} {floated} {aligned} ui header"
+  class="{classNames(
+    [attached, 'attached'],
+    [floated, 'floated'],
+    [aligned, 'aligned'],
+    'ui header',
+    _class
+  )}"
   class:icon
   class:sub
   class:disabled
