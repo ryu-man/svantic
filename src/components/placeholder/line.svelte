@@ -1,5 +1,5 @@
 <script>
-  import { classNames } from 'src/utils'
+  import { classNames } from '../../utils'
 
   let _class = ''
   export { _class as class }
