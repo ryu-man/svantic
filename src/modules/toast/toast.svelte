@@ -10,13 +10,14 @@
   export let icon = false
   export let style = {}
   export let on = {}
+  export let settings = {}
   export let onMount
 
-  function init(node) {
+  function init(node, settings) {
     // the node has been mounted in the DOM
     css(node, style)
     const unregister = register(node, on)
-    let controller = new Controller(node)
+    let controller = new Controller(node, settings)
     onMount?.(controller)
     return {
       // the node has been removed from the DOM
@@ -28,6 +29,6 @@
   }
 </script>
 
-<div use:init class:icon class="{color} ui {type} {_class}">
+<div use:init={settings} class:icon class="{color} ui {type} {_class}">
   <slot />
 </div>

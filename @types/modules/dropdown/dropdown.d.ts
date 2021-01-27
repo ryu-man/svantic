@@ -2,8 +2,8 @@ import { SvelteComponentTyped } from 'svelte/internal'
 import type { SharedProps } from '../../shared_props'
 import type { Animation, Attach, Size, Speed, Wide } from '../../variations'
 import { Module } from '../module'
-import {} from './settings'
 import Controller from './controller'
+import {DropdownSettings} from './settings'
 
 declare type Type =
   | 'selection'
@@ -23,7 +23,7 @@ declare type Type =
 declare type State = 'active' | 'disabled' | 'loading' | 'error'
 declare type Height = 'long' | 'very long'
 
-interface DropdownProps extends SharedProps,Module<Controller> {
+interface DropdownProps extends SharedProps,Module<Controller, DropdownSettings> {
   size?: Size
   column?: Wide
   state?: State

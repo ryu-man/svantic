@@ -3,10 +3,11 @@ import type { SharedProps } from '../../shared_props';
 import type { Attach, Wide } from '../../variations';
 import { Module } from '../module';
 import Controller from './controller'
+import {SidebarSettings} from './settings'
 
 declare type State = 'visible' | 'dimmed';
 
-interface SidebarProps extends SharedProps,Module<Controller> {
+interface SidebarProps extends SharedProps,Module<Controller, SidebarSettings> {
     type?: string;
     wide?: Wide;
     direction?: Attach;

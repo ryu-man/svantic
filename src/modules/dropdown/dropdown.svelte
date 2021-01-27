@@ -28,13 +28,14 @@
   export let scrolling = false
   export let element = 'div'
   export { _class as class }
+  export let settings = {}
   export let onMount
 
   $: _type = type?.join?.(' ') ?? type
 
-  function init(node) {
+  function init(node, settings) {
     css(node, style)
-    let controller = new Controller(node)
+    let controller = new Controller(node, settings)
     onMount?.(controller)
   }
 </script>
@@ -63,7 +64,7 @@
   </select>
 {:else}
   <div
-    use:init
+    use:init = {settings}
     class:top
     class:link
     class:item

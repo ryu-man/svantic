@@ -2,14 +2,15 @@ import { SvelteComponentTyped} from 'svelte/internal';
 import type { SharedProps } from '../../shared_props';
 import { Module } from '../module';
 import Controller from './controller'
-interface ModalProps extends SharedProps,Module<Controller> {
+import {ModalSettings} from './settings'
+
+interface ModalProps extends SharedProps,Module<Controller, ModalSettings> {
     size?: string;
     basic?: boolean;
     active?: boolean;
     overlay?: boolean;
     inverted?: boolean;
     fullscreen?: boolean;
-    onMount?: (controller: Controller) => void;
 }
 /**
  * Vomantic Modal

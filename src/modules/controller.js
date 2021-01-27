@@ -1,10 +1,10 @@
 export default class Controller {
-    constructor(target) {
+    constructor(target, settings = {}) {
         this.jQuery = window['$'] || window['jQuery'];
-        this.settings = {};
+        this.settings = settings;
         this.target = target;
         this.selection = this.jQuery(target);
-       
+
         this.setup()
     }
     setup() { }

@@ -6,16 +6,18 @@
   let _class = ''
   export let icon = 'left'
   export let disabled = false
+  export let settings = {}
+
   export let style = {}
   export let on = {}
 
   export let onMount
   export { _class as class }
 
-  function init(node) {
+  function init(node, settings) {
     css(node, style)
     const unregister = register(node, on)
-    let controller = new Controller(node)
+    let controller = new Controller(node, settings)
     onMount?.(controller)
     return {
       destroy() {
@@ -26,7 +28,7 @@
   }
 </script>
 
-<div use:init class="{_class} ui calendar" class:disabled>
+<div use:init={settings} class="{_class} ui calendar" class:disabled>
   <div class="ui input {icon + ' icon'}">
     <slot name="icon">
       <!-- optional fallback -->

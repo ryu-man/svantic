@@ -4,6 +4,7 @@
   import Controller from './controller'
 
   let _class = ''
+  export { _class as class }
   export let type = ''
   export let size = ''
   export let state = ''
@@ -13,13 +14,12 @@
   export let vertical = false
   export let on = {}
   export let style = {}
-  export { _class as class }
-
+  export let settings = {}
   export let onMount
-  function init(node, params) {
+  function init(node, settings) {
     css(node, style)
     const unregister = register(node, on)
-    let controller = new Controller(node)
+    let controller = new Controller(node, settings)
     onMount?.(controller, node)
     return {
       destroy() {
@@ -31,7 +31,7 @@
 </script>
 
 <div
-  use:init
+  use:init={settings}
   class:inverted
   class:reversed
   class:vertical

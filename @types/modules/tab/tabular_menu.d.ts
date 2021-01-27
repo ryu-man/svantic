@@ -4,8 +4,9 @@ import Item from './item';
 import Tab from './tab';
 import { Module } from '../module';
 import Controller from './controller'
+import {TabularMenuSettings} from './settings'
 
-interface TabularMenuProps extends SharedProps,Module<Controller> {
+interface TabularMenuProps extends SharedProps,Module<Controller, TabularMenuSettings> {
     attached?: string;
     loading?: boolean;
     segment?: boolean;

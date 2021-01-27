@@ -3,9 +3,10 @@ import type { SharedProps } from '../../shared_props';
 import type { Align, Speed, Animation } from '../../variations';
 import { Module } from '../module';
 import Controller from './controller'
+import {SearchSettings} from './settings'
 
 declare type State = 'disabled';
-interface SearchProps extends SharedProps,Module<Controller> {
+interface SearchProps extends SharedProps,Module<Controller, SearchSettings> {
     fluid?: boolean;
     local?: boolean;
     category?: boolean;

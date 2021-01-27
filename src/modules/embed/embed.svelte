@@ -7,6 +7,7 @@
   export let style = {}
   export let data = {}
   export let on = {}
+  export let settings = {}
   export let onMount
 
   let _data = {
@@ -16,9 +17,9 @@
     ...data
   }
 
-  function init(node) {
+  function init(node, settings) {
     const unregister = register(node, on)
-    let controller = new Controller(node)
+    let controller = new Controller(node, settings)
     onMount?.(controller)
     return {
       update() {},
@@ -31,7 +32,7 @@
 </script>
 
 <div
-  use:init
+  use:init = {settings}
   use:css="{style}"
   class="{_class} ui embed"
   data-source="{_data.source}"

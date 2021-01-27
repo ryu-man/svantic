@@ -4,13 +4,14 @@ import type { SharedProps } from '../../shared_props';
 import { Module } from '../module';
 import {} from './settings'
 import Controller from './controller'
+import {DimmerSettings} from './settings'
 
 declare type Type = 'content' | 'page';
 declare type State = 'active' | 'disabled';
 declare type Shade = 'medium' | 'light' | 'very light';
 declare type Partial = 'bottom' | 'center' | 'top';
 
-interface DimmerProps extends SharedProps,Module<Controller> {
+interface DimmerProps extends SharedProps,Module<Controller, DimmerSettings> {
     type?: Type;
     state?: State;
     aligned?: Align;

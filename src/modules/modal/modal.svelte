@@ -3,6 +3,8 @@
   import { css } from '../../utils'
   import Controller from './controller'
 
+  let _class = ''
+  export { _class as class }
   export let size = ''
   export let basic = false
   export let active = false
@@ -10,14 +12,12 @@
   export let inverted = false
   export let fullscreen = false
   export let style = {}
-  let _class = ''
-  export { _class as class }
-
+  export let settings = {}
   export let onMount
 
-  function init(node) {
+  function init(node, settings) {
     css(node, style)
-    let controller = new Controller(node)
+    let controller = new Controller(node, settings)
     onMount?.(controller)
     return {
       destroy() {
@@ -28,7 +28,7 @@
 </script>
 
 <div
-  use:init
+  use:init = {settings}
   class:basic
   class:active
   class:inverted

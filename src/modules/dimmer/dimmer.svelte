@@ -1,44 +1,38 @@
 <script>
   import '../../../fomantic/dist/components/dimmer.css'
   import { css, classNames } from '../../utils'
+  import Controller from './controller'
 
   let _class = ''
+  export { _class as class }
   export let style = {}
-  //content
-  //page
   export let type = ''
-  // active
-  // disabled
   export let state = ''
-  // top
-  // bottom
-  // center
   export let aligned = ''
-  // medium
-  // light
-  // very light
   export let shades = ''
-  // bottom
-  // center
-  // top
   export let partial = ''
   export let inverted = false
-  export { _class as class }
-
+  export let settings = {}
   export let onMount
 
-  function init(node) {
+  function init(node, settings) {
     css(node, style)
-
-    let controller = new Controller(node)
+    let controller = new Controller(node, settings)
     onMount?.(controller)
   }
 </script>
 
 <div
-  use:init
+  use:init="{settings}"
   class:inverted
-  class="{classNames(shades, partial, state, type[(aligned, 'aligned')], 'ui dimmer', _class)}"
+  class="{classNames(
+    shades,
+    partial,
+    state,
+    type[(aligned, 'aligned')],
+    'ui dimmer',
+    _class
+  )}"
 >
   {#if type == 'content'}
     <div class="content">

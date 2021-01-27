@@ -2,7 +2,9 @@ import { SvelteComponentTyped } from 'svelte/internal'
 import type { SharedProps } from '../../shared_props'
 import { Module } from '../module'
 import Controller from './controller'
-interface CalendarProps extends SharedProps,Module<Controller> {
+import {CalendarSettings} from './settings'
+
+interface CalendarProps extends SharedProps,Module<Controller, CalendarSettings> {
   icon?: string
   disabled?: boolean
 }

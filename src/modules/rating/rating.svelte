@@ -12,12 +12,13 @@
   export let icon
   export let rating = '0'
   export let maxRating = '5'
+  export let settings = {}
   export let onMount
 
-  function init(node, params) {
+  function init(node, settings) {
     // the node has been mounted in the DOM
     css(style)
-    let controller = new Controller(node)
+    let controller = new Controller(node, settings)
     onMount?.(controller)
     return {
       destroy() {
@@ -30,7 +31,7 @@
 
 <!-- markup (zero or more items) goes here -->
 <div
-  use:init
+  use:init={settings}
   class:disabled
   class="{color} {size} ui rating {_class}"
   data-rating="{rating}"

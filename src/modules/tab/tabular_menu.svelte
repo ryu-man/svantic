@@ -10,20 +10,25 @@
   export let segment = false
   export let active = false
   export let style = {}
+  export let settings = {}
+  export let onMount
+
+  function init(node, settings){
+    css(node, style)
+    let controller = new Controller(node, settings)
+    onMount?.(controller)
+  }
 </script>
 
 <div
-  use:css="{style}"
+  use:init={settings}
   class:loading
   class:segment
   class:active
   class="{classNames([attached, 'attached'], 'ui tabular menu', _class)}"
 >
-  <slot name="item">
-    <!-- optional fallback -->
-  </slot>
+  <slot name="item"/>
 </div>
-<slot>
-  <!-- optional fallback -->
-</slot>
+<slot />
+ 
 

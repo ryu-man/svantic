@@ -17,14 +17,15 @@
   export let scrolling = false
   export let style = {}
   export let on = {}
+  export let settings = {}
   export { _class as class }
 
   export let onMount
 
-  function init(node, _params) {
+  function init(node, settings) {
     css(node, style)
     const unregister = register(node, on)
-    let controller = new Controller(node)
+    let controller = new Controller(node, settings)
     onMount?.(controller)
     return {
       destroy() {
@@ -36,7 +37,7 @@
 </script>
 
 <div
-  use:init
+  use:init={settings}
   class:category
   class:fluid
   class:local

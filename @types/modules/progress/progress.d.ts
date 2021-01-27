@@ -4,6 +4,7 @@ import { SharedProps } from '../../shared_props'
 import { Attach, Color, Size, Speed } from '../../variations'
 import { Module } from '../module'
 import Controller from './controller'
+import {ProgressSettings} from './settings'
 
 type Type = 'standard' | 'indicating'
 type State =
@@ -17,7 +18,7 @@ type State =
   | 'success'
   | 'active'
 
-interface ProgressProps extends SharedProps,Module<Controller> {
+interface ProgressProps extends SharedProps,Module<Controller, ProgressSettings> {
   class?: string
   type?: Type
   attached?: Attach
