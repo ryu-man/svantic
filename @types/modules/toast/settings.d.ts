@@ -52,6 +52,9 @@ export interface ToastSettings {
         hideDuration?: number;
         closeEasing?: EasingType;
     };
+
+    /********************** Callbacks **************************/
+    
     /** Callback before toast is shown. Returning false from this callback will cancel the toast from showing. */
     onShow?: () => boolean;
     /** Callback after toast is shown. */
