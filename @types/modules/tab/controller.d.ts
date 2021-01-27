@@ -1,4 +1,4 @@
-import type { TabularSettings } from './settings'
+import type { TabularMenuSettings } from './settings'
 import Controller from '../controller'
 
 type TabBehavior =
@@ -12,7 +12,7 @@ type TabBehavior =
   | 'cache remove'
 export default class TabularController extends Controller<
   TabBehavior,
-  TabularSettings
+  TabularMenuSettings
 > {
   /**    
 *@description 	Attaches tab action to given selector. Default event if none specified is toggle    
