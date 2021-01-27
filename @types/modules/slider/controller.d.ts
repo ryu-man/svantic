@@ -1,12 +1,7 @@
 import type { SliderSettings } from './settings'
 import Controller from '../controller'
 
-type SliderBehavior =
-  | 'animate pause'
-  | 'animate continue'
-  | 'close'
-  | 'get toasts'
-  | 'get remainingTime'
+type SliderBehavior ='get value'|'get thumbValue'|'get numLabels'|'set value'|'set rangeValue'
 export default class SliderController extends Controller<
   SliderBehavior,
   SliderSettings

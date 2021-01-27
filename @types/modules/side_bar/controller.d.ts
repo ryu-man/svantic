@@ -1,12 +1,7 @@
 import type { SidebarSettings } from './settings';
 import Controller from '../controller'
 
-type SidebarBehavior =
-  | 'animate pause'
-  | 'animate continue'
-  | 'close'
-  | 'get toasts'
-  | 'get remainingTime'
+type SidebarBehavior ='attach events'|'show'|'hide'|'toggle'|'is visible'|'is hidden'|'push page'|'get direction'|'pull page'|'add body CSS'|'remove body CSS'|'get transition event'
 export default class ToastController extends Controller<
   SidebarBehavior,
   SidebarSettings
