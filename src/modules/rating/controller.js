@@ -1,20 +1,42 @@
-export default class ProgressController {
-    constructor(target) {
-        this.jQuery = window['$'] || window['jQuery'];
-        if (!this.jQuery)
-            throw Error('jQuery not found, make sure you include jquery in the head tag');
-        this.target = target;
-        this.selection = this.jQuery(target);
+import Controller from "../controller";
+
+export default class ProgressController extends Controller {
+    setup() {
+        this.selection.rating(this.settings);
     }
-    init() {
-        this.selection.dropdown(this.settings);
-        return this;
+    /**    
+    *@description 	Sets rating programmatically    
+    */
+    setRating(rating) {
+        return this.customBehavior('set rating', rating)
     }
-    setSettings(settings) {
-        this.settings = settings;
-        return this;
+
+    /**    
+    *@description 	Gets current rating    
+    */
+    getRating() {
+        return this.customBehavior('get rating')
     }
-    customBehavior(behavior, ...args) {
-        return this.selection.dropdown(behavior, ...args);
+
+    /**    
+    *@description 	Disables interactive rating mode    
+    */
+    disable() {
+        return this.customBehavior('disable')
     }
+
+    /**    
+    *@description 	Enables interactive rating mode    
+    */
+    enable() {
+        return this.customBehavior('enable')
+    }
+
+    /**    
+    *@description 	Clears current rating    
+    */
+    clearRating() {
+        return this.customBehavior('close rating')
+    }
+
 }

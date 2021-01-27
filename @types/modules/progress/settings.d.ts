@@ -1,10 +1,10 @@
 export interface ProgressSettings {
     /** Whether success state should automatically trigger when progress completes */
-    autoSuccess?: true;
+    autoSuccess?: boolean;
     /** Whether progress should automatically show activity when incremented */
-    showActivity?: true;
+    showActivity?: boolean;
     /** When set to true, values that calculate to above 100% or below 0% will be adjusted. When set to false, inappropriate values will produce an error. */
-    limitValues?: true;
+    limitValues?: boolean;
     /** Can be set to either to display progress as percent or ratio. Matches up to corresponding text template with the same name. */
     label?: number;
     /** When incrementing without value, sets range for random increment value */
@@ -12,9 +12,9 @@ export interface ProgressSettings {
     /** Decimal point precision for calculated progress */
     precision?: 0;
     /** Setting a total value will make each call to increment get closer to this total (i.e. 1/20, 2/20 etc) */
-    total?: false;
+    total?: boolean;
     /** Sets current value, when total is specified, this is used to calculate a ratio of the total, with percent this should be the overall percent */
-    value?: false;
+    value?: boolean;
     /** Callback on percentage change */
     onChange?: (percent: number, value: number, total: number) => void;
     /** Callback on success state */

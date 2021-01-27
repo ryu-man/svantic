@@ -2,7 +2,7 @@ import { SvelteComponentTyped } from 'svelte/internal'
 import { Style } from '../../style'
 import { SharedProps } from '../../shared_props'
 
-interface ProgressProps extends SharedProps {
+interface ProgressProps extends SharedProps,Module<ToastSettings, Controller> {
   class?: string
   style?: Style
   color?: string

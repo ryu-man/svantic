@@ -1,11 +1,33 @@
-import type { RatingSettings } from './settings';
-export default class ProgressController {
-    jQuery: any;
-    target: HTMLElement;
-    settings: RatingSettings;
-    selection: any;
-    constructor(target: HTMLElement);
-    init(): ProgressController;
-    setSettings(settings: RatingSettings): ProgressController;
-    customBehavior(behavior: string, ...args: any[]): any;
+import type { RatingSettings } from './settings'
+import Controller from '../controller'
+
+type RatingBehavior ='setRating'|'getRating'|'disable'|'enable'|'clearRating'
+export default class RatingController extends Controller<
+  RatingBehavior,
+  RatingSettings
+> {
+  /**
+   *@description 	Sets rating programmatically
+   */
+  setRating(rating): void
+
+  /**
+   *@description 	Gets current rating
+   */
+  getRating(): string
+
+  /**
+   *@description 	Disables interactive rating mode
+   */
+  disable(): void
+
+  /**
+   *@description 	Enables interactive rating mode
+   */
+  enable(): void
+
+  /**
+   *@description 	Clears current rating
+   */
+  clearRating(): void
 }

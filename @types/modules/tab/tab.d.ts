@@ -1,11 +1,11 @@
-import { SvelteComponentTyped} from 'svelte/internal';
-import { SharedProps } from '../../shared_props';
+import { SvelteComponentTyped } from 'svelte/internal'
+import { SharedProps } from '../../shared_props'
 
 interface TabProps extends SharedProps {
-    attached: string;
-    active: boolean;
-    segment: boolean;
-    tab: string;
+  attached: string
+  active: boolean
+  segment: boolean
+  tab: string
 }
 /**
  * Vomantic Tab

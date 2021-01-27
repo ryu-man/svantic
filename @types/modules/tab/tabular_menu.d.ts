@@ -1,12 +1,11 @@
 import { SvelteComponentTyped} from 'svelte/internal';
-import { Style } from '../../style';
 import { SharedProps } from '../../shared_props';
 import Item from './item';
 import Tab from './tab';
+import { Module } from '../module';
+import Controller from './controller'
 
-interface TabularMenuProps extends SharedProps {
-    class?: string;
-    style?: Style;
+interface TabularMenuProps extends SharedProps,Module<Controller> {
     attached?: string;
     loading?: boolean;
     segment?: boolean;

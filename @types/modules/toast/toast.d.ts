@@ -1,14 +1,15 @@
 import { SvelteComponentTyped} from 'svelte/internal'
 import type { SharedProps } from '../../shared_props'
 import type { Color } from '../../variations'
+import { Module } from '../module'
 import type Controller from './controller'
+
 declare type Type = 'toast' | 'message'
 
-interface ToastProps extends SharedProps {
+interface ToastProps extends SharedProps, Module<Controller> {
   type?: Type
   color?: Color
   icon?: boolean
-  onMount?: (controller: Controller) => void
 }
 /**
  * Vomantic Toast

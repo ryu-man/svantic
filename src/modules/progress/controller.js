@@ -1,18 +1,8 @@
-export default class ProgressController {
-    constructor(target) {
-        this.jQuery = window['$'] || window['jQuery'];
-        if (!this.jQuery)
-            throw Error('jQuery not found, make sure you include jquery in the head tag');
-        this.target = target;
-        this.selection = this.jQuery(target);
-    }
-    init() {
-        this.selection.dropdown(this.settings);
-        return this;
-    }
-    setSettings(settings) {
-        this.settings = settings;
-        return this;
+import Controller from "../controller";
+
+export default class ProgressController extends Controller {
+    setup() {
+        this.selection.progress(this.settings);
     }
     /**
      *@description 	Sets current percent of progress to value. If using a total will convert from percent to estimated value. percent can be array of percent like [20,30,50], comma-separated string like'20,30,50' for `.ui.multiple.progress`.

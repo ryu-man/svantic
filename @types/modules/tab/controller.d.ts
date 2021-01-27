@@ -1,32 +1,57 @@
-import type { TabularSettings } from './settings';
+import type { TabularSettings } from './settings'
+import Controller from '../controller'
 
-export default class TabularController {
-    jQuery: any;
-    target: HTMLElement;
-    settings: TabularSettings;
-    selection: any;
-    constructor(target: HTMLElement);
-    init(): TabularController;
-    setSettings(settings: TabularSettings): TabularController;
-    /**
-     *@description Get the current selected value
-     */
-    getValue(): number;
-    /**
-     *@description Get the selected value of one of the range thumbs. Provide either first or second as a string parameter
-     */
-    getThumbValue(which: any): number;
-    /**
-     *@description Get the number of rendered label ticks
-     */
-    getNumLabels(): number;
-    /**
-     *@description Set the current slider value
-     */
-    setValue(value: any): void;
-    /**
-     *@description Set the current range slider values
-     */
-    setRangeValue(fromValue: any, toValue: any): void;
-    customBehavior(behavior: any, ...args: any[]): any;
+type TabBehavior =
+  | 'attach events'
+  | 'change tab'
+  | 'set state'
+  | 'get path'
+  | 'is tab'
+  | 'cache read'
+  | 'cache add'
+  | 'cache remove'
+export default class TabularController extends Controller<
+  TabBehavior,
+  TabularSettings
+> {
+  /**    
+*@description 	Attaches tab action to given selector. Default event if none specified is toggle    
+*/
+attachEvents(selector:string, event):void
+
+/**    
+*@description 	Changes tab to path    
+*/
+changeTab(path:string):void
+
+/**    
+*@description 	Sets current path to state    
+*/
+setState(path:string):void
+
+/**    
+*@description 	Returns current path    
+*/
+getPath():string
+
+/**    
+*@description 	Returns whether tab exists    
+*/
+isTab():boolean
+
+/**    
+*@description 	Returns cached HTML for path    
+*/
+cacheRead(path:string):void
+
+/**    
+*@description 	Sets cached HTML for path    
+*/
+cacheAdd(path:string, html:HTMLElement):void
+
+/**    
+*@description 	Removes cached HTML for path    
+*/
+cacheRemove(path:string):void
+
 }

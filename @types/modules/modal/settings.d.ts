@@ -1,4 +1,4 @@
-import type { TransitionType } from '../../components/transitionnts/transition';
+import type { TransitionType } from '../../transition';
 export interface ModalSettings {
     /** If set to false will prevent the modal from being moved to inside the dimmer */
     detachable?: boolean;

@@ -1,18 +1,8 @@
-export default class SliderController {
-    constructor(target) {
-        this.jQuery = window['$'] || window['jQuery'];
-        if (!this.jQuery)
-            throw Error('jQuery not found, make sure you include jquery in the head tag');
-        this.target = target;
-        this.selection = this.jQuery(this.target);
-    }
-    init() {
-        this.selection.modal(this.settings);
-        return this;
-    }
-    setSettings(settings) {
-        this.settings = settings;
-        return this;
+import Controller from "../controller";
+
+export default class SliderController extends Controller{
+    setup() {
+        this.selection.slider(this.settings);
     }
     /**
      *@description Get the current selected value

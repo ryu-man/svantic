@@ -1,20 +1,11 @@
-export default class DropdownController {
-    constructor(target) {
-        this.jQuery = window['$'] || window['jQuery'];
-        this.settings = {};
-        this.target = target;
-        this.selection = this.jQuery(target);
+import Controller from "../controller";
+
+export default class DropdownController extends Controller {
+
+    setup() {
         this.selection.dropdown(this.settings);
     }
-    init() {
-        this.selection.dropdown(this.settings);
-        return this;
-    }
-    setSettings(settings) {
-        this.settings = settings;
-        this.selection.dropdown(this.settings);
-        return this;
-    }
+
     /**
      *@description 	Recreates dropdown menu from passed values. values should be an object with the following structure: { values: [ {value, text, name} ] }.
      */
@@ -243,7 +234,5 @@ export default class DropdownController {
     getPlaceholderText() {
         return this.customBehavior('get placeholder');
     }
-    customBehavior(behavior, ...args) {
-        return this.selection.dropdown(behavior, ...args);
-    }
+
 }

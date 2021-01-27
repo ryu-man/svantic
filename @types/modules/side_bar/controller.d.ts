@@ -1,13 +1,17 @@
 import type { SidebarSettings } from './settings';
+import Controller from '../controller'
 
-export default class SidebarController {
-    jQuery: any;
-    target: HTMLElement;
-    settings: SidebarSettings;
-    selection: any;
-    constructor(target: HTMLElement);
-    init(): SidebarController;
-    setSettings(settings: SidebarSettings): SidebarController;
+type SidebarBehavior =
+  | 'animate pause'
+  | 'animate continue'
+  | 'close'
+  | 'get toasts'
+  | 'get remainingTime'
+export default class ToastController extends Controller<
+  SidebarBehavior,
+  SidebarSettings
+> {
+
     /**
      *@description 	Attaches sidebar action to given selector. Default event if none specified is toggle
      */
@@ -56,5 +60,4 @@ export default class SidebarController {
      *@description 	Returns vendor prefixed transition end event
      */
     getTransitionEvent(): any;
-    customBehavior(behavior: any, ...args: any[]): any;
 }

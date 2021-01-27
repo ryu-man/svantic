@@ -1,6 +1,8 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import type { SharedProps } from '../../shared_props';
-interface EmbedProps extends SharedProps {
+import { Module } from '../module';
+import Controller from './controller'
+interface EmbedProps extends SharedProps,Module<Controller> {
     active?: boolean;
     disabled?: boolean;
     fluid?: boolean;

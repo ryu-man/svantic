@@ -1,9 +1,11 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import type { SharedProps } from '../../shared_props';
 import type { Align, Speed, Animation } from '../../variations';
-import type SearchController from './controller';
+import { Module } from '../module';
+import Controller from './controller'
+
 declare type State = 'disabled';
-interface SearchProps extends SharedProps {
+interface SearchProps extends SharedProps,Module<Controller> {
     fluid?: boolean;
     local?: boolean;
     category?: boolean;
@@ -13,7 +15,6 @@ interface SearchProps extends SharedProps {
     aligned?: Align;
     speed?: Speed;
     animation?: Animation;
-    onMount?: (controller: SearchController) => void;
 }
 /**
  * Vomantic Search

@@ -1,22 +1,10 @@
-export default class ToastController {
-    constructor(target) {
-        this.jQuery = window['$'] || window['jQuery'];
-        if (!this.jQuery)
-            throw Error('jQuery not found, make sure you include jquery in the head tag');
-        this.target = target;
-        this.selection = this.jQuery(target);
-    }
-    init() {
+import Controller from "../controller";
+
+export default class ToastController extends Controller{
+    setup() {
         this.selection.toast(this.settings);
-        return this;
     }
-    setSettings(settings) {
-        this.settings = settings;
-        return this;
-    }
-    customBehavior(behavior, ...args) {
-        return this.selection.toast(behavior, ...args);
-    }
+
     /**
      *@description 	Pauses the display time decrease (and possible progress bar animation)
      */

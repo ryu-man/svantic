@@ -1,13 +1,11 @@
 import type { SearchSettings } from './settings';
-export default class SearchController {
-    jQuery: any;
-    target: HTMLElement;
-    settings: SearchSettings;
-    selection: any;
-    constructor(target: HTMLElement);
-    init(): SearchController;
-    setSettings(settings: SearchSettings): SearchController;
-    customBehavior(behavior: string, ...args: any[]): any;
+import Controller from '../controller'
+
+type SearchBehavior ='attach events'|'show'|'hide'|'toggle'|'is visible'|'is hidden'|'push page'|'get direction'|'pull page'|'add body CSS'|'remove body CSS'|'get transition event'
+export default class SearchController extends Controller<
+  SearchBehavior,
+  SearchSettings
+> {
     /**
      *@description 	Search for value currently set in search input
      */

@@ -1,50 +1,64 @@
-export default class TabularController {
-    constructor(target) {
-        this.jQuery = window['$'] || window['jQuery'];
-        if (!this.jQuery)
-            throw Error('jQuery not found, make sure you include jquery in the head tag');
-        this.target = target;
-        this.selection = this.jQuery(target);
+import Controller from "../controller";
+
+export default class TabularController extends Controller{
+    setup() {
+        this.selection.tab(this.settings);
     }
-    init() {
-        this.selection.toast(this.settings);
-        return this;
+
+    /**    
+    *@description 	Attaches tab action to given selector. Default event if none specified is toggle    
+    */
+    attachEvents(selector, event) {
+        return ''
     }
-    setSettings(settings) {
-        this.settings = settings;
-        return this;
+
+    /**    
+    *@description 	Changes tab to path    
+    */
+    changeTab(path) {
+        return ''
     }
-    customBehavior(behavior, ...args) {
-        return this.selection.toast(behavior, ...args);
+
+    /**    
+    *@description 	Sets current path to state    
+    */
+    setState(path) {
+        return ''
     }
-    /**
-     *@description 	Pauses the display time decrease (and possible progress bar animation)
-     */
-    animatePause() {
-        this.customBehavior('animate pause');
+
+    /**    
+    *@description 	Returns current path    
+    */
+    getPath() {
+        return ''
     }
-    /**
-     *@description 	Continues decreasing display time (and possible progress bar animation)
-     */
-    animateContinue() {
-        this.customBehavior('animate continue');
+
+    /**    
+    *@description 	Returns whether tab exists    
+    */
+    isTab() {
+        return ''
     }
-    /**
-     *@description 	Closes the toast
-     */
-    close() {
-        this.customBehavior('close');
+
+    /**    
+    *@description 	Returns cached HTML for path    
+    */
+    cacheRead(path) {
+        return ''
     }
-    /**
-     *@description 	Returns all toasts as an array of objects which are visible within the current toast-container
-     */
-    getToasts() {
-        return this.customBehavior('get toasts');
+
+    /**    
+    *@description 	Sets cached HTML for path    
+    */
+    cacheAdd(path, html) {
+        return ''
     }
-    /**
-     *@description 	Returns the remaining time in milliseconds
-     */
-    getRemainingTime() {
-        return this.customBehavior('get remainingTime');
+
+    /**    
+    *@description 	Removes cached HTML for path    
+    */
+    cacheRemove(path) {
+        return ''
     }
+
 }

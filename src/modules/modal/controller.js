@@ -1,21 +1,9 @@
-export default class ModalController {
-    constructor(target) {
-        this.jQuery = window['$'] || window['jQuery'];
-        this.settings = {};
-        if (!this.jQuery)
-            throw Error('jQuery not found, make sure you include jquery in the head tag');
-        this.target = target;
-        this.selection = this.jQuery(this.target);
+import Controller from "../controller";
+
+export default class ModalController extends Controller{
+    
+    setup() {
         this.selection.modal(this.settings);
-    }
-    init() {
-        this.selection.modal(this.settings);
-        return this;
-    }
-    setSettings(settings) {
-        this.settings = settings;
-        this.selection.modal(this.settings);
-        return this;
     }
     /* Shows the modal */
     show() {

@@ -1,18 +1,16 @@
 import { SvelteComponentTyped } from 'svelte/internal'
-import { Style } from '../../style'
 import { Color, Size } from '../../variations'
+import { SharedProps } from '../../shared_props'
+import { Module } from '../module'
 import Controller from './controller'
 
-interface RatingProps {
-  class?: string
-  style?: Style
+interface RatingProps extends SharedProps, Module<Controller>{
   icon?: string
   rating?: string
   maxRating?: string
   disabled?: boolean
   color?: Color
   size?: Size
-  onMount?: (controller: Controller) => void
 }
 /**
  * Vomantic Rating

@@ -1,7 +1,10 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import type { Style } from '../../style';
 import type { SharedProps } from '../../shared_props';
-interface PopupProps extends SharedProps {
+import { Module } from '../module';
+import Controller from './controller'
+
+interface PopupProps extends SharedProps,Module<Controller> {
     class?: string;
     active?: boolean;
     disabled?: boolean;

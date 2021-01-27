@@ -1,24 +1,8 @@
-export default class SearchController {
-    constructor(target) {
-        this.jQuery = window['$'] || window['jQuery'];
-        if (!this.jQuery)
-            throw Error('jQuery not found, make sure you include jquery in the head tag');
-        this.target = target;
-        this.settings = {};
-        this.selection = this.jQuery(target);
+import Controller from "../controller";
+
+export default class SearchController extends Controller{
+    setup() {
         this.selection.search(this.settings);
-    }
-    init() {
-        this.selection.search(this.settings);
-        return this;
-    }
-    setSettings(settings) {
-        this.settings = settings;
-        this.selection.search(this.settings);
-        return this;
-    }
-    customBehavior(behavior, ...args) {
-        return this.selection.search(behavior, ...args);
     }
     /**
      *@description 	Search for value currently set in search input
