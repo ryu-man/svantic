@@ -35,7 +35,5 @@
   class:inverted
   class="ui accordion {_class}"
 >
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+  <slot />
 </div>

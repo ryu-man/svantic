@@ -18,7 +18,6 @@
     let controller = new Controller(node)
     onMount?.(controller)
     return {
-      update() {},
       destroy() {
         unregister()
         controller = null
