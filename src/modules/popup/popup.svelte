@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/popup'
   import '../../../fomantic/dist/components/popup.css'
   import { css, classNames } from '../../utils'
   import Controller from './controller'

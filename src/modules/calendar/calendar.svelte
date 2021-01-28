@@ -1,4 +1,7 @@
 <script>
+  import '../../../fomantic/dist/components/transition'
+  import '../../../fomantic/dist/components/popup'
+  import '../../../fomantic/dist/components/calendar'
   import '../../../fomantic/dist/components/calendar.css'
   import { css, register } from '../../utils'
   import Controller from './controller'
@@ -28,10 +31,10 @@
   }
 </script>
 
-<div use:init={settings} class="{_class} ui calendar" class:disabled>
+<div use:init="{settings}" class="{_class} ui calendar" class:disabled>
   <div class="ui input {icon + ' icon'}">
-    <slot name="icon">
-      <!-- optional fallback -->
+    <slot>
+      <i class="calendar icon"></i>
     </slot>
     <input type="text" placeholder="Date/Time" />
   </div>

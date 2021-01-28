@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/slider'
   import '../../../fomantic/dist/components/slider.css'
   import { css, register, classNames } from '../../utils'
   import Controller from './controller'

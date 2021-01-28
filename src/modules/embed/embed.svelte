@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/embed'
   import { css, register, } from '../../utils'
   import Controller from './controller'
 

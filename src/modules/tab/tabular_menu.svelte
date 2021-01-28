@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/tab'
   import '../../../fomantic/dist/components/tab.css'
   import { classNames, css } from '../../utils'
   import Controller from './controller'

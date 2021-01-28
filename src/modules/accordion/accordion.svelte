@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/accordion'
   import '../../../fomantic/dist/components/accordion.css'
   import { css } from '../../utils'
   import { register } from '../../utils/events'

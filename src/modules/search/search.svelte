@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/search'
   import '../../../fomantic/dist/components/search.css'
   import { css, register, classNames } from '../../utils'
   import Controller from './controller'

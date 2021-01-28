@@ -1,4 +1,5 @@
 <script>
+  import '../../../fomantic/dist/components/rating'
   import '../../../fomantic/dist/components/rating.css'
   import { css } from '../../utils'
   import Controller from './controller'
@@ -29,7 +30,6 @@
   }
 </script>
 
-<!-- markup (zero or more items) goes here -->
 <div
   use:init={settings}
   class:disabled
