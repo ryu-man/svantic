@@ -1,8 +1,5 @@
 <script>
-  import '../../../fomantic/dist/components/dropdown'
-  import '../../../fomantic/dist/components/dropdown.css'
-  import { css, classNames } from '../../utils'
-  import Controller from './controller'
+  import { classNames } from 'src/utils'
 
   let _class = ''
   export let style = {}
@@ -40,21 +37,34 @@
   }
 </script>
 
-  <div
-    use:init = {settings}
-    class:top
-    class:link
-    class:item
-    class:left
-    class:long
-    class:right
-    class:fluid
-    class:label
-    class:bottom
-    class:compact
-    class:inverted
-    class:scrolling
-    class="{classNames(height, column, speed, loaderStyle, wide, _type, state, size, menuDirection, 'ui dropdown', _class)}"
-  >
-    <slot/>
-  </div>
+<select
+  use:init="{settings}"
+  multiple="{type.includes('multiple')}"
+  class:top
+  class:link
+  class:item
+  class:left
+  class:long
+  class:right
+  class:fluid
+  class:label
+  class:bottom
+  class:compact
+  class:inverted
+  class:scrolling
+  class="{classNames(
+    height,
+    column,
+    speed,
+    loaderStyle,
+    wide,
+    _type,
+    state,
+    size,
+    menuDirection,
+    'ui dropdown',
+    _class
+  )}"
+>
+  <slot/>
+</select>

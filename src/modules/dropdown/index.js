@@ -1,4 +1,7 @@
-export { default as Dropdown } from './dropdown.svelte'
 export { default as DropdownController } from './controller'
+import { default as Dropdown } from './dropdown.svelte'
+import { default as Select } from './select.svelte'
 
-// export {Dropdown, DropdownController}
+Dropdown.Select = Select
+
+export { Dropdown }

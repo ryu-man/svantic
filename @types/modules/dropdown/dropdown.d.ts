@@ -55,5 +55,6 @@ interface DropdownProps extends Module<Controller, DropdownSettings> {
  * Vomantic Dropdown
  */
 declare class Dropdown extends SvelteComponentTyped<DropdownProps> {
+  static Select : new ()=>Dropdown
 }
 export default Dropdown
