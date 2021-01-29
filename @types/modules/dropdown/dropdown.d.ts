@@ -49,7 +49,6 @@ interface DropdownProps extends Module<Controller, DropdownSettings> {
   inverted?: boolean
   secondary?: boolean
   scrolling?: boolean
-  element?: 'div' | 'select'
 }
 /**
  * Vomantic Dropdown
