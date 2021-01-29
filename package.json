@@ -4,11 +4,10 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "svelte": "./src/index.js",
-  "types": "@types/index.d.ts",
+  "types": "./src/index.d.ts",
   "files": [
     "dist",
-    "src",
-    "@types"
+    "src"
   ],
   "scripts": {
     "tsc": "tsc --sourceMap false",
@@ -33,7 +32,6 @@
     "@types/semantic-ui": "^2.2.7",
     "autoprefixer": "^10.0.4",
     "jest": "^26.5.3",
-    "node-sass": "^5.0.0",
     "npm-check": "^5.9.2",
     "postcss-import": "^13.0.0",
     "postcss-load-config": "^3.0.0",
