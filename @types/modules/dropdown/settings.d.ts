@@ -1,4 +1,4 @@
-import type { TransitionType } from '../transition';
+import type { TransitionType } from '../../transition';
 declare type Value = {
     name?: any;
     value?: string;
