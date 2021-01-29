@@ -1,8 +1,8 @@
 import { SvelteComponentTyped} from 'svelte/internal';
-import type { SharedProps } from '../../shared_props';
+import type { Component } from '../../component';
 import type { Align } from '../../variations';
 declare type Type = "horizontal" | "vertical";
-interface DividerProps extends SharedProps {
+interface DividerProps extends Component {
     type?: Type;
     aligned?: Align;
     clearing?: boolean;

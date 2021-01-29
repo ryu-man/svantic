@@ -1,10 +1,9 @@
 import { SvelteComponentTyped} from 'svelte/internal';
-import type { SharedProps } from '../../shared_props';
 import { Module } from '../module';
 import Controller from './controller'
 import {ModalSettings} from './settings'
 
-interface ModalProps extends SharedProps,Module<Controller, ModalSettings> {
+interface ModalProps extends Module<Controller, ModalSettings> {
     size?: string;
     basic?: boolean;
     active?: boolean;

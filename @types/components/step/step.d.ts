@@ -1,9 +1,9 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import { Style } from '../../style';
-import { SharedProps } from '../../shared_props';
+import { Component } from '../../component';
 
 declare type State = 'completed' | 'active' | 'disabled';
-interface StepProps extends SharedProps {
+interface StepProps extends Component {
     class?: string;
     state?: State;
     style?: Style;

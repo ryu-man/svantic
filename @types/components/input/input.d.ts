@@ -1,11 +1,11 @@
 import { SvelteComponentTyped } from 'svelte';
 import type { Style } from '../../style';
 import type { Speed, Animation, Color, Float, Size } from '../../variations';
-import type { SharedProps } from '../../shared_props';
+import type { Component } from '../../component';
 
 declare type State = 'focus' | 'loading' | 'disabled' | 'error' | '';
 
-interface InputProps extends SharedProps {
+interface InputProps extends Component {
     class?: string;
     style?: Style;
     color?: Color;

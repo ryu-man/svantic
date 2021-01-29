@@ -1,7 +1,7 @@
 import { SvelteComponentTyped} from 'svelte/internal';
-import type { SharedProps } from '../../shared_props';
+import type { Component } from '../../component';
 import type { Color } from '../../variations';
-interface ButtonsProps extends SharedProps {
+interface ButtonsProps extends Component {
     color?: Color;
 }
 /**

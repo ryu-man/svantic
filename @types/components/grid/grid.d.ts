@@ -1,6 +1,6 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import { Style } from '../../style'
-import { SharedProps } from '../../shared_props'
+import { Component } from '../../component'
 import { Wide } from '../../variations'
 
 type GridType =
@@ -16,7 +16,7 @@ export type Visibility = `${
   | 'tablet'
   | 'large screen'
   | 'wide screen'}${' only' | ''}`
-interface GridProps extends SharedProps {
+interface GridProps extends Component {
   class?: string
   style?: Style
   type?: GridType

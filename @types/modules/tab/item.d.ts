@@ -1,7 +1,7 @@
 import { SvelteComponentTyped } from 'svelte/internal'
-import { SharedProps } from '../../shared_props'
+import { Component } from '../../component'
 
-interface ItemProps extends SharedProps{
+interface ItemProps extends Component{
   data?: string
 }
 /**

@@ -1,8 +1,8 @@
-import { SharedProps } from '../../shared_props'
+import { Component } from '../../component'
 import { SvelteComponentTyped } from 'svelte'
 
 type State = 'visible' | 'hidden'
-interface ContentProps extends SharedProps {
+interface ContentProps extends Component {
   state?: State
 }
 /**

@@ -1,6 +1,6 @@
 import { SvelteComponentTyped} from 'svelte/internal';
-import { SharedProps } from '../../shared_props';
-interface TableProps extends SharedProps {
+import { Component } from '../../component';
+interface TableProps extends Component {
     type?: string;
     column?: string;
     line?: boolean;

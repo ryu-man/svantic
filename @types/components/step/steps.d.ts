@@ -1,11 +1,11 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import { Style } from '../../style';
 import { Wide } from '../../variations';
-import { SharedProps } from '../../shared_props';
+import { Component } from '../../component';
 
 declare type Type = 'ordered' | 'vertical';
 declare type Side = 'up' | 'right' | 'bottom' | 'left';
-interface StepsProps extends SharedProps {
+interface StepsProps extends Component {
     class?: string;
     type?: Type;
     side?: Side;

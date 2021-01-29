@@ -1,9 +1,9 @@
 import { SvelteComponentTyped} from 'svelte/internal';
-import type { SharedProps } from '../../shared_props';
+import type { Component } from '../../component';
 import type { Animation, Speed } from '../../variations';
 declare type Type = 'text';
 declare type State = 'indeterminate' | 'active' | 'disabled';
-interface LoaderProps extends SharedProps {
+interface LoaderProps extends Component {
     type?: Type;
     state?: State;
     animationStyle?: Animation;

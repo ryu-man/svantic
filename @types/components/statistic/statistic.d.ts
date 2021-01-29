@@ -2,9 +2,9 @@
 import {SvelteComponentTyped} from 'svelte/internal'
 import { Style } from '../../style'
 import { Color, Float, Size } from '../../variations'
-import { SharedProps } from '../../shared_props'
+import { Component } from '../../component'
 
-interface StatisticProps extends SharedProps {
+interface StatisticProps extends Component {
   class?: string
   style?: Style
   color?: Color

@@ -1,6 +1,6 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import type { Attach, Align, Color, Size } from '../../variations'
-import type { DOMEvents, SharedProps } from '../../shared_props'
+import type { DOMEvents, Component } from '../../component'
 import Tag from './tag'
 import Ribbon from './ribbon'
 import Link from './link'
@@ -20,7 +20,7 @@ declare type Type =
   | 'left floating'
   | 'bottom floating'
 
-interface LabelProps extends SharedProps {
+interface LabelProps extends Component {
   type?: Type
   attached?: Attach
   floating?: Attach

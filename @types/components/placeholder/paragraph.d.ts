@@ -1,7 +1,7 @@
-import { SharedProps } from '../../shared_props';
+import { Component } from '../../component';
 import { SvelteComponentTyped} from 'svelte';
 
-interface ParagraphProps extends SharedProps {
+interface ParagraphProps extends Component {
     inverted?: boolean;
 }
 /**

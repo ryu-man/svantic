@@ -1,11 +1,11 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import { Style } from '../../style';
 import { Size } from '../../variations';
-import { SharedProps } from '../../shared_props';
+import { Component } from '../../component';
 import Field from './field'
 import Fields from './fields'
 declare type State = 'info' | 'warning' | 'error' | 'success' | 'loading';
-interface FormProps extends SharedProps {
+interface FormProps extends Component {
     class?: string;
     style?: Style;
     state?: State;

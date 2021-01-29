@@ -1,5 +1,4 @@
 import { SvelteComponentTyped } from 'svelte/internal'
-import type { SharedProps } from '../../shared_props'
 import type { Animation, Attach, Size, Speed, Wide } from '../../variations'
 import { Module } from '../module'
 import Controller from './controller'
@@ -23,7 +22,7 @@ declare type Type =
 declare type State = 'active' | 'disabled' | 'loading' | 'error'
 declare type Height = 'long' | 'very long'
 
-interface DropdownProps extends SharedProps,Module<Controller, DropdownSettings> {
+interface DropdownProps extends Module<Controller, DropdownSettings> {
   size?: Size
   column?: Wide
   state?: State
@@ -55,5 +54,6 @@ interface DropdownProps extends SharedProps,Module<Controller, DropdownSettings>
 /**
  * Vomantic Dropdown
  */
-declare class Dropdown extends SvelteComponentTyped<DropdownProps> {}
+declare class Dropdown extends SvelteComponentTyped<DropdownProps> {
+}
 export default Dropdown

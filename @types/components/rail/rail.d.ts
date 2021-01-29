@@ -1,7 +1,7 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import type { Style } from '../../style';
-import type { SharedProps } from '../../shared_props';
-interface RailProps extends SharedProps {
+import type { Component } from '../../component';
+interface RailProps extends Component {
     class?: string;
     style?: Style;
     side?: string;

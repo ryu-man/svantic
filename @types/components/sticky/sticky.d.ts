@@ -1,7 +1,7 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import { Style } from '../../style';
-import { SharedProps } from '../../shared_props';
-interface StickyProps extends SharedProps {
+import { Component } from '../../component';
+interface StickyProps extends Component {
     class?: string;
     active?: boolean;
     disabled?: boolean;

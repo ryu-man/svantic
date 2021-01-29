@@ -1,8 +1,8 @@
 import { SvelteComponentTyped } from 'svelte/internal'
-import type { SharedProps } from '../../shared_props'
+import type { Component } from '../../component'
 import { Align, Attach, Color, Size } from '../../variations'
 
-interface LinkProps extends SharedProps {
+interface LinkProps extends Component {
   type?: string
   attached?: Attach
   aligned?: Align

@@ -1,6 +1,6 @@
 import { SvelteComponentTyped} from 'svelte/internal';
-import type { SharedProps } from '../../shared_props';
-interface RangeProps extends SharedProps {
+import type { Component } from '../../component';
+interface RangeProps extends Component {
     active?: boolean;
     disabled?: boolean;
     fluid?: boolean;

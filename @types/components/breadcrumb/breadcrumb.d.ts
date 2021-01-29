@@ -1,10 +1,10 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import type { Style } from '../../style';
-import type { SharedProps } from '../../shared_props';
+import type { Component } from '../../component';
 import Section from './section'
 import Divider from './divider'
 
-interface BreadcrumbProps extends SharedProps {
+interface BreadcrumbProps extends Component {
     class?: string;
     active?: boolean;
     disabled?: boolean;
@@ -28,4 +28,5 @@ interface BreadcrumbProps extends SharedProps {
  */
 export default class Breadcrumb extends SvelteComponentTyped<BreadcrumbProps> {
     static Section:new ()=>Section
+    static Divider: new ()=>Divider
 }

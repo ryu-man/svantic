@@ -1,11 +1,11 @@
 import { SvelteComponentTyped} from 'svelte/internal';
-import type { SharedProps } from '../../shared_props';
+import type { Component } from '../../component';
 import type { Size } from '../type';
 import type { Float, Wide } from '../../variations';
 import Item from './item'
 
 declare type Type = 'secondary' | 'pointing' | 'tabular' | 'text' | 'vertical' | 'pagination';
-interface MenuProps extends SharedProps {
+interface MenuProps extends Component {
     type?: Type | Type[];
     wide?: Wide;
     size?: Size;

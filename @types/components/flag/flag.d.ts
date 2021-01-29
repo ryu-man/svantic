@@ -1,9 +1,9 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import { Style } from '../../style'
-import { SharedProps } from '../../shared_props'
+import { Component } from '../../component'
 
 type ISOCODE = string
-interface FlagProps extends SharedProps {
+interface FlagProps extends Component {
   isoCode?: ISOCODE
 }
 /**

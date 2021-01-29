@@ -1,7 +1,7 @@
 declare type Style = {
   [key in keyof CSSStyleDeclaration]?: string
 }
-export interface SharedProps {
+export interface Component {
   class?: string
   style?: Style
   dimmable?: boolean

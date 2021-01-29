@@ -1,8 +1,8 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import type { Style } from '../../style';
-import type { SharedProps } from '../../shared_props';
+import type { Component } from '../../component';
 
-interface SectionProps extends SharedProps {
+interface SectionProps extends Component {
     class?: string;
     active?: boolean;
     disabled?: boolean;

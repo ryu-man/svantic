@@ -1,7 +1,7 @@
 import { SvelteComponentTyped } from 'svelte/internal'
-import type { SharedProps } from '../../shared_props'
+import type { Component } from '../../component'
 
-interface RibbonProps extends SharedProps {
+interface RibbonProps extends Component {
   icon?: boolean
   left?: boolean
   right?: boolean

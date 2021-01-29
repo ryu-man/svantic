@@ -1,7 +1,7 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import { Align, Float, Size } from '../../variations';
-import { SharedProps } from '../../shared_props';
-interface ImageProps extends SharedProps {
+import { Component } from '../../component';
+interface ImageProps extends Component {
     aligned?: Align;
     floated?: Float;
     size?: Size;

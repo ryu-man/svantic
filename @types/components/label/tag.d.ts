@@ -1,8 +1,8 @@
 import { SvelteComponentTyped} from 'svelte/internal';
-import type { SharedProps } from '../../shared_props';
+import type { Component } from '../../component';
 import type { Size, Color } from '../../variations';
 
-interface TagProps extends SharedProps {
+interface TagProps extends Component {
     size?: Size;
     color?: Color;
     basic?: boolean;

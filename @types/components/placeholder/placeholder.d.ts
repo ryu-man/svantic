@@ -1,11 +1,11 @@
-import { SharedProps } from '../../shared_props'
+import { Component } from '../../component'
 import { SvelteComponentTyped } from 'svelte'
 import Header from './header'
 import Paragraph from './paragraph'
 import Image from './image'
 import Line from './line'
 
-interface PlaceholderProps extends SharedProps {
+interface PlaceholderProps extends Component {
   inverted?: boolean
 }
 /**

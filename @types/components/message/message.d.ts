@@ -1,10 +1,10 @@
 import { SvelteComponentTyped} from 'svelte/internal';
-import { SharedProps } from '../../shared_props';
+import { Component } from '../../component';
 import { Attach, Float, Size } from '../../variations';
 declare type Type = 'message' | 'list' | 'icon' | 'dissmissible';
 declare type Context = 'info' | 'warning' | 'positive' | 'negative';
 declare type State = 'visible' | 'hidden';
-interface MessageProps extends SharedProps {
+interface MessageProps extends Component {
     type?: Type;
     context?: Context;
     attached?: Attach;

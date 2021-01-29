@@ -1,10 +1,9 @@
 import type { Style } from '../../style'
-import type { SharedProps } from '../../shared_props'
 import { SvelteComponentTyped } from 'svelte/internal'
 import { Module } from '../module'
 import Controller from './controller'
 import {AccordionSettings} from './settings'
-interface AccordionProps extends SharedProps, Module<Controller, AccordionSettings> {
+interface AccordionProps extends Module<Controller, AccordionSettings> {
   class?: string
   active?: boolean
   disabled?: boolean

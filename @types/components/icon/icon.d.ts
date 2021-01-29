@@ -1,11 +1,11 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import type { Style } from '../../style';
 import type { Size, Color } from '../../variations';
-import type { SharedProps } from '../../shared_props';
+import type { Component } from '../../component';
 declare type State = 'disabled' | 'loading';
 declare type Rotate = 'counterclockwise' | 'clockwise';
 declare type Flip = 'horizontally' | 'vertically';
-interface IconProps extends SharedProps {
+interface IconProps extends Component {
     name?: Icons;
     state?: State;
     rotated?: Rotate;

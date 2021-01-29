@@ -1,9 +1,9 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import { Style } from '../../style';
-import { SharedProps } from '../../shared_props';
+import { Component } from '../../component';
 import { Wide } from '../../variations';
 
-interface StatisticProps extends SharedProps {
+interface StatisticProps extends Component {
     class?: string;
     style?:Style
     columns?:Wide

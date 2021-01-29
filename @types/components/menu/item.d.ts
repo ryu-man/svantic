@@ -1,7 +1,7 @@
 import { SvelteComponentTyped} from 'svelte/internal';
-import type { SharedProps } from '../../shared_props';
+import type { Component } from '../../component';
 
-interface ItemProps extends SharedProps {
+interface ItemProps extends Component {
     active?: boolean;
     horizontally?: boolean;
     fitted?: boolean;

@@ -1,6 +1,6 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import { Style } from '../../style'
-import { SharedProps } from '../../shared_props'
+import { Component } from '../../component'
 import { Align } from '../../variations'
 import { GridWide, Visibility } from './grid'
 type GridType =
@@ -9,7 +9,7 @@ type GridType =
   | 'celled'
   | 'internally celled'
 
-interface RowProps extends SharedProps {
+interface RowProps extends Component {
   class?: string
   style?: Style
   type?: GridType

@@ -1,7 +1,7 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import { Style } from '../../style';
-import { SharedProps } from '../../shared_props';
-interface ListProps extends SharedProps {
+import { Component } from '../../component';
+interface ListProps extends Component {
     class?: string;
     fluid?: boolean;
     circular?: boolean;

@@ -1,6 +1,6 @@
 import { SvelteComponentTyped} from 'svelte/internal';
-import type { SharedProps } from '../../shared_props';
-interface DimmableProps extends SharedProps,Module<ToastSettings, Controller> {
+import type { Component } from '../../component';
+interface DimmableProps extends Component,Module<ToastSettings, Controller> {
 }
 /**
  * Vomantic Dimmable

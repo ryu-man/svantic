@@ -1,6 +1,5 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import { Style } from '../../style'
-import { SharedProps } from '../../shared_props'
 import { Attach, Color, Size, Speed } from '../../variations'
 import { Module } from '../module'
 import Controller from './controller'
@@ -18,7 +17,7 @@ type State =
   | 'success'
   | 'active'
 
-interface ProgressProps extends SharedProps,Module<Controller, ProgressSettings> {
+interface ProgressProps extends Module<Controller, ProgressSettings> {
   class?: string
   type?: Type
   attached?: Attach

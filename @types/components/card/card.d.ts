@@ -1,8 +1,8 @@
 import { SvelteComponentTyped} from 'svelte/internal';
-import type { SharedProps } from '../../shared_props';
+import type { Component } from '../../component';
 import type { Style } from '../../style';
 
-interface CardProps extends SharedProps {
+interface CardProps extends Component {
     class?: string;
     style?: Style;
     link?: string;

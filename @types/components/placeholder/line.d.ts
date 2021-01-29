@@ -1,7 +1,7 @@
-import { SharedProps } from '../../shared_props';
+import { Component } from '../../component';
 import { SvelteComponentTyped} from 'svelte';
 
-interface LineProps extends SharedProps {
+interface LineProps extends Component {
     short ?: boolean
     medium ?: boolean
     full ?: boolean

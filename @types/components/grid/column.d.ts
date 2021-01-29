@@ -1,10 +1,10 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import { Style } from '../../style'
-import { SharedProps } from '../../shared_props'
+import { Component } from '../../component'
 import { Align, Color, Float, Wide } from '../../variations'
 import {GridWide, Visibility} from './grid'
 
-interface ColumnProps extends SharedProps {
+interface ColumnProps extends Component {
   class?: string
   style?: Style
   wide?: GridWide | GridWide[]

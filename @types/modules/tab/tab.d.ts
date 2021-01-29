@@ -1,7 +1,7 @@
 import { SvelteComponentTyped } from 'svelte/internal'
-import { SharedProps } from '../../shared_props'
+import { Component } from '../../component'
 
-interface TabProps extends SharedProps {
+interface TabProps extends Component {
   attached: string
   active: boolean
   segment: boolean

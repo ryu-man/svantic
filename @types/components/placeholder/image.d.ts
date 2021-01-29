@@ -1,7 +1,7 @@
-import { SharedProps } from '../../shared_props'
+import { Component } from '../../component'
 import { SvelteComponentTyped } from 'svelte'
 
-interface ImageProps extends SharedProps {
+interface ImageProps extends Component {
   header?: boolean
   square?: boolean
 }

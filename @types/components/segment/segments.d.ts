@@ -1,9 +1,9 @@
 import { SvelteComponentTyped} from 'svelte/internal';
-import type { SharedProps } from '../../shared_props';
+import type { Component } from '../../component';
 
 declare type Type = 'raised' | 'piled' | 'vertical' | 'horizontal stackable' | 'horizontal';
 
-interface SegmentsProps extends SharedProps {
+interface SegmentsProps extends Component {
     type?: Type;
 }
 /**

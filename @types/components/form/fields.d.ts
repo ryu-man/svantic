@@ -1,8 +1,8 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import type { Style } from '../../style';
 import type { Wide } from '../../variations';
-import type { SharedProps } from '../../shared_props';
-interface FieldsProps extends SharedProps {
+import type { Component } from '../../component';
+interface FieldsProps extends Component {
     style?: Style;
     wide?: Wide;
     class?: string;

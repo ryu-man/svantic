@@ -1,11 +1,11 @@
-import { SharedProps } from '../../shared_props'
+import { Component } from '../../component'
 import { SvelteComponentTyped } from 'svelte'
 
 type Type = 'fade'|'move'|'rotate'
 type Direction = 'up'|'down'|'left'|'right'
 type State = 'active'|'disable'
 
-interface RevealProps extends SharedProps {
+interface RevealProps extends Component {
     type?: Type
     direction?:Direction
     state?:State

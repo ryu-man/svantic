@@ -1,10 +1,10 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import { Float, Align, Attach, Color } from '../../variations';
-import { SharedProps } from '../../shared_props';
+import { Component } from '../../component';
 declare type Type = 'raised' | 'placeholder' | 'stacked' | 'piled' | 'vertical';
 declare type State = 'loading' | 'disabled';
 declare type Emphasis = 'secondary' | 'tertiary';
-interface SegmentProps extends SharedProps {
+interface SegmentProps extends Component {
     type?: Type;
     state?: State;
     floated?: Float;

@@ -1,6 +1,6 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import type { Size, Float, Color, Attach } from '../../variations'
-import type { SharedProps, DOMEvents } from '../../shared_props'
+import type { Component, DOMEvents } from '../../component'
 
 declare type Type =
   | 'primary'
@@ -25,7 +25,7 @@ declare type Social =
   | 'facebook'
   | ''
 
-interface ButtonProps extends SharedProps {
+interface ButtonProps extends Component {
   size?: Size
   type?: Type | Type[]
   color?: Color
