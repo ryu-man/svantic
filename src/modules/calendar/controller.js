@@ -4,7 +4,7 @@ export default class CalendarController extends Controller {
     setup() {
         this.selection.calendar(this.settings);
     }
-    
+
     refresh() {
         this.customBehavior('refresh')
     }

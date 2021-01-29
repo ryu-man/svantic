@@ -1,6 +1,6 @@
 import { SvelteComponentTyped} from 'svelte/internal';
 import type { Component } from '../../component';
-import type { Size } from '../type';
+import type { Size } from '../../elements/type';
 import type { Float, Wide } from '../../variations';
 import Item from './item'
 

@@ -8,5 +8,8 @@ import '../fomantic/dist/components/feed.min.css'
 import '../fomantic/dist/components/comment.min.css'
 import '../fomantic/dist/components/nag.min.css'
 
-export * from './components'
+export * from './collections'
+export * from './elements'
 export * from './modules'
+export * from './views'
+
