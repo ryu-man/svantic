@@ -3,7 +3,7 @@ export default class Controller {
         this.jQuery = window['$'] || window['jQuery'];
         this.settings = settings;
         this.target = target;
-        this.selection = this.jQuery(target);
+        this.selection = this.jQuery(this.target);
 
         this.setup()
     }
