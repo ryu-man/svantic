@@ -1,5 +1,5 @@
 {
-  "name": "vomantic",
+  "name": "svantic",
   "version": "0.1.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -10,16 +10,13 @@
     "src"
   ],
   "scripts": {
-    "tsc": "tsc --sourceMap false",
-    "tsc:w": "tsc -w",
-    "tsc:d": "tsc -d --declarationDir @types/ --emitDeclarationOnly --declarationMap --rootDir src/ --noEmitOnError  false",
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public",
     "validate": "svelte-check",
     "pretty": "prettier --write \"src/**/*.{svelte,js,ts}\"",
     "test": "jest",
-    "fomantic-build": "gulp build -f fomantic/gulpfile.js"
+    "build:fomantic": "gulp build -f fomantic/gulpfile.js"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.1",
