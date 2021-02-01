@@ -1,4 +1,4 @@
-import '../../../fomantic/dist/components/label.css'
+import '../../../semantic/dist/components/label.css'
 
 import { default as Tag } from './tag.svelte'
 import { default as Ribbon } from './ribbon.svelte'

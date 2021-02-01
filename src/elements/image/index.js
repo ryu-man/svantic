@@ -1,4 +1,4 @@
-import '../../../fomantic/dist/components/image.css'
+import '../../../semantic/dist/components/image.css'
 
 import { default as Image } from './image.svelte'
 import { default as ImageLink } from './link.svelte'

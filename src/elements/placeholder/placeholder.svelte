@@ -1,5 +1,5 @@
 <script>
-  import '../../../fomantic/dist/components/placeholder.css'
+  import '../../../semantic/dist/components/placeholder.css'
   import { css } from '../../utils'
 
   let _class = ''

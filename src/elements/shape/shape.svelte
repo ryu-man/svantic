@@ -1,5 +1,5 @@
 <script>
-  import '../../../fomantic/dist/components/shape.css'
+  import '../../../semantic/dist/components/shape.css'
   import { css } from '../../utils'
 
   export let style = {}

@@ -1,5 +1,5 @@
 <script>
-  import '../../../fomantic/dist/components/message.css'
+  import '../../../semantic/dist/components/message.css'
   import { classNames, css, register } from '../../utils'
 
   export let type = ''

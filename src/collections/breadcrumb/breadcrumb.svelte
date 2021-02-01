@@ -1,5 +1,5 @@
 <script>
-  import '../../../fomantic/dist/components/breadcrumb.css';
+  import '../../../semantic/dist/components/breadcrumb.css';
   import { register } from '../../utils/events'
   import { css } from '../../utils'
 

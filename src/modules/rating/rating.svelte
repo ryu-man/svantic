@@ -1,6 +1,6 @@
 <script>
-  import '../../../fomantic/dist/components/rating'
-  import '../../../fomantic/dist/components/rating.css'
+  import '../../../semantic/dist/components/rating'
+  import '../../../semantic/dist/components/rating.css'
   import { css } from '../../utils'
   import Controller from './controller'
 
