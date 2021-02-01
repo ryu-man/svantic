@@ -13,5 +13,5 @@ Feed.Extra = {
     Images: ExtraImages
 }
 
-export { Feed }
+export { Feed,Content,Date,ExtraImages,ExtraText,Label }
 export default Feed
