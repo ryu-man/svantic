@@ -4,4 +4,5 @@ import { default as Header } from './header.svelte'
 
 Popup.Header = Header
 
-export { Popup }
+export { Popup, Header }
+export default Popup
