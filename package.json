@@ -16,7 +16,7 @@
     "validate": "svelte-check",
     "pretty": "prettier --write \"src/**/*.{svelte,js,ts}\"",
     "test": "jest",
-    "build:fomantic": "gulp build -f fomantic/gulpfile.js"
+    "build:fomantic": "gulp build -f node_modules/fomantic-ui/gulpfile.js"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.1",
