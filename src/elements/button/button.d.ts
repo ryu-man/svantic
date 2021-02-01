@@ -42,6 +42,7 @@ interface ButtonProps extends Component {
   inverted?: boolean
   circular?: boolean
   vertical?: boolean
+  tabIndex?: number
   on?: DOMEvents<HTMLDivElement>
 }
 /**

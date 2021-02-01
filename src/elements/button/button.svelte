@@ -20,6 +20,7 @@
   export let negative = false
   export let inverted = false
   export let vertical = false
+  export let tabIndex
   export let style = {}
   export let on = {}
 
@@ -27,6 +28,9 @@
 
   function init(node) {
     css(node, style)
+    if (tabIndex !== undefined && tabIndex!== null) {
+      node.tabIndex = tabIndex
+    }
     const unregister = register(node, on)
     return {
       destroy() {
