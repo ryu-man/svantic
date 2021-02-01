@@ -10,6 +10,7 @@ interface MenuProps extends Component {
     wide?: Wide;
     size?: Size;
     attached?: Float;
+    floated?: Float
     fluid?: boolean;
     compact?: boolean;
     fixed?: boolean;
@@ -20,7 +21,7 @@ interface MenuProps extends Component {
     borderless?: boolean;
 }
 /**
- * Vomantic Menu
+ * @description 
  */
 declare class Menu extends SvelteComponentTyped<MenuProps> {
     static Item: new ()=> Item

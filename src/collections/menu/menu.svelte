@@ -5,10 +5,10 @@
   let _class = ''
   export let style = {}
   export let type = ''
-  export let wide = ''
-  export let size = ''
+  export let wide 
+  export let size 
   export let item = false
-  export let attached = ''
+  export let attached
   export let fluid = false
   export let compact = false
   export let fixed = false
@@ -17,6 +17,7 @@
   export let icon = false
   export let labeled = false
   export let borderless = false
+  export let floated
   export { _class as class }
 </script>
 
@@ -31,7 +32,7 @@
   class:icon
   class:labeled
   class:borderless
-  class="{classNames(type, [attached, 'attached'], wide, size, 'ui menu', _class)}"
+  class="{classNames(type, [attached, 'attached'], [floated, 'floated'], wide, size, 'ui menu', _class)}"
 >
   <slot />
 </div>
