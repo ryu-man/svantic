@@ -10,6 +10,6 @@ interface LineProps extends Component {
     fluid ?: boolean
 }
 /**
- * Vomantic Placeholder Line
+ * Svantic Placeholder Line
  */
 export default class Line extends SvelteComponentTyped<LineProps> {}

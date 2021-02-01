@@ -14,7 +14,7 @@ interface FormProps extends Component {
     equal?: boolean;
 }
 /**
- * Vomantic Form
+ * Svantic Form
  */
 declare class Form extends SvelteComponentTyped<FormProps> {
     static Field: new()=> Field

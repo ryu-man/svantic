@@ -19,7 +19,7 @@ interface ListProps extends Component {
     style?: Style;
 }
 /**
- * Vomantic List
+ * Svantic List
  */
 declare class List extends SvelteComponentTyped<ListProps> {
 }

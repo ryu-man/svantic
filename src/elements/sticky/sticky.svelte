@@ -1,5 +1,5 @@
 <script>
-  import '../../../fomantic/dist/components/sticky.css'
+  import '../../../semantic/dist/components/sticky.css'
   import { css, classNames } from '../../utils'
 
   let _class = ''

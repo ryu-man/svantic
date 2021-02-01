@@ -1,4 +1,4 @@
-import '../../../fomantic/dist/components/header.css'
+import '../../../semantic/dist/components/header.css'
 
 import { default as Header } from './header.svelte'
 import { default as H1 } from './h1.svelte'

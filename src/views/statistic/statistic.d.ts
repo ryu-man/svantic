@@ -15,6 +15,6 @@ interface StatisticProps extends Component {
   horizontal?: boolean
 }
 /**
- * Vomantic Statistic
+ * Svantic Statistic
  */
 export default  class Statistic extends SvelteComponentTyped<StatisticProps> {}

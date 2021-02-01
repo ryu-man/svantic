@@ -16,7 +16,7 @@ interface SliderProps extends Module<Controller, SliderSettings> {
     vertical?: boolean;
 }
 /**
- * Vomantic Slider
+ * Svantic Slider
  */
 declare class Slider extends SvelteComponentTyped<SliderProps> {
 }

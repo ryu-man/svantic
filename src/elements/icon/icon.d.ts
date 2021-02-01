@@ -22,7 +22,7 @@ interface IconProps extends Component {
     divider?: boolean;
 }
 /**
- * Vomantic Icon
+ * Svantic Icon
  */
 declare class Icon extends SvelteComponentTyped<IconProps> {
 }

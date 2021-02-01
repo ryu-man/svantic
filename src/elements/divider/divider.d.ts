@@ -12,6 +12,6 @@ interface DividerProps extends Component {
     inverted?: boolean;
 }
 /**
- * Vomantic Divider
+ * Svantic Divider
  */
 export default class Divider extends SvelteComponentTyped<DividerProps> {}

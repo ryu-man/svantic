@@ -17,7 +17,7 @@ interface SearchProps extends Module<Controller, SearchSettings> {
     animation?: Animation;
 }
 /**
- * Vomantic Search
+ * Svantic Search
  */
 declare class Search extends SvelteComponentTyped<SearchProps> {
 }

@@ -11,7 +11,7 @@ interface TagProps extends Component {
     inverted?: boolean;
 }
 /**
- * Vomantic Label Tag
+ * Svantic Label Tag
  */
 export default class Tag extends SvelteComponentTyped<TagProps> {
 }

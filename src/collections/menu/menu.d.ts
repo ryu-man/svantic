@@ -20,7 +20,7 @@ interface MenuProps extends Component {
     borderless?: boolean;
 }
 /**
- * Vomantic Menu
+ * Svantic Menu
  */
 declare class Menu extends SvelteComponentTyped<MenuProps> {
     static Item: new ()=> Item

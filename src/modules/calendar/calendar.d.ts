@@ -8,7 +8,7 @@ interface CalendarProps extends Module<Controller, CalendarSettings> {
   disabled?: boolean
 }
 /**
- * Vomantic Calendar
+ * Svantic Calendar
  */
 declare class Calendar extends SvelteComponentTyped<CalendarProps> {}
 export default Calendar

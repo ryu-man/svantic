@@ -11,7 +11,7 @@ interface FieldsProps extends Component {
     grouped?: boolean;
 }
 /**
- * Vomantic Fields
+ * Svantic Fields
  */
 declare class Fields extends SvelteComponentTyped<FieldsProps> {
 }

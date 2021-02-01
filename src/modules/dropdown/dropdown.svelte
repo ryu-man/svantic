@@ -1,6 +1,6 @@
 <script>
-  import '../../../fomantic/dist/components/dropdown'
-  import '../../../fomantic/dist/components/dropdown.css'
+  import '../../../semantic/dist/components/dropdown'
+  import '../../../semantic/dist/components/dropdown.css'
   import { css, classNames } from '../../utils'
   import Controller from './controller'
 

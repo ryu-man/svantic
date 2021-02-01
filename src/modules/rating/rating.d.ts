@@ -13,6 +13,6 @@ interface RatingProps extends Module<Controller, RatingSettings>{
   size?: Size
 }
 /**
- * Vomantic Rating
+ * Svantic Rating
  */
 export default class Rating extends SvelteComponentTyped<RatingProps> {}

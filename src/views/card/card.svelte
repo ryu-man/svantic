@@ -1,5 +1,5 @@
 <script>
-  import '../../../fomantic/dist/components/card.css'
+  import '../../../semantic/dist/components/card.css'
   import { register } from '../../utils/events'
   import { css } from '../../utils'
 

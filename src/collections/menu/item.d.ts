@@ -7,7 +7,7 @@ interface ItemProps extends Component {
     fitted?: boolean;
 }
 /**
- * Vomantic Menu Item
+ * Svantic Menu Item
  */
 declare class Item extends SvelteComponentTyped<ItemProps> {
 }

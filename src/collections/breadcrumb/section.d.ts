@@ -22,6 +22,6 @@ interface SectionProps extends Component {
     style?: Style;
 }
 /**
- * Vomantic Section
+ * Svantic Section
  */
 export default class Section extends SvelteComponentTyped<SectionProps> {}

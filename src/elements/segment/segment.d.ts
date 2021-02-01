@@ -26,7 +26,7 @@ interface SegmentProps extends Component {
     container ?:boolean
 }
 /**
- * Vomantic Segment
+ * Svantic Segment
  */
 declare class Segment extends SvelteComponentTyped<SegmentProps> {
 }

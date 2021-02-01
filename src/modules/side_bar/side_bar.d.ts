@@ -15,7 +15,7 @@ interface SidebarProps extends Module<Controller, SidebarSettings> {
     vertical?: boolean;
 }
 /**
- * Vomantic Sidebar
+ * Svantic Sidebar
  */
 declare class Sidebar extends SvelteComponentTyped<SidebarProps> {
 }

@@ -5,6 +5,6 @@ interface ItemProps extends Component{
   data?: string
 }
 /**
- * Vomantic TabularMenuItem
+ * Svantic TabularMenuItem
  */
 export default class Item extends SvelteComponentTyped<ItemProps> {}

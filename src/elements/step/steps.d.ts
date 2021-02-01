@@ -13,7 +13,7 @@ interface StepsProps extends Component {
     style?: Style;
 }
 /**
- * Vomantic Steps
+ * Svantic Steps
  */
 export default class Steps extends SvelteComponentTyped<StepsProps> {
 }

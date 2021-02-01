@@ -15,7 +15,7 @@ interface ColumnProps extends Component {
   visibility?: Visibility
 }
 /**
- * Vomantic Grid Column
+ * Svantic Grid Column
  */
 declare class Column extends SvelteComponentTyped<ColumnProps> {}
 export default Column

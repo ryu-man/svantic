@@ -1,6 +1,6 @@
 <script>
-  import '../../../fomantic/dist/components/toast'
-  import '../../../fomantic/dist/components/toast.css'
+  import '../../../semantic/dist/components/toast'
+  import '../../../semantic/dist/components/toast.css'
   import { css, register } from '../../utils'
   import Controller from './controller'
 

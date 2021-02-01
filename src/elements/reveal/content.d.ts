@@ -6,6 +6,6 @@ interface ContentProps extends Component {
   state?: State
 }
 /**
- * Vomantic Reveal Content
+ * Svantic Reveal Content
  */
 export default class Content extends SvelteComponentTyped<ContentProps> {}

@@ -5,7 +5,7 @@ interface ButtonsProps extends Component {
     color?: Color;
 }
 /**
- * Vomantic Buttons
+ * Svantic Buttons
  */
 declare class Buttons extends SvelteComponentTyped<ButtonsProps> {
 }

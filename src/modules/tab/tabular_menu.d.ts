@@ -12,7 +12,7 @@ interface TabularMenuProps extends Module<Controller, TabularMenuSettings> {
     active?: boolean;
 }
 /**
- * Vomantic TabularMenu
+ * Svantic TabularMenu
  */
 export default class TabularMenu extends SvelteComponentTyped<TabularMenuProps> {
     static Item: new ()=> Item

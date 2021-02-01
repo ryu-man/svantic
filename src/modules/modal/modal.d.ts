@@ -12,7 +12,7 @@ interface ModalProps extends Module<Controller, ModalSettings> {
     fullscreen?: boolean;
 }
 /**
- * Vomantic Modal
+ * Svantic Modal
  */
 declare class Modal extends SvelteComponentTyped<ModalProps> {
 }

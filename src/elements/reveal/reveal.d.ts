@@ -12,6 +12,6 @@ interface RevealProps extends Component {
     instant?:boolean
 }
 /**
- * Vomantic Reveal
+ * Svantic Reveal
  */
 export default class Reveal extends SvelteComponentTyped<RevealProps> {}

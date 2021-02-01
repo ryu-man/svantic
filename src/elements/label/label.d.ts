@@ -34,7 +34,7 @@ interface LabelProps extends Component {
   on?: DOMEvents<HTMLDivElement>
 }
 /**
- * Vomantic Label
+ * Svantic Label
  */
 declare class Label extends SvelteComponentTyped<LabelProps> {
   static Tag: new () => Tag

@@ -1,5 +1,5 @@
 <script>
-  import '../../../fomantic/dist/components/menu.css'
+  import '../../../semantic/dist/components/menu.css'
   import { classNames, css } from '../../utils'
 
   let _class = ''

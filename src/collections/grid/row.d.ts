@@ -19,7 +19,7 @@ interface RowProps extends Component {
   visibility?: Visibility
 }
 /**
- * Vomantic Grid Row
+ * Svantic Grid Row
  */
 declare class Row extends SvelteComponentTyped<RowProps> {}
 export default Row

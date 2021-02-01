@@ -21,7 +21,7 @@ interface EmojiProps extends Component {
     style?: Style;
 }
 /**
- * Vomantic Emoji
+ * Svantic Emoji
  */
 declare class Emoji extends SvelteComponentTyped<EmojiProps> {
 }

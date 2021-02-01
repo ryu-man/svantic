@@ -23,7 +23,7 @@ interface InputProps extends Component {
     transparent?: boolean;
 }
 /**
- * Vomantic Input
+ * Svantic Input
  *
  */
 declare class Input extends SvelteComponentTyped<InputProps>{

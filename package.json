@@ -5,10 +5,24 @@
   "module": "./dist/index.mjs",
   "svelte": "./src/index.js",
   "types": "./src/index.d.ts",
+  "description": "This is a project based on Fomantic UI implement for Svelte.js framework",
+  "homepage": "https://github.com/ryu-man/svantic#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryu-man/svantic.git"
+  },
+  "author": "ryu-man",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ryu-man/svantic/issues"
+  },
   "files": [
     "dist",
     "src"
   ],
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
@@ -16,7 +30,7 @@
     "validate": "svelte-check",
     "pretty": "prettier --write \"src/**/*.{svelte,js,ts}\"",
     "test": "jest",
-    "build:fomantic": "gulp build -f fomantic/gulpfile.js"
+    "build:fomantic": "gulp build -f node_modules/fomantic-ui/gulpfile.js"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.1",

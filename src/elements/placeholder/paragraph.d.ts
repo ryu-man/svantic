@@ -5,6 +5,6 @@ interface ParagraphProps extends Component {
     inverted?: boolean;
 }
 /**
- * Vomantic Placeholder Paragraph
+ * Svantic Placeholder Paragraph
  */
 export default class Paragraph extends SvelteComponentTyped<ParagraphProps> {}

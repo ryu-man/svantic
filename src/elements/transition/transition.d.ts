@@ -21,7 +21,7 @@ interface ButtonProps extends Component {
     style?: Style;
 }
 /**
- * Vomantic Button
+ * Svantic Button
  */
 declare class Button extends SvelteComponentTyped<ButtonProps> {
 }

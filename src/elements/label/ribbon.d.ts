@@ -7,6 +7,6 @@ interface RibbonProps extends Component {
   right?: boolean
 }
 /**
- * Vomantic Label Ribbon
+ * Svantic Label Ribbon
  */
 export default class Ribbon extends SvelteComponentTyped<RibbonProps> {}

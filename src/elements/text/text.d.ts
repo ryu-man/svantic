@@ -21,6 +21,6 @@ interface TextProps extends Component {
     style?: Style;
 }
 /**
- * Vomantic Text
+ * Svantic Text
  */
 export default class Text extends SvelteComponentTyped<TextProps> {}

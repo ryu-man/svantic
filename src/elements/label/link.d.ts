@@ -16,6 +16,6 @@ interface LinkProps extends Component {
   on?: {}
 }
 /**
- * Vomantic Label Link
+ * Svantic Label Link
  */
 export default class Link extends SvelteComponentTyped<LinkProps> {}

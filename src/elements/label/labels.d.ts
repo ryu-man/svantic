@@ -10,7 +10,7 @@ interface LabelsProps extends Component {
     inverted?: boolean;
 }
 /**
- * Vomantic Labels
+ * Svantic Labels
  */
 declare class Labels extends SvelteComponentTyped<LabelsProps> {
 }

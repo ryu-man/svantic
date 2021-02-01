@@ -21,7 +21,7 @@ interface StickyProps extends Component {
     style?: Style;
 }
 /**
- * Vomantic Sticky
+ * Svantic Sticky
  */
 declare class Sticky extends SvelteComponentTyped<StickyProps> {
 }

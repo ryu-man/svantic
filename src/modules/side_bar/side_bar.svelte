@@ -1,6 +1,6 @@
 <script>
-  import '../../../fomantic/dist/components/sidebar'
-  import '../../../fomantic/dist/components/sidebar.css'
+  import '../../../semantic/dist/components/sidebar'
+  import '../../../semantic/dist/components/sidebar.css'
   import { css, register, classNames } from '../../utils'
   import Controller from './controller'
 

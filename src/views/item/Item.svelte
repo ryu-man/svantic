@@ -1,5 +1,5 @@
 <script>
-  import '../../../fomantic/dist/components/item.css'
+  import '../../../semantic/dist/components/item.css'
   import { css } from '../../utils'
   
   let _class = ''
