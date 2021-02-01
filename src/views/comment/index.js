@@ -1,3 +1,5 @@
+import '../../../fomantic/dist/components/comment.css'
+
 import { default as Comments } from './comments.svelte'
 import { default as Comment } from './comment.svelte'
 import { default as Avatar } from './avatar.svelte'
