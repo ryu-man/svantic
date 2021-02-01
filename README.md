@@ -1,90 +1,98 @@
-# Vomantic UI
+# Svantic UI
 
-This is a project based on Fomantic UI implement for Svelte.js framework
+Svantic is a set of UI components for [Svelte](https://svelte.dev) based on the [Fomantic-UI](http://fomantic-ui.com) framework.
 
-## Get started
+# Documentation
 
-Install the dependencies...
+-- Coming soon --
+
+
+## Installation
+
+_Note that you will need to have [Node.js](https://nodejs.org) installed_
 
 ```bash
-cd svelte-app
+npm install --save-dev svantic
+```
+
+## Usage
+
+```html
+<Textfield bind:value filled label="Name" message="Enter your name" />
+
+<h1>Hello {value}!</h1>
+
+<script>
+    // import any components you want
+    import { Textfield } from 'svantic';
+
+    let value = 'world';
+</script>
+```
+## Quick start with new project
+
+Create a new project based on [sveltejs/template](https://github.com/sveltejs/template)
+
+```bash
+npx degit sveltejs/template svantic-app
+cd svantic-app
 npm install
 ```
 
-...then start [Rollup](https://rollupjs.org):
+_NOTE_: There are of course other ways to set up a project using svelte. This is just the quickest way to start.
+
+Add components
+
+```bash
+npm install --save-dev svantic
+```
+
+Modify file `src/App.svelte` in the following way
+
+```html
+<script>
+    // optional import focus-visible polyfill only once
+    import 'focus-visible';
+    // import any components
+    import { Button, Checkbox } from 'svantic';
+
+    let checked = true;
+</script>
+
+<Checkbox bind:checked>Checkbox</Checkbox>
+
+<p>Checkbox is {checked ? 'checked' : 'unchecked'}</p>
+
+<Button
+    outlined
+    shaped
+    color="Red"
+    on:click={() => { checked = !checked }}
+>
+    Inverse
+</Button>
+```
+
+
+...then start [Rollup](https://rollupjs.org/)
 
 ```bash
 npm run dev
 ```
 
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
+Navigate to [localhost:5000](http://localhost:5000)
 
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
+# Development
 
+1. Clone this repo: `git clone https://github.com/ryu-man/svantic.git`
+2. Install dependencies: `npm i`
+3. Start building fomantic: `npm run build:fomantic`
+4. Start the automated build: `npm run build`
+5. Open url that console prints in your browser
 
-## Building and running in production mode
+# License
 
-To create an optimised version of the app:
+Code released under MIT license.
 
-```bash
-npm run build
-```
+Copyright &copy;, ryu-man.
 
-You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
-
-
-## Single-page app mode
-
-By default, sirv will only respond to requests that match files in `public`. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.
-
-If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for *any* path. You can make it so by editing the `"start"` command in package.json:
-
-```js
-"start": "sirv public --single"
-```
-
-## Using TypeScript
-
-This template comes with a script to set up a TypeScript development environment, you can run it immediately after cloning the template with:
-
-```bash
-node scripts/setupTypeScript.js
-```
-
-Or remove the script via:
-
-```bash
-rm scripts/setupTypeScript.js
-```
-
-## Deploying to the web
-
-### With [Vercel](https://vercel.com)
-
-Install `vercel` if you haven't already:
-
-```bash
-npm install -g vercel
-```
-
-Then, from within your project folder:
-
-```bash
-cd public
-vercel deploy --name my-project
-```
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public my-project.surge.sh
-```
