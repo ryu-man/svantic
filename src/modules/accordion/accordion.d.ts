@@ -2,7 +2,9 @@ import type { Style } from '../../style'
 import { SvelteComponentTyped } from 'svelte/internal'
 import { Module } from '../module'
 import Controller from './controller'
-import {AccordionSettings} from './settings'
+import AccordionSettings from './settings'
+import Title from './title'
+import Content from './content'
 interface AccordionProps extends Module<Controller, AccordionSettings> {
   class?: string
   active?: boolean
@@ -23,7 +25,10 @@ interface AccordionProps extends Module<Controller, AccordionSettings> {
   style?: Style
 }
 /**
- * Vomantic Accordion
+ * @description An accordion allows users to toggle the display of sections of content
  */
-declare class Accordion extends SvelteComponentTyped<AccordionProps> {}
+declare class Accordion extends SvelteComponentTyped<AccordionProps> {
+  static Title: new()=> Title
+  static Content: new()=> Content
+}
 export default Accordion
