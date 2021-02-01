@@ -6,3 +6,4 @@ Grid.Row = Row
 Grid.Column = Column
 
 export {Grid, Row, Column}
+export default Grid

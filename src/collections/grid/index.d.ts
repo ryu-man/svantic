@@ -1,3 +1,7 @@
-export { default as Grid } from './grid'
-export { default as Row } from './row'
-export { default as Column } from './column'
+import {default as Grid} from './grid'
+import {default as Row} from './row'
+import {default as Column} from './column'
+
+
+export {Grid, Row, Column}
+export default Grid
