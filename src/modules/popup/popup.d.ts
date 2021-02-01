@@ -25,7 +25,7 @@ interface PopupProps extends Module<Controller, PopupSettings> {
     style?: Style;
 }
 /**
- * Vomantic Popup
+ * Svantic Popup
  */
 declare class Popup extends SvelteComponentTyped<PopupProps> {
     Header: new ()=> Header

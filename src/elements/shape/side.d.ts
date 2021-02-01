@@ -22,7 +22,7 @@ interface SideProps extends Component {
     style?: Style;
 }
 /**
- * Vomantic Shape Side
+ * Svantic Shape Side
  */
 export default class Side extends SvelteComponentTyped<SideProps> {
 }

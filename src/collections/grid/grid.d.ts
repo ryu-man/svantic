@@ -28,7 +28,7 @@ interface GridProps extends Component {
   reversed?: Reversed
 }
 /**
- * Vomantic Grid
+ * Svantic Grid
  */
 declare class Grid extends SvelteComponentTyped<GridProps> {}
 export default Grid

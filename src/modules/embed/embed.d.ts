@@ -21,7 +21,7 @@ interface EmbedProps extends Module<Controller, EmbedSettings> {
     icon?: boolean;
 }
 /**
- * Vomantic Embed
+ * Svantic Embed
  */
 declare class Embed extends SvelteComponentTyped<EmbedProps> {
 }

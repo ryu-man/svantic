@@ -12,7 +12,7 @@ interface ContainerProps extends Component {
     grid?:boolean
 }
 /**
- * Vomantic Container
+ * Svantic Container
  */
 declare class Container extends SvelteComponentTyped<ContainerProps> {
 }

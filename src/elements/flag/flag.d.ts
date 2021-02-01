@@ -7,6 +7,6 @@ interface FlagProps extends Component {
   isoCode?: ISOCODE
 }
 /**
- * Vomantic Flag
+ * Svantic Flag
  */
 export default class Flag extends SvelteComponentTyped<FlagProps> {}

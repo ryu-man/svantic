@@ -11,7 +11,7 @@ interface RailProps extends Component {
     close?: boolean;
 }
 /**
- * Vomantic Rail
+ * Svantic Rail
  */
 declare class Rail extends SvelteComponentTyped<RailProps> {
 }

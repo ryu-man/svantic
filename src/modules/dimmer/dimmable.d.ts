@@ -3,7 +3,7 @@ import type { Component } from '../../component';
 interface DimmableProps extends Component,Module<ToastSettings, Controller> {
 }
 /**
- * Vomantic Dimmable
+ * Svantic Dimmable
  */
 declare class Dimmable extends SvelteComponentTyped<DimmableProps> {
 }

@@ -7,6 +7,6 @@ interface DividerProps extends Component {
     style?: Style;
 }
 /**
- * Vomantic Divider
+ * Svantic Divider
  */
 export default class Divider extends SvelteComponentTyped<DividerProps> {}

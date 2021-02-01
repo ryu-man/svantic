@@ -7,7 +7,7 @@ interface SegmentsProps extends Component {
     type?: Type;
 }
 /**
- * Vomantic Segments
+ * Svantic Segments
  */
 export default  class Segments extends SvelteComponentTyped<SegmentsProps> {
 }

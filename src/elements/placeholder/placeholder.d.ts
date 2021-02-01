@@ -9,7 +9,7 @@ interface PlaceholderProps extends Component {
   inverted?: boolean
 }
 /**
- * Vomantic Placeholder
+ * Svantic Placeholder
  */
 export default class Placeholder extends SvelteComponentTyped<PlaceholderProps> {
   static Header: new () => Header

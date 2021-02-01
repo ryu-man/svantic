@@ -12,6 +12,6 @@ interface ProgressProps extends Component,Module<ToastSettings, Controller> {
 }
 
 /**
- * Vomantic Bar
+ * Svantic Bar
  */
 export default class Bar extends SvelteComponentTyped<ProgressProps> {}

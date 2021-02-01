@@ -19,7 +19,7 @@ interface TableProps extends Component {
     unstackable?: boolean;
 }
 /**
- * Vomantic Table
+ * Svantic Table
  */
 declare class Table extends SvelteComponentTyped<TableProps> {
 }

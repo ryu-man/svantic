@@ -19,7 +19,7 @@ interface DimmerProps extends Module<Controller, DimmerSettings> {
     inverted?: boolean;
 }
 /**
- * Vomantic Dimmer
+ * Svantic Dimmer
  */
 declare class Dimmer extends SvelteComponentTyped<DimmerProps> {
 }

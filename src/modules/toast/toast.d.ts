@@ -12,7 +12,7 @@ interface ToastProps extends Module<Controller, ToastSettings> {
   icon?: boolean
 }
 /**
- * Vomantic Toast
+ * Svantic Toast
  */
 declare class Toast extends SvelteComponentTyped<ToastProps> {}
 export default Toast

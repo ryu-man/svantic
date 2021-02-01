@@ -19,7 +19,7 @@ interface ImageProps extends Component {
     space?: boolean;
 }
 /**
- * Vomantic Image
+ * Svantic Image
  */
 declare class Image extends SvelteComponentTyped<ImageProps> {
 }

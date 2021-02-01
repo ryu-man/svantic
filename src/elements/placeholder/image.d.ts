@@ -6,7 +6,7 @@ interface ImageProps extends Component {
   square?: boolean
 }
 /**
- * Vomantic Placeholder Image
+ * Svantic Placeholder Image
  */
 declare class Image extends SvelteComponentTyped<ImageProps> {}
 export default Image

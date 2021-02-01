@@ -6,7 +6,7 @@ interface HeaderProps {
     style?: Style;
 }
 /**
- * Vomantic Popup
+ * Svantic Popup
  */
 declare class Header extends SvelteComponentTyped<HeaderProps> {
 }

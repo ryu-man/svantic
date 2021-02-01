@@ -22,7 +22,7 @@ interface ShapeProps extends Component {
     style?: Style;
 }
 /**
- * Vomantic Shape
+ * Svantic Shape
  */
 declare class Shape extends SvelteComponentTyped<ShapeProps> {
     static Side: new ()=> Side

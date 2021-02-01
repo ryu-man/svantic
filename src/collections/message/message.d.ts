@@ -14,7 +14,7 @@ interface MessageProps extends Component {
     compact?: boolean;
 }
 /**
- * Vomantic Message
+ * Svantic Message
  */
 declare class Message extends SvelteComponentTyped<MessageProps> {
 }

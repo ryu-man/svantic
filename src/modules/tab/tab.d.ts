@@ -8,6 +8,6 @@ interface TabProps extends Component {
   tab: string
 }
 /**
- * Vomantic Tab
+ * Svantic Tab
  */
 export default class Tab extends SvelteComponentTyped<TabProps> {}

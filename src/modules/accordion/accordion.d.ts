@@ -23,7 +23,7 @@ interface AccordionProps extends Module<Controller, AccordionSettings> {
   style?: Style
 }
 /**
- * Vomantic Accordion
+ * Svantic Accordion
  */
 declare class Accordion extends SvelteComponentTyped<AccordionProps> {}
 export default Accordion

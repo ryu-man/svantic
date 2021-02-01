@@ -51,7 +51,7 @@ interface DropdownProps extends Module<Controller, DropdownSettings> {
   scrolling?: boolean
 }
 /**
- * Vomantic Dropdown
+ * Svantic Dropdown
  */
 declare class Dropdown extends SvelteComponentTyped<DropdownProps> {
   static Select : new ()=>Dropdown

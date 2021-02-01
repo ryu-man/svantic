@@ -13,7 +13,7 @@ interface FieldProps extends Component {
     required?: boolean;
 }
 /**
- * Vomantic Field
+ * Svantic Field
  */
 declare class Field extends SvelteComponentTyped<FieldProps> {
 }

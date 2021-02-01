@@ -32,6 +32,6 @@ interface ProgressProps extends Module<Controller, ProgressSettings> {
 }
 
 /**
- * Vomantic Progress
+ * Svantic Progress
  */
 export default class Progress extends SvelteComponentTyped<ProgressProps> {}

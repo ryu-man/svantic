@@ -16,7 +16,7 @@ interface CheckboxProps extends Module<Controller, CheckboxSettings> {
   inverted?: boolean
 }
 /**
- * Vomantic Checkbox
+ * Svantic Checkbox
  */
 declare class Checkbox extends SvelteComponentTyped<CheckboxProps> {}
 export default Checkbox
