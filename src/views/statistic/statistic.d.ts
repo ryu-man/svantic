@@ -3,6 +3,8 @@ import {SvelteComponentTyped} from 'svelte/internal'
 import { Style } from '../../style'
 import { Color, Float, Size } from '../../variations'
 import { Component } from '../../component'
+import Label from './label'
+import Value from './value'
 
 interface StatisticProps extends Component {
   class?: string
@@ -15,6 +17,9 @@ interface StatisticProps extends Component {
   horizontal?: boolean
 }
 /**
- * Vomantic Statistic
+ * @description 
  */
-export default  class Statistic extends SvelteComponentTyped<StatisticProps> {}
+export default class Statistic extends SvelteComponentTyped<StatisticProps> {
+  static Label: new ()=> Label
+  static Value: new ()=> Value
+}
