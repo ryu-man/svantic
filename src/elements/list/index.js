@@ -1,4 +1,4 @@
-import '../../../fomantic/dist/components/list.css'
+import '../../../semantic/dist/components/list.css'
 
 import { default as Link } from './link.svelte'
 import { default as List } from './list.svelte'

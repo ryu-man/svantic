@@ -2,10 +2,9 @@
 /public/
 /dist/
 /example/
-/fomantic/
+/semantic/
 .todo
 .DS_Store
 .todo
 *.log
-package-lock.json
 .vscode

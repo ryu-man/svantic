@@ -1,5 +1,5 @@
 <script>
-  import '../../../fomantic/dist/components/item.css'
+  import '../../../semantic/dist/components/item.css'
 </script>
 
 <div class="item">

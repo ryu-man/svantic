@@ -1,5 +1,5 @@
 <script>
-  import '../../../fomantic/dist/components/rail.css'
+  import '../../../semantic/dist/components/rail.css'
   import { css, register, classNames } from '../../utils'
 
   let _class = ''

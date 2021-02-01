@@ -1,6 +1,6 @@
 <script>
-  import '../../../fomantic/dist/components/modal'
-  import '../../../fomantic/dist/components/modal.css'
+  import '../../../semantic/dist/components/modal'
+  import '../../../semantic/dist/components/modal.css'
   import { css } from '../../utils'
   import Controller from './controller'
 

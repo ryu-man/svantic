@@ -1,5 +1,5 @@
 <script>
-  import '../../../fomantic/dist/components/button.css'
+  import '../../../semantic/dist/components/button.css'
   import { css } from '../../utils'
 
   export let color = ''

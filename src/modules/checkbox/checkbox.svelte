@@ -1,6 +1,6 @@
 <script>
-  import '../../../fomantic/dist/components/checkbox'
-  import '../../../fomantic/dist/components/checkbox.css'
+  import '../../../semantic/dist/components/checkbox'
+  import '../../../semantic/dist/components/checkbox.css'
   import { classNames, css } from '../../utils'
   import Controller from './controller'
 

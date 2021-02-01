@@ -1,4 +1,4 @@
-import '../../../fomantic/dist/components/sticky'
+import '../../../semantic/dist/components/sticky'
 import Controller from "../controller";
 
 export default class SticyController extends Controller{
