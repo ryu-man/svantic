@@ -2,6 +2,8 @@ import { SvelteComponentTyped } from 'svelte/internal'
 import { Style } from '../../style'
 import { Component } from '../../component'
 import { Wide } from '../../variations'
+import type Column from './column'
+import type Row from './row'
 
 type GridType =
   | 'divided'
@@ -28,7 +30,10 @@ interface GridProps extends Component {
   reversed?: Reversed
 }
 /**
- * Vomantic Grid
+ * @description 
  */
-declare class Grid extends SvelteComponentTyped<GridProps> {}
+declare class Grid extends SvelteComponentTyped<GridProps> {
+  static Column: new ()=> Column
+  static Row: new ()=> Row
+}
 export default Grid
