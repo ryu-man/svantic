@@ -1,4 +1,6 @@
 <script>
+  import '../../../fomantic/dist/components/feed.css'
+
   import { classNames, css } from '../../utils'
   let _class = ''
   export { _class as class }
