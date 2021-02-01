@@ -22,6 +22,7 @@
   export let dimmable = false
   export let dimmed = false
   export let container = false
+  export let vertical  = false
   export let style = {}
   export let on = {}
   export { _class as class }
@@ -54,6 +55,7 @@
   class:blurring
   class:dimmable
   class:dimmed
+  class:vertical
   class="{classNames(state, color, emphasis, type, [floated, 'floated'], [attached, 'attached'], [aligned, 'aligned'], 'ui segment', _class)}"
   class:container
 >

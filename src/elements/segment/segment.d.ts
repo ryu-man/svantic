@@ -24,6 +24,7 @@ interface SegmentProps extends Component {
     blurring?: boolean;
     dimmed?: boolean;
     container ?:boolean
+    vertical ?: boolean
 }
 /**
  * Vomantic Segment
