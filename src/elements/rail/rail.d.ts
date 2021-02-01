@@ -1,18 +1,21 @@
-import { SvelteComponentTyped} from 'svelte/internal';
-import type { Style } from '../../style';
-import type { Component } from '../../component';
+import { SvelteComponentTyped } from 'svelte/internal'
+import type { Style } from '../../style'
+import type { Component } from '../../component'
+import type { Size } from 'src/variations'
+
+type Side = 'left' | 'right'
 interface RailProps extends Component {
-    class?: string;
-    style?: Style;
-    side?: string;
-    internal?: boolean;
-    dividing?: boolean;
-    attached?: boolean;
-    close?: boolean;
+  class?: string
+  style?: Style
+  side?: Side
+  internal?: Side
+  dividing?: Side
+  attached?: Side
+  close?: Side
+  Size?: Size
 }
 /**
- * Vomantic Rail
+ * @description
  */
-declare class Rail extends SvelteComponentTyped<RailProps> {
-}
-export default Rail;
+declare class Rail extends SvelteComponentTyped<RailProps> {}
+export default Rail

@@ -1,16 +1,17 @@
 <script>
   import '../../../fomantic/dist/components/rail.css'
-  import { css, register } from '../../utils'
+  import { css, register, classNames } from '../../utils'
 
   let _class = ''
   export { _class as class }
-  export let side = ''
-  export let internal = false
-  export let dividing = false
-  export let attached = false
-  export let close = false
-  export let style= {}
-  export let on= {}
+  export let side
+  export let internal
+  export let dividing
+  export let attached
+  export let close
+  export let size
+  export let style = {}
+  export let on = {}
 
   function init(node) {
     // the node has been mounted in the DOM
@@ -28,11 +29,19 @@
 
 <div
   use:init
-  class:internal
   class:dividing
   class:attached
   class:close
-  class=" {side} ui rail {_class}"
+  class="{classNames(
+    side,
+    [internal, 'internal'],
+    [dividing, 'dividing'],
+    [attached, 'attached'],
+    [close, 'close'],
+    size,
+    _class,
+    'ui rail'
+  )}"
 >
   <slot>
     <!-- optional fallback -->
