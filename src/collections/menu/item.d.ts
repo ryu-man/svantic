@@ -5,9 +5,10 @@ interface ItemProps extends Component {
     active?: boolean;
     horizontally?: boolean;
     fitted?: boolean;
+    href?: string
 }
 /**
- * Vomantic Menu Item
+ * @description 
  */
 declare class Item extends SvelteComponentTyped<ItemProps> {
 }

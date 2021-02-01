@@ -4,6 +4,7 @@
   export let active = false
   export let horizontally = false
   export let fitted = false
+  export let href
   export let style = {}
   export let on = {}
   let _class = ''
@@ -12,7 +13,7 @@
   function init(node) {
     css(node, style)
     const unregister = register(node, on)
-
+    href && (node.href = href)
     return {
       destroy() {
         unregister()
