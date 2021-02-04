@@ -1,8 +1,10 @@
-export { default as Button } from './button.svelte'
-export { default as Buttons } from './buttons.svelte'
+import { default as Buttons } from "./buttons.svelte";
+import { default as Button } from "./button.svelte";
+import { default as Content } from "./content.svelte"
+import { default as Or} from './or.svelte'
 
-// Button.Animated = AnimatedButton
-// Button.Conditionals = ConditionalsButton
-// Button.Labeled = LabeledButton
-// Button.LabeledIcon = LabeledButton
-// export { Button, AnimatedButton, ConditionalsButton, LabeledButton, LabeledIconButton }
+Button.Content = Content
+Button.Or = Or
+
+export { Button, Buttons , Content}
+export default Button
