@@ -16,7 +16,7 @@
     ...data
   }
 
-  function init(node, settings) {
+  function module(node, settings) {
     let controller = new Controller(node, settings)
     onMount?.(controller)
 
@@ -31,7 +31,7 @@
 </script>
 
 <div
-  use:init="{settings}"
+  use:module="{settings}"
   use:css="{style}"
   class="{_class} ui embed"
   data-source="{_data.source}"

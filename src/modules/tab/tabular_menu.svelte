@@ -13,7 +13,7 @@
   export let settings = {}
   export let onMount
 
-  function init(node, settings) {
+  function module(node, settings) {
     css(node, style)
 
     let controller = new Controller(node, settings)
@@ -30,7 +30,7 @@
 </script>
 
 <div
-  use:init="{settings}"
+  use:module="{settings}"
   class:loading
   class:segment
   class:active

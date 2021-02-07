@@ -13,7 +13,7 @@
   export let on = {}
   export let onMount
 
-  function init(node, settings) {
+  function module(node, settings) {
     // the node has been mounted in the DOM
     css(node, style)
     const unregister = register(node, on)
@@ -33,7 +33,7 @@
 </script>
 
 <div
-  use:init="{settings}"
+  use:module="{settings}"
   class:styled
   class:fluid
   class:inverted

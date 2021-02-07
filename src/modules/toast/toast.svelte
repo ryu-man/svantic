@@ -13,7 +13,7 @@
   export let settings = {}
   export let onMount
 
-  function init(node, settings) {
+  function module(node, settings) {
     // the node has been mounted in the DOM
     css(node, style)
 
@@ -33,6 +33,6 @@
   }
 </script>
 
-<div use:init="{settings}" class:icon class="{color} ui {type} {_class}">
+<div use:module="{settings}" class:icon class="{color} ui {type} {_class}">
   <slot />
 </div>

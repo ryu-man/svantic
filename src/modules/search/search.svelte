@@ -22,7 +22,7 @@
 
   export let onMount
 
-  function init(node, settings) {
+  function module(node, settings) {
     css(node, style)
 
     const unregister = register(node, on)
@@ -42,7 +42,7 @@
 </script>
 
 <div
-  use:init="{settings}"
+  use:module="{settings}"
   class:category
   class:fluid
   class:local

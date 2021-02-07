@@ -30,7 +30,7 @@
 
   $: _type = type?.join?.(' ') ?? type
 
-  function init(node, settings) {
+  function module(node, settings) {
     css(node, style)
 
     let controller = new Controller(node, settings)
@@ -46,7 +46,7 @@
 </script>
 
 <select
-  use:init="{settings}"
+  use:module="{settings}"
   multiple="{type.includes('multiple')}"
   class:top
   class:link

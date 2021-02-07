@@ -5,7 +5,7 @@
   export let settings = {}
   export let onMount
 
-  function init(node, settings) {
+  function module(node, settings) {
     const controller = new Controller(node, settings)
     onMount?.(controller)
 
@@ -19,6 +19,6 @@
   }
 </script>
 
-<div use:init="{settings}" class="ui sticky">
+<div use:module="{settings}" class="ui sticky">
   <slot />
 </div>

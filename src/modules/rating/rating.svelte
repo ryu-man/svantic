@@ -15,7 +15,7 @@
   export let settings = {}
   export let onMount
 
-  function init(node, settings) {
+  function module(node, settings) {
     // the node has been mounted in the DOM
     css(style)
 
@@ -33,7 +33,7 @@
 </script>
 
 <div
-  use:init="{settings}"
+  use:module="{settings}"
   class:disabled
   class="{color} {size} ui rating {_class}"
   data-rating="{rating}"

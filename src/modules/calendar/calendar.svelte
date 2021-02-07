@@ -21,7 +21,7 @@
   export let onMount
   export { _class as class }
 
-  function init(node, settings) {
+  function module(node, settings) {
     css(node, style)
     const unregister = register(node, on)
 
@@ -39,7 +39,7 @@
   }
 </script>
 
-<div use:init="{settings}" class="{_class} ui calendar" class:disabled>
+<div use:module="{settings}" class="{_class} ui calendar" class:disabled>
   <div class="ui input {icon + ' icon'}">
     <slot>
       <i class="calendar icon"></i>

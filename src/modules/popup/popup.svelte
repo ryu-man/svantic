@@ -9,7 +9,7 @@
   export let settings = {}
   export let onMount
 
-  function init(node, settings) {
+  function module(node, settings) {
     css(node, style)
     let controller = new Controller(node, settings)
     onMount?.(controller)
@@ -24,6 +24,6 @@
   }
 </script>
 
-<div use:init="{settings}" class="{classNames('ui popup', _class)}">
+<div use:module="{settings}" class="{classNames('ui popup', _class)}">
   <slot />
 </div>

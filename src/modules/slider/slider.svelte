@@ -16,7 +16,7 @@
   export let style = {}
   export let settings = {}
   export let onMount
-  function init(node, settings) {
+  function module(node, settings) {
     css(node, style)
 
     const unregister = register(node, on)
@@ -35,7 +35,7 @@
 </script>
 
 <div
-  use:init="{settings}"
+  use:module="{settings}"
   class:inverted
   class:reversed
   class:vertical

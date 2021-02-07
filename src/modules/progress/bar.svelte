@@ -10,7 +10,7 @@
   export let on = {}
   export let style = {}
 
-  function init(node, params) {
+  function module(node, params) {
     // the node has been mounted in the DOM
     css(node, style)
     const unregister = register(node, on)
@@ -23,7 +23,7 @@
   }
 </script>
 
-<div use:init class="{classNames(color, { inverted }, _class, 'bar')}" on:click>
+<div use:module class="{classNames(color, { inverted }, _class, 'bar')}" on:click>
   {#if progress}
     <div class="progress"></div>
   {/if}
