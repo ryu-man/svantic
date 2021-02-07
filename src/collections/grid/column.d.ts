@@ -9,7 +9,7 @@ interface ColumnProps extends Component {
   style?: Style
   wide?: GridWide | GridWide[]
   floated?: Float
-  aligned?: Align
+  aligned?: 'top'|'middle'|'bottom'
   color?: Color
   doubling?: boolean
   visibility?: Visibility

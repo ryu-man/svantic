@@ -6,16 +6,23 @@
   export let centered = false
   export let container = false
   export let stackable = false
+  export let very = false
+  export let relaxed = false
+  export let columns
+  export let divided = false | ''
+  export let celled = false | ''
   export let reversed
 </script>
 
 <div
-  class:centered
-  class:stackable
-  class="{classNames(
+  class="{classNames('ui',
     [reversed, 'reversed'],
     [equal, 'equal width'],
-    'ui grid'
+    [divided, 'divided'],
+    [celled, 'celled'],
+    [columns, 'column'],
+    {centered, stackable, very, relaxed},
+    'grid'
   )}"
   class:container
 >

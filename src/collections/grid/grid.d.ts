@@ -5,11 +5,6 @@ import { Wide } from '../../variations'
 import type Column from './column'
 import type Row from './row'
 
-type GridType =
-  | 'divided'
-  | 'vertically divided'
-  | 'celled'
-  | 'internally celled'
 type Reversed = `${'computer' | 'mobile' | 'tablet'}${' vertically' | ''}`
 export type GridWide = `${Wide}${' computer' | ' mobile' | ' tablet' | ''}`
 export type Visibility = `${
@@ -19,21 +14,23 @@ export type Visibility = `${
   | 'large screen'
   | 'wide screen'}${' only' | ''}`
 interface GridProps extends Component {
-  class?: string
-  style?: Style
-  type?: GridType
+  very?: boolean
   relaxed?: boolean
   padded?: boolean
   equal?: boolean
   container?: boolean
   stackable?: boolean
   reversed?: Reversed
+  columns?: GridWide
+  divided?: boolean | 'vertically'
+  celled?: boolean | 'internally'
+  centered?: boolean
 }
 /**
  * @description 
  */
 declare class Grid extends SvelteComponentTyped<GridProps> {
-  static Column: new ()=> Column
-  static Row: new ()=> Row
+  static column: new ()=> Column
+  static row: new ()=> Row
 }
 export default Grid

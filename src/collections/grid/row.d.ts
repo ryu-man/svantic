@@ -15,7 +15,7 @@ interface RowProps extends Component {
   type?: GridType
   columns?: GridWide | GridWide[]
   equal?: boolean
-  aligned?: Align
+  aligned?: 'top'|'middle'|'bottom'
   visibility?: Visibility
 }
 /**
