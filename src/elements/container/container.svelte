@@ -7,6 +7,7 @@
   export let style = {}
   export let aligned
   export let fluid = false
+  export let justified = false
   export let on = {}
 
   function init(node) {
@@ -21,9 +22,7 @@
 </script>
 
 <div
-  use:init
-  class:fluid
-  class="{classNames([aligned, 'aligned'], 'ui container', _class)}"
+  use:init class="{classNames('ui',[aligned, 'aligned'],{justified, fluid},_class, 'container')}"
 >
   <slot />
 </div>
