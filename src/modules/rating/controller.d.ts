@@ -1,7 +1,12 @@
 import type { RatingSettings } from './settings'
 import Controller from '../controller'
 
-type RatingBehavior ='setRating'|'getRating'|'disable'|'enable'|'clearRating'
+type RatingBehavior =
+  | 'setRating'
+  | 'getRating'
+  | 'disable'
+  | 'enable'
+  | 'clearRating'
 export default class RatingController extends Controller<
   RatingBehavior,
   RatingSettings
@@ -14,7 +19,7 @@ export default class RatingController extends Controller<
   /**
    *@description 	Gets current rating
    */
-  getRating(): string
+  getRating(): Promise<String>
 
   /**
    *@description 	Disables interactive rating mode

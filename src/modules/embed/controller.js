@@ -1,83 +1,60 @@
-import Controller from "../controller";
+import Controller from '../controller'
 
-export default class EmbedController extends Controller{
-    setup() {
-        this.selection.embed(this.settings);
-    }
-    /**
-     *@description 	Changes iframe to a new content source
-     */
-    change(source, id, url) {
-        return this.customBehavior('change', source, id, url)
-    }
+export default class EmbedController extends Controller {
+  constructor(target, settings = {}) {
+    super(target, settings)
+  }
 
-    /**
-     *@description 	Removes embed and shows placeholder content if available
-     */
-    reset() {
-        return this.customBehavior('reset')
-    }
+  moduleSync(...args) {
+    return this.selection.embed(...args)
+  }
 
-    /**
-     *@description 	Shows embed content
-     */
-    show() {
-        return this.customBehavior('show')
-    }
+  async module(...args) {
+    await this.ready
+    return this.selection.embed(...args)
+  }
 
-    /**
-     *@description 	Hides embed content and shows placeholder content
-     */
-    hide() {
-        return this.customBehavior('hide')
-    }
+  async import() {
+    if (!window.embed) await import('../../../semantic/dist/components/embed')
+  }
 
-    /**
-     *@description 	Returns current content id
-     */
-    getId() {
-        return this.customBehavior('get id')
-    }
+  change(source, id, url) {
+    this.module('change', source, id, url)
+  }
 
-    /**
-     *@description 	Returns placeholder image url
-     */
-    getPlaceholder() {
-        return this.customBehavior('get placeholder')
-    }
+  reset() {
+    this.module('reset')
+  }
 
-    /**
-     *@description 	Returns source name
-     */
-    getSources() {
-        return this.customBehavior('get sources')
-    }
+  show() {
+    this.module('show')
+  }
 
-    /**
-     *@description 	Returns source type
-     */
-    getType() {
-        return this.customBehavior('get type')
-    }
+  hide() {
+    this.module('hide')
+  }
 
-    /**
-     *@description 	Returns URL with all parameters added
-     */
-    getUrl() {
-        return this.customBehavior('get url')
-    }
+  getId() {
+    return this.module('get id')
+  }
 
-    /**
-     *@description 	Returns whether embed content has placeholder
-     */
-    hasPlaceholder() {
-        return this.customBehavior('has placeholder')
-    }
+  getPlaceholder() {
+    return this.module('get placeholder')
+  }
 
-    /**
-     *@description 	Destroys instance and removes all events
-     */
-    destroy() {
-        return this.customBehavior('destroy')
-    }
+  getSources() {
+    return this.module('get sources')
+  }
+
+  getType() {
+    return this.module('get type')
+  }
+
+  getUrl() {
+    return this.module('get url')
+  }
+
+  hasPlaceholder() {
+    return this.module('has placeholder')
+  }
 }

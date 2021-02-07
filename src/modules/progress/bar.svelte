@@ -1,5 +1,5 @@
 <script>
-  import { css } from '../../utils'
+  import { classNames, css } from '../../utils'
   import { register } from '../../utils/events'
 
   let _class = ''
@@ -23,7 +23,7 @@
   }
 </script>
 
-<div use:init class:inverted class="{color} bar {_class}">
+<div use:init class="{classNames(color, { inverted }, _class, 'bar')}" on:click>
   {#if progress}
     <div class="progress"></div>
   {/if}

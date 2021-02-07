@@ -1,40 +1,40 @@
 import Controller from "../controller";
 
-export default class SliderController extends Controller{
-    setup() {
-        this.selection.slider(this.settings);
+export default class SliderController extends Controller {
+    constructor(target, settings = {}) {
+        super(target, settings)
     }
-    /**
-     *@description Get the current selected value
-     */
+
+    moduleSync(...args) {
+        return this.selection.slider(...args)
+    }
+
+    async module(...args) {
+        await this.ready
+        return this.selection.slider(...args)
+    }
+    
+    async import() {
+        if (!window.slider) await import('../../../semantic/dist/components/slider')
+    }
+
     getValue() {
-        return this.customBehavior('get value', arguments);
+        return this.module('get value', arguments);
     }
-    /**
-     *@description Get the selected value of one of the range thumbs. Provide either first or second as a string parameter
-     */
+
     getThumbValue(which) {
-        return this.customBehavior('get thumbValue', which);
+        return this.module('get thumbValue', which);
     }
-    /**
-     *@description Get the number of rendered label ticks
-     */
+
     getNumLabels() {
-        return this.customBehavior('get numLabels');
+        return this.module('get numLabels');
     }
-    /**
-     *@description Set the current slider value
-     */
+
     setValue(value) {
-        this.customBehavior('set value', value);
+        this.module('set value', value);
     }
-    /**
-     *@description Set the current range slider values
-     */
+
     setRangeValue(fromValue, toValue) {
-        this.customBehavior('set rangeValue', fromValue, toValue);
-    }
-    customBehavior(behavior, ...args) {
-        return this.selection.search(behavior, ...args);
+        this.module('set rangeValue', fromValue, toValue);
     }
 }

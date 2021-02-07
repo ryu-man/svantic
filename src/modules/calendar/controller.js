@@ -1,75 +1,92 @@
 import Controller from '../controller'
 
 export default class CalendarController extends Controller {
-    setup() {
-        this.selection.calendar(this.settings);
+    constructor(target, settings = {}) {
+        super(target, settings)
+    }
+    moduleSync(...args) {
+        return this.selection.calendar(...args)
+    }
+    async module(...args) {
+        await this.ready
+        return this.selection.calendar(...args)
+    }
+    async import() {
+        if (!window.transition) await import('../../../semantic/dist/components/transition')
+
+        if (!window.dropdown) await import('../../../semantic/dist/components/dropdown')
+
+        if (!window.popup) await import('../../../semantic/dist/components/popup')
+
+        if (!window.calendar) await import('../../../semantic/dist/components/calendar')
+
     }
 
     refresh() {
-        this.customBehavior('refresh')
+        this.module('refresh')
     }
 
-    popup(args) {
-        this.customBehavior('popup', args)
+    popup(...args) {
+        this.module('popup', args)
     }
 
     focus() {
-        this.customBehavior('focus')
+        this.module('focus')
     }
 
     blur() {
-        this.customBehavior('blur')
+        this.module('blur')
     }
 
     clear() {
-        this.customBehavior('clear')
+        this.module('clear')
     }
 
     getDate() {
-        this.customBehavior('get date')
+        return this.module('get date')
     }
 
     setDate(date, updateInput, fireChange) {
-        this.customBehavior('set date', date, updateInput, fireChange)
+        this.module('set date', date, updateInput, fireChange)
     }
 
     getMode() {
-        return this.customBehavior('get mode')
+        return this.module('get mode')
     }
 
     setMode(mode) {
-        this.customBehavior('set mode', mode)
+        this.module('set mode', mode)
     }
 
     getStartDate() {
-        return this.customBehavior('get start date')
+        return this.module('get start date')
     }
 
     setStartDate(date) {
-        this.customBehavior('set start date', date)
+        this.module('set start date', date)
     }
 
     getEndDate() {
-        return this.customBehavior('get end date')
+        return this.module('get end date')
     }
 
     setEndDate(date) {
-        this.customBehavior('set end date', date)
+        this.module('set end date', date)
     }
 
     getFocusDate() {
-        return this.customBehavior('get focus date')
+        return this.module('get focus date')
     }
 
     setFocusDate(date) {
-        this.customBehavior('set focus date', date)
+        this.module('set focus date', date)
     }
 
     setMinDate(date) {
-        this.customBehavior('set min date', date)
+        this.module('set min date', date)
     }
 
     setMaxDate(date) {
-        this.customBehavior('set max date', date)
+        this.module('set max date', date)
     }
 }

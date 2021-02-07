@@ -70,43 +70,43 @@ export default class ProgressController extends Controller<
   /**
    *@description 	Replaces templated string with value, total, percent left and percent.
    */
-  getText(text: string): string
+  getText(text: string): Promise<string>
   /**
    *@description 	Returns normalized value inside acceptable range specified by total.
    */
-  getNormalizedValue(value: number): number
+  getNormalizedValue(value: number): Promise<number>
   /**
    *@description 	Returns percent as last specified
    */
-  getPercent(): number
+  getPercent(): Promise<number>
   /**
    *@description 	Returns current progress value
    */
-  getValue(): number
+  getValue(): Promise<number>
   /**
    *@description 	Returns total
    */
-  getTotal(): number
+  getTotal(): Promise<number>
   /**
    *@description 	Returns whether progress is completed
    */
-  isComplete(): boolean
+  isComplete(): Promise<boolean>
   /**
    *@description 	Returns whether progress was a success
    */
-  isSuccess(): boolean
+  isSuccess(): Promise<boolean>
   /**
    *@description 	Returns whether progress is in warning state
    */
-  isWarning(): boolean
+  isWarning(): Promise<boolean>
   /**
    *@description 	Returns whether progress is in error state
    */
-  isError(): boolean
+  isError(): Promise<boolean>
   /**
    *@description 	Returns whether progress is in active state
    */
-  isActive(): boolean
+  isActive(): Promise<boolean>
   /**
    *@description 	Sets progress to active state
    */

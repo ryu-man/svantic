@@ -19,7 +19,7 @@ export default class AccordionController extends Controller<
   /**
    *@description 	Opens accordion content at index
    */
-  open(index): void
+  open(index: number): void
 
   /**
    *@description 	Closes accordion content that are not active
@@ -29,10 +29,10 @@ export default class AccordionController extends Controller<
   /**
    *@description 	Closes accordion content at index
    */
-  close(index): void
+  close(index: number): void
 
   /**
    *@description 	Toggles accordion content at index
    */
-  toggle(index): void
+  toggle(index: number): void
 }

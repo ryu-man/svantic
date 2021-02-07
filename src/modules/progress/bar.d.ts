@@ -2,9 +2,7 @@ import { SvelteComponentTyped } from 'svelte/internal'
 import { Style } from '../../style'
 import { Component } from '../../component'
 
-interface ProgressProps extends Component,Module<ToastSettings, Controller> {
-  class?: string
-  style?: Style
+interface ProgressProps extends Component{
   color?: string
   inverted?: boolean
   progress?: boolean

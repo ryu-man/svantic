@@ -1,5 +1,4 @@
 <script>
-  import '../../../semantic/dist/components/rating'
   import '../../../semantic/dist/components/rating.css'
   import { css } from '../../utils'
   import Controller from './controller'
@@ -19,11 +18,14 @@
   function init(node, settings) {
     // the node has been mounted in the DOM
     css(style)
+
     let controller = new Controller(node, settings)
     onMount?.(controller)
+
     return {
+      // the node has been removed from the DOM
       destroy() {
-        // the node has been removed from the DOM
+        controller.destroy()
         controller = null
       }
     }
@@ -31,7 +33,7 @@
 </script>
 
 <div
-  use:init={settings}
+  use:init="{settings}"
   class:disabled
   class="{color} {size} ui rating {_class}"
   data-rating="{rating}"

@@ -1,5 +1,4 @@
 <script>
-  import '../../../semantic/dist/components/dimmer'
   import '../../../semantic/dist/components/dimmer.css'
   import { css, classNames } from '../../utils'
   import Controller from './controller'
@@ -18,8 +17,17 @@
 
   function init(node, settings) {
     css(node, style)
+
     let controller = new Controller(node, settings)
     onMount?.(controller)
+
+    return {
+      // the node has been removed from the DOM
+      destroy() {
+        controller.destroy()
+        controller = null
+      }
+    }
   }
 </script>
 

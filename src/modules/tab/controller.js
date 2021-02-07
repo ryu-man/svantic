@@ -1,64 +1,53 @@
-import Controller from "../controller";
+import Controller from '../controller'
 
-export default class TabularController extends Controller{
-    setup() {
-        this.selection.tab(this.settings);
-    }
+export default class TabularController extends Controller {
+  constructor(target, settings = {}) {
+    super(target, settings)
+  }
 
-    /**    
-    *@description 	Attaches tab action to given selector. Default event if none specified is toggle    
-    */
-    attachEvents(selector, event) {
-        return ''
-    }
+  moduleSync(...args) {
+    return this.selection.tab(...args)
+  }
 
-    /**    
-    *@description 	Changes tab to path    
-    */
-    changeTab(path) {
-        return ''
-    }
+  async module(...args) {
+    await this.ready
+    return this.selection.tab(...args)
+  }
 
-    /**    
-    *@description 	Sets current path to state    
-    */
-    setState(path) {
-        return ''
-    }
+  async import() {
+    if (!window.tab) await import('../../..disttab')
+  }
 
-    /**    
-    *@description 	Returns current path    
-    */
-    getPath() {
-        return ''
-    }
+  attachEvents(selector, event) {
+    return this.module('attach events', selector, event)
+  }
+  
+  changeTab(path) {
+    return this.module('change tab', path)
+  }
 
-    /**    
-    *@description 	Returns whether tab exists    
-    */
-    isTab() {
-        return ''
-    }
+  setState(path) {
+    return this.module('set path', path)
+  }
 
-    /**    
-    *@description 	Returns cached HTML for path    
-    */
-    cacheRead(path) {
-        return ''
-    }
+  
+  async getPath() {
+    return await this.module('get path')
+  }
+  
+  async isTab() {
+    return await this.module('is tab')
+  }
 
-    /**    
-    *@description 	Sets cached HTML for path    
-    */
-    cacheAdd(path, html) {
-        return ''
-    }
-
-    /**    
-    *@description 	Removes cached HTML for path    
-    */
-    cacheRemove(path) {
-        return ''
-    }
-
+  cacheRead(path) {
+    return this.module('cache read', path)
+  }
+  
+  cacheAdd(path, html) {
+    return this.module('cache add', path, html)
+  }
+  
+  cacheRemove(path) {
+    return this.module('cache remove', path)
+  }
 }

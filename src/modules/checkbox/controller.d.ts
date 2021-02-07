@@ -97,45 +97,45 @@ export default class CheckboxController extends Controller<
   /**
    *@description 	Returns whether element is radio selection
    */
-  isRadio(): boolean
+  isRadio(): Promise<boolean>
 
   /**
    *@description 	Returns whether element is currently checked
    */
-  isChecked(): boolean
+  isChecked(): Promise<boolean>
 
   /**
    *@description 	Returns whether element is not checked
    */
-  isUnchecked(): boolean
+  isUnchecked(): Promise<boolean>
 
   /**
    *@description 	Returns whether element is able to be changed
    */
-  canChange(): boolean
+  canChange(): Promise<boolean>
 
   /**
    *@description 	Returns whether element can be checked (checking if already checked or `beforeChecked` would cancel)
    */
-  shouldAllowCheck(): boolean
+  shouldAllowCheck(): Promise<boolean>
 
   /**
    *@description 	Returns whether element can be unchecked (checking if already unchecked or `beforeUnchecked` would cancel)
    */
-  shouldAllowUncheck(): boolean
+  shouldAllowUncheck(): Promise<boolean>
 
   /**
    *@description 	Returns whether element can be determinate (checking if already determinate or `beforeDeterminate` would cancel)
    */
-  shouldAllowDeterminate(): boolean
+  shouldAllowDeterminate(): Promise<boolean>
 
   /**
    *@description 	Returns whether element can be indeterminate (checking if already indeterminate or `beforeIndeterminate` would cancel)
    */
-  shouldAllowIndeterminate(): boolean
+  shouldAllowIndeterminate(): Promise<boolean>
 
   /**
    *@description 	Returns whether element is able to be unchecked
    */
-  canUncheck(): boolean
+  canUncheck(): Promise<boolean>
 }

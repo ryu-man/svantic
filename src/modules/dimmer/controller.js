@@ -1,118 +1,107 @@
-import Controller from "../controller";
+import Controller from '../controller'
 
-// import type { DimmerSettings } from './settings'
 export default class DimmerController extends Controller {
-    setup() {
-        this.selection.dimmer(this.settings);
-    }
+  constructor(target, settings = {}) {
+    super(target, settings)
+  }
 
-    addContent(element) {
-        return this.customBehavior('add content')
-    }
+  moduleSync(...args) {
+    return this.selection.dimmer(...args)
+  }
 
-    show() {
-        return this.customBehavior('show')
+  module(...args) {
+    return this.selection.dimmer(...args)
+  }
 
-    }
+  async import() {
+    if (!window.dimmer) await import('../../../semantic/dist/components/dimmer')
+  }
 
-    hide() {
-        return this.customBehavior('hide')
+  addContent(element) {
+    this.module('add content', element)
+  }
 
-    }
+  show() {
+    this.module('show')
+  }
 
-    toggle() {
-        return this.customBehavior('toggle')
+  hide() {
+    this.module('hide')
+  }
 
-    }
+  toggle() {
+    this.module('toggle')
+  }
 
-    setOpacity(opacity) {
-        return this.customBehavior('set opacity')
+  setOpacity(opacity) {
+    this.module('set opacity', opacity)
+  }
 
-    }
+  create() {
+    this.module('create')
+  }
 
-    create() {
-        return this.customBehavior('create')
+  getDuration() {
+    return this.module('get duration')
+  }
 
-    }
+  getDimmer() {
+    return this.module('get dimmer')
+  }
 
-    getDuration() {
-        return this.customBehavior('get duration')
+  hasDimmer() {
+    return this.module('has dimmer')
+  }
 
-    }
+  isActive() {
+    return this.module('is active')
+  }
 
-    getDimmer() {
-        return this.customBehavior('get dimmer')
+  isAnimating() {
+    return this.module('is animating')
+  }
 
-    }
+  isDimmer() {
+    return this.module('is dimmer')
+  }
 
-    hasDimmer() {
-        return this.customBehavior('has dimmer')
+  isDimmable() {
+    return this.module('is dimmable')
+  }
 
-    }
+  isDisabled() {
+    return this.module('is disabled')
+  }
 
-    isActive() {
-        return this.customBehavior('is active')
+  isEnabled() {
+    return this.module('is enabled')
+  }
 
-    }
+  isPage() {
+    return this.module('is page')
+  }
 
-    isAnimating() {
-        return this.customBehavior('is animating')
+  isPageDimmer() {
+    return this.module('isPageDimmer')
+  }
 
-    }
+  setActive() {
+    this.module('set active')
+  }
 
-    isDimmer() {
-        return this.customBehavior('is dimmer')
+  setDimmable() {
+    this.module('set dimmable')
+  }
 
-    }
+  setDimmed() {
+    this.module('set dimmed')
+  }
 
-    isDimmable() {
-        return this.customBehavior('is dimmable')
+  setPageDimmer() {
+    this.module('setPageDimmer')
+  }
 
-    }
-
-
-    isDisabled() {
-        return this.customBehavior('is disabled')
-
-    }
-
-    isEnabled() {
-        return this.customBehavior('is enabled')
-
-    }
-
-    isPage() {
-        return this.customBehavior('is page')
-
-    }
-
-    ageDimmer() {
-        return this.customBehavior('isPageDimmer')
-
-    }
-
-    setActive() {
-        return this.customBehavior('set active')
-
-    }
-
-    setDimmable() {
-        return this.customBehavior('set dimmable')
-
-    }
-
-    setDimmed() {
-        return this.customBehavior('set dimmed')
-
-    }
-
-    setPageDimmer() {
-        return this.customBehavior('setPageDimmer')
-
-    }
-
-    setDisabled() {
-        return this.customBehavior('set disabled')
-
-    }
+  setDisabled() {
+    this.module('set disabled')
+  }
 }

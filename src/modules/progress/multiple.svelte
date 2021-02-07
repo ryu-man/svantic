@@ -10,11 +10,9 @@
 
 <div
   use:css="{style}"
-  class="{classNames('ui multiple progress', _class)}"
+  class="{classNames('ui', _class, 'multiple progress')}"
   data-total="{total}"
   data-percent="{percents.join(',')}"
 >
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+  <slot></slot>
 </div>

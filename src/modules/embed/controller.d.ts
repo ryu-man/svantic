@@ -40,32 +40,32 @@ export default class EmbedController extends Controller<
   /**
    *@description 	Returns current content id
    */
-  getId(): any
+  getId(): Promise
 
   /**
    *@description 	Returns placeholder image url
    */
-  getPlaceholder(): string
+  getPlaceholder(): Promise<string>
 
   /**
    *@description 	Returns source name
    */
-  getSources(): string
+  getSources(): Promise<string>
 
   /**
    *@description 	Returns source type
    */
-  getType(): any
+  getType(): Promise
 
   /**
    *@description 	Returns URL with all parameters added
    */
-  getUrl(): string
+  getUrl(): Promise<string>
 
   /**
    *@description 	Returns whether embed content has placeholder
    */
-  hasPlaceholder(): boolean
+  hasPlaceholder(): Promise<boolean>
 
   /**
    *@description 	Destroys instance and removes all events

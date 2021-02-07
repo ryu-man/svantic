@@ -1,42 +1,40 @@
-import Controller from "../controller";
+import Controller from '../controller'
 
 export default class ProgressController extends Controller {
-    setup() {
-        this.selection.rating(this.settings);
-    }
-    /**    
-    *@description 	Sets rating programmatically    
-    */
-    setRating(rating) {
-        return this.customBehavior('set rating', rating)
-    }
+  constructor(target, settings = {}) {
+    super(target, settings)
+  }
 
-    /**    
-    *@description 	Gets current rating    
-    */
-    getRating() {
-        return this.customBehavior('get rating')
-    }
+  moduleSync(...args) {
+    return this.selection.rating(...args)
+  }
 
-    /**    
-    *@description 	Disables interactive rating mode    
-    */
-    disable() {
-        return this.customBehavior('disable')
-    }
+  async module(...args) {
+    await this.ready
+    return this.selection.rating(...args)
+  }
 
-    /**    
-    *@description 	Enables interactive rating mode    
-    */
-    enable() {
-        return this.customBehavior('enable')
-    }
+  async import() {
+    if (!window.rating) await import('../../../semantic/dist/components/rating')
+  }
 
-    /**    
-    *@description 	Clears current rating    
-    */
-    clearRating() {
-        return this.customBehavior('close rating')
-    }
+  setRating(rating) {
+    return this.module('set rating', rating)
+  }
 
+  getRating() {
+    return this.module('get rating')
+  }
+
+  disable() {
+    return this.module('disable')
+  }
+
+  enable() {
+    return this.module('enable')
+  }
+
+  clearRating() {
+    return this.module('close rating')
+  }
 }

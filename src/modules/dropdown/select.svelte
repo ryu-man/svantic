@@ -32,8 +32,16 @@
 
   function init(node, settings) {
     css(node, style)
+
     let controller = new Controller(node, settings)
     onMount?.(controller)
+
+    return {
+      destroy() {
+        controller.destroy()
+        controller = null
+      }
+    }
   }
 </script>
 
@@ -66,5 +74,5 @@
     _class
   )}"
 >
-  <slot/>
+  <slot />
 </select>

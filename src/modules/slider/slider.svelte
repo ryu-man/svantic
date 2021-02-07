@@ -1,5 +1,4 @@
 <script>
-  import '../../../semantic/dist/components/slider'
   import '../../../semantic/dist/components/slider.css'
   import { css, register, classNames } from '../../utils'
   import Controller from './controller'
@@ -19,12 +18,16 @@
   export let onMount
   function init(node, settings) {
     css(node, style)
+
     const unregister = register(node, on)
+
     let controller = new Controller(node, settings)
     onMount?.(controller, node)
+
     return {
       destroy() {
         unregister()
+        controller.destroy()
         controller = null
       }
     }
@@ -32,7 +35,7 @@
 </script>
 
 <div
-  use:init={settings}
+  use:init="{settings}"
   class:inverted
   class:reversed
   class:vertical

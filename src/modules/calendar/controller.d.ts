@@ -51,34 +51,34 @@ export default class CalendarController extends Controller<
   /**
    * @description 	Get the selected date
    */
-  getDate(): void
+  getDate(): Promise<Date>
 
   /**
    * @description Set the selected date. Pass false to updateInput to disable updating the input. Pass false to fireChange to disable the onBeforeChange and onChange callbacks for this change
    */
-  setDate(date, updateInput, fireChange): void
+  setDate(date: Date, updateInput: boolean, fireChange: boolean): void
   /**
    * @description	Get the current selection mode (year, month, day, hour, minute)
    */
-  getMode(): any
+  getMode(): Promise<'year' | 'month' | 'day' | 'hour' | 'minute'>
   /**
    * @description	Set the current selection mode (year, month, day, hour, minute)
    */
-  setMode(mode): void
+  setMode(mode: 'year' | 'month' | 'day' | 'hour' | 'minute'): void
   /**
    *@description 	Get the start date for range selection
    */
-  getStartDate(): Date
+  getStartDate(): Promise<Date>
 
   /**
    *@description 	Set the start date for range selection
    */
-  setStartDate(date): void
+  setStartDate(date: Date): void
 
   /**
    *@description 	Get the end date for range selection
    */
-  getEndDate(): Date
+  getEndDate(): Promise<Date>
 
   /**
    *@description 	Set the end date for range selection
@@ -88,7 +88,7 @@ export default class CalendarController extends Controller<
   /**
    *@description 	Get the currently focused date
    */
-  getFocusDate(): Date
+  getFocusDate(): Promise<Date>
 
   /**
    *@description 	Set the currently focused date
@@ -98,10 +98,10 @@ export default class CalendarController extends Controller<
   /**
    *@description 	Set the minimal selectable date
    */
-  setMinDate(date): void
+  setMinDate(date: Date): void
 
   /**
    *@description 	Set the maximal selectable date
    */
-  setMaxDate(date): void
+  setMaxDate(date: Date): void
 }

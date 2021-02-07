@@ -1,5 +1,4 @@
 <script>
-  import '../../../semantic/dist/components/checkbox'
   import '../../../semantic/dist/components/checkbox.css'
   import { classNames, css } from '../../utils'
   import Controller from './controller'
@@ -18,11 +17,15 @@
   function init(node, settings) {
     css(node, style)
     const unregister = register(node, on)
+
     let controller = new Controller(node, settings)
     onMount?.(controller)
+
     return {
+      // the node has been removed from the DOM
       destroy() {
         unregister()
+        controller.destroy()
         controller = null
       }
     }

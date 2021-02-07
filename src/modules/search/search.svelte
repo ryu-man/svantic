@@ -1,5 +1,4 @@
 <script>
-  import '../../../semantic/dist/components/search'
   import '../../../semantic/dist/components/search.css'
   import { css, register, classNames } from '../../utils'
   import Controller from './controller'
@@ -25,12 +24,17 @@
 
   function init(node, settings) {
     css(node, style)
+
     const unregister = register(node, on)
+
     let controller = new Controller(node, settings)
     onMount?.(controller)
+
     return {
+      // the node has been removed from the DOM
       destroy() {
         unregister()
+        controller.destroy()
         controller = null
       }
     }
@@ -38,7 +42,7 @@
 </script>
 
 <div
-  use:init={settings}
+  use:init="{settings}"
   class:category
   class:fluid
   class:local
@@ -46,7 +50,14 @@
   class:short
   class:scrolling
   class:loading
-  class="{classNames(state, animation, speed, [aligned, 'aligned'], 'ui search', _class)}"
+  class="{classNames(
+    state,
+    animation,
+    speed,
+    [aligned, 'aligned'],
+    'ui search',
+    _class
+  )}"
 >
   <slot>
     <!-- optional fallback -->

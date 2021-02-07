@@ -8,6 +8,14 @@
   function init(node, settings) {
     const controller = new Controller(node, settings)
     onMount?.(controller)
+
+    return {
+      // the node has been removed from the DOM
+      destroy() {
+        controller.destroy()
+        controller = null
+      }
+    }
   }
 </script>
 

@@ -1,5 +1,5 @@
 import { SvelteComponentTyped } from 'svelte/internal'
-import type { Animation, Attach, Size, Speed, Wide } from '../../variations'
+import type { Loading, Attach, Size, Speed, Wide } from '../../variations'
 import { Module } from '../module'
 import Controller from './controller'
 import {DropdownSettings} from './settings'
@@ -30,7 +30,7 @@ interface DropdownProps extends Module<Controller, DropdownSettings> {
   height?: Height
   type?: Type | Type[]
   menuDirection?: Attach
-  loaderStyle?: Animation
+  loaderStyle?: Loading
   icon?: boolean
   link?: boolean
   item?: boolean

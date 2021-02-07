@@ -38,7 +38,7 @@ export default class PopupController extends Controller<
   /**
    *@description 	Returns current popup dom element
    */
-  getPopup(): void
+  getPopup(): Promise<HTMLElement>
 
   /**
    *@description 	Changes current popup content
@@ -53,12 +53,12 @@ export default class PopupController extends Controller<
   /**
    *@description 	Returns whether popup is visible
    */
-  isVisible(): void
+  isVisible(): Promise<boolean>
 
   /**
    *@description 	Returns whether popup is hidden
    */
-  isHidden(): void
+  isHidden(): Promise<boolean>
 
   /**
    *@description 	Returns whether popup is created and inserted into the page
@@ -73,7 +73,7 @@ export default class PopupController extends Controller<
   /**
    *@description 	Repositions a popup
    */
-  setPosition(position): void
+  setPosition(position: index): void
 
   /**
    *@description 	Removes popup from the page and removes all events

@@ -1,5 +1,4 @@
 <script>
-  import '../../../semantic/dist/components/accordion'
   import '../../../semantic/dist/components/accordion.css'
   import { css } from '../../utils'
   import { register } from '../../utils/events'
@@ -18,12 +17,15 @@
     // the node has been mounted in the DOM
     css(node, style)
     const unregister = register(node, on)
+
     let controller = new Controller(node, settings)
     onMount?.(controller)
+
     return {
       // the node has been removed from the DOM
       destroy() {
         unregister()
+        controller.destroy()
         controller = null
       }
     }
@@ -31,7 +33,7 @@
 </script>
 
 <div
-  use:init = {settings}
+  use:init="{settings}"
   class:styled
   class:fluid
   class:inverted

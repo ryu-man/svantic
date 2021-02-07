@@ -1,8 +1,8 @@
 <script>
-  import '../../../semantic/dist/components/dropdown'
-  import '../../../semantic/dist/components/dropdown.css'
+  import '../../../semantic/dist/components/dropdown.min.css'
   import { css, classNames } from '../../utils'
   import Controller from './controller'
+  // import path from 'path'
 
   let _class = ''
   export let style = {}
@@ -35,26 +35,47 @@
 
   function init(node, settings) {
     css(node, style)
+
     let controller = new Controller(node, settings)
     onMount?.(controller)
+
+    return {
+      // the node has been removed from the DOM
+      destroy() {
+        controller.destroy()
+        controller = null
+      }
+    }
   }
 </script>
 
-  <div
-    use:init = {settings}
-    class:top
-    class:link
-    class:item
-    class:left
-    class:long
-    class:right
-    class:fluid
-    class:label
-    class:bottom
-    class:compact
-    class:inverted
-    class:scrolling
-    class="{classNames(height, column, speed, loaderStyle, wide, _type, state, size, menuDirection, 'ui dropdown', _class)}"
-  >
-    <slot/>
-  </div>
+<div
+  use:init="{settings}"
+  class:top
+  class:link
+  class:item
+  class:left
+  class:long
+  class:right
+  class:fluid
+  class:label
+  class:bottom
+  class:compact
+  class:inverted
+  class:scrolling
+  class="{classNames(
+    height,
+    column,
+    speed,
+    loaderStyle,
+    wide,
+    _type,
+    state,
+    size,
+    menuDirection,
+    'ui dropdown',
+    _class
+  )}"
+>
+  <slot />
+</div>

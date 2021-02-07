@@ -32,12 +32,12 @@ setState(path:string):void
 /**    
 *@description 	Returns current path    
 */
-getPath():string
+getPath():Promise<string>
 
 /**    
 *@description 	Returns whether tab exists    
 */
-isTab():boolean
+isTab():Promise<boolean>
 
 /**    
 *@description 	Returns cached HTML for path    

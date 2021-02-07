@@ -1,45 +1,41 @@
-import Controller from "../controller";
+import Controller from '../controller'
 
 export default class AccordionController extends Controller {
+  constructor(target, settings = {}) {
+    super(target, settings)
+  }
 
-    setup() {
-        this.selection.accordion(this.settings);
-    }
+  moduleSync(...args) {
+    return this.selection.accordion(...args)
+  }
 
-    /**
-   *@description 	Refreshes all cached selectors and data
-   */
-    refresh() {
-        return this.customBehavior('refresh')
-    }
+  async module(...args) {
+    await this.ready
+    return this.selection.accordion(...args)
+  }
 
-    /**
-     *@description 	Opens accordion content at index
-     */
-    open(index) {
-        return this.customBehavior('open', index)
-    }
+  async import() {
+    if (!window.accordion)
+      await import('../../../semantic/dist/components/accordion')
+  }
 
-    /**
-     *@description 	Closes accordion content that are not active
-     */
-    closeOthers() {
-        return this.customBehavior('close others')
-    }
+  refresh() {
+    this.module('refresh')
+  }
 
-    /**
-     *@description 	Closes accordion content at index
-     */
-    close(index) {
-        return this.customBehavior('close', index)
-    }
+  open(index) {
+    this.module('open', index)
+  }
 
-    /**
-     *@description 	Toggles accordion content at index
-     */
-    toggle(index) {
-        return this.customBehavior('toggle', index)
+  closeOthers() {
+    this.module('close others')
+  }
 
-    }
-    
+  close(index) {
+    this.module('close', index)
+  }
+
+  toggle(index) {
+    this.module('toggle', index)
+  }
 }

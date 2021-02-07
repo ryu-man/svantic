@@ -1,59 +1,68 @@
-import Controller from "../controller";
+import Controller from '../controller'
 
 export default class PopupController extends Controller {
-    setup() {
-        this.selection.popup(this.settings);
-    }
-    
-    show() {
-        return this.customBehavior('show')
-    }
-    
-    hide() {
-        return this.customBehavior('hide')
-    }
-    
-    hideAll() {
-        return this.customBehavior('hide all')
-    }
-    
-    getPopup() {
-        return this.customBehavior('get popup')
-    }
-    
-    changeContent(html) {
-        return this.customBehavior('change content', html)
-    }
-    
-    toggle() {
-        return this.customBehavior('toggle')
-    }
-    
-    isVisible() {
-        return this.customBehavior('is visible')
-    }
-    
-    isHidden() {
-        return this.customBehavior('is hidden')
-    }
-    
-    exists() {
-        return this.customBehavior('exists')
-    }
-    
-    reposition() {
-        return this.customBehavior('reposition')
-    }
-    
-    setPosition(position) {
-        return this.customBehavior('set position', position)
-    }
-    
-    destroy() {
-        return this.customBehavior('destroy')
-    }
-    
-    removePopup() {
-        return this.customBehavior('remove popup')
-    }
+  constructor(target, settings = {}) {
+    super(target, settings)
+  }
+  
+  moduleSync(...args) {
+    return this.selection.popup(...args)
+  }
+
+  async module(...args) {
+    await this.ready
+    return this.selection.popup(...args)
+  }
+
+  async import() {
+    if (!window.popup) await import('../../../semantic/dist/components/popup')
+  }
+
+  show() {
+    this.module('show')
+  }
+
+  hide() {
+    this.module('hide')
+  }
+
+  hideAll() {
+    this.module('hide all')
+  }
+
+  getPopup() {
+    this.module('get popup')
+  }
+
+  changeContent(html) {
+    this.module('change content', html)
+  }
+
+  toggle() {
+    this.module('toggle')
+  }
+
+  isVisible() {
+    return this.module('is visible')
+  }
+
+  isHidden() {
+    return this.module('is hidden')
+  }
+
+  exists() {
+    this.module('exists')
+  }
+
+  reposition() {
+    this.module('reposition')
+  }
+
+  setPosition(position) {
+    this.module('set position', position)
+  }
+
+  removePopup() {
+    this.module('remove popup')
+  }
 }

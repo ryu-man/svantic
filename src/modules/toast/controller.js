@@ -1,38 +1,40 @@
-import Controller from "../controller";
+import Controller from '../controller'
 
-export default class ToastController extends Controller{
-    setup() {
-        this.selection.toast(this.settings);
-    }
+export default class ToastController extends Controller {
+  constructor(target, settings = {}) {
+    super(target, settings)
+  }
 
-    /**
-     *@description 	Pauses the display time decrease (and possible progress bar animation)
-     */
-    animatePause() {
-        this.customBehavior('animate pause');
-    }
-    /**
-     *@description 	Continues decreasing display time (and possible progress bar animation)
-     */
-    animateContinue() {
-        this.customBehavior('animate continue');
-    }
-    /**
-     *@description 	Closes the toast
-     */
-    close() {
-        this.customBehavior('close');
-    }
-    /**
-     *@description 	Returns all toasts as an array of objects which are visible within the current toast-container
-     */
-    getToasts() {
-        return this.customBehavior('get toasts');
-    }
-    /**
-     *@description 	Returns the remaining time in milliseconds
-     */
-    getRemainingTime() {
-        return this.customBehavior('get remainingTime');
-    }
+  moduleSync(...args) {
+    return this.selection.toast(...args)
+  }
+
+  async module(...args) {
+    await this.ready
+    return this.selection.toast(...args)
+  }
+
+  async import() {
+    if (!window.toast) await import('../../../semantic/dist/components/toast')
+  }
+
+  animatePause() {
+    this.module('animate pause')
+  }
+
+  animateContinue() {
+    this.module('animate continue')
+  }
+
+  close() {
+    this.module('close')
+  }
+
+  getToasts() {
+    return this.module('get toasts')
+  }
+
+  getRemainingTime() {
+    return this.module('get remainingTime')
+  }
 }

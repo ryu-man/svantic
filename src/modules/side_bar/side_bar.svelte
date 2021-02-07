@@ -1,5 +1,4 @@
 <script>
-  import '../../../semantic/dist/components/sidebar'
   import '../../../semantic/dist/components/sidebar.css'
   import { css, register, classNames } from '../../utils'
   import Controller from './controller'
@@ -20,13 +19,17 @@
   function init(node, settings) {
     // the node has been mounted in the DOM
     css(node, style)
+
     const unregister = register(node, on)
+
     let controller = new Controller(node, settings)
     onMount?.(controller)
+
     return {
       // the node has been removed from the DOM
       destroy() {
         unregister()
+        controller.destroy()
         controller = null
       }
     }
@@ -34,10 +37,17 @@
 </script>
 
 <div
-  use:init={settings}
+  use:init="{settings}"
   class:inverted
   class:vertical
-  class="{classNames(state, type, direction, [wide, 'wide'], 'ui sidebar', _class)}"
+  class="{classNames(
+    state,
+    type,
+    direction,
+    [wide, 'wide'],
+    'ui sidebar',
+    _class
+  )}"
 >
-  <slot/>
+  <slot />
 </div>
