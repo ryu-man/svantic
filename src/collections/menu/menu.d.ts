@@ -11,6 +11,7 @@ interface MenuProps extends Component {
     size?: Size;
     attached?: Float;
     floated?: Float
+    item?: boolean;
     fluid?: boolean;
     compact?: boolean;
     fixed?: boolean;
@@ -19,6 +20,7 @@ interface MenuProps extends Component {
     icon?: boolean;
     labeled?: boolean;
     borderless?: boolean;
+    
 }
 /**
  * @description 

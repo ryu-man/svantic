@@ -1,10 +1,13 @@
 <script>
-  import { css, register } from '../../utils'
+  import { Icon } from '../../elements'
+  import { classNames, css, register } from '../../utils'
 
   export let active = false
   export let horizontally = false
   export let fitted = false
+  export let icon = false
   export let href
+  export let content
   export let style = {}
   export let on = {}
   let _class = ''
@@ -13,7 +16,7 @@
   function init(node) {
     css(node, style)
     const unregister = register(node, on)
-    href && (node.href = href)
+    // href && (node.href = href)
     return {
       destroy() {
         unregister()
@@ -23,6 +26,18 @@
 </script>
 
 <!-- svelte-ignore a11y-missing-attribute -->
-<a use:init  class:active class:horizontally class:fitted class="item {_class}">
+<a
+  use:init
+  class:active
+  class:horizontally
+  class:fitted
+  class="{classNames([icon, 'icon'], _class, 'item')}"
+  href="{href}"
+  data-content="{content}"
+  on:click
+>
   <slot />
+  {#if typeof icon === 'string'}
+    <Icon name="{icon}" />
+  {/if}
 </a>
