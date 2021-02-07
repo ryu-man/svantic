@@ -9,6 +9,8 @@ interface DividerProps extends Component {
     section?: boolean;
     hidden?: boolean;
     fitted?: boolean;
+    ignored?: boolean;
+    vertical?: boolean;
     inverted?: boolean;
 }
 /**

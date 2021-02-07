@@ -1,6 +1,6 @@
 <script>
   import '../../../semantic/dist/components/divider.css'
-  import { css } from '../../utils'
+  import { classNames, css } from '../../utils'
 
   export let style = {}
   export let type = ''
@@ -9,23 +9,14 @@
   export let section = false
   export let hidden = false
   export let fitted = false
+  export let ignored = false
+  export let vertical = false
   export let inverted = false
   let _class = ''
   export { _class as class }
 
-  function init(node) {
-    css(node, style)
-  }
 </script>
 
-<div
-  use:init
-  class:clearing
-  class:section
-  class:hidden
-  class:fitted
-  class:inverted
-  class="{type} {aligned && `${aligned}`} ui divider {_class}"
->
+<div class="{classNames('ui',[aligned, 'aligned'], {clearing, section, hidden, fitted, ignored, vertical, inverted}, _class, 'divider')}">
   <slot />
 </div>
