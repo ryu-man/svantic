@@ -1,3 +1,6 @@
-export { default as Dropdown } from "./dropdown";
-export { default as DropdownController } from "./controller";
-export { DropdownSettings } from "./settings";
+export { default as DropdownController } from './controller'
+import { default as Dropdown } from './dropdown'
+import { default as Select } from './select'
+
+export { Dropdown, Select }
+export default Dropdown
