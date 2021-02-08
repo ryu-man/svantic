@@ -7,6 +7,6 @@
   export { _class as class }
 </script>
 
-<i use:css="{style}" class="{classNames(size,'icons',_class)}">
+<i use:css="{style}" class="{classNames(_class, size, 'icons')}">
   <slot />
 </i>

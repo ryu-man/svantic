@@ -3,7 +3,6 @@ import type { Component } from '../../component'
 import { Align, Attach, Color, Size } from '../../variations'
 
 interface LinkProps extends Component {
-  type?: string
   attached?: Attach
   aligned?: Align
   color?: Color

@@ -1,13 +1,9 @@
-import { Component } from '../../component';
-import { SvelteComponentTyped} from 'svelte';
+import { Component } from '../../component'
+import { SvelteComponentTyped } from 'svelte'
 
 interface LineProps extends Component {
-    short ?: boolean
-    medium ?: boolean
-    full ?: boolean
-    long ?: boolean
-    very ?: boolean
-    fluid ?: boolean
+  length?: 'full' | 'very long' | 'long' | 'medium' | 'short' | 'very short'
+  fluid?: boolean
 }
 /**
  * Vomantic Placeholder Line

@@ -15,7 +15,15 @@
 
 <div
   use:css="{style}"
-  class="{classNames('ui', [labeled, 'labeled'], { icon, vertical, basic }, color, size, width, _class, 'buttons')}"
+  class="{classNames(
+    _class,
+    'ui',
+    { icon, vertical, basic, labeled },
+    color,
+    size,
+    width,
+    'buttons'
+  )}"
 >
   <slot />
 </div>

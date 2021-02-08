@@ -6,4 +6,4 @@
   export let isoCode = ''
 </script>
 
-<i class="{classNames(isoCode, 'flag', _class)}"></i>
+<i class="{classNames(_class, isoCode, 'flag')}"></i>

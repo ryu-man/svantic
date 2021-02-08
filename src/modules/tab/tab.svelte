@@ -1,5 +1,5 @@
 <script>
-  import { css,classNames } from '../../utils'
+  import { css, classNames } from '../../utils'
 
   export let _class = ''
   export { _class as class }
@@ -12,13 +12,8 @@
 
 <div
   use:css="{style}"
-  class:attached
-  class:active
-  class:segment
   data-tab="{data}"
-  class="{classNames([attached, 'attached'], 'ui tab', _class)}"
+  class="{classNames(_class, 'ui', { active, segment, attached }, 'tab')}"
 >
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+  <slot />
 </div>

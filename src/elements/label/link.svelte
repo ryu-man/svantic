@@ -1,7 +1,8 @@
 <script>
   import { register, css, classNames } from '../../utils'
 
-  export let type = ''
+  let _class = ''
+  export { _class as class }
   export let attached = ''
   export let aligned = ''
   export let color = ''
@@ -13,8 +14,6 @@
   export let inverted = false
   export let on = {}
   export let style = {}
-  let _class = ''
-  export { _class as class }
 
   function init(node) {
     css(node, style)
@@ -31,16 +30,14 @@
 <!-- svelte-ignore a11y-missing-attribute -->
 <a
   use:init
-  class:attached
-  class:basic
-  class:horizontal
-  class:floating
-  class:aligned
-  class:circular
-  class:inverted
-  class="{classNames(size, color, [attached, 'attached'], [floating, 'floating'], [aligned, 'aligned'], type, 'ui label', _class)}"
+  class="{classNames(
+    _class,
+    'ui',
+    size,
+    color,
+    { basic, horizontal, circular, inverted, attached, floating, aligned },
+    'label'
+  )}"
 >
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+  <slot />
 </a>

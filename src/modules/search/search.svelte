@@ -4,9 +4,9 @@
   import Controller from './controller'
 
   let _class = ''
-  export let state = ''
+  export let disabled = false
   export let speed = ''
-  export let aligned = ''
+  export let aligned
   export let animation = ''
   export let long = false
   export let fluid = false
@@ -43,20 +43,13 @@
 
 <div
   use:module="{settings}"
-  class:category
-  class:fluid
-  class:local
-  class:long
-  class:short
-  class:scrolling
-  class:loading
   class="{classNames(
-    state,
+    _class,
+    'ui',
     animation,
     speed,
-    [aligned, 'aligned'],
-    'ui search',
-    _class
+    { disabled, category, fluid, local, long, scrolling, loading, aligned },
+    'search'
   )}"
 >
   <slot>

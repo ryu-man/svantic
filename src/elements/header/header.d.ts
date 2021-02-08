@@ -1,13 +1,14 @@
 import { SvelteComponentTyped } from 'svelte/internal'
+import type { Align, Float } from 'src/variations'
 import { Component } from '../../component'
 import { default as H1 } from './h1'
 import { default as H2 } from './h2'
 import { default as H3 } from './h3'
 import { default as H4 } from './h4'
 import { default as H5 } from './h5'
-import type Sub from './sub'
+import { default as Sub } from './sub'
 
-interface HeaderProps extends Component {
+export interface HeaderProps extends Component {
   active?: boolean
   disabled?: boolean
   fluid?: boolean
@@ -24,16 +25,20 @@ interface HeaderProps extends Component {
   inverted?: boolean
   icon?: boolean
   sub?: boolean
+  divider?: boolean | 'horizontal'
+  dividing?: boolean
+  aligned?: Align
+  floated?: Float
 }
 /**
  * @description
  */
 declare class Header extends SvelteComponentTyped<HeaderProps> {
-static H1 : new ()=> H1
-static H2 : new ()=> H2
-static H3 : new ()=> H3
-static H4 : new ()=> H4
-static H5 : new ()=> H5
-static Sub : new ()=> Sub
+  static h1: new () => H1
+  static h2: new () => H2
+  static h3: new () => H3
+  static h4: new () => H4
+  static h5: new () => H5
+  static sub: new () => Sub
 }
 export default Header

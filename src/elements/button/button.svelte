@@ -6,7 +6,6 @@
   let _class = ''
   export { _class as class }
   export let size = ''
-  export let type = ''
   export let color = ''
   export let state = ''
   export let social = ''
@@ -33,7 +32,6 @@
   export let style = {}
   export let on = {}
 
-  $: _type = type?.join?.(' ') ?? type
   $: emphasis = primary
     ? 'primary'
     : secondary
@@ -65,13 +63,8 @@
     use:init
     on:click
     class="{classNames(
-      'ui',
       _class,
-      [floated, 'floated'],
-      [attached, 'attached'],
-      [animated, 'animated'],
-      [loading, 'loading'],
-      [labeled, 'labeled'],
+      'ui',
       {
         icon,
         fluid,
@@ -82,14 +75,18 @@
         negative,
         basic,
         inverted,
-        disabled
+        disabled,
+        floated,
+        attached,
+        animated,
+        loading,
+        labeled
       },
       size,
       state,
       social,
       color,
       emphasis,
-      _type,
       'button'
     )}"
   >
@@ -103,13 +100,8 @@
     use:init
     on:click
     class="{classNames(
-      'ui',
       _class,
-      [floated, 'floated'],
-      [attached, 'attached'],
-      [animated, 'animated'],
-      [loading, 'loading'],
-      [labeled, 'labeled'],
+      'ui',
       {
         icon,
         fluid,
@@ -120,14 +112,18 @@
         negative,
         basic,
         inverted,
-        disabled
+        disabled,
+        floated,
+        attached,
+        animated,
+        loading,
+        labeled
       },
       size,
       state,
       social,
       color,
       emphasis,
-      _type,
       'button'
     )}"
   >

@@ -24,6 +24,6 @@
   }
 </script>
 
-<div use:module="{settings}" class="{classNames('ui popup', _class)}">
+<div use:module="{settings}" class="{classNames(_class, 'ui popup')}">
   <slot />
 </div>

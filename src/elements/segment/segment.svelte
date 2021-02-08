@@ -2,13 +2,20 @@
   import { classNames, css, register } from '../../utils'
 
   let _class = ''
-  export let type = ''
-  export let state = ''
-  export let floated = ''
-  export let attached = ''
-  export let aligned = ''
+  export { _class as class }
+  export let raised = false
+  export let placeholder = false
+  export let stacked = false
+  export let piled = false
+  export let vertical = false
+  export let loading = false
+  export let disabled = false
+  export let secondary = false
+  export let tertiary = false
+  export let floated
+  export let attached
+  export let aligned
   export let color = ''
-  export let emphasis = ''
   export let tall = false
   export let double = false
   export let inverted = false
@@ -22,44 +29,44 @@
   export let dimmable = false
   export let dimmed = false
   export let container = false
-  export let vertical  = false
   export let style = {}
-  export let on = {}
-  export { _class as class }
-
-  function init(node) {
-    // the node has been mounted in the DOM
-    css(node, style)
-    const unregister = register(node, on)
-
-    return {
-      // the node has been removed from the DOM
-      destroy() {
-        unregister()
-      }
-    }
-  }
 </script>
 
 <div
-  use:init
-  class:tall
-  class:double
-  class:inverted
-  class:padded
-  class:fitted
-  class:compact
-  class:circular
-  class:clearing
-  class:basic
-  class:blurring
-  class:dimmable
-  class:dimmed
-  class:vertical
-  class="{classNames(state, color, emphasis, type, [floated, 'floated'], [attached, 'attached'], [aligned, 'aligned'], 'ui segment', _class)}"
+  use:css="{style}"
+  class="{classNames(
+    _class,
+    'ui',
+    color,
+    {
+      tall,
+      double,
+      inverted,
+      padded,
+      fitted,
+      compact,
+      circular,
+      clearing,
+      basic,
+      blurring,
+      dimmable,
+      dimmed,
+      vertical,
+      raised,
+      stacked,
+      piled,
+      placeholder,
+      loading,
+      disabled,
+      secondary,
+      tertiary,
+      floated,
+      attached,
+      aligned
+    },
+    'segment'
+  )}"
   class:container
 >
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+  <slot />
 </div>

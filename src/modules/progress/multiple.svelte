@@ -10,7 +10,7 @@
 
 <div
   use:css="{style}"
-  class="{classNames('ui', _class, 'multiple progress')}"
+  class="{classNames(_class, 'ui', 'multiple progress')}"
   data-total="{total}"
   data-percent="{percents.join(',')}"
 >

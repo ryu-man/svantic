@@ -13,7 +13,7 @@ interface TableProps extends Component {
     striped?: boolean;
     sortable?: boolean;
     inverted?: boolean;
-    veryBasic?: boolean;
+    very?: boolean;
     selectable?: boolean;
     collapsing?: boolean;
     unstackable?: boolean;

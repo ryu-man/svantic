@@ -2,10 +2,10 @@
   import { classNames, css } from '../../utils'
 
   let _class = ''
-  export let style = {}
   export { _class as class }
+  export let style = {}
 </script>
 
-<div use:css="{style}" class="{classNames("side", _class)}">
+<div use:css="{style}" class="{classNames(_class,"side")}">
   <slot />
 </div>

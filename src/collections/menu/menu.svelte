@@ -3,10 +3,10 @@
   import { classNames, css } from '../../utils'
 
   let _class = ''
+  export { _class as class }
   export let style = {}
-  export let type = ''
-  export let wide 
-  export let size 
+  export let wide
+  export let size
   export let item = false
   export let attached
   export let fluid = false
@@ -18,21 +18,42 @@
   export let labeled = false
   export let borderless = false
   export let floated
-  export { _class as class }
+  export let accordion = false
+  export let secondary = false
+  export let pointing = false
+  export let tabular = false
+  export let text = false
+  export let vertical = false
+  export let pagination = false
 </script>
 
 <div
   use:css="{style}"
-  class:item
-  class:fluid
-  class:compact
-  class:fixed
-  class:stackable
-  class:inverted
-  class:icon
-  class:labeled
-  class:borderless
-  class="{classNames(type, [attached, 'attached'], [floated, 'floated'], wide, size, 'ui menu', _class)}"
+  class="{classNames(
+    _class,
+    'ui',
+    fluid,
+    compact,
+    fixed,
+    stackable,
+    labeled,
+    icon,
+    borderless,
+    inverted,
+    attached,
+    floated,
+    wide,
+    size,
+    accordion,
+    secondary,
+    pointing,
+    tabular,
+    text,
+    vertical,
+    pagination,
+    item,
+    'menu'
+  )}"
 >
   <slot />
 </div>

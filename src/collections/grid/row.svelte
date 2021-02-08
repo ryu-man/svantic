@@ -7,7 +7,7 @@
   export let equal = false
   export let centered = false
   export let type
-  export let columns
+  export let column
   export let aligned
   export let visibility = ''
 </script>
@@ -16,13 +16,11 @@
   use:css="{style}"
   class:centered
   class="{classNames(
+    _class,
     visibility,
-    [columns, `column`],
-    [equal, 'equal width'],
-    [aligned, `aligned`],
+    { column, equal, aligned },
     type,
-    'row',
-    _class
+    'row'
   )}"
 >
   <slot />

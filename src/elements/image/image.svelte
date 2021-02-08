@@ -15,35 +15,34 @@
   export let circular = false
   export let centered = false
   export let bordered = false
-  export let on = {}
   export let style = {}
   let _class = ''
   export { _class as class }
-
-  function init(node) {
-    css(node, style)
-    const unregister = register(node, on)
-    return {
-      destroy() {
-        unregister()
-      }
-    }
-  }
 </script>
 
 <img
-  use:init
-  class:avatar
-  class:bordered
-  class:fluid
-  class:round
-  class:circular
-  class:middle
-  class:centered
+  use:css="{style}"
   class:space
-  class="{classNames(state, size, [floated, 'floated'], [aligned, 'aligned'], 'ui image', _class)}"
+  class="{classNames(
+    _class,
+    'ui',
+    state,
+    size,
+    {
+      avatar,
+      bordered,
+      fluid,
+      round,
+      circular,
+      middle,
+      centered,
+      space,
+      floated,
+      aligned
+    },
+    'image'
+  )}"
   src="{src}"
   alt="{alt}"
 />
-<slot/>
- 
+<slot />

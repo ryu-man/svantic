@@ -6,7 +6,9 @@
   let _class = ''
   export { _class as class }
   export let style = {}
-  export let type = ''
+  export let page = false
+  export let disabled = false
+  export let active = false
   export let state = ''
   export let aligned = ''
   export let shades = ''
@@ -33,25 +35,17 @@
 
 <div
   use:module="{settings}"
-  class:inverted
   class="{classNames(
+    _class,
+    'ui',
     shades,
     partial,
     state,
-    type[(aligned, 'aligned')],
-    'ui dimmer',
-    _class
+    { inverted, page, active, disabled, aligned },
+    'dimmer'
   )}"
 >
-  {#if type == 'content'}
-    <div class="content">
-      <slot>
-        <!-- optional fallback -->
-      </slot>
-    </div>
-
     <slot>
       <!-- optional fallback -->
     </slot>
-  {/if}
 </div>

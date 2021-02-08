@@ -16,4 +16,4 @@
   class:disabled
   class:loading
   class:link
-  class="{classNames(size, _class)}"></em>
+  class="{classNames(_class, size)}"></em>

@@ -4,9 +4,7 @@ import { Component } from '../../component';
 import { Wide } from '../../variations';
 
 interface StatisticProps extends Component {
-    class?: string;
-    style?:Style
-    columns?:Wide
+    column?:Wide
 }
 /**
  * Vomantic Statistics

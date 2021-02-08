@@ -15,13 +15,19 @@
 </script>
 
 <div
-  class="{classNames('ui',
-    [reversed, 'reversed'],
-    [equal, 'equal width'],
-    [divided, 'divided'],
-    [celled, 'celled'],
-    [columns, 'column'],
-    {centered, stackable, very, relaxed},
+  class="{classNames(
+    'ui',
+    {
+      reversed,
+      equal,
+      divided,
+      celled,
+      columns,
+      centered,
+      stackable,
+      very,
+      relaxed
+    },
     'grid'
   )}"
   class:container

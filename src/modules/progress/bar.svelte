@@ -23,7 +23,7 @@
   }
 </script>
 
-<div use:module class="{classNames(color, { inverted }, _class, 'bar')}" on:click>
+<div use:module class="{classNames(_class, color, { inverted }, 'bar')}" on:click>
   {#if progress}
     <div class="progress"></div>
   {/if}

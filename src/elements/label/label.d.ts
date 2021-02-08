@@ -31,6 +31,13 @@ interface LabelProps extends Component {
   inverted?: boolean
   horizontal?: boolean
   circular?: boolean
+  ribbon?: boolean
+  tag?: boolean
+  corner?: Attach
+  pointing?: Attach | 'below'
+  image?: boolean
+  horizontal?: boolean
+  floating?: Attach
   on?: DOMEvents<HTMLDivElement>
 }
 /**

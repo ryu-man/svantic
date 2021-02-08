@@ -3,20 +3,10 @@
 
   let _class = ''
   export { _class as class }
-  export let short = false
-  export let medium = false
-  export let full = false
-  export let long = false
-  export let very = false
+  export let length
   export let fluid = false
 </script>
 
 <div
-  class:short
-  class:medium
-  class:very
-  class:full
-  class:long
-  class:fluid
-  class="{classNames('line', _class)}"
+  class="{classNames(_class,{fluid, length},'line')}"
 ></div>

@@ -2,33 +2,45 @@ import { SvelteComponentTyped } from 'svelte/internal'
 import type { Loading, Attach, Size, Speed, Wide } from '../../variations'
 import { Module } from '../module'
 import Controller from './controller'
-import {DropdownSettings} from './settings'
+import { DropdownSettings } from './settings'
 
-declare type Type =
-  | 'selection'
-  | 'search'
-  | 'clearable'
-  | 'multiple'
-  | 'floating'
-  | 'labeled'
-  | 'icon'
-  | 'labeled icon'
-  | 'button'
-  | 'inline'
-  | 'pointing'
-  | 'simple'
-  | ''
+// declare type Type =
+//   | 'selection'
+//   | 'search'
+//   | 'clearable'
+//   | 'multiple'
+//   | 'floating'
+//   | 'labeled'
+//   | 'icon'
+//   | 'labeled icon'
+//   | 'button'
+//   | 'inline'
+//   | 'pointing'
+//   | 'simple'
+//   | ''
 
-declare type State = 'active' | 'disabled' | 'loading' | 'error'
 declare type Height = 'long' | 'very long'
 
-interface DropdownProps extends Module<Controller, DropdownSettings> {
+export interface DropdownProps extends Module<Controller, DropdownSettings> {
+  selection?: boolean
+  search?: boolean
+  clearable?: boolean
+  multiple?: boolean
+  floating?: boolean
+  labeled?: boolean
+  icon?: boolean
+  button?: boolean
+  inline?: boolean
+  pointing?: boolean
+  simple?: boolean
   size?: Size
   column?: Wide
-  state?: State
+  active?: boolean
+  disabled?: boolean
+  loading?: boolean
+  error?: boolean
   speed?: Speed
   height?: Height
-  type?: Type | Type[]
   menuDirection?: Attach
   loaderStyle?: Loading
   icon?: boolean
@@ -39,7 +51,7 @@ interface DropdownProps extends Module<Controller, DropdownSettings> {
   fluid?: boolean
   label?: boolean
   toggle?: boolean
-  loading?: boolean
+  loading?: Loading
   primary?: boolean
   compact?: boolean
   circular?: boolean
@@ -54,6 +66,6 @@ interface DropdownProps extends Module<Controller, DropdownSettings> {
  * Vomantic Dropdown
  */
 declare class Dropdown extends SvelteComponentTyped<DropdownProps> {
-  static Select : new ()=>Dropdown
+  static select: new () => Dropdown
 }
 export default Dropdown

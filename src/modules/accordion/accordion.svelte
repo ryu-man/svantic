@@ -1,11 +1,15 @@
 <script>
   import '../../../semantic/dist/components/accordion.css'
-  import { css } from '../../utils'
+  import { classNames, css } from '../../utils'
   import { register } from '../../utils/events'
   import Controller from './controller'
 
   let _class = ''
   export let fluid = false
+  export let vertical = false
+  export let following = false
+  export let text = false
+  export let menu = false
   export let styled = false
   export let inverted = false
   export let settings = {}
@@ -34,10 +38,18 @@
 
 <div
   use:module="{settings}"
-  class:styled
-  class:fluid
-  class:inverted
-  class="ui accordion {_class}"
+  class="{classNames(
+    _class,
+    'ui',
+    vertical,
+    fluid,
+    following,
+    styled,
+    inverted,
+    'accordion',
+    text,
+    menu
+  )}"
 >
   <slot />
 </div>

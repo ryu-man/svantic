@@ -16,7 +16,7 @@
   class:relaxed
   class:link
   class:inverted
-  class="{classNames('ui', _class, 'items')}"
+  class="{classNames(_class,'ui',{unstackable, divided, relaxed, link, inverted}, 'items')}"
 >
   <slot />
 </div>

@@ -13,7 +13,7 @@ interface RowProps extends Component {
   class?: string
   style?: Style
   type?: GridType
-  columns?: GridWide | GridWide[]
+  column?: GridWide | GridWide[]
   equal?: boolean
   aligned?: 'top'|'middle'|'bottom'
   visibility?: Visibility

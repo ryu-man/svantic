@@ -5,15 +5,6 @@ import type { Icons } from '../icon/icon'
 import Content from './content'
 import Or from './or'
 
-declare type Type =
-  | 'icon'
-  | 'labeled'
-  | 'left labeled'
-  | 'right labeled'
-  | 'basic'
-  | 'inverted'
-  | 'animated'
-
 declare type State = 'active' | 'disabled' | 'loading'
 
 declare type Social =
@@ -27,12 +18,11 @@ declare type Social =
 
 export interface ButtonProps extends Component {
   size?: Size
-  type?: Type | Type[]
   color?: Color
   state?: State
   social?: Social
   floated?: Float
-  labeled?: Float
+  labeled?: boolean | Float
   attached?: Attach
   animated?: true | 'fade' | 'vertical'
   icon?: true | Icons
@@ -57,8 +47,8 @@ export interface ButtonProps extends Component {
  * Vomantic Button
  */
 declare class Button extends SvelteComponentTyped<ButtonProps> {
-  static Content: new () => Content
-  static Or: new () => Or
+  static content: new () => Content
+  static or: new () => Or
 
 }
 export default Button

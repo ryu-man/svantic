@@ -34,7 +34,12 @@
   class:loading
   class:segment
   class:active
-  class="{classNames([attached, 'attached'], 'ui tabular menu', _class)}"
+  class="{classNames(
+    _class,
+    'ui',
+    { loading, segment, active, attached },
+    'tabular menu'
+  )}"
 >
   <slot name="item" />
 </div>

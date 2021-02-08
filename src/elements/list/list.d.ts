@@ -1,26 +1,23 @@
-import { SvelteComponentTyped} from 'svelte/internal';
-import { Style } from '../../style';
-import { Component } from '../../component';
+import type { Align, Float } from 'src/variations'
+import { SvelteComponentTyped } from 'svelte/internal'
+import { Component } from '../../component'
+
 interface ListProps extends Component {
-    class?: string;
-    fluid?: boolean;
-    circular?: boolean;
-    loading?: boolean;
-    primary?: boolean;
-    secondary?: boolean;
-    compact?: boolean;
-    basic?: boolean;
-    toggle?: boolean;
-    positive?: boolean;
-    negative?: boolean;
-    tertiary?: boolean;
-    inverted?: boolean;
-    icon?: boolean;
-    style?: Style;
+  aligned?: Align
+  floated?: Float
+  bulleted?: boolean
+  ordered?: boolean
+  link?: boolean
+  horizontal?: boolean
+  inverted?: boolean
+  selection?: boolean
+  animated?: boolean
+  relaxed?: boolean
+  divided?: boolean
+  celled?: boolean
 }
 /**
  * Vomantic List
  */
-declare class List extends SvelteComponentTyped<ListProps> {
-}
-export default List;
+declare class List extends SvelteComponentTyped<ListProps> {}
+export default List

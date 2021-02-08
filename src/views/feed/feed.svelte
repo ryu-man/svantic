@@ -8,7 +8,7 @@
   export let inverted = false
 </script>
 
-<div class:inverted class="{classNames(size, 'ui feed', _class)}">
+<div class:inverted class="{classNames(_class, 'ui',size, 'feed')}">
   <div class="event">
     <slot />
   </div>

@@ -27,9 +27,16 @@
 
 <div
   use:init
-  class:compact
-  class:floating
-  class="{classNames(type, context, state, size, [attached, 'attached'], 'ui message', _class)}"
+  class="{classNames(
+    _class,
+    'ui',
+    type,
+    context,
+    state,
+    size,
+    { compact, floating, attached },
+    'message'
+  )}"
 >
   <slot />
 </div>

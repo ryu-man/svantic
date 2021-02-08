@@ -8,6 +8,6 @@
   export let style = {}
 </script>
 
-<div use:css="{style}" class:header class:square class="{classNames('image', _class)}">
+<div use:css="{style}" class="{classNames(_class,{header, square},'image')}">
   <slot />
 </div>

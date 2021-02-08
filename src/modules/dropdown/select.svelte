@@ -2,33 +2,39 @@
   import { classNames } from '../../utils'
 
   let _class = ''
+  export { _class as class }
   export let style = {}
   export let size = ''
   export let wide = ''
-  export let type = ''
-  export let state = ''
+  export let active = false
+  export let disabled = false
+  export let loading
+  export let error = false
   export let speed = ''
   export let height = ''
-  export let column = ''
-  export let loaderStyle = ''
+  export let column
   export let menuDirection = ''
-  export let top = false
   export let link = false
   export let item = false
-  export let left = false
   export let long = false
   export let fluid = false
-  export let right = false
   export let label = false
-  export let bottom = false
   export let compact = false
   export let inverted = false
   export let scrolling = false
-  export { _class as class }
+  export let selection = false
+  export let search = false
+  export let clearable = false
+  export let multiple = false
+  export let floating = false
+  export let labeled = false
+  export let icon = false
+  export let button = false
+  export let inline = false
+  export let pointing = false
+  export let simple = false
   export let settings = {}
   export let onMount
-
-  $: _type = type?.join?.(' ') ?? type
 
   function module(node, settings) {
     css(node, style)
@@ -47,31 +53,42 @@
 
 <select
   use:module="{settings}"
-  multiple="{type.includes('multiple')}"
-  class:top
-  class:link
-  class:item
-  class:left
-  class:long
-  class:right
-  class:fluid
-  class:label
-  class:bottom
-  class:compact
-  class:inverted
-  class:scrolling
+  multiple="{multiple}"
   class="{classNames(
+    _class,
+    'ui',
     height,
     column,
     speed,
-    loaderStyle,
     wide,
-    _type,
-    state,
     size,
     menuDirection,
-    'ui dropdown',
-    _class
+    {
+      link,
+      item,
+      long,
+      fluid,
+      label,
+      compact,
+      scrolling,
+      inverted,
+      active,
+      disabled,
+      loading,
+      error,
+      selection,
+      search,
+      clearable,
+      multiple,
+      floating,
+      labeled,
+      icon,
+      button,
+      inline,
+      pointing,
+      simple
+    },
+    'dropdown'
   )}"
 >
   <slot />

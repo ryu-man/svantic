@@ -1,8 +1,9 @@
 <script>
   import '../../../semantic/dist/components/list.css'
-  import { classNames, css, register } from '../../utils'
+  import { classNames, css } from '../../utils'
 
   let _class = ''
+  export { _class as class }
   export let aligned = ''
   export let floated = ''
   export let bulleted = false
@@ -15,36 +16,30 @@
   export let relaxed = false
   export let divided = false
   export let celled = false
-  export let style= {}
-  export let on= {}
-  export { _class as class }
-
-  function init(node) {
-    css(node, style)
-    const unregister = register(node, on)
-    return {
-      destroy() {
-        unregister()
-      }
-    }
-  }
+  export let style = {}
 </script>
 
 <div
-  use:init
-  class:link
-  class:celled
-  class:ordered
-  class:relaxed
-  class:divided
-  class:bulleted
-  class:inverted
-  class:animated
-  class:selection
-  class:horizontal
-  class="{classNames([floated, 'floated'], [aligned, 'aligned', 'ui list', _class])}"
+  use:css="{style}"
+  class="{classNames(
+    _class,
+    'ui',
+    {
+      link,
+      celled,
+      ordered,
+      relaxed,
+      divided,
+      bulleted,
+      animated,
+      selection,
+      horizontal,
+      inverted,
+      floated,
+      aligned
+    },
+    'list'
+  )}"
 >
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+  <slot/>
 </div>

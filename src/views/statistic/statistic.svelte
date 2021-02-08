@@ -17,7 +17,7 @@
   use:css="{style}"
   class:inverted
   class:horizontal
-  class="{classNames(color, size, [floated, 'floated'], [stackable, 'stackable'], 'ui statistic', _class)}"
+  class="{classNames(_class, 'ui', color, size, {horizontal, inverted,floated,stackable}, 'statistic')}"
 >
   <slot />
 </div>

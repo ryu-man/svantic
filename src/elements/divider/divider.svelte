@@ -14,9 +14,15 @@
   export let inverted = false
   let _class = ''
   export { _class as class }
-
 </script>
 
-<div class="{classNames('ui',[aligned, 'aligned'], {clearing, section, hidden, fitted, ignored, vertical, inverted}, _class, 'divider')}">
+<div
+  class="{classNames(
+    _class,
+    'ui',
+    { clearing, section, hidden, fitted, ignored, vertical, inverted, aligned },
+    'divider'
+  )}"
+>
   <slot />
 </div>

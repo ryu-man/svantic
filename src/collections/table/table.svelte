@@ -15,7 +15,7 @@
   export let striped = false
   export let sortable = false
   export let inverted = false
-  export let veryBasic = false
+  export let very = false
   export let collapsing = false
   export let selectable = false
   export let unstackable = false
@@ -25,21 +25,29 @@
 
 <table
   use:css="{style}"
-  class:celled
-  class:compact
-  class:striped
-  class:collapsing
-  class:padded
-  class:sortable
-  class:inverted
-  class:selectable
-  class:unstackable
-  class:fixed
-  class:single
-  class:line
-  class:very="{veryBasic}"
-  class:basic="{basic || veryBasic}"
-  class="{classNames(type, [column, 'column'],'ui table',_class)}"
+  class="{classNames(
+    _class,
+    'ui',
+    type,
+    {
+      column,
+      celled,
+      compact,
+      striped,
+      collapsing,
+      padded,
+      sortable,
+      inverted,
+      selectable,
+      unstackable,
+      fixed,
+      single,
+      line,
+      very,
+      basic
+    },
+    'table'
+  )}"
 >
   <slot />
 </table>

@@ -11,36 +11,18 @@
   export let close
   export let size
   export let style = {}
-  export let on = {}
 
-  function init(node) {
-    // the node has been mounted in the DOM
-    css(node, style)
-    const unregister = register(node, on)
-
-    return {
-      // the node has been removed from the DOM
-      destroy() {
-        unregister()
-      }
-    }
-  }
 </script>
 
 <div
-  use:init
-  class:dividing
-  class:attached
-  class:close
+  use:css={style}
   class="{classNames(
-    side,
-    [internal, 'internal'],
-    [dividing, 'dividing'],
-    [attached, 'attached'],
-    [close, 'close'],
-    size,
     _class,
-    'ui rail'
+    'ui',
+    side,
+    size,
+    { dividing, attached,internal, dividing, attached, close },
+    'rail'
   )}"
 >
   <slot>

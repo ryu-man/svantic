@@ -22,7 +22,8 @@
 </script>
 
 <div
-  use:init class="{classNames('ui',[aligned, 'aligned'],{justified, fluid},_class, 'container')}"
+  use:init
+  class="{classNames(_class, 'ui', { justified, fluid, aligned }, 'container')}"
 >
   <slot />
 </div>

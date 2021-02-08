@@ -1,13 +1,12 @@
 <script>
-
   import { classNames, css } from '../../utils'
 
   let _class = ''
-  export let type = ''
-  export let side = ''
+  export { _class as class }
+  export let side
   export let size = ''
-  export let wide = ''
-  export let attached = ''
+  export let wide
+  export let attached
   export let ordered = false
   export let vertical = false
   export let tablet = false
@@ -15,23 +14,29 @@
   export let fluid = false
   export let unstackable = false
   export let inverted = false
-  export { _class as class }
   export let style = {}
 </script>
 
 <div
   use:css="{style}"
-  class:ordered
-  class:vertical
-  class:tablet
-  class:stackable
-  class:fluid
-  class:unstackable
-  class:attached
-  class:inverted
-  class="{classNames(type, side, size, wide, [attached, 'attached'], 'ui steps', _class)}"
+  class="{classNames(
+    _class,
+    'ui',
+    side,
+    size,
+    wide,
+    {
+      ordered,
+      vertical,
+      tablet,
+      stackable,
+      fluid,
+      unstackable,
+      inverted,
+      attached
+    },
+    'steps'
+  )}"
 >
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+  <slot />
 </div>

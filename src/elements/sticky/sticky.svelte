@@ -7,6 +7,6 @@
   export let style = {}
 </script>
 
-<div use:css="{style}" class="{classNames('ui sticky', _class)}">
+<div use:css="{style}" class="{classNames(_class, 'ui sticky')}">
   <slot />
 </div>

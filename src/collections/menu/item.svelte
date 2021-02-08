@@ -28,10 +28,7 @@
 <!-- svelte-ignore a11y-missing-attribute -->
 <a
   use:init
-  class:active
-  class:horizontally
-  class:fitted
-  class="{classNames([icon, 'icon'], _class, 'item')}"
+  class="{classNames(_class, { active, horizontally, fitted, icon }, 'item')}"
   href="{href}"
   data-content="{content}"
   on:click

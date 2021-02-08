@@ -5,9 +5,9 @@
 
   let _class = ''
   export { _class as class }
-  export let type = ''
   export let wide = ''
-  export let state = ''
+  export let visible = false
+  export let dimmed = false
   export let direction = ''
   export let inverted = false
   export let vertical = false
@@ -41,12 +41,11 @@
   class:inverted
   class:vertical
   class="{classNames(
-    state,
-    type,
+    _class,
+    'ui',
     direction,
-    [wide, 'wide'],
-    'ui sidebar',
-    _class
+    { wide, visible, dimmed },
+    'sidebar'
   )}"
 >
   <slot />

@@ -1,6 +1,8 @@
 <script>
   import { classNames, css } from '../../utils'
 
+  let _class = ''
+  export { _class as class }
   export let style = {}
   export let size = ''
   export let color = ''
@@ -8,8 +10,6 @@
   export let tag = false
   export let circular = false
   export let inverted = false
-  let _class = ''
-  export { _class as class }
 </script>
 
 <div
@@ -18,9 +18,14 @@
   class:tag
   class:circular
   class:inverted
-  class="{classNames(size, color, 'ui labels', _class)}"
+  class="{classNames(
+    _class,
+    'ui',
+    size,
+    color,
+    { basic, tag, circular, inverted },
+    'labels'
+  )}"
 >
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+  <slot />
 </div>

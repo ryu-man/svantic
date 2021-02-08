@@ -7,8 +7,6 @@
   export { _class as class }
 </script>
 
-<div use:css="{style}" class="{classNames(size, 'ui images', _class)}">
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+<div use:css="{style}" class="{classNames(_class, 'ui', size, 'images')}">
+  <slot />
 </div>

@@ -14,7 +14,7 @@
 <div
   use:css="{style}"
   class:instant
-  class="{classNames(state, direction, type, 'ui reaveal', _class)}"
+  class="{classNames(_class, 'ui', state, direction, type, 'reaveal')}"
 >
   <slot />
 </div>

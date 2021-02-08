@@ -6,6 +6,6 @@
   export let style = {}
 </script>
 
-<div use:css="{style}" class="{classNames('header', _class)}">
+<div use:css="{style}" class="{classNames(_class, 'header')}">
   <slot />
 </div>

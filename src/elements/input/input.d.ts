@@ -1,6 +1,6 @@
 import { SvelteComponentTyped } from 'svelte';
 import type { Style } from '../../style';
-import type { Speed, Animation, Color, Float, Size } from '../../variations';
+import type { Speed, Loading, Color, Float, Size } from '../../variations';
 import type { Component } from '../../component';
 
 declare type State = 'focus' | 'loading' | 'disabled' | 'error' | '';
@@ -15,7 +15,7 @@ interface InputProps extends Component {
     icon?: Float;
     labeled?: Float;
     action?: Float;
-    animation?: Animation;
+    animation?: Loading;
     basic?: boolean;
     fluid?: boolean;
     corner?: boolean;

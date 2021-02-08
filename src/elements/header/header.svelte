@@ -2,18 +2,18 @@
   import { register, css, classNames } from '../../utils'
 
   let _class = ''
-  export let style = {}
+  export { _class as class }
   export let attached = ''
   export let floated = ''
   export let aligned = ''
-  export let icon = false
-  export let sub = false
-  export let disabled = false
+  export let divider
   export let dividing = false
+  export let icon = false
+  export let disabled = false
   export let block = false
   export let inverted = false
   export let on = {}
-  export { _class as class }
+  export let style = {}
 
   function init(node) {
     css(node, style)
@@ -29,23 +29,21 @@
 <div
   use:init
   class="{classNames(
-    [attached, 'attached'],
-    [floated, 'floated'],
-    [aligned, 'aligned'],
-    'ui header',
-    _class
+    _class,
+    'ui',
+    {
+      icon,
+      disabled,
+      block,
+      inverted,
+      dividing,
+      attached,
+      floated,
+      aligned,
+      divider
+    },
+    'header'
   )}"
-  class:icon
-  class:sub
-  class:disabled
-  class:dividing
-  class:block
-  class:attached="{attached != ''}"
-  class:floated="{floated != ''}"
-  class:aligned="{aligned != ''}"
-  class:inverted
 >
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+  <slot />
 </div>

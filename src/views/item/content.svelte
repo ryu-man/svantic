@@ -4,6 +4,6 @@
   export let align
 </script>
 
-<div class="{classNames([align, 'align'], 'content')}">
+<div class="{classNames({align}, 'content')}">
   <slot />
 </div>

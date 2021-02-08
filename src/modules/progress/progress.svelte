@@ -45,15 +45,22 @@
   data-value="{value}"
   data-total="{total}"
   class="{classNames(
+    _class,
     'ui',
-    { indicating },
     speed,
     size,
     color,
-    [attached, 'attached'],
-    [indeterminate, 'indeterminate'],
-    { disabled, error, warning, success, active, inverted },
-    _class,
+    {
+      indicating,
+      disabled,
+      error,
+      warning,
+      success,
+      active,
+      inverted,
+      attached,
+      indeterminate
+    },
     'progress'
   )}"
 >

@@ -35,17 +35,14 @@
 <div
   use:module="{settings}"
   class="{classNames(
+    _class,
     'ui',
     type,
     state,
-    [fitted, 'fitted'],
-    [inverted, 'inverted'],
-    'checkbox',
-    _class
+    { fitted, inverted },
+    'checkbox'
   )}"
 >
-  <input type="checkbox" name="example" />
-  <slot>
-    <label></label>
-  </slot>
+  <input type="checkbox" name="" />
+  <slot />
 </div>

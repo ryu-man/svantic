@@ -16,15 +16,17 @@
 
 <div
   use:css="{style}"
-  class:doubling
   class="{classNames(
+    _class,
+    doubling,
     visibility,
-    [aligned, 'aligned'],
-    [floated, 'floated'],
-    [_wide, 'wide'],
+    {
+      aligned,
+      floated
+    },
+    _wide,
     color,
-    'column',
-    _class
+    'column'
   )}"
 >
   <slot />

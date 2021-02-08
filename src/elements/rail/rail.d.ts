@@ -5,8 +5,6 @@ import type { Size } from 'src/variations'
 
 type Side = 'left' | 'right'
 interface RailProps extends Component {
-  class?: string
-  style?: Style
   side?: Side
   internal?: Side
   dividing?: Side

@@ -1,8 +1,9 @@
 <script>
   import '../../../semantic/dist/components/input.css'
-  import { classNames, css, register } from '../../utils'
+  import { classNames, css } from '../../utils'
 
   let _class = ''
+  export { _class as class }
   export let size = ''
   export let state = ''
   export let color = ''
@@ -13,36 +14,19 @@
   export let corner = false
   export let inverted = false
   export let transparent = false
-  export let on = {}
   export let style = {}
-  export { _class as class }
-
-  function init(node) {
-    css(node, style)
-    const unregister = register(node, on)
-    return {
-      destroy() {
-        unregister()
-      }
-    }
-  }
 </script>
 
 <div
-  use:init
-  class:fluid
-  class:corner
-  class:inverted
-  class:transparent
+  use:css="{style}"
   class="{classNames(
+    _class,
+    'ui',
     color,
     size,
     state,
-    [labeled, 'labeled'],
-    [icon, 'icon'],
-    [action, 'action'],
-    'ui input',
-    _class
+    { fluid, corner, inverted, transparent, labeled, icon, action },
+    'input'
   )}"
 >
   <slot>
