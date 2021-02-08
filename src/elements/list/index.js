@@ -1,9 +1,9 @@
 import '../../../semantic/dist/components/list.css'
 
-import { default as Link } from './link.svelte'
 import { default as List } from './list.svelte'
+import { default as Item } from './item.svelte'
 
-List.link = Link
+List.item = Item
 
-export {List}
+export { List, Item }
 export default List
