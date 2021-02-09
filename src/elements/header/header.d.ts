@@ -1,5 +1,5 @@
 import { SvelteComponentTyped } from 'svelte/internal'
-import type { Align, Float } from 'src/variations'
+import type { Align, Attach, Color, Float, Size } from 'src/variations'
 import { Component } from '../../component'
 import { default as H1 } from './h1'
 import { default as H2 } from './h2'
@@ -9,26 +9,21 @@ import { default as H5 } from './h5'
 import { default as Sub } from './sub'
 
 export interface HeaderProps extends Component {
-  active?: boolean
   disabled?: boolean
-  fluid?: boolean
-  circular?: boolean
-  loading?: boolean
   primary?: boolean
   secondary?: boolean
-  compact?: boolean
-  basic?: boolean
-  toggle?: boolean
-  positive?: boolean
-  negative?: boolean
-  tertiary?: boolean
   inverted?: boolean
   icon?: boolean
   sub?: boolean
   divider?: boolean | 'horizontal'
   dividing?: boolean
+  attached?: Attach
   aligned?: Align
   floated?: Float
+  size?: Size
+  color?: Color
+  block?: boolean
+  justified?: boolean
 }
 /**
  * @description

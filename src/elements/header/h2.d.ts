@@ -1,7 +1,7 @@
 import { SvelteComponentTyped} from 'svelte/internal';
-import { Component } from '../../component';
+import type { HeaderProps } from './header';
 
-interface H2Props extends Component {
+interface H2Props extends HeaderProps {
 }
 /**
  * @description 

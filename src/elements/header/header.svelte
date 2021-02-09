@@ -1,37 +1,37 @@
 <script>
-  import { register, css, classNames } from '../../utils'
+  import { css, classNames } from '../../utils'
 
   let _class = ''
   export { _class as class }
-  export let attached = ''
-  export let floated = ''
-  export let aligned = ''
-  export let divider
-  export let dividing = false
-  export let icon = false
   export let disabled = false
-  export let block = false
+  export let primary = false
+  export let secondary = false
   export let inverted = false
-  export let on = {}
+  export let icon = false
+  export let sub = false
+  export let divider = false
+  export let dividing = false
+  export let attached
+  export let aligned
+  export let floated
+  export let size
+  export let color
+  export let block = false
+  export let justified = false
   export let style = {}
-
-  function init(node) {
-    css(node, style)
-    const unregister = register(node, on)
-    return {
-      destroy() {
-        unregister()
-      }
-    }
-  }
 </script>
 
 <div
-  use:init
+  use:css="{style}"
   class="{classNames(
     _class,
     'ui',
+    size,
+    color,
     {
+      primary,
+      secondary,
+      sub,
       icon,
       disabled,
       block,
@@ -40,6 +40,7 @@
       attached,
       floated,
       aligned,
+      justified,
       divider
     },
     'header'

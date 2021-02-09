@@ -1,24 +1,7 @@
 import { SvelteComponentTyped} from 'svelte/internal';
-import { Component } from '../../component';
+import type { HeaderProps } from './header';
 
-interface H3Props extends Component {
-    class?: string;
-    active?: boolean;
-    disabled?: boolean;
-    fluid?: boolean;
-    circular?: boolean;
-    loading?: boolean;
-    primary?: boolean;
-    secondary?: boolean;
-    compact?: boolean;
-    basic?: boolean;
-    toggle?: boolean;
-    positive?: boolean;
-    negative?: boolean;
-    tertiary?: boolean;
-    inverted?: boolean;
-    icon?: boolean;
-    style?: Style;
+interface H3Props extends HeaderProps {
 }
 /**
  * @description 
