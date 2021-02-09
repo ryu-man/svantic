@@ -1,4 +1,6 @@
 <script>
+  import '../../../semantic/dist/components/site.min.css'
+  import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/card.css'
   import { register } from '../../utils/events'
   import { css } from '../../utils'
