@@ -1,4 +1,4 @@
-import { default as Header } from './header.svelte'
+import { default as Header } from './header'
 import { default as H1 } from './h1.svelte'
 import { default as H2 } from './h2.svelte'
 import { default as H3 } from './h3.svelte'
