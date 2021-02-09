@@ -1,2 +1,5 @@
-export { default as Link } from "./link";
-export { default as Item } from "./item";
+import { default as List } from './list.svelte'
+import { default as Item } from './item.svelte'
+
+export { List, Item }
+export default List
