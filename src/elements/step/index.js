@@ -1,4 +1,3 @@
-import '../../../semantic/dist/components/step.css'
 
 import { default as Step } from './step.svelte'
 import { default as Link } from './link.svelte'

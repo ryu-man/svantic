@@ -1,4 +1,6 @@
 <script>
+  import '../../../semantic/dist/components/site.min.css'
+  import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/rail.css'
   import { css, register, classNames } from '../../utils'
 
@@ -11,17 +13,16 @@
   export let close
   export let size
   export let style = {}
-
 </script>
 
 <div
-  use:css={style}
+  use:css="{style}"
   class="{classNames(
     _class,
     'ui',
     side,
     size,
-    { dividing, attached,internal, dividing, attached, close },
+    { dividing, attached, internal, dividing, attached, close },
     'rail'
   )}"
 >

@@ -1,4 +1,9 @@
 <script>
+  import '../../../semantic/dist/components/site.min.css'
+  import '../../../semantic/dist/components/reset.min.css'
+  import '../../../semantic/dist/components/transition.min.css'
+  import '../../../semantic/dist/components/label.css'
+
   import { css, register, classNames } from '../../utils'
 
   let _class = ''

@@ -1,4 +1,7 @@
 <script>
+  import '../../../semantic/dist/components/site.min.css'
+  import '../../../semantic/dist/components/reset.min.css'
+  import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/shape.css'
   import { css } from '../../utils'
 
@@ -9,10 +12,9 @@
   //cude
   //text
   export let type = ''
-
 </script>
 
-<div use:css={style} class="{type} ui shape {_class}">
+<div use:css="{style}" class="{type} ui shape {_class}">
   <div class="sides">
     <slot>
       <!-- optional fallback -->

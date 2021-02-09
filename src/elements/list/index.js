@@ -1,5 +1,3 @@
-import '../../../semantic/dist/components/list.css'
-
 import { default as List } from './list.svelte'
 import { default as Item } from './item.svelte'
 

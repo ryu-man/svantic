@@ -1,5 +1,9 @@
 <script>
-  import { css, register, classNames } from '../../utils'
+  import '../../../semantic/dist/components/site.min.css'
+  import '../../../semantic/dist/components/reset.min.css'
+  import '../../../semantic/dist/components/transition.min.css'
+  import '../../../semantic/dist/components/icon.css'
+  import { css, classNames } from '../../utils'
 
   export let name = ''
   export let size = ''

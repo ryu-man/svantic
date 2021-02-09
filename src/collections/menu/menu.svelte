@@ -1,5 +1,8 @@
 <script>
+  import '../../../semantic/dist/components/site.min.css'
+  import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/menu.css'
+
   import { classNames, css } from '../../utils'
 
   let _class = ''
@@ -32,26 +35,28 @@
   class="{classNames(
     _class,
     'ui',
-    fluid,
-    compact,
-    fixed,
-    stackable,
-    labeled,
-    icon,
-    borderless,
-    inverted,
-    attached,
-    floated,
     wide,
     size,
-    accordion,
-    secondary,
-    pointing,
-    tabular,
-    text,
-    vertical,
-    pagination,
-    item,
+    {
+      fluid,
+      compact,
+      fixed,
+      stackable,
+      labeled,
+      icon,
+      borderless,
+      inverted,
+      attached,
+      floated,
+      accordion,
+      secondary,
+      pointing,
+      tabular,
+      text,
+      vertical,
+      pagination,
+      item
+    },
     'menu'
   )}"
 >
