@@ -1,40 +1,49 @@
 <script>
+  import '../../../semantic/dist/components/site.min.css'
+  import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/message.css'
-  import { classNames, css, register } from '../../utils'
+  import { classNames, css } from '../../utils'
 
-  export let type = ''
-  export let size = ''
-  export let state = ''
-  export let context = ''
-  export let attached = ''
-  export let compact = false
-  export let floating = false
-  export let on = {}
-  export let style = {}
   let _class = ''
   export { _class as class }
-
-  function init(node) {
-    css(node, style)
-    const unregister = register(node, on)
-    return {
-      destroy() {
-        unregister()
-      }
-    }
-  }
+  export let message = false
+  export let list = false
+  export let icon = false
+  export let dissmissible = false
+  export let info = false
+  export let warning = false
+  export let positive = false
+  export let negative = false
+  export let visible = false
+  export let hidden = false
+  export let attached
+  export let floating
+  export let size
+  export let compact = false
+  export let style = {}
 </script>
 
 <div
-  use:init
+  use:css="{style}"
   class="{classNames(
     _class,
     'ui',
-    type,
-    context,
-    state,
     size,
-    { compact, floating, attached },
+    {
+      message,
+      list,
+      icon,
+      dissmissible,
+      info,
+      warning,
+      positive,
+      negative,
+      visible,
+      hidden,
+      compact,
+      floating,
+      attached
+    },
     'message'
   )}"
 >
