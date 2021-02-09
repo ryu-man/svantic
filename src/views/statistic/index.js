@@ -1,4 +1,3 @@
-import '../../../semantic/dist/components/statistic.css'
 
 import { default as Statistics } from './statistics.svelte'
 import { default as Statistic } from './statistic.svelte'
