@@ -60,7 +60,7 @@ export default class ModalController extends Controller {
   canFit() {
     return this.module('can fit')
   }
-  
+
   isActive() {
     return this.module('is active')
   }
