@@ -4,7 +4,7 @@
   import '../../../semantic/dist/components/dimmer.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/modal.css'
-  import { css } from '../../utils'
+  import { classNames, css } from '../../utils'
   import Controller from './controller'
 
   let _class = ''
@@ -37,12 +37,13 @@
 
 <div
   use:module="{settings}"
-  class:basic
-  class:active
-  class:inverted
-  class:overlay
-  class:fullscreen
-  class="{size} ui modal {_class}"
+  class="{classNames(
+    _class,
+    'ui',
+    { basic, active, overlay, fullscreen, inverted },
+    size,
+    'modal'
+  )}"
 >
   <slot />
 </div>
