@@ -5,8 +5,10 @@
   import { css, classNames } from '../../utils'
 
   let _class = ''
-  export let type = ''
-  export let column = ''
+  export let definition = false
+  export let structured = false
+  export let column
+  export let wide
   export let line = false
   export let basic = false
   export let fixed = false
@@ -30,8 +32,8 @@
   class="{classNames(
     _class,
     'ui',
-    type,
     {
+      wide,
       column,
       celled,
       compact,
@@ -46,7 +48,9 @@
       single,
       line,
       very,
-      basic
+      basic,
+      definition,
+      structured
     },
     'table'
   )}"
