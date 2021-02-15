@@ -36,7 +36,24 @@ cd svantic-app
 npm install
 ```
 
-_NOTE_: There are of course other ways to set up a project using svelte. This is just the quickest way to start.
+<!-- Or you can our svantic-template -->
+
+_NOTE: There are of course other ways to set up a project using svelte. This is just the quickest way to start._
+
+### Rollup Configuration
+
+Because svantic uses dymanic import for better footprint and performance you have to configure rollup as following:
+
+```js
+
+output: {
+  ...,
+  dir: "path to output directory",
+  entryFileNames: "[name].js",
+  chunkFileNames: "[name].js"
+},
+  
+```
 
 Add svantic and modify `src/App.svelte` file in the following way
 
