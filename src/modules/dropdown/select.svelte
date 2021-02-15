@@ -2,8 +2,9 @@
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
-  import { classNames } from '../../utils'
-
+  import { css, classNames } from '../../utils'
+  import Controller from './controller'
+  
   let _class = ''
   export { _class as class }
   export let style = {}
