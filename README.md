@@ -74,6 +74,6 @@ Navigate to [localhost:5000](http://localhost:5000)
 
 ## License
 
-Code released under MIT license.
+Code released under [MIT license](./Licence) .
 
-Copyright &copy;, ryu-man.
+Copyright &copy; - ryu-man.
