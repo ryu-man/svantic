@@ -29,7 +29,7 @@
   "files": [
     "dist",
     "src",
-    "semantic"
+    "semantic/dist"
   ],
   "directories": {
     "test": "test"
