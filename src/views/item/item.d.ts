@@ -15,12 +15,12 @@ interface ItemProps {
  * @description An item view presents large collections of site content for display
  */
 export default class Item extends SvelteComponentTyped<ItemProps> {
-  static Content: new () => Content
-  static Image: new () => Image
-  static Link: new () => Link
-  static Description: new () => Description
-  static Extra: new () => Extra
-  static Header: new () => Header
-  static Meta: new () => Meta
-  static Rating: new () => Rating
+  static content: new () => Content
+  static image: new () => Image
+  static link: new () => Link
+  static description: new () => Description
+  static extra: new () => Extra
+  static header: new () => Header
+  static meta: new () => Meta
+  static rating: new () => Rating
 }

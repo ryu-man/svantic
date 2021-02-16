@@ -15,7 +15,7 @@ interface CommentsProps {
 }
 
 /**
- * @description Comments
+ * @description A basic list of comments
  * @example
  * <Comments collapsed threaded minimal inverted size="small">
  *  <Comment></Comment>

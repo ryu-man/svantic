@@ -10,14 +10,14 @@ import { default as Header } from './header.svelte'
 import { default as Meta } from './meta.svelte'
 import { default as Rating } from './rating.svelte'
 
-Item.Content = Content
-Item.Image = Image
-Item.Link = Link
-Item.Description = Description
-Item.Extra = Extra
-Item.Header = Header
-Item.Meta = Meta
-Item.Rating = Rating
+Item.content = Content
+Item.image = Image
+Item.link = Link
+Item.description = Description
+Item.extra = Extra
+Item.header = Header
+Item.meta = Meta
+Item.rating = Rating
 
 export { Items, Item, Content, Description, Extra, Header, Image, Link, Meta, Rating }
 export default Item

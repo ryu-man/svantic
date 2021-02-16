@@ -12,15 +12,15 @@ import { default as Reply } from './reply.svelte'
 import { default as Text } from './text.svelte'
 import { default as Actions } from './actions.svelte'
 
-Comment.Avatar = Avatar
-Comment.Author = Author
-Comment.Content = Content
-Comment.Date = Date
-Comment.MetaData = MetaData
-Comment.Rating = Rating
-Comment.Reply = Reply
-Comment.Text = Text
-Comment.Actions = Actions
+Comment.avatar = Avatar
+Comment.author = Author
+Comment.content = Content
+Comment.date = Date
+Comment.metaData = MetaData
+Comment.rating = Rating
+Comment.reply = Reply
+Comment.text = Text
+Comment.actions = Actions
 
 export { Comment, Comments, Avatar, Author, Content, MetaData, Date, Rating, Reply, Text, Actions }
 export default Comment

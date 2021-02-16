@@ -9,11 +9,11 @@ import type Label from './label'
 interface FeedProps extends Component {}
 
 export default class Feed extends SvelteComponentTyped<FeedProps> {
-  static Label: new () => Label
-  static Content: new () => Content
-  static Date: new () => Date
-  static Extra: {
-    Text: new () => ExtraText
-    Images: new () => ExtraImages
+  static label: new () => Label
+  static content: new () => Content
+  static date: new () => Date
+  static extra: {
+    text: new () => ExtraText
+    images: new () => ExtraImages
   }
 }

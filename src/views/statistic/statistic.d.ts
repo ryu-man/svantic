@@ -20,6 +20,6 @@ interface StatisticProps extends Component {
  * @description 
  */
 export default class Statistic extends SvelteComponentTyped<StatisticProps> {
-  static Label: new ()=> Label
-  static Value: new ()=> Value
+  static label: new ()=> Label
+  static value: new ()=> Value
 }
