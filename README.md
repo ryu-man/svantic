@@ -42,7 +42,7 @@ yarn install
 Or you can use our [svantic template](https://github.com/ryu-man/svantic-template), it comes pre-configured
 
 ```bash
-npx degit ryu-man/avntic-template svantic-app
+npx degit ryu-man/svantic-template svantic-app
 cd svantic-app
 # npm
 npm install
