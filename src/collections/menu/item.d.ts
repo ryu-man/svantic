@@ -5,7 +5,7 @@ import type { Component } from '../../component';
 interface ItemProps extends Component {
     active?: boolean;
     horizontally?: boolean;
-    fitted?: boolean;
+    fitted?: boolean | "vertically" | "horizontally";
     icon?: boolean | Icons;
     href?: string
     content?: string
