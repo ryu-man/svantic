@@ -1,9 +1,10 @@
 <script>
   import '../../../semantic/dist/components/comment.css'
+  import { classNames } from '../../utils'
+  let _class
+  export { _class as class }
 </script>
 
-<div class="ui comments">
-  <div class="comment">
-    <slot />
-  </div>
+<div class="{classNames(_class, 'comment')}">
+  <slot />
 </div>

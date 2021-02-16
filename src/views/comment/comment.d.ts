@@ -1,4 +1,5 @@
 import type { SvelteComponentTyped } from 'svelte'
+import type { Component } from 'src/component'
 import type Avatar from './avatar'
 import type Author from './author'
 import type Content from './content'
