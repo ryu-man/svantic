@@ -17,7 +17,7 @@ interface FormProps extends Component {
  * Vomantic Form
  */
 declare class Form extends SvelteComponentTyped<FormProps> {
-    static Field: new()=> Field
-    static Fields: new()=> Fields
+    static field: new()=> Field
+    static fields: new()=> Fields
 }
 export default Form;
