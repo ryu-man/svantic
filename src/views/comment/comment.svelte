@@ -1,5 +1,5 @@
 <script>
-  // your script goes here
+  import '../../../semantic/dist/components/comment.css'
 </script>
 
 <div class="ui comments">
