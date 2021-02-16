@@ -33,9 +33,22 @@ Create a new project based on [sveltejs/template](https://github.com/sveltejs/te
 ```bash
 npx degit sveltejs/template svantic-app
 cd svantic-app
+# npm
 npm install
+# yarn
+yarn install
 ```
 
+Or you can use our [svantic template](https://github.com/ryu-man/svantic-template), it comes pre-configured
+
+```bash
+npx degit ryu-man/avntic-template svantic-app
+cd svantic-app
+# npm
+npm install
+# yarn
+yarn install
+```
 <!-- Or you can our svantic-template -->
 
 _NOTE: There are of course other ways to set up a project using svelte. This is just the quickest way to start._
