@@ -1,11 +1,46 @@
-export declare type Size = 'mini' | 'tiny' | 'small' | 'large' | 'big' | 'huge' | 'massive';
-export declare type Wide = 'two' | 'three' | 'four' | 'five' | 'six' |'seven' |'eight' |'nine' |'ten' |'eleven' |'twelve' |'thirteen' | 'fourteen' |'fifteen' | 'sixteen';
-export declare type State = 'disabled' | 'loading';
-export declare type Rotate = 'counterclockwise' | 'clockwise';
-export declare type Flip = 'horizontally' | 'vertically';
-export declare type Color = 'red' | 'orange' | 'teal' | 'blue' | 'violet' | 'purple' | 'pink' | 'brown' | 'grey' | 'black';
-export declare type Attach = 'top' | 'bottom';
-export declare type Float = 'left' | 'right';
-export declare type Align = 'left' | 'center' | 'right';
-export declare type Speed = 'slow' | 'fast';
-export declare type Animation = 'elastic' | 'double';
+export declare type Size =
+  | 'mini'
+  | 'tiny'
+  | 'small'
+  | 'meduim'
+  | 'large'
+  | 'big'
+  | 'huge'
+  | 'massive'
+export declare type Wide =
+  | 'two'
+  | 'three'
+  | 'four'
+  | 'five'
+  | 'six'
+  | 'seven'
+  | 'eight'
+  | 'nine'
+  | 'ten'
+  | 'eleven'
+  | 'twelve'
+  | 'thirteen'
+  | 'fourteen'
+  | 'fifteen'
+  | 'sixteen'
+export declare type State = 'disabled' | 'loading'
+export declare type Rotate = 'counterclockwise' | 'clockwise'
+export declare type Flip = 'horizontally' | 'vertically'
+export declare type Color =
+  | 'primary'
+  | 'secondary'
+  | 'red'
+  | 'orange'
+  | 'teal'
+  | 'blue'
+  | 'violet'
+  | 'purple'
+  | 'pink'
+  | 'brown'
+  | 'grey'
+  | 'black'
+export declare type Attach = boolean | 'left' | 'right' | 'top' | 'bottom'
+export declare type Float = 'left' | 'right'
+export declare type Align = 'left' | 'center' | 'right'
+export declare type Speed = 'slow' | 'fast'
+export declare type Loading = 'elastic' | 'double'
