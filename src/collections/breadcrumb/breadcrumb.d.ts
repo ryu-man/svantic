@@ -27,6 +27,6 @@ interface BreadcrumbProps extends Component {
  * Vomantic Breadcrumb
  */
 export default class Breadcrumb extends SvelteComponentTyped<BreadcrumbProps> {
-    static Section:new ()=>Section
-    static Divider: new ()=>Divider
+    static section:new ()=>Section
+    static divider: new ()=>Divider
 }
