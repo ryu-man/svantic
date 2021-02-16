@@ -2,7 +2,7 @@ import type { SvelteComponentTyped } from 'svelte'
 import type Avatar from './avatar'
 import type Author from './author'
 import type Content from './content'
-import type MetaData from './meta_data'
+import type Meta from './meta'
 import type Date from './date'
 import type Rating from './rating'
 import type Reply from './reply'
@@ -15,7 +15,7 @@ export default class Comment extends SvelteComponentTyped<CommentProps> {
   static author: new () => Author
   static content: new () => Content
   static date: new () => Date
-  static metaData: new () => MetaData
+  static meta: new () => Meta
   static rating: new () => Rating
   static reply: new () => Reply
   static text: new () => Text
