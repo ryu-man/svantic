@@ -5,9 +5,9 @@ import { default as Label } from './label.svelte'
 import { default as Labels } from './labels.svelte'
 import { default as Detail } from './detail.svelte'
 
-Label.Tag = Tag
-Label.Ribbon = Ribbon
-Label.Link = Link
+Label.tag = Tag
+Label.ribbon = Ribbon
+Label.link = Link
 Label.detail = Detail
 
 export { Label, Labels, Tag, Link, Ribbon }
