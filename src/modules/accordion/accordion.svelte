@@ -3,8 +3,7 @@
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/accordion.css'
-  import { classNames, css } from '../../utils'
-  import { register } from '../../utils/events'
+  import { classNames, css, register } from '../../utils'
   import Controller from './controller'
 
   let _class = ''

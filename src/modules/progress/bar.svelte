@@ -1,6 +1,5 @@
 <script>
-  import { classNames, css } from '../../utils'
-  import { register } from '../../utils/events'
+  import { classNames, css, register } from '../../utils'
 
   let _class = ''
   export { _class as class }

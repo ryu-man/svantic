@@ -1,6 +1,5 @@
 <script>
-  import { register } from '../../utils/events'
-  import { css } from '../../utils'
+  import { css, register } from '../../utils'
 
   let _class = ''
   export let style = {}

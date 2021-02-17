@@ -2,8 +2,7 @@
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/breadcrumb.css';
-  import { register } from '../../utils/events'
-  import { css } from '../../utils'
+  import { css,register } from '../../utils'
 
   
   let _class = ''
