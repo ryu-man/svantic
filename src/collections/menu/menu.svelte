@@ -28,6 +28,7 @@
   export let text = false
   export let vertical = false
   export let pagination = false
+  export let header = false
 </script>
 
 <div
@@ -55,6 +56,7 @@
       text,
       vertical,
       pagination,
+      header,
       item
     },
     'menu'

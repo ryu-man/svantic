@@ -26,6 +26,7 @@ interface MenuProps extends Component {
     text?: boolean
     vertical?: boolean
     pagination?: boolean
+    header?: boolean
 }
 /**
  * @description 
