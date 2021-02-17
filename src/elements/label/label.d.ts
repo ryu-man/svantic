@@ -4,6 +4,7 @@ import type { DOMEvents, Component } from '../../component'
 import Tag from './tag'
 import Ribbon from './ribbon'
 import Link from './link'
+import type Detail from './detail'
 
 declare type Type =
   | 'ribbon'
@@ -47,5 +48,6 @@ declare class Label extends SvelteComponentTyped<LabelProps> {
   static Tag: new () => Tag
   static Ribbon: new () => Ribbon
   static Link: new () => Link
+  static detail: new () => Detail
 }
 export default Label
