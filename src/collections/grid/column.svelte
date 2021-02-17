@@ -21,10 +21,10 @@
     doubling,
     visibility,
     {
+      wide: _wide,
       aligned,
       floated
     },
-    _wide,
     color,
     'column'
   )}"
