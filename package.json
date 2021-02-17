@@ -1,8 +1,8 @@
 {
   "name": "svantic",
   "version": "0.1.3",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "main": "./dist/nomodule/index.js",
+  "module": "./dist/module/index.js",
   "svelte": "./src/index.js",
   "types": "./src/index.d.ts",
   "description": "Fomantic UI components for Svelte.js framework",
@@ -75,5 +75,7 @@
     "tslib": "^2.0.0",
     "typescript": "^4.0.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.5.1"
+  }
 }
