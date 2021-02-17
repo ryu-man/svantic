@@ -42,11 +42,5 @@
   data-id="{_data.id}"
   data-placeholder="{_data.placeholder}"
 >
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+  <slot/>
 </div>
-
-<style>
-  /* @import './embed.css';*/
-</style>
