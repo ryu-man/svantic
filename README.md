@@ -9,8 +9,9 @@ Svantic is a set of UI components for [Svelte](https://svelte.dev) based on the 
 ## Installation
 
 ```bash
+# npm
 npm install svantic
-
+# yarn
 yarn add svantic
 ```
 
@@ -62,7 +63,7 @@ Because svantic uses dymanic import for better footprint and performance you hav
 output: {
   ...,
   dir: "path to output directory",
-  entryFileNames: "[name].js",
+  entryFileNames: "index.js",
   chunkFileNames: "[name].js"
 },
   
@@ -104,6 +105,6 @@ Navigate to [localhost:5000](http://localhost:5000)
 
 ## License
 
-Code released under [MIT license](./Licence) .
+Code released under [MIT license](./Licence)
 
 Copyright &copy; - ryu-man.
