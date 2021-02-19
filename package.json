@@ -27,7 +27,6 @@
     "semantic"
   ],
   "files": [
-    "dist",
     "src",
     "semantic/dist/components"
   ],
