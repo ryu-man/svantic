@@ -4,6 +4,11 @@ import { Module } from '../module'
 import Controller from './controller'
 import { DropdownSettings } from './settings'
 
+import Header from './header'
+import Menu from './menu'
+import Item from './item'
+import Divider from './divider'
+import Text from './text'
 // declare type Type =
 //   | 'selection'
 //   | 'search'
@@ -63,9 +68,14 @@ export interface DropdownProps extends Module<Controller, DropdownSettings> {
   scrolling?: boolean
 }
 /**
- * Vomantic Dropdown
+ * Svantic Dropdown
  */
 declare class Dropdown extends SvelteComponentTyped<DropdownProps> {
   static select: new () => Dropdown
+  static header: new () => Header
+  static divider: new () => Divider
+  static menu: new () => Menu
+  static item: new () => Item
+  static text: new () => Text
 }
 export default Dropdown
