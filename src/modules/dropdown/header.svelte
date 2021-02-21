@@ -1,5 +1,5 @@
 <script>
-  import Icon from 'src/elements/icon/icon.svelte'
+  import {Icon} from '../../elements/icon'
   import { css, classNames } from '../../utils'
 
   let _class
