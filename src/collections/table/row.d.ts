@@ -1,5 +1,5 @@
 import { SvelteComponentTyped } from 'svelte/internal'
-import type { Color, Float } from 'src/variations'
+import type { Align, Color, Float, VAlign, Wide } from 'src/variations'
 import { Component } from '../../component'
 
 interface RowProps extends Component {
@@ -11,9 +11,15 @@ interface RowProps extends Component {
   disabled?: boolean
   color?: Color
   marked?: Float
+  selectable?: boolean
+  collapsing?: boolean
+  wide?: Wide
+  textAlign?: Align
+  veticalAlign?: VAlign
+  singleLine?: boolean
 }
 /**
- * @description
+ * @description Svantic Table Row
  */
 declare class Row extends SvelteComponentTyped<RowProps> {}
 export default Row

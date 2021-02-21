@@ -18,7 +18,7 @@ interface TableProps extends Component {
   fixed?: boolean
   celled?: boolean
   padded?: boolean
-  single?: boolean
+  singleLine?: boolean
   compact?: boolean
   striped?: boolean
   sortable?: boolean

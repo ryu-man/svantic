@@ -2,7 +2,7 @@ import { SvelteComponentTyped } from 'svelte/internal'
 import { Component } from '../../component'
 
 interface HCellProps extends Component {
-
+    sorted?: "ascending" | "descending"
 }
 /**
  * @description 

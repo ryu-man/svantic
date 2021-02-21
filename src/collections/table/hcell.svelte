@@ -1,10 +1,11 @@
 <script>
-    import { css } from '../../utils'
+    import { css, classNames } from '../../utils'
     let _class = ''
     export { _class as class }
     export let style
+    export let sorted
   </script>
   
-  <td use:css="{style}" class="{_class}">
+  <th use:css="{style}" class="{classNames(_class, sorted)}">
     <slot />
-  </td>
+  </th>

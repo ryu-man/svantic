@@ -2,7 +2,7 @@ import { SvelteComponentTyped } from 'svelte/internal'
 import { Component } from '../../component'
 
 interface HeaderProps extends Component {
-
+    fullWidth?:boolean
 }
 /**
  * @description 

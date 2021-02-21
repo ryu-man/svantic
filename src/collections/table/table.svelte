@@ -14,7 +14,7 @@
   export let fixed = false
   export let padded = false
   export let celled = false
-  export let single = false
+  export let singleLine = false
   export let compact = false
   export let striped = false
   export let sortable = false
@@ -25,10 +25,21 @@
   export let unstackable = false
   export let style = {}
   export { _class as class }
+
+  async function component(node) {
+    if (sortable) {
+      if (!window.jQuery) {
+        window.jQuery = await import('jquery')
+      }
+      await import('./tablesort')
+      jQuery(node).tablesort()
+    }
+  }
 </script>
 
 <table
   use:css="{style}"
+  use:component
   class="{classNames(
     _class,
     'ui',
@@ -45,7 +56,7 @@
       selectable,
       unstackable,
       fixed,
-      single,
+      'single line': singleLine,
       line,
       very,
       basic,

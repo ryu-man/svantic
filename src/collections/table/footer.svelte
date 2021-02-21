@@ -1,10 +1,14 @@
 <script>
-    import { css } from '../../utils'
-    let _class = ''
-    export { _class as class }
-    export let style
-  </script>
-  
-  <footer use:css="{style}" class="{_class}">
-    <slot />
-  </footer>
+  import { css, classNames } from '../../utils'
+  let _class = ''
+  export { _class as class }
+  export let style
+  export let fullWidth
+</script>
+
+<tfoot
+  use:css="{style}"
+  class="{classNames(_class, { 'full-width': fullWidth })}"
+>
+  <slot />
+</tfoot>

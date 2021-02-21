@@ -1,5 +1,5 @@
 import { SvelteComponentTyped } from 'svelte/internal'
-import type { Color, Float } from 'src/variations'
+import type { Align, Color, Float, Wide, VAlign} from 'src/variations'
 import { Component } from '../../component'
 
 interface CellProps extends Component {
@@ -11,6 +11,12 @@ interface CellProps extends Component {
   disabled?: boolean
   color?: Color
   marked?: Float
+  selectable?: boolean
+  collapsing?: boolean
+  wide?: Wide
+  textAlign?: Align
+  veticalAlign?: VAlign
+  singleLine?: boolean
 }
 /**
  * @description

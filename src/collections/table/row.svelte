@@ -11,11 +11,29 @@
   export let disabled = false
   export let color
   export let marked
+  export let selectable = false
+  export let collapsing = false
+  export let wide
+  export let textAlign
+  export let verticalAlign
+  export let singleLine = false
 </script>
 
 <tr
   use:css="{style}"
-  class="{classNames(_class, { marked }, color)}"
+  class="{classNames(
+    _class,
+    {
+      marked,
+      selectable,
+      collapsing,
+      wide,
+      'single line': singleLine,
+      aligned: verticalAlign
+    },
+    { aligned: textAlign },
+    color
+  )}"
   class:positive
   class:negative
   class:error
