@@ -8,14 +8,12 @@ import { DropdownSettings } from './settings'
 
 export interface DropdownMenuItemProps extends Component {
   value?: string
-  content?: string
-  description?: string
+  text?: string
   disabled?: boolean
-  flag?: string
-  icon?: Icons
   image?: boolean
   label?: boolean
   selected?: boolean
+  active?: boolean
   onClick: (event: EventTarget, data: object) => void
 }
 /**
