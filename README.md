@@ -1,5 +1,5 @@
 <p style="text-align:center">
-  <img alt="SVANTIC" src="./banner.png"/>
+  <img alt="SVANTIC" src="./banner.png" width="100%"/>
   <br>
   <a href="https://www.npmjs.com/package/svantic">
     <img src="https://img.shields.io/npm/v/svantic.svg" alt="npm version">
