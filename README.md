@@ -1,6 +1,16 @@
-# Svantic UI
+<p style="text-align:center">
+  <img alt="SVANTIC" src="./banner.png"/>
+  <br>
+  <a href="https://www.npmjs.com/package/svantic">
+    <img src="https://img.shields.io/npm/v/svantic.svg" alt="npm version">
+  </a>
+  <a href="https://github.com/ryu-man/svantic/blob/main/LICENSE">
+    <img src="https://img.shields.io/npm/l/svantic.svg" alt="license">
+  </a>
+</p>
+<br>
 
-Svantic is a set of UI components for [Svelte](https://svelte.dev) based on the [Fomantic-UI](http://fomantic-ui.com) framework.
+Svantic is a set of UI components for [Svelte](https://svelte.dev) based on the [Fomantic-UI](http://fomantic-ui.com) library.
 
 ## Documentation
 
@@ -13,18 +23,6 @@ Svantic is a set of UI components for [Svelte](https://svelte.dev) based on the 
 npm install svantic
 # yarn
 yarn add svantic
-```
-
-## Usage
-
-```html
-<script>
-  // import any components you want
-  import { Button } from 'svantic'
-
-</script>
-
-<Button >Hello world</Button>
 ```
 
 ## Quick start with new project
@@ -43,7 +41,7 @@ yarn install
 Or you can use our [svantic template](https://github.com/ryu-man/svantic-template), it comes pre-configured
 
 ```bash
-npx degit ryu-man/svantic-template svantic-app
+npx degit ryu-man/svantic-template#main svantic-app
 cd svantic-app
 # npm
 npm install
@@ -69,22 +67,41 @@ output: {
   
 ```
 
+## Usage
+
 Add svantic and modify `src/App.svelte` file in the following way
 
 ```html
 <script>
-    // import any components
-    import { Button } from 'svantic';
+  // import any components you want
+  import { Button } from 'svantic'
 
-    let count = 1;
 </script>
 
+<Button >Hello world</Button>
+```
 
-<p>you clicked {count} times!</p>
+```html
+<script>
+    // import modules
+    import { Dropdown } from 'svantic';
 
-<Button color="Red" on:click={() => count+= 1}>
-    Increment
-</Button>
+</script>
+
+// Every module have two props: onMount{function} and setting{object}
+
+// onMount function: allows control module behaviors
+// settings: pass module settings
+<Dropdown selection onMount={(controller) => {}} settings={{}}>
+	<Icon name="caret down" />
+	<Dropdown.text>Select language</Dropdown.text>
+	<Dropdown.menu>
+		<Dropdown.item>English</Dropdown.item>
+		<Dropdown.item>Arabic</Dropdown.item>
+		<Dropdown.item>Spanish</Dropdown.item>
+		<Dropdown.item>German</Dropdown.item>
+	</Dropdown.menu>
+</Dropdown>
 ```
 
 ...then start [Rollup](https://rollupjs.org/)
