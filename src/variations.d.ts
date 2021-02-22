@@ -42,5 +42,6 @@ export declare type Color =
 export declare type Attach = boolean | 'left' | 'right' | 'top' | 'bottom'
 export declare type Float = 'left' | 'right'
 export declare type Align = 'left' | 'center' | 'right'
+export declare type VAlign = 'top' | 'middle' | 'bottom'
 export declare type Speed = 'slow' | 'fast'
 export declare type Loading = 'elastic' | 'double'
