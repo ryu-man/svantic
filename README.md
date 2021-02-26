@@ -1,5 +1,5 @@
 <p style="text-align:center">
-  <img alt="SVANTIC" src="./banner.png" width="100%"/>
+  <img alt="SVANTIC" src="./banner_new.png" width="100%"/>
     <span style="font-size:24pt; color:white;">
     A set of UI components for <a href="https://svelte.dev">Svelte</a> framework based on <a href="http://fomantic-ui.com">Fomantic-UI</a> library
     </span>
