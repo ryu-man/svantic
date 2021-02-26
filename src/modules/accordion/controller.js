@@ -16,7 +16,7 @@ export default class AccordionController extends Controller {
 
   async import() {
     if (!window.accordion)
-      await import('../../../semantic/dist/components/accordion')
+      await import('../../../semantic/dist/components/accordion.min')
   }
 
   refresh() {

@@ -16,9 +16,9 @@ export default class ModalController extends Controller {
 
   async import() {
     if (!window.transition)
-      await import('../../../semantic/dist/components/transition')
-    if (!window.dimmer) await import('../../../semantic/dist/components/dimmer')
-    if (!window.modal) await import('../../../semantic/dist/components/modal')
+      await import('../../../semantic/dist/components/transition.min')
+    if (!window.dimmer) await import('../../../semantic/dist/components/dimmer.min')
+    if (!window.modal) await import('../../../semantic/dist/components/modal.min')
   }
 
   show() {

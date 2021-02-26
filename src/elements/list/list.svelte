@@ -2,7 +2,7 @@
     import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
-  import '../../../semantic/dist/components/list.css'
+  import '../../../semantic/dist/components/list.min.css'
   import { classNames, css } from '../../utils'
 
   let _class = ''

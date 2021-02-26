@@ -2,7 +2,7 @@
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
-  import '../../../semantic/dist/components/tab.css'
+  import '../../../semantic/dist/components/tab.min.css'
   import { classNames, css } from '../../utils'
   import Controller from './controller'
 

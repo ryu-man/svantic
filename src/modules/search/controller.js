@@ -11,7 +11,7 @@ export default class SearchController extends Controller {
     return this.selection.search(...args)
   }
   async import() {
-    if (!window.search) await import('../../../semantic/dist/components/search')
+    if (!window.search) await import('../../../semantic/dist/components/search.min')
   }
 
   query(callback) {

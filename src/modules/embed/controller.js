@@ -15,7 +15,7 @@ export default class EmbedController extends Controller {
   }
 
   async import() {
-    if (!window.embed) await import('../../../semantic/dist/components/embed')
+    if (!window.embed) await import('../../../semantic/dist/components/embed.min')
   }
 
   change(source, id, url) {

@@ -16,7 +16,7 @@ export default class CheckboxController extends Controller {
 
   async import() {
     if (!window.checkbox)
-      await import('../../../semantic/dist/components/checkbox')
+      await import('../../../semantic/dist/components/checkbox.min')
   }
 
   toggle() {

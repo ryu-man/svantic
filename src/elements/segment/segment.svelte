@@ -2,7 +2,7 @@
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
-  import '../../../semantic/dist/components/segment.css'
+  import '../../../semantic/dist/components/segment.min.css'
 
   import { classNames, css, register } from '../../utils'
 

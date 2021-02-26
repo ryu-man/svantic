@@ -16,9 +16,9 @@ export default class DropdownController extends Controller {
   
   async import() {
     if (!window.transition)
-      await import('../../../semantic/dist/components/transition')
+      await import('../../../semantic/dist/components/transition.min')
     if (!window.dropdown)
-      await import('../../../semantic/dist/components/dropdown')
+      await import('../../../semantic/dist/components/dropdown.min')
   }
 
   setupMenu(values) {

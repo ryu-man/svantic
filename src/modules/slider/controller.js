@@ -15,7 +15,7 @@ export default class SliderController extends Controller {
     }
     
     async import() {
-        if (!window.slider) await import('../../../semantic/dist/components/slider')
+        if (!window.slider) await import('../../../semantic/dist/components/slider.min')
     }
 
     getValue() {

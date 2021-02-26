@@ -14,7 +14,7 @@ export default class DimmerController extends Controller {
   }
 
   async import() {
-    if (!window.dimmer) await import('../../../semantic/dist/components/dimmer')
+    if (!window.dimmer) await import('../../../semantic/dist/components/dimmer.min')
   }
 
   addContent(element) {

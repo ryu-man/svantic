@@ -16,7 +16,7 @@ export default class ProgressController extends Controller {
 
   async import() {
     if (!window.progress)
-      await import('../../../semantic/dist/components/progress')
+      await import('../../../semantic/dist/components/progress.min')
   }
 
   setPercent(percent) {

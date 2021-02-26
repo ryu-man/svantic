@@ -15,7 +15,7 @@ export default class ProgressController extends Controller {
   }
 
   async import() {
-    if (!window.rating) await import('../../../semantic/dist/components/rating')
+    if (!window.rating) await import('../../../semantic/dist/components/rating.min')
   }
 
   setRating(rating) {

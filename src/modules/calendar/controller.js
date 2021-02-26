@@ -12,13 +12,13 @@ export default class CalendarController extends Controller {
         return this.selection.calendar(...args)
     }
     async import() {
-        if (!window.transition) await import('../../../semantic/dist/components/transition')
+        if (!window.transition) await import('../../../semantic/dist/components/transition.min')
 
-        if (!window.dropdown) await import('../../../semantic/dist/components/dropdown')
+        if (!window.dropdown) await import('../../../semantic/dist/components/dropdown.min')
 
-        if (!window.popup) await import('../../../semantic/dist/components/popup')
+        if (!window.popup) await import('../../../semantic/dist/components/popup.min')
 
-        if (!window.calendar) await import('../../../semantic/dist/components/calendar')
+        if (!window.calendar) await import('../../../semantic/dist/components/calendar.min')
 
     }
 

@@ -16,7 +16,7 @@ export default class SidebarController extends Controller {
 
   async import() {
     if (!window.sidebar)
-      await import('../../../semantic/dist/components/sidebar')
+      await import('../../../semantic/dist/components/sidebar.min')
   }
 
   attachEvents(selector, event) {

@@ -15,7 +15,7 @@ export default class TabularController extends Controller {
   }
 
   async import() {
-    if (!window.tab) await import('../../../semantic/dist/components/tab')
+    if (!window.tab) await import('../../../semantic/dist/components/tab.min')
   }
 
   attachEvents(selector, event) {

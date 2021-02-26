@@ -15,7 +15,7 @@ export default class ToastController extends Controller {
   }
 
   async import() {
-    if (!window.toast) await import('../../../semantic/dist/components/toast')
+    if (!window.toast) await import('../../../semantic/dist/components/toast.min')
   }
 
   animatePause() {

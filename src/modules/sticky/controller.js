@@ -14,6 +14,6 @@ export default class SticyController extends Controller {
   }
   
   async import() {
-    if (!window.sticky) await import('../../../semantic/dist/components/sticky')
+    if (!window.sticky) await import('../../../semantic/dist/components/sticky.min')
   }
 }

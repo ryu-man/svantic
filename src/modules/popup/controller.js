@@ -15,7 +15,7 @@ export default class PopupController extends Controller {
   }
 
   async import() {
-    if (!window.popup) await import('../../../semantic/dist/components/popup')
+    if (!window.popup) await import('../../../semantic/dist/components/popup.min')
   }
 
   show() {

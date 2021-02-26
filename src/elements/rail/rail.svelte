@@ -1,7 +1,7 @@
 <script>
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
-  import '../../../semantic/dist/components/rail.css'
+  import '../../../semantic/dist/components/rail.min.css'
   import { css, register, classNames } from '../../utils'
 
   let _class = ''

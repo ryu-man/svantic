@@ -1,7 +1,7 @@
 <script>
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
-  import '../../../semantic/dist/components/popup.css'
+  import '../../../semantic/dist/components/popup.min.css'
   import { css, classNames } from '../../utils'
   import Controller from './controller'
 
