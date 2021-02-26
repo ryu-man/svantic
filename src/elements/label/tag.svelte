@@ -1,5 +1,5 @@
 <script>
-  
+  import { classNames, css } from '../../utils'
   let _class = ''
   export { _class as class }
 
@@ -16,7 +16,7 @@
 </script>
 
 <!-- svelte-ignore a11y-missing-attribute -->
-<a use:init class="ui tag label {_class}">
+<a use:init class="{classNames(_class, 'ui tag label')}">
   <slot>
     <!-- optional fallback -->
   </slot>

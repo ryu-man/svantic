@@ -8,6 +8,6 @@
   export let style
 </script>
 
-<div use:css={style} class="meta">
+<div use:css={style} class="{classNames(_class, 'meta')}">
     <slot />
 </div>

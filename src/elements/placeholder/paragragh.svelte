@@ -1,11 +1,11 @@
 <script>
-  import { css } from '../../utils'
+  import { classNames, css } from '../../utils'
 
   let _class = ''
   export { _class as class }
   export let style = {}
 </script>
 
-<div use:css={style} class="paragraph {_class}">
+<div use:css={style} class="{classNames(_class, 'paragraph')}">
   <slot />
 </div>

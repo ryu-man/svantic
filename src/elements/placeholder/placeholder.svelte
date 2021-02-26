@@ -3,7 +3,7 @@
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/placeholder.css'
-  import { css } from '../../utils'
+  import { classNames, css } from '../../utils'
 
   let _class = ''
   export { _class as class }
@@ -11,6 +11,9 @@
   export let style = {}
 </script>
 
-<div use:css="{style}" class:inverted class="ui placeholder {_class}">
+<div
+  use:css="{style}"
+  class="{classNames(_class, 'ui', { inverted }, 'placeholder')}"
+>
   <slot />
 </div>

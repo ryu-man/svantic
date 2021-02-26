@@ -1,13 +1,11 @@
 <script>
-  import { css } from '../../utils'
+  import { classNames, css } from '../../utils'
 
   let _class = ''
   export { _class as class }
   export let style = {}
 </script>
 
-<div use:css="{style}" class="divider {_class}">
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+<div use:css="{style}" class="{classNames(_class, 'divider')}">
+  <slot />
 </div>

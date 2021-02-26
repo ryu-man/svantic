@@ -2,12 +2,12 @@
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/form.css'
-  import { css, register } from '../../utils'
+  import { classNames, css, register } from '../../utils'
 
-  let _class = ''
-  export let style = {}
-  export let state = ''
-  export let size = ''
+  let _class
+  export let style
+  export let state
+  export let size
   export let inverted = false
   export let equal = false
   export let on = {}
@@ -29,9 +29,14 @@
   class:inverted
   class:equal
   class:width="{equal}"
-  class="{state} {size} ui form {_class}"
+  class="{classNames(
+    _class,
+    'ui',
+    { 'equal width': equal },
+    state,
+    size,
+    'form'
+  )}"
 >
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+  <slot />
 </form>

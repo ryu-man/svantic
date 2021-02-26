@@ -1,7 +1,11 @@
 <script>
-    
+  import { classNames, css } from '../../utils'
+
+  let _class
+  export { _class as class }
+  export let style
 </script>
 
-<div class="actions">
-    <slot/>
+<div use:css="{style}" class="{classNames(_class, 'actions')}">
+  <slot />
 </div>

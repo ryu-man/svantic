@@ -1,8 +1,8 @@
 <script>
-  import { css, register } from '../../utils'
+  import { classNames, css, register } from '../../utils'
 
-  let _class = ''
-  export let style = {}
+  let _class
+  export let style
   export { _class as class }
   export let active = false
   export let on = {}
@@ -18,8 +18,6 @@
   }
 </script>
 
-<div use:init class:active class="section {_class} " >
-  <slot>
-    <!-- optional fallback -->
-  </slot>
+<div use:init class="{classNames(_class, { active }, 'section')}">
+  <slot />
 </div>

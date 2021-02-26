@@ -4,7 +4,11 @@
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/sticky.css'
   import Controller from './controller'
+  import { classNames, css } from '../../utils'
 
+  let _class
+  export { _class as class }
+  export let style
   export let settings = {}
   export let onMount
 
@@ -22,6 +26,10 @@
   }
 </script>
 
-<div use:module="{settings}" class="ui sticky">
+<div
+  use:css="{style}"
+  use:module="{settings}"
+  class="{classNames(_class, 'ui sticky')}"
+>
   <slot />
 </div>

@@ -1,10 +1,13 @@
 <script>
-
+  import { classNames, css } from '../../utils'
   let _class = ''
+  export { _class as class }
+  export let style
   export let src = ''
   export let alt = ''
   export let link = ''
-  export { _class as class }
 </script>
 
-<a class="ui image {_class}" href="{link}"> <img src="{src}" alt="{alt}" > </a>
+<a use:css="{style}" class="{classNames(_class, 'ui image')}" href="{link}">
+  <img src="{src}" alt="{alt}" />
+</a>

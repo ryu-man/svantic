@@ -1,5 +1,5 @@
 <script>
-  import { css } from '../../utils'
+  import { classNames, css } from '../../utils'
 
   let _class = ''
   export { _class as class }
@@ -9,7 +9,7 @@
   export let state = ''
 </script>
 
-<div use:css="{style}" class="{state} content {_class} ">
+<div use:css="{style}" class="{classNames(_class, state, 'content')}">
   <slot>
     <!-- optional fallback -->
   </slot>

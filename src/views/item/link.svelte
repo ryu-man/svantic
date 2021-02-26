@@ -7,6 +7,6 @@
 </script>
 
 <!-- svelte-ignore a11y-missing-attribute -->
-<a class="{classNames(_class, style)}">
+<a use:css={style} class="{classNames(_class, style)}">
   <slot />
 </a>

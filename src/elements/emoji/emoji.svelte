@@ -3,10 +3,11 @@
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/emoji.min.css'
-  import { classNames } from '../../utils'
+  import { classNames, css } from '../../utils'
 
   let _class = ''
   export { _class as class }
+  export let style
   export let name
   export let disabled = false
   export let loading = false
@@ -15,8 +16,6 @@
 </script>
 
 <em
+  use:css="{style}"
   data-emoji="{name}"
-  class:disabled
-  class:loading
-  class:link
-  class="{classNames(_class, size)}"></em>
+  class="{classNames(_class,{disabled, loading, link}, size)}"></em>

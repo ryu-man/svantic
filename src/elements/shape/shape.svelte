@@ -3,7 +3,7 @@
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/shape.css'
-  import { css } from '../../utils'
+  import { classNames, css } from '../../utils'
 
   export let style = {}
   let _class = ''
@@ -14,7 +14,7 @@
   export let type = ''
 </script>
 
-<div use:css="{style}" class="{type} ui shape {_class}">
+<div use:css="{style}" class="{classNames(_class, 'ui', type, 'shape')}">
   <div class="sides">
     <slot>
       <!-- optional fallback -->

@@ -1,10 +1,9 @@
 <script>
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
-  import '../../../semantic/dist/components/breadcrumb.css';
-  import { css,register } from '../../utils'
+  import '../../../semantic/dist/components/breadcrumb.css'
+  import { classNames, css, register } from '../../utils'
 
-  
   let _class = ''
   export let style = {}
   export let size
@@ -18,14 +17,11 @@
       update(params) {},
       destroy() {
         unregister()
-        console.log('Button has been destroyed')
       }
     }
   }
 </script>
 
-<div class="{size} ui breadcrumb {_class}">
-  <slot>
-    
-  </slot>
+<div class="{classNames(_class, 'ui', size, 'breadcrumb')}">
+  <slot />
 </div>
