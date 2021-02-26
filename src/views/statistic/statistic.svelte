@@ -1,6 +1,6 @@
 <script>
-  import '../../../semantic/dist/components/site.min.css'
-  import '../../../semantic/dist/components/reset.min.css'
+  import '../../../semantic/dist/components/site.css'
+  import '../../../semantic/dist/components/reset.css'
   import '../../../semantic/dist/components/statistic.css'
 
   import { css, classNames } from '../../utils'
