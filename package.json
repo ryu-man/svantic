@@ -1,11 +1,11 @@
 {
   "name": "svantic",
-  "version": "0.1.4",
-  "main": "./src/index.js",
-  "module": "./src/index.js",
+  "version": "0.1.3",
+  "main": "./dist/nomodule/index.js",
+  "module": "./dist/module/index.js",
   "svelte": "./src/index.js",
   "types": "./src/index.d.ts",
-  "description": "A set of Fomantic-UI components for Svelte framework",
+  "description": "Fomantic UI components for Svelte.js framework",
   "homepage": "https://github.com/ryu-man/svantic#readme",
   "repository": {
     "type": "git",
