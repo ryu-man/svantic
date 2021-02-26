@@ -1,8 +1,9 @@
 <script>
-  import { classNames } from '../../utils'
+  import { classNames, css } from '../../utils'
 
   let _class = ''
   export { _class as class }
+  export let style
   export let unstackable = false
   export let divided = false
   export let relaxed = false
@@ -11,12 +12,13 @@
 </script>
 
 <div
-  class:unstackable
-  class:divided
-  class:relaxed
-  class:link
-  class:inverted
-  class="{classNames(_class,'ui',{unstackable, divided, relaxed, link, inverted}, 'items')}"
+  use:css="{style}"
+  class="{classNames(
+    _class,
+    'ui',
+    { unstackable, divided, relaxed, link, inverted },
+    'items'
+  )}"
 >
   <slot />
 </div>
