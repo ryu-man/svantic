@@ -68,5 +68,8 @@
   },
   "dependencies": {
     "jquery": "^3.5.1"
+  },
+  "peerDependencies": {
+    "jquery": "^3.5.1"
   }
 }
