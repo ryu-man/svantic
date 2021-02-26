@@ -1,16 +1,17 @@
 <p style="text-align:center">
   <img alt="SVANTIC" src="./banner.png" width="100%"/>
+    <span style="font-size:24pt; color:white;">
+    A set of UI components for <a href="https://svelte.dev">Svelte</a> framework based on <a href="http://fomantic-ui.com">Fomantic-UI</a> library
+    </span>
+  <br>
   <br>
   <a href="https://www.npmjs.com/package/svantic">
-    <img src="https://img.shields.io/npm/v/svantic.svg" alt="npm version">
+    <img src="https://img.shields.io/npm/v/svantic.svg?style=flat-square" alt="npm version">
   </a>
   <a href="https://github.com/ryu-man/svantic/blob/main/LICENSE">
-    <img src="https://img.shields.io/npm/l/svantic.svg" alt="license">
+    <img src="https://img.shields.io/npm/l/svantic.svg?style=flat-square" alt="license">
   </a>
 </p>
-<br>
-
-Svantic is a set of UI components for [Svelte](https://svelte.dev) based on the [Fomantic-UI](http://fomantic-ui.com) library.
 
 ## Documentation
 
@@ -48,6 +49,7 @@ npm install
 # yarn
 yarn install
 ```
+
 <!-- Or you can our svantic-template -->
 
 _NOTE: There are of course other ways to set up a project using svelte. This is just the quickest way to start._
@@ -64,7 +66,7 @@ output: {
   entryFileNames: "index.js",
   chunkFileNames: "[name].js"
 },
-  
+
 ```
 
 ## Usage
@@ -75,10 +77,9 @@ Add svantic and modify `src/App.svelte` file in the following way
 <script>
   // import any components you want
   import { Button } from 'svantic'
-
 </script>
 
-<Button >Hello world</Button>
+<button>Hello world</button>
 ```
 
 ```html
