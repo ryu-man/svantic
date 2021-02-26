@@ -1,5 +1,3 @@
-import '../../../semantic/dist/components/placeholder.css'
-
 import { default as Placeholder } from './placeholder.svelte'
 import { default as Header } from './header.svelte'
 import { default as Image } from './image.svelte'
