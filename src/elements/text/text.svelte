@@ -5,8 +5,8 @@
   import '../../../semantic/dist/components/text.css'
   import { classNames, css } from '../../utils'
 
-  let _class = ''
-  export let style = {}
+  let _class
+  export let style
   export { _class as class }
 </script>
 

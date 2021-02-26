@@ -3,15 +3,15 @@
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/toast.css'
-  import { css, register } from '../../utils'
+  import { classNames, css, register } from '../../utils'
   import Controller from './controller'
 
-  let _class = ''
+  let _class
   export { _class as class }
   export let type = 'toast'
   export let color = ''
   export let icon = false
-  export let style = {}
+  export let style
   export let on = {}
   export let settings = {}
   export let onMount
@@ -36,6 +36,9 @@
   }
 </script>
 
-<div use:module="{settings}" class:icon class="{color} ui {type} {_class}">
+<div
+  use:module="{settings}"
+  class="{classNames(_class, 'ui', { icon }, color, type)}"
+>
   <slot />
 </div>

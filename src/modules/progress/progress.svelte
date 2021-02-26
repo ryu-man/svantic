@@ -6,7 +6,7 @@
   import { classNames, css } from '../../utils'
   import Controller from './controller'
 
-  let _class = ''
+  let _class
   export { _class as class }
   export let indicating
   export let attached
@@ -22,7 +22,7 @@
   export let warning = false
   export let success = false
   export let active = false
-  export let style = {}
+  export let style
   export let settings = {}
   export let onMount
 

@@ -1,10 +1,10 @@
 <script>
   import { css, classNames } from '../../utils'
 
-  let _class = ''
+  let _class
   export { _class as class }
-  export let column = ''
-  export let style = {}
+  export let column
+  export let style
 </script>
 
 <div

@@ -1,13 +1,13 @@
 <script>
   import { classNames, css, register } from '../../utils'
 
-  let _class = ''
+  let _class
   export { _class as class }
   export let color = ''
   export let inverted = false
   export let progress = false
   export let on = {}
-  export let style = {}
+  export let style
 
   function module(node, params) {
     // the node has been mounted in the DOM

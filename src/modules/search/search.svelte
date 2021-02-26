@@ -6,7 +6,7 @@
   import { css, register, classNames } from '../../utils'
   import Controller from './controller'
 
-  let _class = ''
+  let _class
   export let disabled = false
   export let speed = ''
   export let aligned
@@ -18,7 +18,7 @@
   export let loading = false
   export let category = false
   export let scrolling = false
-  export let style = {}
+  export let style
   export let on = {}
   export let settings = {}
   export { _class as class }

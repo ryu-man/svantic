@@ -9,7 +9,6 @@
   export let style = {}
 
   function init(node) {
-    css(node, style)
     const unregister = register(node, on)
 
     return {
@@ -21,7 +20,7 @@
 </script>
 
 <!-- svelte-ignore a11y-missing-attribute -->
-<a class={classNames(_class,'ui',color, {icon, right},'ribbon','label')}>
+<a use:css={style} use:init class={classNames(_class,'ui',color, {icon, right},'ribbon','label')}>
   <slot />
 </a>
 

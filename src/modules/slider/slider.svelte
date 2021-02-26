@@ -6,7 +6,7 @@
   import { css, register, classNames } from '../../utils'
   import Controller from './controller'
 
-  let _class = ''
+  let _class
   export { _class as class }
   export let type = ''
   export let size = ''
@@ -16,7 +16,7 @@
   export let reversed = false
   export let vertical = false
   export let on = {}
-  export let style = {}
+  export let style
   export let settings = {}
   export let onMount
   function module(node, settings) {

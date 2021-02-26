@@ -2,9 +2,9 @@
   import { classNames, css } from '../../utils'
   let _class = ''
   export { _class as class }
+  export let style
 
   function init(node) {
-    css(node, style)
     const unregister = register(node, on)
 
     return {
@@ -16,7 +16,7 @@
 </script>
 
 <!-- svelte-ignore a11y-missing-attribute -->
-<a use:init class="{classNames(_class, 'ui tag label')}">
+<a use:css="{style}" use:init class="{classNames(_class, 'ui tag label')}">
   <slot>
     <!-- optional fallback -->
   </slot>

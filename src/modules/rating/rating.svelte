@@ -6,8 +6,8 @@
   import { css } from '../../utils'
   import Controller from './controller'
 
-  let _class = ''
-  export let style = {}
+  let _class
+  export let style
   export { _class as class }
   export let disabled = false
   export let color = ''

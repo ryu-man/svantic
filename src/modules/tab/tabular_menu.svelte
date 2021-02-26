@@ -6,13 +6,13 @@
   import { classNames, css } from '../../utils'
   import Controller from './controller'
 
-  export let _class = ''
+  export let _class
   export { _class as class }
   export let attached = ''
   export let loading = false
   export let segment = false
   export let active = false
-  export let style = {}
+  export let style
   export let settings = {}
   export let onMount
 
@@ -34,9 +34,6 @@
 
 <div
   use:module="{settings}"
-  class:loading
-  class:segment
-  class:active
   class="{classNames(
     _class,
     'ui',

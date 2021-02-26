@@ -1,13 +1,13 @@
 <script>
   import { css, classNames } from '../../utils'
 
-  export let _class = ''
+  export let _class
   export { _class as class }
   export let attached
   export let active = false
   export let segment = false
   export let data = ''
-  export let style = {}
+  export let style
 </script>
 
 <div

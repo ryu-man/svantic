@@ -1,11 +1,11 @@
 <script>
   import { css, classNames } from '../../utils'
 
-  let _class = ''
+  let _class
   export { _class as class }
   export let total = 100
   export let percents = []
-  export let style = {}
+  export let style
 </script>
 
 <div

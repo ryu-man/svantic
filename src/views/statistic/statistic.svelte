@@ -5,10 +5,10 @@
 
   import { css, classNames } from '../../utils'
 
-  let _class = ''
-  export let style = {}
-  export let color = ''
-  export let size = ''
+  let _class
+  export let style
+  export let color
+  export let size
   export let floated
   export let stackable
   export let inverted

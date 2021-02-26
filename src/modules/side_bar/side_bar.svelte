@@ -6,7 +6,7 @@
   import { css, register, classNames } from '../../utils'
   import Controller from './controller'
 
-  let _class = ''
+  let _class
   export { _class as class }
   export let wide = ''
   export let visible = false
@@ -14,7 +14,7 @@
   export let direction = ''
   export let inverted = false
   export let vertical = false
-  export let style = {}
+  export let style
   export let settings = {}
   export let on = {}
 
