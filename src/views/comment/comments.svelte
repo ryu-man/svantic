@@ -1,6 +1,11 @@
 <script>
+  import { classNames, css } from '../../utils'
+  
+  let _class
+  export { _class as class }
+  export let style
 </script>
 
-<div class="ui comments">
+<div  use:css={style} class="{classNames(_class, 'ui comments')}">
   <slot />
 </div>

@@ -1,5 +1,6 @@
 import type { SvelteComponentTyped } from "svelte";
+import type { Component } from "../../component";
 
-interface TextProps{}
+interface TextProps extends Component{}
 
 export default class Text extends SvelteComponentTyped<TextProps>{}

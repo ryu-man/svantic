@@ -1,13 +1,11 @@
 <script>
+  import { classNames, css } from '../../utils'
+
+  let _class
+  export { _class as class }
+  export let style
 </script>
 
-<form class="ui reply form">
-  <div class="field">
-    <textarea></textarea>
-  </div>
-  <slot>
-    <div class="ui primary submit labeled icon button">
-      <i class="icon edit"></i> Add Reply
-    </div>
-  </slot>
+<form use:css={style} class="{classNames(_class, 'ui reply form')}">
+  <slot />
 </form>

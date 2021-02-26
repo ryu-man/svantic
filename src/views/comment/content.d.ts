@@ -1,13 +1,14 @@
 import type { SvelteComponentTyped } from "svelte";
+import type { Component } from "../../component";
 
-interface ContentProps{}
+interface ContentProps extends Component{}
 
 /**
  * @description Comment content
  * @example
  * <Comment>
- *      <Comment.Content>
- *      </Comment.Content>
+ *      <Comment.content>
+ *      </Comment.content>
  * </Comment>
  */
 export default class Content extends SvelteComponentTyped<ContentProps>{}

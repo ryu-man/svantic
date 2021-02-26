@@ -1,12 +1,13 @@
 import type { SvelteComponentTyped } from 'svelte'
+import type { Component } from "../../component";
 
-interface AvatarProps {}
+interface AvatarProps extends Component{}
 
 /**
  * @description Comment avatar
  * @example
- * <Comment.Avatar>
- *  <img src="/path"/>
- * </Comment.Avatar>
+ * <Comment.avatar>
+ *      <img src="/path"/>
+ * </Comment.avatar>
  */
 export default class Avatar extends SvelteComponentTyped<AvatarProps> {}

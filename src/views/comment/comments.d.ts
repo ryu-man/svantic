@@ -1,7 +1,8 @@
 import type { SvelteComponentTyped } from 'svelte'
 import type { Size } from 'src/variations'
+import type { Component } from "../../component";
 
-interface CommentsProps {
+interface CommentsProps extends Component{
   // Comments can be collapsed, or hidden from view
   collapsed?: boolean
   // A comment list can be threaded to showing the relationship between conversations
@@ -18,7 +19,7 @@ interface CommentsProps {
  * @description A basic list of comments
  * @example
  * <Comments collapsed threaded minimal inverted size="small">
- *  <Comment></Comment>
+ *    <Comment></Comment>
  * </Comments>
  */
 export default class Comments extends SvelteComponentTyped<CommentsProps> {}
