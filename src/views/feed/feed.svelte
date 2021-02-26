@@ -6,11 +6,12 @@
   import { classNames, css } from '../../utils'
   let _class = ''
   export { _class as class }
+  export let style
   export let size
   export let inverted = false
 </script>
 
-<div class:inverted class="{classNames(_class, 'ui',size, 'feed')}">
+<div  use:css={style} class:inverted class="{classNames(_class, 'ui',size, 'feed')}">
   <div class="event">
     <slot />
   </div>
