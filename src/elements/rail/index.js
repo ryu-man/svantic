@@ -1,1 +1,1 @@
-export { default as Rail } from './rail.svelte'
+export { default } from './rail.svelte'

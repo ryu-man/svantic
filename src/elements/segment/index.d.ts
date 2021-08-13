@@ -1,2 +1,6 @@
-export { default as Segment } from "./segment";
-export { default as Segments } from "./segments";
+import { default as Segment} from './segment.svelte'
+export { default as Group } from './segments.svelte'
+
+export function init()
+
+export default Segment

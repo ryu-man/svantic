@@ -1,6 +1,9 @@
 import { default as Shape } from './shape.svelte'
 import { default as Side } from './side.svelte'
 
-Shape.Side = Side
-export { Shape, Side }
+export function init(){
+    Shape.Side = Side
+}
+
+export { Side }
 export default Shape

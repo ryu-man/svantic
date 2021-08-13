@@ -1,1 +1,1 @@
-export { default as Container } from './container.svelte'
+export { default } from './container.svelte'

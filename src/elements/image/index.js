@@ -1,9 +1,12 @@
 
 import { default as Image } from './image.svelte'
-import { default as ImageLink } from './link.svelte'
-import { default as Images } from './images.svelte'
+import { default as Link } from './link.svelte'
+import { default as Group } from './images.svelte'
 
-Image.Link = ImageLink
+export function init() {
+    Image.Link = Link
+    Image.Group = Group
+}
 
-export { Image, Images }
+export { Group , Link }
 export default Image

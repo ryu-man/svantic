@@ -1,1 +1,1 @@
-export { default as Sticky } from './sticky.svelte'
+export { default } from './sticky.svelte'

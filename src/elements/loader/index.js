@@ -1,1 +1,1 @@
-export { default as Loader } from './loader.svelte'
+export { default } from './loader.svelte'

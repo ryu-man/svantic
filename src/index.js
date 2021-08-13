@@ -12,30 +12,26 @@ export {
 } from './collections'
 
 export {
-  Button,
+  Button,Buttons,ButtonContent,ButtonOr,initButton,
   Container,
   Divider,
   Emoji,
   Header,
+  H1, H2, H3, H4, H5, HeaderSub, initHeader,
   Icon,
-  Image,
+  Icons, initIcon,
+  Image, Images, initImage,
   Input,
-  Label,
-  List,
+  Label, LabelDetail, LabelLink, LabelRibons, LabelTag, initLabel,
+  List, ListItem, initList,
   Loader,
-  Placeholder,
+  Placeholder, PlaceholderHeader, PlaceholderImage, PlaceholderLine, PlaceholderParagraph, initPlaceholder,
   Rail,
-  Reveal,
-  Segment,
-  Shape,
-  Step,
+  Reveal, RevealContent, initReveal,
+  Segment, Segments, initSegment,
+  Shape, ShapeSide, initShape,
+  Step, Steps, initStep,
   Text,
-  Buttons,
-  Icons,
-  Images,
-  Labels,
-  Segments,
-  Steps
 } from './elements'
 
 export {
@@ -52,26 +48,12 @@ export {
   Sidebar,
   Slider,
   TabMenu,
-  Toast,
-  AccordionController,
-  CalendarController,
-  DimmerController,
-  DropdownController,
-  EmbedController,
-  ModalController,
-  PopupController,
-  ProgressController,
-  RatingController,
-  SearchController,
-  SidebarController,
-  SliderController,
-  TabController,
-  ToastController
+  Toast
 } from './modules'
 
 export {
   Card,
-  Item,
+  // Item,
   Ad,
   Feed,
   Comment,

@@ -4,5 +4,7 @@ import { default as Image } from './image'
 import { default as Paragraph } from './paragraph'
 import { default as Line } from './line'
 
-export { Placeholder, Header, Image, Paragraph, Line }
+export function init()
+
+export { Header, Image, Paragraph, Line }
 export default Placeholder
