@@ -5,7 +5,7 @@
   import '../../../semantic/dist/components/progress.min.css'
   
   import { classNames, css } from '../../utils'
-  import { JQueryLazyLoader, ProgressLoader } from '../../loaders'
+  import { JQueryLazyLoader, ProgressLoader } from '../loaders'
 
   let _class
   export { _class as class }
@@ -48,42 +48,42 @@
 
   export function setPercent(percent) {
     exec('set percent', percent)
-    return exec
+    return this
   }
 
   export function setProgress(value) {
     exec('set progress', value)
-    return exec
+    return this
   }
 
   export function increment(incrementValue) {
     exec('increment', incrementValue)
-    return exec
+    return this
   }
 
   export function decrement(decrementValue) {
     exec('decrement', decrementValue)
-    return exec
+    return this
   }
 
   export function updateProgress(value) {
     exec('update progress', value)
-    return exec
+    return this
   }
 
   export function complete(keepState) {
     exec('complete', keepState)
-    return exec
+    return this
   }
 
   export function reset() {
     exec('reset')
-    return exec
+    return this
   }
 
   export function setTotal(total) {
     exec('set total', total)
-    return exec
+    return this
   }
 
   export async function getText(text) {
@@ -128,57 +128,57 @@
 
   export function setActive() {
     exec('set active')
-    return exec
+    return this
   }
 
   export function setWarning(text, keepState) {
     exec('set warning', text, keepState)
-    return exec
+    return this
   }
 
   export function setSuccess(text, keepState) {
     exec('set success', text, keepState)
-    return exec
+    return this
   }
 
   export function setError(text, keepState) {
     exec('set error', text, keepState)
-    return exec
+    return this
   }
 
   export function setDuration(value) {
     exec('set duration', value)
-    return exec
+    return this
   }
 
   export function setLabel(text) {
     exec('set label', text)
-    return exec
+    return this
   }
 
   export function setBarLabel(text) {
     exec('set bar', text)
-    return exec
+    return this
   }
 
   export function removeActive() {
     exec('remove active')
-    return exec
+    return this
   }
 
   export function removeWarning() {
     exec('remove warning')
-    return exec
+    return this
   }
 
   export function removeSuccess() {
     exec('remove success')
-    return exec
+    return this
   }
 
   export function removeError() {
     exec('remove error')
-    return exec
+    return this
   }
 </script>
 

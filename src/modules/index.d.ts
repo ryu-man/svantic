@@ -1,4 +1,4 @@
-export { Dropdown, DropdownController } from './dropdown'
+export * as Dropdown from './dropdown'
 export { Modal, ModalController } from './modal'
 export { Bar, Progress, ProgressController } from './progress'
 export { Rating, RatingController } from './rating'

@@ -24,5 +24,59 @@ interface EmbedProps extends Module<Controller, EmbedSettings> {
  * Vomantic Embed
  */
 declare class Embed extends SvelteComponentTyped<EmbedProps> {
+    /**
+   *@description 	Changes iframe to a new content source
+   */
+  change(source, id, url): void
+
+  /**
+   *@description 	Removes embed and shows placeholder content if available
+   */
+  reset(): void
+
+  /**
+   *@description 	Shows embed content
+   */
+  show(): void
+
+  /**
+   *@description 	Hides embed content and shows placeholder content
+   */
+  hide(): void
+
+  /**
+   *@description 	Returns current content id
+   */
+  getId(): Promise<any>
+
+  /**
+   *@description 	Returns placeholder image url
+   */
+  getPlaceholder(): Promise<string>
+
+  /**
+   *@description 	Returns source name
+   */
+  getSources(): Promise<string>
+
+  /**
+   *@description 	Returns source type
+   */
+  getType(): Promise<any>
+
+  /**
+   *@description 	Returns URL with all parameters added
+   */
+  getUrl(): Promise<string>
+
+  /**
+   *@description 	Returns whether embed content has placeholder
+   */
+  hasPlaceholder(): Promise<boolean>
+
+  /**
+   *@description 	Destroys instance and removes all events
+   */
+  destroy(): void
 }
 export default Embed;

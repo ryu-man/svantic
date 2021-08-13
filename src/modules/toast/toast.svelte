@@ -5,7 +5,7 @@
   import '../../../semantic/dist/components/toast.min.css'
 
   import { classNames, css } from '../../utils'
-  import { JQueryLazyLoader, ToastLoader } from '../../loaders'
+  import { JQueryLazyLoader, ToastLoader } from '../loaders'
 
   let _class
   export { _class as class }
@@ -35,22 +35,22 @@
 
   export function setSettings(settings) {
     exec(settings)
-    return exec
+    return this
   }
 
   export function animatePause() {
     exec('animate pause')
-    return exec
+    return this
   }
 
   export function animateContinue() {
     exec('animate continue')
-    return exec
+    return this
   }
 
   export function close() {
     exec('close')
-    return exec
+    return this
   }
 
   export function getToasts() {

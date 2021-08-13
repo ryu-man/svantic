@@ -10,7 +10,7 @@
   import '../../../semantic/dist/components/calendar.min.css'
 
   import { css } from '../../utils'
-  import { JQueryLazyLoader, CalendarLoader } from '../../loaders'
+  import { JQueryLazyLoader, CalendarLoader } from '../loaders'
 
   let _class = ''
   export let icon = 'left'
@@ -37,27 +37,27 @@
 
   export function refresh() {
     exec('refresh')
-    return exec
+    return this
   }
 
   export function popup(...args) {
     exec('popup', args)
-    return exec
+    return this
   }
 
   export function focus() {
     exec('focus')
-    return exec
+    return this
   }
 
   export function blur() {
     exec('blur')
-    return exec
+    return this
   }
 
   export function clear() {
     exec('clear')
-    return exec
+    return this
   }
 
   export function getDate() {
@@ -74,7 +74,7 @@
 
   export function setMode(mode) {
     exec('set mode', mode)
-    return exec
+    return this
   }
 
   export function getStartDate() {
@@ -83,7 +83,7 @@
 
   export function setStartDate(date) {
     exec('set start date', date)
-    return exec
+    return this
   }
 
   export function getEndDate() {
@@ -100,17 +100,17 @@
 
   export function setFocusDate(date) {
     exec('set focus date', date)
-    return exec
+    return this
   }
 
   export function setMinDate(date) {
     exec('set min date', date)
-    return exec
+    return this
   }
 
   export function setMaxDate(date) {
     exec('set max date', date)
-    return exec
+    return this
   }
 </script>
 

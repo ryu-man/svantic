@@ -6,7 +6,7 @@
   import '../../../semantic/dist/components/modal.min.css'
 
   import { classNames, css } from '../../utils'
-  import { JQueryLazyLoader, ModalLoader } from '../../loaders'
+  import { JQueryLazyLoader, ModalLoader } from '../loaders'
 
   let _class = ''
   export { _class as class }
@@ -41,7 +41,7 @@
 
   export function setSettings(settings) {
     exec(settings)
-    return exec
+    return this
   }
 
   export function show() {
@@ -50,34 +50,42 @@
 
   export function hide() {
     exec('hide')
+    return this
   }
 
   export function toggle() {
     exec('toggle')
+    return this
   }
 
   export function refresh() {
     exec('refresh')
+    return this
   }
 
   export function showDimmer() {
     exec('show dimmer')
+    return this
   }
 
   export function hideDimmer() {
     exec('hide dimmer')
+    return this
   }
 
   export function hideOthers() {
     exec('hide others')
+    return this
   }
 
   export function hideAll() {
     exec('hide all')
+    return this
   }
 
   export function cacheSizes() {
     exec('cache sizes')
+    return this
   }
 
   export function canFit() {
@@ -90,6 +98,7 @@
 
   export function setActive() {
     exec('set active')
+    return this
   }
 </script>
 

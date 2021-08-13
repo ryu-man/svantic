@@ -5,8 +5,7 @@
   import '../../../semantic/dist/components/sticky.min.css'
 
   import { classNames, css } from '../../utils'
-  import JQueryLazyLoader from '../../loaders/JQueryLazyLoader.svelte'
-  import StickyLoader from '../../loaders/StickyLoader.svelte'
+  import { StickyLoader, JQueryLazyLoader } from '../loaders'
 
   let _class
   export { _class as class }

@@ -5,7 +5,7 @@
   import '../../../semantic/dist/components/dimmer.min.css'
 
   import { css, classNames } from '../../utils'
-  import { JQueryLazyLoader, DimmerLoader } from '../../loaders'
+  import { JQueryLazyLoader, DimmerLoader } from '../loaders'
 
   let _class = ''
   export { _class as class }
@@ -42,32 +42,32 @@
 
   export function addContent(element) {
     exec('add content', element)
-    return exec
+    return this
   }
 
   export function show() {
     exec('show')
-    return exec
+    return this
   }
 
   export function hide() {
     exec('hide')
-    return exec
+    return this
   }
 
   export function toggle() {
     exec('toggle')
-    return exec
+    return this
   }
 
   export function setOpacity(opacity) {
     exec('set opacity', opacity)
-    return exec
+    return this
   }
 
   export function create() {
     exec('create')
-    return exec
+    return this
   }
 
   export function getDuration() {
@@ -116,27 +116,27 @@
 
   export function setActive() {
     exec('set active')
-    return exec
+    return this
   }
 
   export function setDimmable() {
     exec('set dimmable')
-    return exec
+    return this
   }
 
   export function setDimmed() {
     exec('set dimmed')
-    return exec
+    return this
   }
 
   export function setPageDimmer() {
     exec('setPageDimmer')
-    return exec
+    return this
   }
 
   export function setDisabled() {
     exec('set disabled')
-    return exec
+    return this
   }
 </script>
 

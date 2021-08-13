@@ -4,8 +4,8 @@
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/sidebar.min.css'
   import { css, classNames } from '../../utils'
-  import JQueryLazyLoader from '../../loaders/JQueryLazyLoader.svelte'
-  import SidebarLoader from '../../loaders/SidebarLoader.svelte'
+  import JQueryLazyLoader from '../loaders/JQueryLazyLoader.svelte'
+  import SidebarLoader from '../loaders/SidebarLoader.svelte'
 
   let _class
   export { _class as class }
@@ -40,22 +40,22 @@
 
   export function attachEvents(selector, event) {
     exec('attach events', selector, event)
-    return exec
+    return this
   }
 
   export function show() {
     exec('show')
-    return exec
+    return this
   }
 
   export function hide() {
     exec('hide')
-    return exec
+    return this
   }
 
   export function toggle() {
     exec('toggle')
-    return exec
+    return this
   }
 
   export function isVisible() {
@@ -68,7 +68,7 @@
 
   export function pushPage() {
     exec('push page')
-    return exec
+    return this
   }
 
   export function getDirection() {
@@ -77,17 +77,17 @@
 
   export function pullPage() {
     exec('pull page')
-    return exec
+    return this
   }
 
   export function addBodyCSS() {
     exec('add body CSS')
-    return exec
+    return this
   }
 
   export function removeBodyCSS() {
     exec('remove body CSS')
-    return exec
+    return this
   }
 
   export function getTransitionEvent() {

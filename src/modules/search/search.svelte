@@ -6,8 +6,8 @@
 
   import { css, register, classNames } from '../../utils'
   import Controller from './controller'
-  import JQueryLazyLoader from '../../loaders/JQueryLazyLoader.svelte'
-  import SearchLoader from '../../loaders/SearchLoader.svelte'
+  import JQueryLazyLoader from '../loaders/JQueryLazyLoader.svelte'
+  import SearchLoader from '../loaders/SearchLoader.svelte'
 
   let _class
   export let disabled = false
@@ -47,12 +47,12 @@
 
   export function query(callback) {
     exec('query ', callback)
-    return exec
+    return this
   }
 
   export function displayMessage(text, type) {
     exec('display message', text, type)
-    return exec
+    return this
   }
 
   export function searchLocal(query) {
@@ -73,7 +73,7 @@
 
   export function cancelQuery() {
     exec('cancel query')
-    return exec
+    return this
   }
 
   export function isFocused() {
@@ -98,7 +98,7 @@
 
   export function setValue(value) {
     exec('set value', value)
-    return exec
+    return this
   }
 
   export function readCache(query) {
@@ -107,32 +107,32 @@
 
   export function clearCache(query) {
     exec('clear cache', query)
-    return exec
+    return this
   }
 
   export function writeCache(query) {
     exec('write cache', query)
-    return exec
+    return this
   }
 
   export function addResults(html) {
     exec('add results', html)
-    return exec
+    return this
   }
 
   export function showResults(callback) {
     exec('show results', callback)
-    return exec
+    return this
   }
 
   export function hideResults(callback) {
     exec('hide results', callback)
-    return exec
+    return this
   }
 
   export function generateResults(response) {
     exec('generate results', response)
-    return exec
+    return this
   }
 </script>
 

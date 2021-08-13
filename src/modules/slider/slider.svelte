@@ -5,8 +5,8 @@
   import '../../../semantic/dist/components/slider.min.css'
 
   import { css, classNames } from '../../utils'
-  import JQueryLazyLoader from '../../loaders/JQueryLazyLoader.svelte'
-  import SliderLoader from '../../loaders/SliderLoader.svelte'
+  import JQueryLazyLoader from '../loaders/JQueryLazyLoader.svelte'
+  import SliderLoader from '../loaders/SliderLoader.svelte'
 
   let _class
   export { _class as class }
@@ -54,12 +54,12 @@
 
   export function setValue(value) {
     exec('set value', value)
-    return exec
+    return this
   }
 
   export function setRangeValue(fromValue, toValue) {
     exec('set rangeValue', fromValue, toValue)
-    return exec
+    return this
   }
 </script>
 

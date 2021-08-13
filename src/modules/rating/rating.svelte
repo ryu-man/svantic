@@ -5,7 +5,7 @@
   import '../../../semantic/dist/components/rating.min.css'
 
   import { css } from '../../utils'
-  import { JQueryLazyLoader, RatingLoader } from '../../loaders'
+  import { JQueryLazyLoader, RatingLoader } from '../loaders'
 
   let _class
   export let style

@@ -9,8 +9,8 @@
   import '../../../semantic/dist/components/tab.min.css'
 
   import { classNames, css } from '../../utils'
-  import JQueryLazyLoader from '../../loaders/JQueryLazyLoader.svelte'
-  import TabLoader from '../../loaders/TabLoader.svelte'
+  import JQueryLazyLoader from '../loaders/JQueryLazyLoader.svelte'
+  import TabLoader from '../loaders/TabLoader.svelte'
   import { writable } from 'svelte/store'
   import { setContext } from 'svelte'
 

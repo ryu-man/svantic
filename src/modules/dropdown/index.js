@@ -1,4 +1,3 @@
-export { default as DropdownController } from './controller'
 import Dropdown from './dropdown.svelte'
 import Select from './select.svelte'
 import Header from './header.svelte'

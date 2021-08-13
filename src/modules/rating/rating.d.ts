@@ -15,4 +15,29 @@ interface RatingProps extends Module<Controller, RatingSettings>{
 /**
  * Vomantic Rating
  */
-export default class Rating extends SvelteComponentTyped<RatingProps> {}
+export default class Rating extends SvelteComponentTyped<RatingProps> {
+  /**
+   *@description 	Sets rating programmatically
+   */
+   setRating(rating): void
+
+   /**
+    *@description 	Gets current rating
+    */
+   getRating(): Promise<String>
+ 
+   /**
+    *@description 	Disables interactive rating mode
+    */
+   disable(): void
+ 
+   /**
+    *@description 	Enables interactive rating mode
+    */
+   enable(): void
+ 
+   /**
+    *@description 	Clears current rating
+    */
+   clearRating(): void
+}

@@ -4,7 +4,7 @@
   import '../../../semantic/dist/components/checkbox.min.css'
   
   import { classNames, css } from '../../utils'
-  import { JQueryLazyLoader, CheckboxLoader } from '../../loaders'
+  import { JQueryLazyLoader, CheckboxLoader } from '../loaders'
 
   let _class = ''
   export { _class as class }
@@ -34,32 +34,32 @@
 
   export function toggle() {
     exec('toggle')
-    return exec
+    return this
   }
 
   export function check() {
     exec('check')
-    return exec
+    return this
   }
 
   export function uncheck() {
     exec('uncheck')
-    return exec
+    return this
   }
 
   export function indeterminate() {
     exec('indeterminate')
-    return exec
+    return this
   }
 
   export function determinate() {
     exec('determinate')
-    return exec
+    return this
   }
 
   export function enable() {
     exec('enable')
-    return exec
+    return this
   }
 
   export function setChecked() {
@@ -68,32 +68,32 @@
 
   export function setUnchecked() {
     exec('set unchecked')
-    return exec
+    return this
   }
 
   export function setIndeterminate() {
     exec('set indeterminate')
-    return exec
+    return this
   }
 
   export function setDeterminate() {
     exec('set determinate')
-    return exec
+    return this
   }
 
   export function setEnabled() {
     exec('set enabled')
-    return exec
+    return this
   }
 
   export function setDisabled() {
     exec('set disabled')
-    return exec
+    return this
   }
 
   export function attachEvents(selector, behavior) {
     exec('attach events', selector, behavior)
-    return exec
+    return this
   }
 
   export function isRadio() {

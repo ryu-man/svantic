@@ -5,7 +5,7 @@
   import '../../../semantic/dist/components/embed.min.css'
 
   import { css } from '../../utils'
-  import { JQueryLazyLoader, EmbedLoader } from '../../loaders'
+  import { JQueryLazyLoader, EmbedLoader } from '../loaders'
 
   let _class = ''
   export { _class as class }
@@ -42,22 +42,22 @@ function module(node, settings) {
 
   export function change(source, id, url) {
     exec('change', source, id, url)
-    return exec
+    return this
   }
 
   export function reset() {
     exec('reset')
-    return exec
+    return this
   }
 
   export function show() {
     exec('show')
-    return exec
+    return this
   }
 
   export function hide() {
     exec('hide')
-    return exec
+    return this
   }
 
   export function getId() {

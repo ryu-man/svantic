@@ -3,8 +3,8 @@
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import { css, classNames } from '../../utils'
-  import { DropdownLoader } from '../../loaders'
-  import JQueryLazyLoader from '../../loaders/JQueryLazyLoader.svelte'
+  import { DropdownLoader } from '../loaders'
+  import JQueryLazyLoader from '../loaders/JQueryLazyLoader.svelte'
 
   let _class = ''
   export { _class as class }
@@ -66,97 +66,97 @@
 
   export function setSettings(settings) {
     exec(settings)
-    return exec
+    return this
   }
 
   export function setupMenu(values) {
     exec('setup menu', values)
-    return exec
+    return this
   }
 
   export function changeValues(values) {
     exec('change values', values)
-    return exec
+    return this
   }
 
   export function refresh() {
     exec('refresh')
-    return exec
+    return this
   }
 
   export function toggle() {
     exec('toggle')
-    return exec
+    return this
   }
 
   export function show(callback = () => {}, preventFocus = true) {
     exec('show', callback, preventFocus)
-    return exec
+    return this
   }
 
   export function hide(callback, preventBlur) {
     exec('hide', callback, preventBlur)
-    return exec
+    return this
   }
 
   export function clear(preventChangeTrigger) {
     exec('clear', preventChangeTrigger)
-    return exec
+    return this
   }
 
   export function hideOthers() {
     exec('hide others')
-    return exec
+    return this
   }
 
   export function restoreDefaults(preventChangeTrigger) {
     exec('restore defaults', preventChangeTrigger)
-    return exec
+    return this
   }
 
   export function restoreDefaultText() {
     exec('restore default')
-    return exec
+    return this
   }
 
   export function restorePlaceholderText() {
     exec('restore placeholder')
-    return exec
+    return this
   }
 
   export function restoreDefaultValue() {
     exec('restore default')
-    return exec
+    return this
   }
 
   export function saveDefaults() {
     exec('save defaults')
-    return exec
+    return this
   }
 
   export function setSelected(...args) {
     exec('set selected', ...args)
-    return exec
+    return this
   }
 
   export function removeSelected(value) {
     exec('remove selected', value)
-    return exec
+    return this
   }
 
   export function setExactly(...args) {
     exec('set exactly', ...args)
-    return exec
+    return this
   }
 
   export function setText(text) {
     exec('set text', text)
-    return exec
+    return this
   }
 
   export function setValue(value, text, $selected, preventChangeTrigger) {
     exec('set value', value, text, $selected, preventChangeTrigger)
-    return exec
+    return this
   }
 
   export function getText() {
@@ -173,52 +173,52 @@
 
   export function bindTouchEvents() {
     exec('bind touch')
-    return exec
+    return this
   }
 
   export function bindMouseEvents() {
     exec('bind mouse')
-    return exec
+    return this
   }
 
   export function bindIntent() {
     exec('bind intent')
-    return exec
+    return this
   }
 
   export function unbindIntent() {
     exec('unbind intent')
-    return exec
+    return this
   }
 
   export function determineEventInModule() {
     exec('determine eventInModule')
-    return exec
+    return this
   }
 
   export function determineSelectAction(text, value) {
     exec('determine select', text, value)
-    return exec
+    return this
   }
 
   export function setActive() {
     exec('set active')
-    return exec
+    return this
   }
 
   export function setVisible() {
     exec('set visible')
-    return exec
+    return this
   }
 
   export function removeActive() {
     exec('remove active')
-    return exec
+    return this
   }
 
   export function removeVisible() {
     exec('remove visible')
-    return exec
+    return this
   }
 
   export function isSelection() {

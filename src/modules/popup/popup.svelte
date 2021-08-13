@@ -4,7 +4,7 @@
   import '../../../semantic/dist/components/popup.min.css'
 
   import { css, classNames } from '../../utils'
-  import { JQueryLazyLoader, PopupLoader } from '../../loaders'
+  import { JQueryLazyLoader, PopupLoader } from '../loaders'
 
   let _class = ''
   export { _class as class }
@@ -33,32 +33,32 @@
 
   export function show() {
     exec('show')
-    return exec
+    return this
   }
 
   export function hide() {
     exec('hide')
-    return exec
+    return this
   }
 
   export function hideAll() {
     exec('hide all')
-    return exec
+    return this
   }
 
   export function getPopup() {
     exec('get popup')
-    return exec
+    return this
   }
 
   export function changeContent(html) {
     exec('change content', html)
-    return exec
+    return this
   }
 
   export function toggle() {
     exec('toggle')
-    return exec
+    return this
   }
 
   export function isVisible() {
@@ -71,22 +71,22 @@
 
   export function exists() {
     exec('exists')
-    return exec
+    return this
   }
 
   export function reposition() {
     exec('reposition')
-    return exec
+    return this
   }
 
   export function setPosition(position) {
     exec('set position', position)
-    return exec
+    return this
   }
 
   export function removePopup() {
     exec('remove popup')
-    return exec
+    return this
   }
 </script>
 
