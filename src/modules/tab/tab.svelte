@@ -1,13 +1,23 @@
 <script>
+  import { key } from './tabular_menu.svelte'
   import { css, classNames } from '../../utils'
+  import { getContext } from 'svelte'
 
   export let _class
   export { _class as class }
   export let attached
   export let active = false
   export let segment = false
-  export let data = ''
+  export let data
+  export let center = false
+  export let title
   export let style
+
+  const tabs = getContext(key)
+
+  const index = $tabs.length
+
+  $: $tabs[index] = { attached, active, segment, data, center, title }
 </script>
 
 <div

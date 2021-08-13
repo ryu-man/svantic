@@ -1,13 +1,15 @@
+<script context="module">
+  const load = () => import('../../../semantic/dist/components/modal.min')
+</script>
 <script>
   import DimmerLoader from './DimmerLoader.svelte'
   import TransitionLoader from './TransitionLoader.svelte'
-  const promise = import('../../semantic/dist/components/modal.min')
 </script>
 
 {#if jQuery?.fn?.modal}
   <slot />
 {:else}
-  {#await promise then _}
+  {#await load() then _}
     <TransitionLoader>
       <DimmerLoader>
         <slot />

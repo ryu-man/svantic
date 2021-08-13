@@ -1,18 +1,19 @@
+<script context="module">
+  const load = () => import('../../../semantic/dist/components/calendar.min')
+</script>
 <script>
   import DropdownLoader from './DropdownLoader.svelte'
   import PopupLoader from './PopupLoader.svelte'
   import TransitionLoader from './TransitionLoader.svelte'
-
-  const promise = import('../../semantic/dist/components/calendar.min')
 </script>
 
 <TransitionLoader>
   <DropdownLoader>
     <PopupLoader>
-      {#if jQuery.calendar}
+      {#if jQuery?.fn?.calendar}
         <slot />
       {:else}
-        {#await promise then _}
+        {#await load() then _}
           <slot />
         {/await}
       {/if}

@@ -3,8 +3,9 @@
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/accordion.min.css'
-  import { classNames, css, register } from '../../utils'
-  import Controller from './controller'
+  
+  import { classNames, css } from '../../utils'
+  import { JQueryLazyLoader, AccordionLoader } from '../../loaders'
 
   let _class = ''
   export let fluid = false
@@ -16,42 +17,67 @@
   export let inverted = false
   export let settings = {}
   export let style = {}
-  export let on = {}
-  export let onMount
 
+  /**
+   * @type {SemanticUI.Calendar}
+   */
+  let exec
   function module(node, settings) {
-    // the node has been mounted in the DOM
     css(node, style)
-    const unregister = register(node, on)
 
-    let controller = new Controller(node, settings)
-    onMount?.(controller)
+    /**
+     * @type {JQueryStatic}
+     */
+    const jQuery = window['JQuery']
 
-    return {
-      // the node has been removed from the DOM
-      destroy() {
-        unregister()
-        controller.destroy()
-        controller = null
-      }
-    }
+    exec = (args) => jQuery(node).accordion(args)
+    exec(settings)
+  }
+
+  export function refresh() {
+    exec('refresh')
+    return exec
+  }
+
+  export function open(index) {
+    exec('open', index)
+    return exec
+  }
+
+  export function closeOthers() {
+    exec('close others')
+    return exec
+  }
+
+  export function close(index) {
+    exec('close', index)
+    return exec
+  }
+
+  export function toggle(index) {
+    exec('toggle', index)
+    return exec
   }
 </script>
 
-<div
-  use:module="{settings}"
-  class="{classNames(
-    _class,
-    'ui',
-    vertical,
-    fluid,
-    following,
-    styled,
-    inverted,
-    'accordion',
-    text,
-    menu
-  )}"
->
-  <slot />
-</div>
+<JQueryLazyLoader>
+  <AccordionLoader>
+    <div
+      use:module="{settings}"
+      class="{classNames(
+        _class,
+        'ui',
+        vertical,
+        fluid,
+        following,
+        styled,
+        inverted,
+        'accordion',
+        text,
+        menu
+      )}"
+    >
+      <slot />
+    </div>
+  </AccordionLoader>
+</JQueryLazyLoader>

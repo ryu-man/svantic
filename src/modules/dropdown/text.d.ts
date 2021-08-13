@@ -1,9 +1,8 @@
 import { SvelteComponentTyped } from 'svelte/internal'
-import type { Component } from 'src/component'
-import type { Icons } from 'src/elements/icon/icon'
+import type { Component } from '../../component'
+import type { Icons } from '../../elements/icon/icon'
 
 export interface DropdownTextProps extends Component {
-  icon?: Icons
 }
 /**
  * Svantic Dropdown Text

@@ -3,8 +3,10 @@
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/slider.min.css'
-  import { css, register, classNames } from '../../utils'
-  import Controller from './controller'
+
+  import { css, classNames } from '../../utils'
+  import JQueryLazyLoader from '../../loaders/JQueryLazyLoader.svelte'
+  import SliderLoader from '../../loaders/SliderLoader.svelte'
 
   let _class
   export { _class as class }
@@ -15,36 +17,62 @@
   export let inverted = false
   export let reversed = false
   export let vertical = false
-  export let on = {}
   export let style
+
+  /**
+   * @type {SemanticUI.SliderSettings.Param}
+   */
   export let settings = {}
-  export let onMount
+
+  /**
+   * @type {SemanticUI.Slider}
+   */
+  let exec
   function module(node, settings) {
     css(node, style)
 
-    const unregister = register(node, on)
+    /**
+     * @type {JQueryStatic}
+     */
+    const jQuery = window['JQuery']
 
-    let controller = new Controller(node, settings)
-    onMount?.(controller, node)
+    exec = (args) => jQuery(node).slider(args)
+    exec(settings)
+  }
 
-    return {
-      destroy() {
-        unregister()
-        controller.destroy()
-        controller = null
-      }
-    }
+  export function getValue() {
+    return exec('get value', arguments)
+  }
+
+  export function getThumbValue(which) {
+    return exec('get thumbValue', which)
+  }
+
+  export function getNumLabels() {
+    return exec('get numLabels')
+  }
+
+  export function setValue(value) {
+    exec('set value', value)
+    return exec
+  }
+
+  export function setRangeValue(fromValue, toValue) {
+    exec('set rangeValue', fromValue, toValue)
+    return exec
   }
 </script>
 
-<div
-  use:module="{settings}"
-  class:inverted
-  class:reversed
-  class:vertical
-  class="{classNames(state, color, size, type, 'ui slide', _class)}"
->
-  <slot>
-    <!-- optional fallback -->
-  </slot>
-</div>
+<JQueryLazyLoader>
+  <SliderLoader>
+    <div
+      use:module="{settings}"
+      class:inverted
+      class:reversed
+      class:vertical
+      class="{classNames(state, color, size, type, 'ui slide', _class)}"
+    >
+      <slot />
+    </div>
+  </SliderLoader>
+</JQueryLazyLoader>

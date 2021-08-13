@@ -3,8 +3,11 @@
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/search.min.css'
+
   import { css, register, classNames } from '../../utils'
   import Controller from './controller'
+  import JQueryLazyLoader from '../../loaders/JQueryLazyLoader.svelte'
+  import SearchLoader from '../../loaders/SearchLoader.svelte'
 
   let _class
   export let disabled = false
@@ -19,44 +22,137 @@
   export let category = false
   export let scrolling = false
   export let style
-  export let on = {}
-  export let settings = {}
   export { _class as class }
 
-  export let onMount
+  /**
+   * @type {SemanticUI.DropdownSettings.Param}
+   */
+  export let settings = {}
 
+  /**
+   * @type {SemanticUI.Dropdown}
+   */
+  let exec
   function module(node, settings) {
     css(node, style)
 
-    const unregister = register(node, on)
+    /**
+     * @type {JQueryStatic}
+     */
+    const jQuery = window['JQuery']
 
-    let controller = new Controller(node, settings)
-    onMount?.(controller)
+    exec = (args) => jQuery(node).search(args)
+    exec(settings)
+  }
 
-    return {
-      // the node has been removed from the DOM
-      destroy() {
-        unregister()
-        controller.destroy()
-        controller = null
-      }
-    }
+  export function query(callback) {
+    exec('query ', callback)
+    return exec
+  }
+
+  export function displayMessage(text, type) {
+    exec('display message', text, type)
+    return exec
+  }
+
+  export function searchLocal(query) {
+    return exec('search local', query)
+  }
+
+  export async function hasMinimumCharacters() {
+    return await exec('has minimum')
+  }
+
+  export function searchRemote(query, callback) {
+    return exec('search remote', query, callback)
+  }
+
+  export function searchObject(query, object, searchFields) {
+    return exec('search object', query, object, searchFields)
+  }
+
+  export function cancelQuery() {
+    exec('cancel query')
+    return exec
+  }
+
+  export function isFocused() {
+    return exec('is focused')
+  }
+
+  export function isVisible() {
+    return exec('is visible')
+  }
+
+  export function isEmpty() {
+    return exec('is empty')
+  }
+
+  export function getValue() {
+    return exec('get value')
+  }
+
+  export function getResult(value) {
+    return exec('get result', value)
+  }
+
+  export function setValue(value) {
+    exec('set value', value)
+    return exec
+  }
+
+  export function readCache(query) {
+    return exec('read cache', query)
+  }
+
+  export function clearCache(query) {
+    exec('clear cache', query)
+    return exec
+  }
+
+  export function writeCache(query) {
+    exec('write cache', query)
+    return exec
+  }
+
+  export function addResults(html) {
+    exec('add results', html)
+    return exec
+  }
+
+  export function showResults(callback) {
+    exec('show results', callback)
+    return exec
+  }
+
+  export function hideResults(callback) {
+    exec('hide results', callback)
+    return exec
+  }
+
+  export function generateResults(response) {
+    exec('generate results', response)
+    return exec
   }
 </script>
 
-<div
-  use:module="{settings}"
-  class="{classNames(
-    _class,
-    'ui',
-    animation,
-    speed,
-    { disabled, category, fluid, local, long, scrolling, loading, aligned },
-    'search'
-  )}"
->
-  <slot>
-    <!-- optional fallback -->
-  </slot>
-  <div class="results"></div>
-</div>
+<JQueryLazyLoader>
+  <SearchLoader>
+    <div
+      use:module="{settings}"
+      class="{classNames(
+        _class,
+        'ui',
+        animation,
+        speed,
+        { disabled, category, fluid, local, long, scrolling, loading, aligned },
+        'search'
+      )}"
+    >
+      <slot>
+        <!-- optional fallback -->
+      </slot>
+      <div class="results"></div>
+    </div>
+  </SearchLoader>
+</JQueryLazyLoader>

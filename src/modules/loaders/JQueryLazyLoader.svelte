@@ -1,11 +1,13 @@
+<script context="module">
+  const load = () => import('jquery')
+</script>
+
 <script>
   import RegisterJQuery from './RegisterJQuery.svelte'
-
-  const promise = import('jquery')
 </script>
 
 {#if !window['$'] || !window['jQuery']}
-  {#await promise then jq}
+  {#await load() then jq}
     <RegisterJQuery jquery="{jq.default}">
       <slot />
     </RegisterJQuery>
