@@ -28,7 +28,7 @@
   ],
   "files": [
     "src",
-    "semantic/dist/components"
+    "semantic/dist/components/**/*.min.*"
   ],
   "directories": {
     "test": "test"
@@ -40,34 +40,44 @@
     "validate": "svelte-check",
     "pretty": "prettier --write \"src/**/*.{svelte,js,ts}\"",
     "test": "jest",
-    "build:fomantic": "gulp build -f node_modules/fomantic-ui/gulpfile.js"
+    "build:fomantic": "gulp build -f node_modules/fomantic-ui/gulpfile.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.12.11",
-    "@rollup/plugin-alias": "^3.1.1",
-    "@rollup/plugin-commonjs": "^16.0.0",
-    "@rollup/plugin-node-resolve": "^10.0.0",
-    "@testing-library/jest-dom": "^5.11.9",
+    "@babel/core": "^7.14.5",
+    "@babel/preset-env": "^7.14.2",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@storybook/addon-actions": "^6.3.7",
+    "@storybook/addon-essentials": "^6.3.7",
+    "@storybook/addon-links": "^6.3.7",
+    "@storybook/addon-svelte-csf": "^1.1.0",
+    "@storybook/builder-webpack5": "^6.3.7",
+    "@storybook/manager-webpack5": "^6.3.7",
+    "@storybook/svelte": "^6.3.7",
+    "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/svelte": "^3.0.0",
-    "@tsconfig/svelte": "^1.0.0",
-    "@types/jest": "^26.0.20",
-    "@types/jquery": "^3.5.1",
+    "@types/jest": "^27.0.1",
+    "@types/jquery": "^3.5.6",
     "@types/semantic-ui": "^2.2.7",
-    "babel-jest": "^26.6.3",
+    "babel-jest": "^27.0.6",
+    "babel-loader": "^8.2.2",
     "fomantic-ui": "^2.8.7",
-    "jest": "^26.6.3",
-    "rollup": "^2.28.2",
+    "jest": "^27.0.6",
+    "rollup": "^2.56.2",
     "rollup-plugin-css-only": "^3.0.0",
-    "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-terser": "^7.0.2",
-    "svelte": "3.31.0",
-    "svelte-check": "^1.0.52",
-    "svelte-jester": "^1.3.0",
-    "svelte-preprocess": "^4.3.2"
+    "sirv": "^1.0.12",
+    "svelte": "^3.42.1",
+    "svelte-check": "^2.2.4",
+    "svelte-jester": "^2.0.1",
+    "svelte-loader": "^3.1.2",
+    "svelte-preprocess": "^4.7.4"
   },
   "dependencies": {
-    "jquery": "^3.5.1"
+    "jquery": "^3.6.0"
   },
   "peerDependencies": {
     "jquery": "^3.5.1"
