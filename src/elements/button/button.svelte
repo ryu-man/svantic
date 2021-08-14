@@ -4,7 +4,7 @@
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/button.min.css'
   import { classNames, css, register } from '../../utils'
-  import Icon from '../icon/icon.svelte'
+  import Icon from '../icon'
 
   let _class = ''
   export { _class as class }
@@ -59,40 +59,38 @@
       }
     }
   }
+
+  $: classProp = classNames(
+    _class,
+    'ui',
+    {
+      icon,
+      fluid,
+      toggle,
+      compact,
+      circular,
+      positive,
+      negative,
+      basic,
+      inverted,
+      disabled,
+      floated,
+      attached,
+      animated,
+      loading,
+      labeled
+    },
+    size,
+    state,
+    social,
+    color,
+    emphasis,
+    'button'
+  )
 </script>
 
 {#if as === 'button'}
-  <button
-    use:init
-    on:click
-    class="{classNames(
-      _class,
-      'ui',
-      {
-        icon,
-        fluid,
-        toggle,
-        compact,
-        circular,
-        positive,
-        negative,
-        basic,
-        inverted,
-        disabled,
-        floated,
-        attached,
-        animated,
-        loading,
-        labeled
-      },
-      size,
-      state,
-      social,
-      color,
-      emphasis,
-      'button'
-    )}"
-  >
+  <button use:init on:click class="{classProp}">
     {#if typeof icon === 'string'}
       <Icon name="{icon}" />
     {/if}
@@ -102,33 +100,7 @@
   <div
     use:init
     on:click
-    class="{classNames(
-      _class,
-      'ui',
-      {
-        icon,
-        fluid,
-        toggle,
-        compact,
-        circular,
-        positive,
-        negative,
-        basic,
-        inverted,
-        disabled,
-        floated,
-        attached,
-        animated,
-        loading,
-        labeled
-      },
-      size,
-      state,
-      social,
-      color,
-      emphasis,
-      'button'
-    )}"
+    class="{classProp}"
   >
     {#if typeof icon === 'string'}
       <Icon name="{icon}" />

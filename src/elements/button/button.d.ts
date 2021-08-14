@@ -44,7 +44,7 @@ export interface ButtonProps extends Component {
   on?: DOMEvents<HTMLDivElement>
 }
 /**
- * Vomantic Button
+ * @description Svantic Button
  */
 declare class Button extends SvelteComponentTyped<ButtonProps> {
   static content: new () => Content
