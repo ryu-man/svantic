@@ -35,19 +35,19 @@ export {
 } from './elements'
 
 export {
-  Accordion,
+  Accordion,AccordionContent, AccordionTitle, initAccordion,
   Calendar,
-  Dimmer,
-  Dropdown,
+  Dimmer,Dimmable,
+  Dropdown, DropdownDivider, DropdownHeader, DropdownMenu, DropwdownText, Select, initDropdown,
   Embed,
-  Modal,
-  Popup,
-  Progress,
+  Modal,ModalActions, ModalContent, ModalDescription, ModalHeader, initModal,
+  Popup,PopupHeader, initPopup,
+  Progress,ProgressBar, ProgressMultiple, initProgress,
   Rating,
   Search,
   Sidebar,
   Slider,
-  TabMenu,
+  Tabs, Tab, TabItem, initTabs,
   Toast
 } from './modules'
 

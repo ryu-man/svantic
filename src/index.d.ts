@@ -35,34 +35,29 @@ export {
 } from './elements'
 
 export {
-  Accordion,
+  Accordion,AccordionContent, AccordionTitle, initAccordion,
   Calendar,
-  Dimmer,
-  Dropdown,
+  Dimmer,Dimmable,
+  Dropdown, DropdownDivider, DropdownHeader, DropdownMenu, DropwdownText, Select, initDropdown,
   Embed,
-  Modal,
-  Popup,
-  Progress,
+  Modal,ModalActions, ModalContent, ModalDescription, ModalHeader, initModal,
+  Popup,PopupHeader, initPopup,
+  Progress,ProgressBar, ProgressMultiple, initProgress,
   Rating,
   Search,
   Sidebar,
   Slider,
-  TabMenu,
-  Toast,
-  AccordionController,
-  CalendarController,
-  DimmerController,
-  DropdownController,
-  EmbedController,
-  ModalController,
-  PopupController,
-  ProgressController,
-  RatingController,
-  SearchController,
-  SidebarController,
-  SliderController,
-  TabController,
-  ToastController
+  Tabs, Tab, TabItem, initTabs,
+  Toast
 } from './modules'
 
-export { Card, Item, Ad, Feed, Comment, Items, Statistics, Comments } from './views'
+export {
+  Card,
+  // Item,
+  Ad,
+  Feed,
+  Comment,
+  Items,
+  Statistics,
+  Comments
+} from './views'
