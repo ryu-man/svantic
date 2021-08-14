@@ -1,9 +1,9 @@
-import { default as TabMenu } from './tabular_menu.svelte'
+import { default as Tabs } from './tabular_menu.svelte'
 import { default as Tab } from './tab.svelte'
-import { default as Item } from './item.svelte'
 
-TabMenu.Tab = Tab
-TabMenu.Item = Item
+export function init() {
+    Tabs.Tab = Tab
+}
 
-export { TabMenu, Tab, Item }
-export default TabMenu
+export { Tab, Item }
+export default Tabs

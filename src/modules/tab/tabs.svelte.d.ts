@@ -1,11 +1,9 @@
 import { SvelteComponentTyped} from 'svelte/internal';
-import Item from './item';
-import Tab from './tab';
-import { Module } from '../module';
-import Controller from './controller'
-import {TabularMenuSettings} from './settings'
+import Tab from './tab.svellte';
+import Module from '../module';
+import TabularMenuSettings from './settings'
 
-interface TabularMenuProps extends Module<Controller, TabularMenuSettings> {
+interface TabularMenuProps extends Module<TabularMenuSettings> {
     attached?: string;
     loading?: boolean;
     segment?: boolean;
@@ -15,6 +13,5 @@ interface TabularMenuProps extends Module<Controller, TabularMenuSettings> {
  * Vomantic TabularMenu
  */
 export default class TabularMenu extends SvelteComponentTyped<TabularMenuProps> {
-    static Item: new ()=> Item
     static Tab: new ()=> Tab
 }

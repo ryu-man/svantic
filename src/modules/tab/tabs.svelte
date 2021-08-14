@@ -9,10 +9,10 @@
   import '../../../semantic/dist/components/tab.min.css'
 
   import { classNames, css } from '../../utils'
-  import JQueryLazyLoader from '../loaders/JQueryLazyLoader.svelte'
-  import TabLoader from '../loaders/TabLoader.svelte'
+  import { JQueryLazyLoader, TabLoader } from '../loaders'
   import { writable } from 'svelte/store'
-  import { setContext } from 'svelte'
+  import { setContext, tick } from 'svelte'
+  import Item from './item.svelte'
 
   export let _class
   export { _class as class }
@@ -35,16 +35,20 @@
    */
   let exec
 
+  /**
+   *
+   * @param node {HTMLDivElement}
+   * @param settings
+   */
   function module(node, settings) {
     css(node, style)
+    exec = (...args) => jQuery(node.getElementsByClassName('item')).tab(...args)
 
-    /**
-     * @type {JQueryStatic}
-     */
-    const jQuery = window['JQuery']
-
-    exec = (...args) => jQuery(node).tab(...args)
-    exec(settings)
+    tabs.subscribe((v) => {
+      tick().then(()=>{
+        exec(settings)
+      })
+    })
   }
 
   export function attachEvents(selector, event) {
@@ -91,10 +95,18 @@
         'tabular menu'
       )}"
     >
-      {#each $tabs as { center, data, title }}
-        <div class:center class="item" data-tab="{data}">
+      {#each $tabs as { center, data, title, active }}
+        <!-- <div class:center class:active class="item" data-tab="{data}">
           {title}
-        </div>
+        </div> -->
+        <Item
+          data="{data}"
+          center="{center}"
+          active="{active}"
+          settings="{settings}"
+        >
+          {title}
+        </Item>
       {/each}
     </div>
     <slot />

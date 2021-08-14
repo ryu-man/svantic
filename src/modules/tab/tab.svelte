@@ -1,5 +1,5 @@
 <script>
-  import { key } from './tabular_menu.svelte'
+  import { key } from './tabs.svelte'
   import { css, classNames } from '../../utils'
   import { getContext } from 'svelte'
 
