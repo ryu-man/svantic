@@ -5,5 +5,8 @@ interface ContentProps{
     scrolling?: boolean
 }
 
+/**
+ * @description ModalContent
+ */
 export default class Content extends SvelteComponentTyped<ContentProps>{
 }

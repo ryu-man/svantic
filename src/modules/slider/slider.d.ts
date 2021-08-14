@@ -1,12 +1,11 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import { Color, Size } from '../../variations'
-import { Module } from '../module'
-import Controller from './controller'
-import { SliderSettings } from './settings'
+import Module from '../module'
+import SliderSettings from './settings'
 
 declare type Type = 'range'
 declare type State = 'disabled'
-interface SliderProps extends Module<Controller, SliderSettings> {
+interface SliderProps extends Module<SliderSettings> {
   type?: Type
   size?: Size
   state?: State

@@ -1,36 +1,35 @@
-import { SvelteComponentTyped} from 'svelte/internal';
-import type { Style } from '../../style';
-import { Module } from '../module';
-import Controller from './controller'
-import {PopupSettings} from './settings'
-import Header from './header';
+import { SvelteComponentTyped } from 'svelte/internal'
+import { Style } from '../../style'
+import Module from '../module'
+import PopupSettings from './settings'
+import Header from './header'
 
-interface PopupProps extends Module<Controller, PopupSettings> {
-    class?: string;
-    active?: boolean;
-    disabled?: boolean;
-    fluid?: boolean;
-    circular?: boolean;
-    loading?: boolean;
-    primary?: boolean;
-    secondary?: boolean;
-    compact?: boolean;
-    basic?: boolean;
-    toggle?: boolean;
-    positive?: boolean;
-    negative?: boolean;
-    tertiary?: boolean;
-    inverted?: boolean;
-    icon?: boolean;
-    style?: Style;
+interface PopupProps extends Module<PopupSettings> {
+  class?: string
+  active?: boolean
+  disabled?: boolean
+  fluid?: boolean
+  circular?: boolean
+  loading?: boolean
+  primary?: boolean
+  secondary?: boolean
+  compact?: boolean
+  basic?: boolean
+  toggle?: boolean
+  positive?: boolean
+  negative?: boolean
+  tertiary?: boolean
+  inverted?: boolean
+  icon?: boolean
+  style?: Style
 }
 /**
- * Vomantic Popup
+ * @description Svantic Popup
  */
 declare class Popup extends SvelteComponentTyped<PopupProps> {
-    Header: new ()=> Header
+  Header: new () => Header
 
-    /**
+  /**
    *@description 	Shows popup
    */
   show(): void
@@ -95,4 +94,4 @@ declare class Popup extends SvelteComponentTyped<PopupProps> {
    */
   removePopup(): void
 }
-export default Popup;
+export default Popup

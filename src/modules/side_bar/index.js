@@ -1,4 +1,1 @@
-export { default as Sidebar } from './side_bar.svelte'
-
-// export{Sidebar, SidebarController}
-// export default Sidebar
+export { default } from './side_bar.svelte'

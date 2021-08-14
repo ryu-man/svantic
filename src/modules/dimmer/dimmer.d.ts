@@ -1,27 +1,26 @@
-import { SvelteComponentTyped} from 'svelte/internal';
-import type { Align } from '../../variations';
-import { Module } from '../module';
-import {} from './settings'
-import Controller from './controller'
-import {DimmerSettings} from './settings'
+import { SvelteComponentTyped } from 'svelte/internal'
+import { Align } from '../../variations'
+import Module from '../module'
+import DimmerSettings from './settings'
 
-declare type Shade = 'medium' | 'light' | 'very light';
-declare type Partial = 'bottom' | 'center' | 'top';
+declare type Shade = 'medium' | 'light' | 'very light'
+declare type Partial = 'bottom' | 'center' | 'top'
 
-interface DimmerProps extends Module<Controller, DimmerSettings> {
-    page?: boolean;
-    disabled?: boolean;
-    active?: boolean;
-    aligned?: Align;
-    shades?: Shade;
-    partial?: Partial;
-    inverted?: boolean;
+interface DimmerProps extends Module<DimmerSettings> {
+  page?: boolean
+  disabled?: boolean
+  active?: boolean
+  aligned?: Align
+  shades?: Shade
+  partial?: Partial
+  inverted?: boolean
 }
+
 /**
- * Svantic Dimmer
+ * @description Svantic Dimmer
  */
 declare class Dimmer extends SvelteComponentTyped<DimmerProps> {
-    /**
+  /**
    *@description 	Detaches a given element from DOM and reattaches element inside dimmer
    */
   addContent(element: HTMLElement): void
@@ -129,4 +128,4 @@ declare class Dimmer extends SvelteComponentTyped<DimmerProps> {
    */
   setDisabled(): void
 }
-export default Dimmer;
+export default Dimmer

@@ -1,9 +1,8 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import { Style } from '../../style'
 import { Attach, Color, Size, Speed } from '../../variations'
-import { Module } from '../module'
-import Controller from './controller'
-import { ProgressSettings } from './settings'
+import Module from '../module'
+import ProgressSettings from './settings'
 
 type State =
   | 'indeterminate'
@@ -16,7 +15,7 @@ type State =
   | 'success'
   | 'active'
 
-interface ProgressProps extends Module<Controller, ProgressSettings> {
+interface ProgressProps extends Module<ProgressSettings> {
   indicating?: boolean
   attached?: Attach
   speed?: Speed
@@ -35,8 +34,6 @@ interface ProgressProps extends Module<Controller, ProgressSettings> {
 }
 
 /**
- * Vomantic Progress
+ * @description Svantic Progress
  */
-export default class Progress extends SvelteComponentTyped<ProgressProps> {
-  
-}
+export default class Progress extends SvelteComponentTyped<ProgressProps> {}

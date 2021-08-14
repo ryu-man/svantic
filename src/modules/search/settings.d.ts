@@ -1,5 +1,5 @@
 import type { TransitionType } from '../../transition';
-export interface SearchSettings {
+export default interface SearchSettings {
     /** Minimum characters to query for results */
     minCharacters?: number;
     /** Whether search should show results on focus (must also match min character length) */

@@ -1,11 +1,10 @@
 import { SvelteComponentTyped } from 'svelte/internal'
-import type { Component } from 'src/component'
-import type { Icons } from 'src/elements/icon/icon'
+import type { Component } from '../../component'
 
 export interface DropdownDividerProps extends Component {
 }
 /**
- * Svantic Dropdown Divider
+ * @escription Svantic DropdownDivider
  */
 declare class DropdownDivider extends SvelteComponentTyped<DropdownDividerProps> {}
 export default DropdownDivider

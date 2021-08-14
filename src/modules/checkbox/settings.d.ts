@@ -1,4 +1,4 @@
-export interface CheckboxSettings {
+export default interface CheckboxSettings {
   // Setting to true/false will determine whether an input will allow no selection. Auto will set disallow this behavior only for radio boxes
   uncheckable?: boolean
   // Whether callbacks for checked status should be fired on init as well as change

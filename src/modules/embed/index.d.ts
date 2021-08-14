@@ -1,1 +1,1 @@
-export { default as Embed } from "./embed";
+export { default } from "./embed";

@@ -1,2 +1,8 @@
-export { default as Progress } from "./progress";
-export { default as Bar } from "./bar";
+import { default as Progress } from './progress.svelte'
+import { default as Bar } from './bar.svelte'
+import { default as Multiple } from './multiple.svelte'
+
+export function init() 
+
+export { Bar, Multiple }
+export default Progress

@@ -1,5 +1,5 @@
 import type { TransitionType } from '../../transition';
-export interface ModalSettings {
+export default interface ModalSettings {
     /** If set to false will prevent the modal from being moved to inside the dimmer */
     detachable?: boolean;
     /** Auto will automatically use flex in browsers that support absolutely positioned elements inside flex containers. Setting to true/false will force this setting for all browsers. */

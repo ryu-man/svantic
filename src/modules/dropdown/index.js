@@ -6,12 +6,14 @@ import Item from './item.svelte'
 import Divider from './divider.svelte'
 import Text from './text.svelte'
 
-Dropdown.select = Select
-Dropdown.header = Header
-Dropdown.divider = Divider
-Dropdown.menu = Menu
-Dropdown.item = Item
-Dropdown.text = Text
+export function init() {
+    Dropdown.Select = Select
+    Dropdown.Header = Header
+    Dropdown.Menu = Menu
+    Dropdown.Item = Item
+    Dropdown.Divider = Divider
+    Dropdown.Text = Text
+}
 
-export { Dropdown, Select, Header, Divider, Menu, Item, Text }
+export { Select, Header, Divider, Menu, Item, Text }
 export default Dropdown

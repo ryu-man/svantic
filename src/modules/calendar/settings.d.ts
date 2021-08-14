@@ -1,7 +1,7 @@
 type PositionV = 'top' | 'bottom'
 type PositionH = 'left' | 'right'
 type Position = `${PositionV} ${PositionH}`
-export interface CalendarSettings {
+export default interface CalendarSettings {
   // Picker type, can be datetime, date, time, month, or year
   type?: 'datetime' | 'date' | 'time' | 'month' | 'year'
   // Day for first day column (0 = Sunday)

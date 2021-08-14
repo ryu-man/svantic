@@ -1,9 +1,8 @@
 import { SvelteComponentTyped } from 'svelte/internal'
-import { Module } from '../module'
-import Controller from './controller'
-import {CalendarSettings} from './settings'
+import Module from '../module'
+import CalendarSettings from './settings'
 
-interface CalendarProps extends Module<Controller, CalendarSettings> {
+interface CalendarProps extends Module<CalendarSettings> {
   icon?: string
   disabled?: boolean
 }

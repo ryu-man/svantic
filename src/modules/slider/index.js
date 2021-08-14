@@ -1,3 +1,1 @@
-export { default as Slider } from './slider.svelte'
-
-// export {Slider, SliderController}
+export { default } from './slider.svelte'

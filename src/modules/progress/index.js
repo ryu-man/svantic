@@ -1,5 +1,11 @@
-export { default as Progress } from './progress.svelte'
-export { default as Bar } from './bar.svelte'
+import { default as Progress } from './progress.svelte'
+import { default as Bar } from './bar.svelte'
+import { default as Multiple } from './multiple.svelte'
 
-// Progress.Bar = Bar
-// export { Progress, Bar, ProgressController }
+export function init() {
+    Progress.Bar = Bar
+    Progress.Multiple = Multiple
+}
+
+export { Bar, Multiple }
+export default Progress

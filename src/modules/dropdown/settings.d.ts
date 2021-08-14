@@ -4,7 +4,7 @@ declare type Value = {
     value?: string;
     selected?: boolean;
 };
-export interface DropdownSettings {
+export default interface DropdownSettings {
     /** When specified allows you to initialize dropdown with specific values. See usage guide for details. */
     values?: Value[];
     /** Event used to trigger dropdown (Hover, Click, Custom Event) */

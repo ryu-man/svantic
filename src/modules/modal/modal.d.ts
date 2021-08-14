@@ -1,12 +1,11 @@
 import { SvelteComponentTyped } from 'svelte/internal'
-import { Module } from '../module'
-import Controller from './controller'
-import { ModalSettings } from './settings'
+import Module from '../module'
+import ModalSettings from './settings'
 import Header from './header'
 import Content from './content'
 import Actions from './actions'
 import Description from './description.svelte'
-interface ModalProps extends Module<Controller, ModalSettings> {
+interface ModalProps extends Module<ModalSettings> {
   size?: string
   basic?: boolean
   active?: boolean
@@ -15,7 +14,7 @@ interface ModalProps extends Module<Controller, ModalSettings> {
   fullscreen?: boolean
 }
 /**
- * Svantic Modal
+ * @escription Svantic Modal
  */
 declare class Modal extends SvelteComponentTyped<ModalProps> {
   static header: new () => Header

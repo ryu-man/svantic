@@ -1,6 +1,7 @@
 import { SvelteComponentTyped } from 'svelte/internal'
+import {DropdownProps} from './dropdown.svelte'
 /**
- * Vomantic Dropdown
+ * @description Svantic Dropdown
  */
 declare class Dropdown extends SvelteComponentTyped<DropdownProps> {
 }

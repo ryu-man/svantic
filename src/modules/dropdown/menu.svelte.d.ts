@@ -1,5 +1,5 @@
 import { SvelteComponentTyped } from 'svelte/internal'
-import type { Component } from 'src/component'
+import type { Component } from '../../component'
 import type { Float } from '../../variations'
 
 export interface DropdownMenuProps extends Component {
@@ -8,7 +8,7 @@ export interface DropdownMenuProps extends Component {
   scrolling?: boolean
 }
 /**
- * Svantic Dropdown Menu
+ * @description Svantic DropdownMenu
  */
 declare class DropdownMenu extends SvelteComponentTyped<DropdownMenuProps> {}
 export default DropdownMenu

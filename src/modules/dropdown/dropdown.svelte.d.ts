@@ -1,14 +1,14 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import type { Loading, Attach, Size, Speed, Wide } from '../../variations'
-import { Module } from '../module'
-import Controller from './controller'
-import { DropdownSettings } from './settings'
 
-import Header from './header'
-import Menu from './menu'
-import Item from './item'
-import Divider from './divider'
-import Text from './text'
+import Module from '../module'
+import Settings from './settings'
+
+import Header from './header.svelte'
+import Menu from './menu.svelte'
+import Item from './item.svelte'
+import Divider from './divider.svelte'
+import Text from './text.svelte'
 // declare type Type =
 //   | 'selection'
 //   | 'search'
@@ -26,7 +26,7 @@ import Text from './text'
 
 declare type Height = 'long' | 'very long'
 
-export interface DropdownProps extends Module<Controller, DropdownSettings> {
+export interface DropdownProps extends Module<Settings> {
   selection?: boolean
   search?: boolean
   clearable?: boolean
@@ -66,19 +66,19 @@ export interface DropdownProps extends Module<Controller, DropdownSettings> {
   scrolling?: boolean
 }
 /**
- * Svantic Dropdown
+ * @description Svantic Dropdown
  */
 declare class Dropdown extends SvelteComponentTyped<DropdownProps> {
-  static select: new () => Dropdown
-  static header: new () => Header
-  static divider: new () => Divider
-  static menu: new () => Menu
-  static item: new () => Item
-  static text: new () => Text
+  static Select: new () => Dropdown
+  static Header: new () => Header
+  static Divider: new () => Divider
+  static Menu: new () => Menu
+  static Item: new () => Item
+  static Text: new () => Text
 
   mounted(callback: () => void): void
 
-  setSettings(settings: DropdownSettings): this
+  setSettings(settings: Settings): this
 
   /**
    *@description 	Recreates dropdown menu from passed values. values should be an object with the following structure: { values: [ {value, text, name} ] }.
@@ -275,4 +275,5 @@ declare class Dropdown extends SvelteComponentTyped<DropdownProps> {
    */
   getPlaceholderText(): Promise<string>
 }
+
 export default Dropdown

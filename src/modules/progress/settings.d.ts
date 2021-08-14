@@ -1,4 +1,4 @@
-export interface ProgressSettings {
+export default interface ProgressSettings {
     /** Whether success state should automatically trigger when progress completes */
     autoSuccess?: boolean;
     /** Whether progress should automatically show activity when incremented */

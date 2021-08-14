@@ -1,1 +1,1 @@
-export { default as Embed } from './embed.svelte'
+export { default } from './embed.svelte'

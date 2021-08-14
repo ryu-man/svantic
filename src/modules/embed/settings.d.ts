@@ -1,2 +1,2 @@
-export interface EmbedSettings {
+export default interface EmbedSettings {
 }

@@ -1,10 +1,9 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import type { Attach, Wide } from '../../variations'
-import { Module } from '../module'
-import Controller from './controller'
-import { SidebarSettings } from './settings'
+import Module from '../module'
+import SidebarSettings from './settings'
 
-interface SidebarProps extends Module<Controller, SidebarSettings> {
+interface SidebarProps extends Module<SidebarSettings> {
   wide?: Wide
   visible?: boolean
   dimmed?: boolean
@@ -13,7 +12,7 @@ interface SidebarProps extends Module<Controller, SidebarSettings> {
   vertical?: boolean
 }
 /**
- * Vomantic Sidebar
+ * @description Svantic Sidebar
  */
 declare class Sidebar extends SvelteComponentTyped<SidebarProps> {
   /**
