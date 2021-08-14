@@ -6,7 +6,7 @@
   import RegisterJQuery from './RegisterJQuery.svelte'
 </script>
 
-{#if !window['$'] || !window['jQuery']}
+{#if !window['jQuery']}
   {#await load() then jq}
     <RegisterJQuery jquery="{jq.default}">
       <slot />
