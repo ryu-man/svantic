@@ -6,6 +6,7 @@ export interface Component {
   style?: Style
   dimmable?: boolean
 }
+export default Component
 // declare type Event = HTMLElementEventMap[keyof HTMLElementEventMap]
 declare type EventHandler<E = Event, T = HTMLElement> = (
   this: HTMLElement,
