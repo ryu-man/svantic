@@ -85,7 +85,7 @@ Add svantic and modify `src/App.svelte` file in the following way
 ```html
 <script>
     // import modules
-    import { Dropdown } from 'svantic';
+    import { Dropdown, Icon } from 'svantic';
 
 </script>
 
