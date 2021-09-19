@@ -57,7 +57,6 @@
       control: 'select',
       options: [true, false, 'left', 'right', 'top', 'bottom']
     },
-    animated: { control: 'select', options: [true, 'fade', 'vertical'] },
     icon: { control: 'text' },
     fluid: { control: 'boolean' },
     toggle: { control: 'boolean' },
@@ -80,17 +79,7 @@
 <Centerize>
   <Template let:args>
     <Button.default {...args} on:click="{args.onClick}">
-      {#if args.animated}
-        <Button.Content hidden>
-          {args.animated}
-        </Button.Content>
-
-        <Button.Content>
-          {' Click me ! '}
-        </Button.Content>
-      {:else}
-        {' Click me ! '}
-      {/if}
+      Click meeeeee !
     </Button.default>
   </Template>
 </Centerize>
