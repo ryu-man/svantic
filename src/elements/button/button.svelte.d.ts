@@ -2,8 +2,8 @@ import { SvelteComponentTyped } from 'svelte/internal'
 import type { Size, Float, Color, Attach, Loading } from '../../variations'
 import type { Component, DOMEvents } from '../../component'
 import type { Icons } from '../icon/icon'
-import Content from './content'
-import Or from './or'
+import Content from './content.svelte'
+import Or from './or.svelte.svelte'
 
 declare type State = 'active' | 'disabled' | 'loading'
 
@@ -41,14 +41,15 @@ export interface ButtonProps extends Component {
   loading?: boolean | Loading
   tabIndex?: number
   as?: 'div' | 'button'
-  on?: DOMEvents<HTMLDivElement>
 }
 /**
  * @description Svantic Button
  */
-declare class Button extends SvelteComponentTyped<ButtonProps> {
+declare class Button extends SvelteComponentTyped<
+  ButtonProps,
+  { click: MouseEvent }
+> {
   static content: new () => Content
   static or: new () => Or
-
 }
 export default Button
