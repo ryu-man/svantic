@@ -31,11 +31,6 @@ let exec
 function module(node, settings) {
   css(node, style)
 
-  /**
-   * @type {JQueryStatic}
-   */
-  const jQuery = window['JQuery']
-
   exec = (args) => jQuery(node).embed(args)
   exec(settings)
 }

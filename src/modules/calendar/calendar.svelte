@@ -26,11 +26,6 @@
   function module(node, settings) {
     css(node, style)
 
-    /**
-     * @type {JQueryStatic}
-     */
-    const jQuery = window['JQuery']
-
     exec = (args) => jQuery(node).calendar(args)
     exec(settings)
   }

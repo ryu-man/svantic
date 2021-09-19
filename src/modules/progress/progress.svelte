@@ -3,7 +3,7 @@
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/progress.min.css'
-  
+
   import { classNames, css } from '../../utils'
   import { JQueryLazyLoader, ProgressLoader } from '../loaders'
 
@@ -26,7 +26,7 @@
   export let style
 
   /**
-   * @type {SemanticUI.DropdownSettings.Param}
+   * @type {SemanticUI.ProgressSettings.Param}
    */
   export let settings = {}
 
@@ -37,12 +37,7 @@
   function module(node, settings) {
     css(node, style)
 
-    /**
-     * @type {JQueryStatic}
-     */
-    const jQuery = window['JQuery']
-
-    exec = (args) => jQuery(node).progress(args)
+    exec = (...args) => jQuery(node).progress(...args)
     exec(settings)
   }
 
@@ -86,8 +81,8 @@
     return this
   }
 
-  export async function getText(text) {
-    return await exec('get text', text)
+  export function getText(text) {
+    return exec('get text', text)
   }
 
   export function getNormalizedValue(value) {

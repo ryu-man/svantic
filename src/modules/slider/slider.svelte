@@ -10,38 +10,30 @@
 
   let _class
   export { _class as class }
-  export let type = ''
   export let size = ''
-  export let state = ''
   export let color = ''
+  export let disabled = false
+  export let range = false
   export let inverted = false
   export let reversed = false
   export let vertical = false
+  export let labeled = false
+  export let ticked = false
+  export let aligned
   export let style
 
-  /**
-   * @type {SemanticUI.SliderSettings.Param}
-   */
   export let settings = {}
 
-  /**
-   * @type {SemanticUI.Slider}
-   */
   let exec
   function module(node, settings) {
     css(node, style)
-
-    /**
-     * @type {JQueryStatic}
-     */
-    const jQuery = window['JQuery']
 
     exec = (args) => jQuery(node).slider(args)
     exec(settings)
   }
 
   export function getValue() {
-    return exec('get value', arguments)
+    return exec('get value')
   }
 
   export function getThumbValue(which) {
@@ -70,7 +62,14 @@
       class:inverted
       class:reversed
       class:vertical
-      class="{classNames(state, color, size, type, 'ui slide', _class)}"
+      class="{classNames(
+        _class,
+        'ui',
+        color,
+        size,
+        { disabled, aligned, labeled, ticked, range },
+        'slider'
+      )}"
     >
       <slot />
     </div>

@@ -20,14 +20,7 @@
    */
   let exec
   function module(node, settings) {
-    css(node, style)
-
-    /**
-     * @type {JQueryStatic}
-     */
-    const jQuery = window['JQuery']
-
-    exec = (args) => jQuery(node).toast(args)
+    exec = (...args) => jQuery(node).toast(...args)
     exec(settings)
   }
 
@@ -65,6 +58,7 @@
 <JQueryLazyLoader>
   <ToastLoader>
     <div
+      use:css="{style}"
       use:module="{settings}"
       class="{classNames(_class, 'ui', { icon }, color, type)}"
     >

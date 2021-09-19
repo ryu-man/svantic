@@ -5,7 +5,7 @@
   import '../../../semantic/dist/components/accordion.min.css'
 
   import { classNames, css } from '../../utils'
-  import { JQueryLazyLoader, AccordionLoader } from '../../loaders'
+  import { JQueryLazyLoader, AccordionLoader } from '../loaders'
 
   let _class = ''
   export let fluid = false
@@ -24,11 +24,6 @@
   let exec
   function module(node, settings) {
     css(node, style)
-
-    /**
-     * @type {JQueryStatic}
-     */
-    const jQuery = window['JQuery']
 
     exec = (args) => jQuery(node).accordion(args)
     exec(settings)
@@ -67,14 +62,15 @@
       class="{classNames(
         _class,
         'ui',
-        vertical,
-        fluid,
-        following,
-        styled,
-        inverted,
+        {
+          vertical,
+          fluid,
+          following,
+          styled,
+          inverted
+        },
         'accordion',
-        text,
-        menu
+        { text, menu }
       )}"
     >
       <slot />
