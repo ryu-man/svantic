@@ -1,10 +1,10 @@
 import type { EasingType, TransitionType } from '../../transition'
-
+import type { Color } from '../../variations'
 export default interface ToastSettings {
   /** Sets where the toast can be displayed. Can be top right, top center, top left, bottom right, bottom center and bottom left */
   position?: 'top' | 'right'
   /** Define the class of notification. Can be any existing color definition or info, success, warning and error. If ui message is used in className.toast option (see below), this option can hold any supported class of the message component */
-  class?: 'neutral'
+  class?: 'info' | 'success' | 'warning' | 'error' | Color
   /** Can hold a string to be added to the progress bar class, for example a separate color */
   classProgress?: boolean
   /** Can hold a string to be added to the actions class to control its appearance. Usually a combination of basic, left, top, bottom, vertical and attached */

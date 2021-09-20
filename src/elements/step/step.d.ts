@@ -1,7 +1,7 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import { Style } from '../../style'
 import { Component } from '../../component'
-import type { Icons } from '../icon/icon'
+import type { Icons } from '../icon/icon.svelte'
 
 declare type State = 'completed' | 'active' | 'disabled'
 interface StepProps extends Component {

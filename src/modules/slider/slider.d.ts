@@ -6,13 +6,16 @@ import SliderSettings from './settings'
 declare type Type = 'range'
 declare type State = 'disabled'
 interface SliderProps extends Module<SliderSettings> {
-  type?: Type
   size?: Size
-  state?: State
   color?: Color
+  disabled?: boolean
+  range?: boolean
   inverted?: boolean
   reversed?: boolean
   vertical?: boolean
+  labeled?: boolean
+  ticked?: boolean
+  aligned?: 'bottom' | 'top'
 }
 
 /**
@@ -44,4 +47,5 @@ declare class Slider extends SvelteComponentTyped<SliderProps> {
    */
   setRangeValue(fromValue: any, toValue: any): void
 }
+
 export default Slider
