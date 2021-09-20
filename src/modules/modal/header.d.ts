@@ -2,6 +2,7 @@ import type { SvelteComponentTyped } from "svelte";
 
 interface HeaderProps{
     image?: boolean
+    icon?: boolean
 }
 
 /**
