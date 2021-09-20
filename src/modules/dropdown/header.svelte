@@ -1,5 +1,5 @@
 <script>
-  import {Icon} from '../../elements/icon'
+  import Icon from '../../elements/icon'
   import { css, classNames } from '../../utils'
 
   let _class
