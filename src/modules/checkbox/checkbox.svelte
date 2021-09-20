@@ -23,7 +23,7 @@
   function module(node, settings) {
     css(node, style)
 
-    exec = (args) => jQuery(node).checkbox(args)
+    exec = (...args) => jQuery(node).checkbox(...args)
     exec(settings)
   }
 

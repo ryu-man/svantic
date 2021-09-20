@@ -19,13 +19,13 @@
   export let style = {}
 
   /**
-   * @type {SemanticUI.Calendar}
+   * @type {SemanticUI.Accordion}
    */
   let exec
   function module(node, settings) {
     css(node, style)
 
-    exec = (args) => jQuery(node).accordion(args)
+    exec = (...args) => jQuery(node).accordion(...args)
     exec(settings)
   }
 

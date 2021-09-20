@@ -19,24 +19,14 @@
   export let partial = ''
   export let inverted = false
 
-  /**
-   * @type {SemanticUI.DropdownSettings.Param}
-   */
   export let settings = {}
 
-  /**
-   * @type {SemanticUI.Dropdown}
-   */
   let exec
+
   function module(node, settings) {
     css(node, style)
 
-    /**
-     * @type {JQueryStatic}
-     */
-    const jQuery = window['JQuery']
-
-    exec = (args) => jQuery(node).dimmer(args)
+    exec = (...args) => jQuery(node).dimmer(...args)
     exec(settings)
   }
 

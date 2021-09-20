@@ -26,7 +26,7 @@
   function module(node, settings) {
     css(node, style)
 
-    exec = (args) => jQuery(node).calendar(args)
+    exec = (...args) => jQuery(node).calendar(...args)
     exec(settings)
   }
 
