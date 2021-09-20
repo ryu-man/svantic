@@ -1,5 +1,5 @@
-import { default as Step } from './step'
-export { default as Group } from './steps'
+import { default as Step } from './step.svelte'
+export { default as Group } from './steps.svelte'
 
 export function init(){
     Step.Group = Group

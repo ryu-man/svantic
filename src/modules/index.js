@@ -9,7 +9,7 @@ export {
     default as Dropdown,
     Divider as DropdownDivider,
     Header as DropdownHeader,
-    Item as DropdownHeader,
+    Item as DropdownItem,
     Menu as DropdownMenu,
     Select,
     Text as DropwdownText,

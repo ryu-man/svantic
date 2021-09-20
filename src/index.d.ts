@@ -38,7 +38,7 @@ export {
   Accordion,AccordionContent, AccordionTitle, initAccordion,
   Calendar,
   Dimmer,Dimmable,
-  Dropdown, DropdownDivider, DropdownHeader, DropdownMenu, DropwdownText, Select, initDropdown,
+  Dropdown, DropdownDivider, DropdownHeader, DropdownMenu, DropdownItem, DropwdownText, Select, initDropdown,
   Embed,
   Modal,ModalActions, ModalContent, ModalDescription, ModalHeader, initModal,
   Popup,PopupHeader, initPopup,
@@ -47,7 +47,7 @@ export {
   Search,
   Sidebar,
   Slider,
-  Tabs, Tab, TabItem, initTabs,
+  Tabs, Tab, initTabs,
   Toast
 } from './modules'
 
