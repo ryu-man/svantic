@@ -76,6 +76,7 @@ export {
   Feed,
   Comment,
   Items,
+  Statistic,
   Statistics,
   Comments
 } from './views'

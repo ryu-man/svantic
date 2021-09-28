@@ -69,4 +69,14 @@ export {
   ToastController
 } from './modules'
 
-export { Card, Item, Ad, Feed, Comment, Items, Statistics, Comments } from './views'
+export {
+  Card,
+  Item,
+  Ad,
+  Feed,
+  Comment,
+  Items,
+  Statistic,
+  Statistics,
+  Comments
+} from './views'
