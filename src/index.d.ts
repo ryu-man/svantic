@@ -53,11 +53,12 @@ export {
 
 export {
   Card,
-  // Item,
+  Item,
   Ad,
   Feed,
   Comment,
   Items,
+  Statistic,
   Statistics,
   Comments
 } from './views'

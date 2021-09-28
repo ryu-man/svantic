@@ -1,6 +1,6 @@
 {
   "name": "svantic",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "main": "./src/index.js",
   "module": "./src/index.js",
   "svelte": "./src/index.js",
