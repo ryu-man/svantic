@@ -4,9 +4,11 @@
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/toast.min.css'
 
+  import { onMount as onMounted } from 'svelte'
   import { classNames, css } from '../../utils'
   import { JQueryLazyLoader, ToastLoader } from '../loaders'
-
+  import { toast } from '../module'
+  
   let _class
   export { _class as class }
   export let type = 'toast'
@@ -15,51 +17,46 @@
   export let style
   export let settings = {}
 
-  /**
-   * @type {SemanticUI.Toast}
-   */
-  let exec
-  function module(node, settings) {
-    exec = (...args) => jQuery(node).toast(...args)
-    exec(settings)
-  }
+  const executer = toast(settings)
+
+  onMounted(() => {})
 
   /*********************************************************************************************/
 
   export function setSettings(settings) {
-    exec(settings)
+    executer.module(settings)
     return this
   }
 
   export function animatePause() {
-    exec('animate pause')
+    executer.module('animate pause')
     return this
   }
 
   export function animateContinue() {
-    exec('animate continue')
+    executer.module('animate continue')
     return this
   }
 
   export function close() {
-    exec('close')
+    executer.module('close')
     return this
   }
 
   export function getToasts() {
-    return exec('get toasts')
+    return executer.module('get toasts')
   }
 
   export function getRemainingTime() {
-    return exec('get remainingTime')
+    return executer.module('get remainingTime')
   }
 </script>
 
 <JQueryLazyLoader>
   <ToastLoader>
     <div
+      bind:this="{$executer}"
       use:css="{style}"
-      use:module="{settings}"
       class="{classNames(_class, 'ui', { icon }, color, type)}"
     >
       <slot />

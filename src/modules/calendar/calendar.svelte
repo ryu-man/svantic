@@ -9,8 +9,10 @@
   import '../../../semantic/dist/components/popup.min.css'
   import '../../../semantic/dist/components/calendar.min.css'
 
+  import { onMount as onMounted } from 'svelte'
   import { css } from '../../utils'
   import { JQueryLazyLoader, CalendarLoader } from '../loaders'
+  import { calendar } from '../module'
 
   let _class = ''
   export let icon = 'left'
@@ -18,100 +20,101 @@
   export let settings = {}
   export let style = {}
   export { _class as class }
+  export let onMount
 
-  /**
-   * @type {SemanticUI.Calendar}
-   */
-  let exec
-  function module(node, settings) {
-    css(node, style)
+  const executer = calendar(settings)
 
-    exec = (...args) => jQuery(node).calendar(...args)
-    exec(settings)
-  }
+  onMounted(() => {
+    onMount?.($executer)
+  })
 
   export function refresh() {
-    exec('refresh')
+    executer.module('refresh')
     return this
   }
 
   export function popup(...args) {
-    exec('popup', args)
+    executer.module('popup', args)
     return this
   }
 
   export function focus() {
-    exec('focus')
+    executer.module('focus')
     return this
   }
 
   export function blur() {
-    exec('blur')
+    executer.module('blur')
     return this
   }
 
   export function clear() {
-    exec('clear')
+    executer.module('clear')
     return this
   }
 
   export function getDate() {
-    return exec('get date')
+    return executer.module('get date')
   }
 
   export function setDate(date, updateInput, fireChange) {
-    exec('set date', date, updateInput, fireChange)
+    executer.module('set date', date, updateInput, fireChange)
   }
 
   export function getMode() {
-    return exec('get mode')
+    return executer.module('get mode')
   }
 
   export function setMode(mode) {
-    exec('set mode', mode)
+    executer.module('set mode', mode)
     return this
   }
 
   export function getStartDate() {
-    return exec('get start date')
+    return executer.module('get start date')
   }
 
   export function setStartDate(date) {
-    exec('set start date', date)
+    executer.module('set start date', date)
     return this
   }
 
   export function getEndDate() {
-    return exec('get end date')
+    return executer.module('get end date')
   }
 
   export function setEndDate(date) {
-    exec('set end date', date)
+    executer.module('set end date', date)
   }
 
   export function getFocusDate() {
-    return exec('get focus date')
+    return executer.module('get focus date')
   }
 
   export function setFocusDate(date) {
-    exec('set focus date', date)
+    executer.module('set focus date', date)
     return this
   }
 
   export function setMinDate(date) {
-    exec('set min date', date)
+    executer.module('set min date', date)
     return this
   }
 
   export function setMaxDate(date) {
-    exec('set max date', date)
+    executer.module('set max date', date)
     return this
   }
 </script>
 
 <JQueryLazyLoader>
   <CalendarLoader>
-    <div use:module="{settings}" class="{_class} ui calendar" class:disabled>
+    <div
+      bind:this="{$executer}"
+      use:css="{style}"
+      class="{_class} ui calendar"
+      class:disabled
+    >
       <div class="ui input {icon + ' icon'}">
         <slot>
           <i class="calendar icon"></i>

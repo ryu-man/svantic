@@ -3,33 +3,11 @@
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/popup.min.css'
 
-  import { css, classNames } from '../../utils'
   import { JQueryLazyLoader, PopupLoader } from '../loaders'
 
-  let _class = ''
-  export { _class as class }
-  export let style = {}
-
-  /**
-   * @type {SemanticUI.DropdownSettings.Param}
-   */
   export let settings = {}
 
-  /**
-   * @type {SemanticUI.Dropdown}
-   */
   let exec
-  function module(node, settings) {
-    css(node, style)
-
-    /**
-     * @type {JQueryStatic}
-     */
-    const jQuery = window['JQuery']
-
-    exec = (args) => jQuery(node).popup(args)
-    exec(settings)
-  }
 
   export function show() {
     exec('show')
@@ -92,8 +70,12 @@
 
 <JQueryLazyLoader>
   <PopupLoader>
-    <div use:module="{settings}" class="{classNames(_class, 'ui popup')}">
-      <slot />
-    </div>
+    <slot
+      popup="{(node) => {
+        exec = (...args) => jQuery(node).popup(...args)
+        exec(settings)
+        return jQuery(node).popup(settings)
+      }}"
+    />
   </PopupLoader>
 </JQueryLazyLoader>

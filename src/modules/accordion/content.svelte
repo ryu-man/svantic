@@ -7,6 +7,7 @@
     export let active = false
   </script>
   
+  <slot name="title"/>
   <div use:css="{style}" class="{classNames(_class, { active }, 'content')}">
     <slot />
   </div>

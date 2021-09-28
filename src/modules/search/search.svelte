@@ -4,11 +4,11 @@
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/search.min.css'
 
-  import { css, register, classNames } from '../../utils'
-  import Controller from './controller'
+  import { onMount as onMounted } from 'svelte'
+  import { css, classNames } from '../../utils'
   import JQueryLazyLoader from '../loaders/JQueryLazyLoader.svelte'
   import SearchLoader from '../loaders/SearchLoader.svelte'
-
+  import { search } from '../module'
   let _class
   export let disabled = false
   export let speed = ''
@@ -23,115 +23,103 @@
   export let scrolling = false
   export let style
   export { _class as class }
-
-  /**
-   * @type {SemanticUI.DropdownSettings.Param}
-   */
+  export let placeholder = ""
   export let settings = {}
+  export let onMount
 
-  /**
-   * @type {SemanticUI.Dropdown}
-   */
-  let exec
-  function module(node, settings) {
-    css(node, style)
+  const executer = search(settings)
 
-    /**
-     * @type {JQueryStatic}
-     */
-    const jQuery = window['JQuery']
-
-    exec = (args) => jQuery(node).search(args)
-    exec(settings)
-  }
+  onMounted(() => {
+    onMount?.($executer)
+  })
 
   export function query(callback) {
-    exec('query ', callback)
+    executer.module('query', callback)
     return this
   }
 
   export function displayMessage(text, type) {
-    exec('display message', text, type)
+    executer.module('display message', text, type)
     return this
   }
 
   export function searchLocal(query) {
-    return exec('search local', query)
+    return executer.module('search local', query)
   }
 
   export async function hasMinimumCharacters() {
-    return await exec('has minimum')
+    return await executer.module('has minimum')
   }
 
   export function searchRemote(query, callback) {
-    return exec('search remote', query, callback)
+    return executer.module('search remote', query, callback)
   }
 
   export function searchObject(query, object, searchFields) {
-    return exec('search object', query, object, searchFields)
+    return executer.module('search object', query, object, searchFields)
   }
 
   export function cancelQuery() {
-    exec('cancel query')
+    executer.module('cancel query')
     return this
   }
 
   export function isFocused() {
-    return exec('is focused')
+    return executer.module('is focused')
   }
 
   export function isVisible() {
-    return exec('is visible')
+    return executer.module('is visible')
   }
 
   export function isEmpty() {
-    return exec('is empty')
+    return executer.module('is empty')
   }
 
   export function getValue() {
-    return exec('get value')
+    return executer.module('get value')
   }
 
   export function getResult(value) {
-    return exec('get result', value)
+    return executer.module('get result', value)
   }
 
   export function setValue(value) {
-    exec('set value', value)
+    executer.module('set value', value)
     return this
   }
 
   export function readCache(query) {
-    return exec('read cache', query)
+    return executer.module('read cache', query)
   }
 
   export function clearCache(query) {
-    exec('clear cache', query)
+    executer.module('clear cache', query)
     return this
   }
 
   export function writeCache(query) {
-    exec('write cache', query)
+    executer.module('write cache', query)
     return this
   }
 
   export function addResults(html) {
-    exec('add results', html)
+    executer.module('add results', html)
     return this
   }
 
   export function showResults(callback) {
-    exec('show results', callback)
+    executer.module('show results', callback)
     return this
   }
 
   export function hideResults(callback) {
-    exec('hide results', callback)
+    executer.module('hide results', callback)
     return this
   }
 
   export function generateResults(response) {
-    exec('generate results', response)
+    executer.module('generate results', response)
     return this
   }
 </script>
@@ -139,7 +127,8 @@
 <JQueryLazyLoader>
   <SearchLoader>
     <div
-      use:module="{settings}"
+      bind:this="{$executer}"
+      use:css="{style}"
       class="{classNames(
         _class,
         'ui',
@@ -149,9 +138,18 @@
         'search'
       )}"
     >
-      <slot>
-        <!-- optional fallback -->
-      </slot>
+      <input
+        class="prompt"
+        type="text"
+        {placeholder}
+        on:change
+        on:input
+        on:keyup
+        on:keydown
+        on:keypress
+        on:focus
+        on:blur
+      /> 
       <div class="results"></div>
     </div>
   </SearchLoader>

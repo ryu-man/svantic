@@ -4,10 +4,11 @@
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/slider.min.css'
 
+  import { onMount as onMounted } from 'svelte'
   import { css, classNames } from '../../utils'
   import JQueryLazyLoader from '../loaders/JQueryLazyLoader.svelte'
   import SliderLoader from '../loaders/SliderLoader.svelte'
-
+  import { slider } from '../module'
   let _class
   export { _class as class }
   export let size = ''
@@ -21,36 +22,34 @@
   export let ticked = false
   export let aligned
   export let style
-
   export let settings = {}
+  export let onMount
 
-  let exec
-  function module(node, settings) {
-    css(node, style)
+  const executer = slider(settings)
 
-    exec = (args) => jQuery(node).slider(args)
-    exec(settings)
-  }
+  onMounted(() => {
+    onMount?.($executer)
+  })
 
   export function getValue() {
-    return exec('get value')
+    return executer.module('get value')
   }
 
   export function getThumbValue(which) {
-    return exec('get thumbValue', which)
+    return executer.module('get thumbValue', which)
   }
 
   export function getNumLabels() {
-    return exec('get numLabels')
+    return executer.module('get numLabels')
   }
 
   export function setValue(value) {
-    exec('set value', value)
+    executer.module('set value', value)
     return this
   }
 
   export function setRangeValue(fromValue, toValue) {
-    exec('set rangeValue', fromValue, toValue)
+    executer.module('set rangeValue', fromValue, toValue)
     return this
   }
 </script>
@@ -58,7 +57,8 @@
 <JQueryLazyLoader>
   <SliderLoader>
     <div
-      use:module="{settings}"
+      bind:this="{$executer}"
+      use:css={style}
       class:inverted
       class:reversed
       class:vertical

@@ -2,9 +2,11 @@
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/checkbox.min.css'
-  
+
+  import { onMount as onMounted } from 'svelte'
   import { classNames, css } from '../../utils'
   import { JQueryLazyLoader, CheckboxLoader } from '../loaders'
+  import { checkbox } from '../module'
 
   let _class = ''
   export { _class as class }
@@ -15,123 +17,120 @@
   export let state = ''
   export let fitted = false
   export let inverted = false
+  export let onMount
 
-  /**
-   * @type {SemanticUI.Checkbox}
-   */
-  let exec
-  function module(node, settings) {
-    css(node, style)
+  const executer = checkbox(settings)
 
-    exec = (...args) => jQuery(node).checkbox(...args)
-    exec(settings)
-  }
+  onMounted(() => {
+    onMount?.($executer)
+  })
 
   export function toggle() {
-    exec('toggle')
+    executer.module('toggle')
     return this
   }
 
   export function check() {
-    exec('check')
+    executer.module('check')
     return this
   }
 
   export function uncheck() {
-    exec('uncheck')
+    executer.module('uncheck')
     return this
   }
 
   export function indeterminate() {
-    exec('indeterminate')
+    executer.module('indeterminate')
     return this
   }
 
   export function determinate() {
-    exec('determinate')
+    executer.module('determinate')
     return this
   }
 
   export function enable() {
-    exec('enable')
+    executer.module('enable')
     return this
   }
 
   export function setChecked() {
-    return exec('set checked')
+    return executer.module('set checked')
   }
 
   export function setUnchecked() {
-    exec('set unchecked')
+    executer.module('set unchecked')
     return this
   }
 
   export function setIndeterminate() {
-    exec('set indeterminate')
+    executer.module('set indeterminate')
     return this
   }
 
   export function setDeterminate() {
-    exec('set determinate')
+    executer.module('set determinate')
     return this
   }
 
   export function setEnabled() {
-    exec('set enabled')
+    executer.module('set enabled')
     return this
   }
 
   export function setDisabled() {
-    exec('set disabled')
+    executer.module('set disabled')
     return this
   }
 
   export function attachEvents(selector, behavior) {
-    exec('attach events', selector, behavior)
+    executer.module('attach events', selector, behavior)
     return this
   }
 
   export function isRadio() {
-    return exec('is radio')
+    return executer.module('is radio')
   }
 
   export function isChecked() {
-    return exec('is checked')
+    return executer.module('is checked')
   }
 
   export function isUnchecked() {
-    return exec('is unchecked')
+    return executer.module('is unchecked')
   }
 
   export function canChange() {
-    return exec('can change')
+    return executer.module('can change')
   }
 
   export function shouldAllowCheck() {
-    return exec('should allow check')
+    return executer.module('should allow check')
   }
 
   export function shouldAllowUncheck() {
-    return exec('should allow uncheck')
+    return executer.module('should allow uncheck')
   }
 
   export function shouldAllowDeterminate() {
-    return exec('should allow determinate')
+    return executer.module('should allow determinate')
   }
 
   export function shouldAllowIndeterminate() {
-    return exec('should allow indeterminate')
+    return executer.module('should allow indeterminate')
   }
 
   export function canUncheck() {
-    return exec('can uncheck')
+    return executer.module('can uncheck')
   }
 </script>
 
 <JQueryLazyLoader>
   <CheckboxLoader>
     <div
-      use:module="{settings}"
+      bind:this="{$executer}"
+      use:css="{style}"
       class="{classNames(
         _class,
         'ui',

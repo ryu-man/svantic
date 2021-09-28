@@ -4,8 +4,10 @@
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/accordion.min.css'
 
+  import { onMount as onMounted } from 'svelte'
   import { classNames, css } from '../../utils'
   import { JQueryLazyLoader, AccordionLoader } from '../loaders'
+  import { accordion } from '../module'
 
   let _class = ''
   export let fluid = false
@@ -17,48 +19,45 @@
   export let inverted = false
   export let settings = {}
   export let style = {}
+  export let onMount
 
-  /**
-   * @type {SemanticUI.Accordion}
-   */
-  let exec
-  function module(node, settings) {
-    css(node, style)
+  const executer = accordion(settings)
 
-    exec = (...args) => jQuery(node).accordion(...args)
-    exec(settings)
-  }
+  onMounted(() => {
+    onMount?.($executer)
+  })
 
   export function refresh() {
-    exec('refresh')
-    return exec
+    executer.module('refresh')
+    return executer.module
   }
 
   export function open(index) {
-    exec('open', index)
-    return exec
+    executer.module('open', index)
+    return executer.module
   }
 
   export function closeOthers() {
-    exec('close others')
-    return exec
+    executer.module('close others')
+    return executer.module
   }
 
   export function close(index) {
-    exec('close', index)
-    return exec
+    executer.module('close', index)
+    return executer.module
   }
 
   export function toggle(index) {
-    exec('toggle', index)
-    return exec
+    executer.module('toggle', index)
+    return executer.module
   }
 </script>
 
 <JQueryLazyLoader>
   <AccordionLoader>
     <div
-      use:module="{settings}"
+      bind:this="{$executer}"
+      use:css="{style}"
       class="{classNames(
         _class,
         'ui',

@@ -1,5 +1,5 @@
 <script context="module">
-  export const key = {}
+  export const key = Symbol()
 </script>
 
 <script>
@@ -8,31 +8,28 @@
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/tab.min.css'
 
+  import { onMount as onMounted } from 'svelte'
   import { classNames, css } from '../../utils'
   import { JQueryLazyLoader, TabLoader } from '../loaders'
   import { writable } from 'svelte/store'
   import { setContext, tick } from 'svelte'
+  import { tab } from '../module'
   import Item from './item.svelte'
 
-  export let _class
+  let _class
   export { _class as class }
   export let attached = ''
   export let loading = false
   export let segment = false
   export let active = false
   export let style
+  export let onMount
 
-  /**
-   * @type {SemanticUI.DropdownSettings.Param}
-   */
   export let settings = {}
 
   const tabs = writable([])
   setContext(key, tabs)
 
-  /**
-   * @type {SemanticUI.Dropdown}
-   */
   let exec
 
   /**
@@ -45,11 +42,17 @@
     exec = (...args) => jQuery(node.getElementsByClassName('item')).tab(...args)
 
     tabs.subscribe((v) => {
-      tick().then(()=>{
+      tick().then(() => {
         exec(settings)
       })
     })
   }
+
+  const executer = tab(settings)
+
+  onMounted(() => {
+    onMount?.()
+  })
 
   export function attachEvents(selector, event) {
     return exec('attach events', selector, event)
@@ -87,7 +90,6 @@
 <JQueryLazyLoader>
   <TabLoader>
     <div
-      use:module="{settings}"
       class="{classNames(
         _class,
         'ui',
@@ -95,7 +97,7 @@
         'tabular menu'
       )}"
     >
-      {#each $tabs as { center, data, title, active }}
+      {#each $tabs as { center, data, title, active, executer }}
         <!-- <div class:center class:active class="item" data-tab="{data}">
           {title}
         </div> -->
@@ -104,6 +106,7 @@
           center="{center}"
           active="{active}"
           settings="{settings}"
+          executer={executer}
         >
           {title}
         </Item>

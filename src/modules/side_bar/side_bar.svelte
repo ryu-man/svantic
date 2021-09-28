@@ -3,9 +3,12 @@
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/sidebar.min.css'
+
+  import { onMount as onMounted } from 'svelte'
   import { css, classNames } from '../../utils'
   import JQueryLazyLoader from '../loaders/JQueryLazyLoader.svelte'
   import SidebarLoader from '../loaders/SidebarLoader.svelte'
+  import { sidebar } from '../module'
 
   let _class
   export { _class as class }
@@ -16,89 +19,77 @@
   export let inverted = false
   export let vertical = false
   export let style
-
-  /**
-   * @type {SemanticUI.DropdownSettings.Param}
-   */
   export let settings = {}
+  export let onMount
 
-  /**
-   * @type {SemanticUI.Dropdown}
-   */
-  let exec
-  function module(node, settings) {
-    css(node, style)
+  const executer = sidebar(settings)
 
-    /**
-     * @type {JQueryStatic}
-     */
-    const jQuery = window['JQuery']
-
-    exec = (args) => jQuery(node).sidebar(args)
-    exec(settings)
-  }
+  onMounted(() => {
+    onMount?.($executer)
+  })
 
   export function attachEvents(selector, event) {
-    exec('attach events', selector, event)
+    executer.module('attach events', selector, event)
     return this
   }
 
   export function show() {
-    exec('show')
+    executer.module('show')
     return this
   }
 
   export function hide() {
-    exec('hide')
+    executer.module('hide')
     return this
   }
 
   export function toggle() {
-    exec('toggle')
+    executer.module('toggle')
     return this
   }
 
   export function isVisible() {
-    return exec('is visible')
+    return executer.module('is visible')
   }
 
   export function isHidden() {
-    return exec('is hidden')
+    return executer.module('is hidden')
   }
 
   export function pushPage() {
-    exec('push page')
+    executer.module('push page')
     return this
   }
 
   export function getDirection() {
-    return exec('get direction')
+    return executer.module('get direction')
   }
 
   export function pullPage() {
-    exec('pull page')
+    executer.module('pull page')
     return this
   }
 
   export function addBodyCSS() {
-    exec('add body CSS')
+    executer.module('add body CSS')
     return this
   }
 
   export function removeBodyCSS() {
-    exec('remove body CSS')
+    executer.module('remove body CSS')
     return this
   }
 
   export function getTransitionEvent() {
-    return exec('get transition event')
+    return executer.module('get transition event')
   }
 </script>
 
 <JQueryLazyLoader>
   <SidebarLoader>
     <div
-      use:module="{settings}"
+      bind:this="{$executer}"
+      use:css="{style}"
       class:inverted
       class:vertical
       class="{classNames(

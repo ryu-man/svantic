@@ -4,8 +4,10 @@
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/progress.min.css'
 
+  import { onMount as onMounted } from 'svelte'
   import { classNames, css } from '../../utils'
   import { JQueryLazyLoader, ProgressLoader } from '../loaders'
+  import { progress } from '../module'
 
   let _class
   export { _class as class }
@@ -24,155 +26,150 @@
   export let success = false
   export let active = false
   export let style
+  export let onMount
 
-  /**
-   * @type {SemanticUI.ProgressSettings.Param}
-   */
   export let settings = {}
 
-  /**
-   * @type {SemanticUI.Dropdown}
-   */
-  let exec
-  function module(node, settings) {
-    css(node, style)
+  const executer = progress(settings)
 
-    exec = (...args) => jQuery(node).progress(...args)
-    exec(settings)
-  }
+  onMounted(() => {
+    onMount?.($executer)
+  })
 
+  $: executer.setSettings(settings)
+  
   export function setPercent(percent) {
-    exec('set percent', percent)
+    executer.module('set percent', percent)
     return this
   }
 
   export function setProgress(value) {
-    exec('set progress', value)
+    executer.module('set progress', value)
     return this
   }
 
   export function increment(incrementValue) {
-    exec('increment', incrementValue)
+    executer.module('increment', incrementValue)
     return this
   }
 
   export function decrement(decrementValue) {
-    exec('decrement', decrementValue)
+    executer.module('decrement', decrementValue)
     return this
   }
 
   export function updateProgress(value) {
-    exec('update progress', value)
+    executer.module('update progress', value)
     return this
   }
 
   export function complete(keepState) {
-    exec('complete', keepState)
+    executer.module('complete', keepState)
     return this
   }
 
   export function reset() {
-    exec('reset')
+    executer.module('reset')
     return this
   }
 
   export function setTotal(total) {
-    exec('set total', total)
+    executer.module('set total', total)
     return this
   }
 
   export function getText(text) {
-    return exec('get text', text)
+    return executer.module('get text', text)
   }
 
   export function getNormalizedValue(value) {
-    return exec('get normalized', value)
+    return executer.module('get normalized', value)
   }
 
   export function getPercent() {
-    return exec('get percent')
+    return executer.module('get percent')
   }
 
   export function getValue() {
-    return exec('get value')
+    return executer.module('get value')
   }
 
   export function getTotal() {
-    return exec('get total')
+    return executer.module('get total')
   }
 
   export function isComplete() {
-    return exec('is complete')
+    return executer.module('is complete')
   }
 
   export function isSuccess() {
-    return exec('is success')
+    return executer.module('is success')
   }
 
   export function isWarning() {
-    return exec('is warning')
+    return executer.module('is warning')
   }
 
   export function isError() {
-    return exec('is error')
+    return executer.module('is error')
   }
 
   export function isActive() {
-    return exec('is active')
+    return executer.module('is active')
   }
 
   export function setActive() {
-    exec('set active')
+    executer.module('set active')
     return this
   }
 
   export function setWarning(text, keepState) {
-    exec('set warning', text, keepState)
+    executer.module('set warning', text, keepState)
     return this
   }
 
   export function setSuccess(text, keepState) {
-    exec('set success', text, keepState)
+    executer.module('set success', text, keepState)
     return this
   }
 
   export function setError(text, keepState) {
-    exec('set error', text, keepState)
+    executer.module('set error', text, keepState)
     return this
   }
 
   export function setDuration(value) {
-    exec('set duration', value)
+    executer.module('set duration', value)
     return this
   }
 
   export function setLabel(text) {
-    exec('set label', text)
+    executer.module('set label', text)
     return this
   }
 
   export function setBarLabel(text) {
-    exec('set bar', text)
+    executer.module('set bar', text)
     return this
   }
 
   export function removeActive() {
-    exec('remove active')
+    executer.module('remove active')
     return this
   }
 
   export function removeWarning() {
-    exec('remove warning')
+    executer.module('remove warning')
     return this
   }
 
   export function removeSuccess() {
-    exec('remove success')
+    executer.module('remove success')
     return this
   }
 
   export function removeError() {
-    exec('remove error')
+    executer.module('remove error')
     return this
   }
 </script>
@@ -180,7 +177,8 @@
 <JQueryLazyLoader>
   <ProgressLoader>
     <div
-      use:module="{settings}"
+      bind:this="{$executer}"
+      use:css="{style}"
       data-value="{value}"
       data-total="{total}"
       class="{classNames(

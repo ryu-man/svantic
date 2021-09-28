@@ -5,8 +5,10 @@
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/modal.min.css'
 
+  import { onMount as onMounted } from 'svelte'
   import { classNames, css } from '../../utils'
   import { JQueryLazyLoader, ModalLoader } from '../loaders'
+  import { modal } from '../module'
 
   let _class = ''
   export { _class as class }
@@ -18,20 +20,16 @@
   export let fullscreen = false
   export let style = {}
   export let settings
+  export let onMount
 
-  /**
-   * @type {SemanticUI.Modal}
-   */
-  let exec
-  let onMount
+  const executer = modal(settings)
 
-  function module(node, settings) {
-    css(node, style)
+  onMounted(() => {
+    onMount?.($executer)
+    console.log(executer)
+  })
 
-    exec = (args) => jQuery(node).modal(args)
-    exec(settings)
-    onMount?.()
-  }
+  $: executer.setSettings(settings)
 
   /**********************************************************************************/
 
@@ -40,64 +38,65 @@
   }
 
   export function setSettings(settings) {
-    exec(settings)
+    executer.setSettings(settings)
     return this
   }
 
   export function show() {
-    exec('show')
+    executer.module('show')
+    return this
   }
 
   export function hide() {
-    exec('hide')
+    executer.module('hide')
     return this
   }
 
   export function toggle() {
-    exec('toggle')
+    executer.module('toggle')
     return this
   }
 
   export function refresh() {
-    exec('refresh')
+    executer.module('refresh')
     return this
   }
 
   export function showDimmer() {
-    exec('show dimmer')
+    executer.module('show dimmer')
     return this
   }
 
   export function hideDimmer() {
-    exec('hide dimmer')
+    executer.module('hide dimmer')
     return this
   }
 
   export function hideOthers() {
-    exec('hide others')
+    executer.module('hide others')
     return this
   }
 
   export function hideAll() {
-    exec('hide all')
+    executer.module('hide all')
     return this
   }
 
   export function cacheSizes() {
-    exec('cache sizes')
+    executer.module('cache sizes')
     return this
   }
 
   export function canFit() {
-    return exec('can fit')
+    return executer.module('can fit')
   }
 
   export function isActive() {
-    return exec('is active')
+    return executer.module('is active')
   }
 
   export function setActive() {
-    exec('set active')
+    executer.module('set active')
     return this
   }
 </script>
@@ -105,7 +104,8 @@
 <JQueryLazyLoader>
   <ModalLoader>
     <div
-      use:module="{settings}"
+      bind:this="{$executer}"
+      use:css="{style}"
       class="{classNames(
         _class,
         'ui',

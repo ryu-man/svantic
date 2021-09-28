@@ -4,8 +4,10 @@
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/rating.min.css'
 
-  import { css } from '../../utils'
+  import { onMount as onMounted } from 'svelte'
+  import { classNames, css } from '../../utils'
   import { JQueryLazyLoader, RatingLoader } from '../loaders'
+  import { rating as ratingModule } from '../module'
 
   let _class
   export let style
@@ -16,50 +18,43 @@
   export let icon
   export let rating = '0'
   export let maxRating = '5'
-
-  /**
-   * @type {SemanticUI.DropdownSettings.Param}
-   */
   export let settings = {}
+  export let onMount
 
-  /**
-   * @type {SemanticUI.Dropdown}
-   */
-  let exec
-  function module(node, settings) {
-    css(node, style)
+  const executer = ratingModule(settings)
 
-    exec = (args) => jQuery(node).rating(args)
-    exec(settings)
-  }
+  onMounted(() => {
+    onMount?.($executer)
+  })
 
   export function setRating(rating) {
-    return exec('set rating', rating)
+    return executer.module('set rating', rating)
   }
 
   export function getRating() {
-    return exec('get rating')
+    return executer.module('get rating')
   }
 
   export function disable() {
-    return exec('disable')
+    return executer.module('disable')
   }
 
   export function enable() {
-    return exec('enable')
+    return executer.module('enable')
   }
 
   export function clearRating() {
-    return exec('close rating')
+    return executer.module('close rating')
   }
 </script>
 
 <JQueryLazyLoader>
   <RatingLoader>
     <div
-      use:module="{settings}"
+      bind:this="{$executer}"
+      use:css="{style}"
       class:disabled
-      class="{color} {size} ui rating {_class}"
+      class="{classNames('ui', color, size, { icon }, 'rating', _class)}"
       data-rating="{rating}"
       data-max-rating="{maxRating}"
     ></div>
