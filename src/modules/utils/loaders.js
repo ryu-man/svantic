@@ -1,0 +1,47 @@
+
+const isJQueryReady = import('jquery')
+
+const loader = async (type) => {
+    const jq = await isJQueryReady
+    window['jQuery'] = jq.default
+    window['$'] = jq.default
+
+    return import(`../../../semantic/dist/components/${type}.min`)
+}
+export default loader
+
+
+
+export const dropdownLoader = () => loader('dropdown')
+
+export const modalLoader = () => loader('modal')
+
+export const progressLoader = () => loader('progress')
+
+export const toastLoader = () => loader('toast')
+
+export const tabLoader = () => loader('tab')
+
+export const sliderLoader = () => loader('slider')
+
+export const sidebarLoader = () => loader('sidebar')
+
+export const searchLoader = () => loader('search')
+
+export const ratingLoader = () => loader('rating')
+
+export const checkboxLoader = () => loader('checkbox')
+
+export const calendarLoader = () => loader('calendar')
+
+export const accordionLoader = () => loader('accordion')
+
+export const transitionLoader = () => loader('transition')
+
+export const dimmerLoader = () => loader('dimmer')
+
+export const embedLoader = () => loader('embed')
+
+export const popupLoader = () => loader('popup')
+
+export const stickyLoader = () => loader('sticky')
