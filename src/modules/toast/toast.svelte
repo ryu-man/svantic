@@ -1,14 +1,18 @@
+<script context="module">
+  import { toastLoader } from '../utils'
+  const isReady = toastLoader()
+</script>
+
 <script>
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/toast.min.css'
 
-  import { onMount as onMounted } from 'svelte'
+  import { createEventDispatcher, onMount as onMounted } from 'svelte'
   import { classNames, css } from '../../utils'
-  import { JQueryLazyLoader, ToastLoader } from '../loaders'
-  import { toast } from '../module'
-  
+  import { toast } from '../utils'
+
   let _class
   export { _class as class }
   export let type = 'toast'
@@ -16,10 +20,15 @@
   export let icon = false
   export let style
   export let settings = {}
+  export let onMount = (_) => {}
 
   const executer = toast(settings)
+  const dispatch = createEventDispatcher();
 
-  onMounted(() => {})
+  onMounted(() => {
+    onMount($executer)
+    dispatch('mount', $executer)
+  })
 
   /*********************************************************************************************/
 
@@ -50,16 +59,18 @@
   export function getRemainingTime() {
     return executer.module('get remainingTime')
   }
+
+  export function ready(){
+    return isReady
+  }
 </script>
 
-<JQueryLazyLoader>
-  <ToastLoader>
-    <div
-      bind:this="{$executer}"
-      use:css="{style}"
-      class="{classNames(_class, 'ui', { icon }, color, type)}"
-    >
-      <slot />
-    </div>
-  </ToastLoader>
-</JQueryLazyLoader>
+{#await isReady then value}
+  <div
+    bind:this="{$executer}"
+    use:css="{style}"
+    class="{classNames(_class, 'ui', { icon }, color, type)}"
+  >
+    <slot />
+  </div>
+{/await}

@@ -1,13 +1,17 @@
+<script context="module">
+  import { dropdownLoader, transitionLoader } from '../utils'
+  const isReady = Promise.all([transitionLoader(), dropdownLoader()])
+</script>
+
 <script>
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/dropdown.min.css'
 
-  import { onMount as onMounted } from 'svelte'
+  import { createEventDispatcher, onMount as onMounted } from 'svelte'
   import { css, classNames } from '../../utils'
-  import { DropdownLoader, JQueryLazyLoader } from '../loaders'
-  import { dropdown } from '../module'
+  import { dropdown } from '../utils'
 
   let _class = ''
   export { _class as class }
@@ -46,20 +50,16 @@
   export let settings = {}
 
   const executer = dropdown(settings)
-
-  let _mounted
+  const dispatch = createEventDispatcher();
 
   onMounted(() => {
     onMount?.($executer)
+    dispatch('mount', $executer)
   })
 
   $: executer.setSettings(settings)
 
   /*********************************************************************************************/
-
-  export function mounted(callback) {
-    _mounted = callback
-  }
 
   export function setSettings(settings) {
     executer.setSettings(settings)
@@ -152,13 +152,7 @@
   }
 
   export function setValue(value, text, $selected, preventChangeTrigger) {
-    executer.module(
-      'set value',
-      value,
-      text,
-      $selected,
-      preventChangeTrigger
-    )
+    executer.module('set value', value, text, $selected, preventChangeTrigger)
     return this
   }
 
@@ -247,51 +241,53 @@
   export function getPlaceholderText() {
     return executer.module('get placeholder')
   }
+
+  export function ready(){
+    return isReady
+  }
 </script>
 
-<JQueryLazyLoader>
-  <DropdownLoader>
-    <div
-      bind:this="{$executer}"
-      use:css="{style}"
-      class="{classNames(
-        _class,
-        'ui',
-        height,
-        column,
-        speed,
-        wide,
-        size,
-        menuDirection,
-        {
-          link,
-          item,
-          long,
-          fluid,
-          label,
-          compact,
-          scrolling,
-          inverted,
-          active,
-          disabled,
-          loading,
-          error,
-          selection,
-          search,
-          clearable,
-          multiple,
-          floating,
-          labeled,
-          icon,
-          button,
-          inline,
-          pointing,
-          simple
-        },
-        'dropdown'
-      )}"
-    >
-      <slot />
-    </div>
-  </DropdownLoader>
-</JQueryLazyLoader>
+{#await isReady then value}
+  <div
+    bind:this="{$executer}"
+    use:css="{style}"
+    class="{classNames(
+      _class,
+      'ui',
+      height,
+      column,
+      speed,
+      wide,
+      size,
+      menuDirection,
+      {
+        link,
+        item,
+        long,
+        fluid,
+        label,
+        compact,
+        scrolling,
+        inverted,
+        active,
+        disabled,
+        loading,
+        error,
+        selection,
+        search,
+        clearable,
+        multiple,
+        floating,
+        labeled,
+        icon,
+        button,
+        inline,
+        pointing,
+        simple
+      },
+      'dropdown'
+    )}"
+  >
+    <slot />
+  </div>
+{/await}

@@ -1,7 +1,11 @@
 import type { SvelteComponentTyped } from 'svelte'
-import type { Component } from "../../component";
+import type { Component } from '../../component'
 
-interface AvatarProps extends Component{}
+interface AvatarProps extends Component {}
+
+type AvatarEvents = {
+  mount: CustomEvent<HTMLDivElement>
+}
 
 /**
  * @description Comment avatar
@@ -10,4 +14,7 @@ interface AvatarProps extends Component{}
  *      <img src="/path"/>
  * </Comment.avatar>
  */
-export default class Avatar extends SvelteComponentTyped<AvatarProps> {}
+export default class Avatar extends SvelteComponentTyped<
+  AvatarProps,
+  AvatarEvents
+> {}

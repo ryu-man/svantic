@@ -1,6 +1,7 @@
 import { SvelteComponentTyped } from 'svelte/internal'
-import Module from '../module'
+import {Module} from '../utils'
 import CheckboxSettings from './settings'
+import type { MountEvent } from '../../common'
 
 declare type Type = 'radio' | 'slider' | 'toggle'
 declare type State = 'read-only' | 'checked' | 'disabled'
@@ -126,5 +127,7 @@ declare class Checkbox extends SvelteComponentTyped<CheckboxProps> {
    * @description 	Returns whether element is able to be unchecked
    */
   canUncheck(): Promise<boolean>
+
+  ready(): Promise<void>
 }
 export default Checkbox

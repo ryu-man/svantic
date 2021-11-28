@@ -1,17 +1,15 @@
 <script>
+  import { createEventDispatcher } from 'svelte'
   import { classNames, css } from '../../utils'
+
   let _class = ''
   export { _class as class }
   export let style
 
-  function init(node) {
-    const unregister = register(node, on)
+  const dispatch = createEventDispatcher()
 
-    return {
-      destroy() {
-        unregister()
-      }
-    }
+  function init(node) {
+    dispatch('mount', node)
   }
 </script>
 

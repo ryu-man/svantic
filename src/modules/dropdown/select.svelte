@@ -1,10 +1,16 @@
+<script context="module">
+  import { dropdownLoader, transitionLoader } from '../utils'
+  const isReady = Promise.all([transitionLoader(), dropdownLoader()])
+</script>
+
 <script>
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
+
+  import { createEventDispatcher, onMount as onMounted } from 'svelte'
   import { css, classNames } from '../../utils'
-  import { DropdownLoader } from '../loaders'
-  import JQueryLazyLoader from '../loaders/JQueryLazyLoader.svelte'
+  import { dropdown } from '../utils'
 
   let _class = ''
   export { _class as class }
@@ -38,257 +44,246 @@
   export let inline = false
   export let pointing = false
   export let simple = false
-  /**
-   * @type {SemanticUI.DropdownSettings.Param}
-   */
+
+  export let onMount
+
   export let settings = {}
 
-  /**
-   * @type {SemanticUI.Dropdown}
-   */
-  let exec
-  function module(node, settings) {
-    debugger
-    css(node, style)
-    console.log(node)
+  const executer = dropdown(settings)
+  const dispatch = createEventDispatcher();
 
-    /**
-     * @type {JQueryStatic}
-     */
-    const jQuery = window['jQuery']
+  onMounted(() => {
+    onMount?.($executer)
+    dispatch('mount', $executer)
+  })
 
-    exec = jQuery(node).dropdown(args)
-    console.log(exec)
-    exec(settings)
-  }
+  $: executer.setSettings(settings)
 
   /*********************************************************************************************/
-
   export function setSettings(settings) {
-    exec(settings)
+    executer.setSettings(settings)
     return this
   }
 
   export function setupMenu(values) {
-    exec('setup menu', values)
+    executer.module('setup menu', values)
     return this
   }
 
   export function changeValues(values) {
-    exec('change values', values)
+    executer.module('change values', values)
     return this
   }
 
   export function refresh() {
-    exec('refresh')
+    executer.module('refresh')
     return this
   }
 
   export function toggle() {
-    exec('toggle')
+    executer.module('toggle')
     return this
   }
 
   export function show(callback = () => {}, preventFocus = true) {
-    exec('show', callback, preventFocus)
+    executer.module('show', callback, preventFocus)
     return this
   }
 
   export function hide(callback, preventBlur) {
-    exec('hide', callback, preventBlur)
+    executer.module('hide', callback, preventBlur)
     return this
   }
 
   export function clear(preventChangeTrigger) {
-    exec('clear', preventChangeTrigger)
+    executer.module('clear', preventChangeTrigger)
     return this
   }
 
   export function hideOthers() {
-    exec('hide others')
+    executer.module('hide others')
     return this
   }
 
   export function restoreDefaults(preventChangeTrigger) {
-    exec('restore defaults', preventChangeTrigger)
+    executer.module('restore defaults', preventChangeTrigger)
     return this
   }
 
   export function restoreDefaultText() {
-    exec('restore default')
+    executer.module('restore default')
     return this
   }
 
   export function restorePlaceholderText() {
-    exec('restore placeholder')
+    executer.module('restore placeholder')
     return this
   }
 
   export function restoreDefaultValue() {
-    exec('restore default')
+    executer.module('restore default')
     return this
   }
 
   export function saveDefaults() {
-    exec('save defaults')
+    executer.module('save defaults')
     return this
   }
 
   export function setSelected(...args) {
-    exec('set selected', ...args)
+    executer.module('set selected', ...args)
     return this
   }
 
   export function removeSelected(value) {
-    exec('remove selected', value)
+    executer.module('remove selected', value)
     return this
   }
 
   export function setExactly(...args) {
-    exec('set exactly', ...args)
+    executer.module('set exactly', ...args)
     return this
   }
 
   export function setText(text) {
-    exec('set text', text)
+    executer.module('set text', text)
     return this
   }
 
   export function setValue(value, text, $selected, preventChangeTrigger) {
-    exec('set value', value, text, $selected, preventChangeTrigger)
+    executer.module('set value', value, text, $selected, preventChangeTrigger)
     return this
   }
 
   export function getText() {
-    return exec('get text')
+    return executer.module('get text')
   }
 
   export function getValue() {
-    return exec('get value')
+    return executer.module('get value')
   }
 
   export function getItem(value) {
-    return exec('get item', value)
+    return executer.module('get item', value)
   }
 
   export function bindTouchEvents() {
-    exec('bind touch')
+    executer.module('bind touch')
     return this
   }
 
   export function bindMouseEvents() {
-    exec('bind mouse')
+    executer.module('bind mouse')
     return this
   }
 
   export function bindIntent() {
-    exec('bind intent')
+    executer.module('bind intent')
     return this
   }
 
   export function unbindIntent() {
-    exec('unbind intent')
+    executer.module('unbind intent')
     return this
   }
 
   export function determineEventInModule() {
-    exec('determine eventInModule')
+    executer.module('determine eventInModule')
     return this
   }
 
   export function determineSelectAction(text, value) {
-    exec('determine select', text, value)
+    executer.module('determine select', text, value)
     return this
   }
 
   export function setActive() {
-    exec('set active')
+    executer.module('set active')
     return this
   }
 
   export function setVisible() {
-    exec('set visible')
+    executer.module('set visible')
     return this
   }
 
   export function removeActive() {
-    exec('remove active')
+    executer.module('remove active')
     return this
   }
 
   export function removeVisible() {
-    exec('remove visible')
+    executer.module('remove visible')
     return this
   }
 
   export function isSelection() {
-    return exec('is selection')
+    return executer.module('is selection')
   }
 
   export function isAnimated() {
-    return exec('is animated')
+    return executer.module('is animated')
   }
 
   export function isVisible() {
-    return exec('is visible')
+    return executer.module('is visible')
   }
 
   export function isHidden() {
-    return exec('is hidden')
+    return executer.module('is hidden')
   }
 
   export function getDefaultText() {
-    return exec('get default')
+    return executer.module('get default')
   }
 
   export function getPlaceholderText() {
-    return exec('get placeholder')
+    return executer.module('get placeholder')
   }
 </script>
 
-<JQueryLazyLoader>
-  <DropdownLoader>
-    <select
-      use:module="{settings}"
-      multiple="{multiple}"
-      class="{classNames(
-        _class,
-        'ui',
-        height,
-        column,
-        speed,
-        wide,
-        size,
-        menuDirection,
-        {
-          link,
-          item,
-          long,
-          fluid,
-          label,
-          compact,
-          scrolling,
-          inverted,
-          active,
-          disabled,
-          loading,
-          error,
-          selection,
-          search,
-          clearable,
-          multiple,
-          floating,
-          labeled,
-          icon,
-          button,
-          inline,
-          pointing,
-          simple
-        },
-        'dropdown'
-      )}"
-    >
-      <slot />
-    </select>
-  </DropdownLoader>
-</JQueryLazyLoader>
+{#await isReady then value}
+  <select
+    bind:this="{$executer}"
+    use:css="{style}"
+    multiple="{multiple}"
+    class="{classNames(
+      _class,
+      'ui',
+      height,
+      column,
+      speed,
+      wide,
+      size,
+      menuDirection,
+      {
+        link,
+        item,
+        long,
+        fluid,
+        label,
+        compact,
+        scrolling,
+        inverted,
+        active,
+        disabled,
+        loading,
+        error,
+        selection,
+        search,
+        clearable,
+        multiple,
+        floating,
+        labeled,
+        icon,
+        button,
+        inline,
+        pointing,
+        simple
+      },
+      'dropdown'
+    )}"
+  >
+    <slot />
+  </select>
+{/await}

@@ -1,5 +1,9 @@
 <script context="module">
+  import { tabLoader } from '../utils'
+
   export const key = Symbol()
+
+  const isReady = tabLoader()
 </script>
 
 <script>
@@ -8,12 +12,11 @@
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/tab.min.css'
 
-  import { onMount as onMounted } from 'svelte'
+  import { createEventDispatcher, onMount as onMounted } from 'svelte'
   import { classNames, css } from '../../utils'
-  import { JQueryLazyLoader, TabLoader } from '../loaders'
   import { writable } from 'svelte/store'
   import { setContext, tick } from 'svelte'
-  import { tab } from '../module'
+  import { tab } from '../utils'
   import Item from './item.svelte'
 
   let _class
@@ -27,91 +30,78 @@
 
   export let settings = {}
 
+  const executor = tab(settings)
+  const dispatch = createEventDispatcher();
+
   const tabs = writable([])
+  const items = writable([])
+
   setContext(key, tabs)
 
-  let exec
+  $: $items.length && ($executor = $items)
 
-  /**
-   *
-   * @param node {HTMLDivElement}
-   * @param settings
-   */
-  function module(node, settings) {
-    css(node, style)
-    exec = (...args) => jQuery(node.getElementsByClassName('item')).tab(...args)
-
-    tabs.subscribe((v) => {
-      tick().then(() => {
-        exec(settings)
-      })
-    })
-  }
-
-  const executer = tab(settings)
-
-  onMounted(() => {
-    onMount?.()
+  onMounted(()=>{
+    onMount($executor)
+    dispatch('mount', $executor)
   })
 
   export function attachEvents(selector, event) {
-    return exec('attach events', selector, event)
+    return executor.module('attach events', selector, event)
   }
 
   export function changeTab(path) {
-    return exec('change tab', path)
+    return executor.module('change tab', path)
   }
 
   export function setState(path) {
-    return exec('set path', path)
+    return executor.module('set path', path)
   }
 
   export async function getPath() {
-    return await exec('get path')
+    return await executor.module('get path')
   }
 
   export async function isTab() {
-    return await exec('is tab')
+    return await executor.module('is tab')
   }
 
   export function cacheRead(path) {
-    return exec('cache read', path)
+    return executor.module('cache read', path)
   }
 
   export function cacheAdd(path, html) {
-    return exec('cache add', path, html)
+    return executor.module('cache add', path, html)
   }
 
   export function cacheRemove(path) {
-    return exec('cache remove', path)
+    return executor.module('cache remove', path)
+  }
+
+  export function ready(){
+    return isReady
   }
 </script>
 
-<JQueryLazyLoader>
-  <TabLoader>
-    <div
-      class="{classNames(
-        _class,
-        'ui',
-        { loading, segment, active, attached },
-        'tabular menu'
-      )}"
-    >
-      {#each $tabs as { center, data, title, active, executer }}
-        <!-- <div class:center class:active class="item" data-tab="{data}">
-          {title}
-        </div> -->
-        <Item
-          data="{data}"
-          center="{center}"
-          active="{active}"
-          settings="{settings}"
-          executer={executer}
-        >
-          {title}
-        </Item>
-      {/each}
-    </div>
-    <slot />
-  </TabLoader>
-</JQueryLazyLoader>
+{#await isReady then value}
+  <div
+    use:css="{style}"
+    class="{classNames(
+      _class,
+      'ui',
+      { loading, segment, active, attached },
+      'tabular menu'
+    )}"
+  >
+    {#each $tabs as { center, data, title, active }, i}
+      <Item
+        bind:node="{$items[i]}"
+        data="{data}"
+        center="{center}"
+        active="{active}"
+      >
+        {title}
+      </Item>
+    {/each}
+  </div>
+  <slot />
+{/await}

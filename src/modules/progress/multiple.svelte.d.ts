@@ -1,8 +1,9 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import { Style } from '../../style'
 import { Attach, Color, Size, Speed } from '../../variations'
-import Module from '../module'
+import {Module} from '../utils'
 import ProgressSettings from './settings'
+import type { MountEvent } from '../../common'
 
 type State =
   | 'indeterminate'

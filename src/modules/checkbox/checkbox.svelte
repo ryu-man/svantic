@@ -1,12 +1,16 @@
+<script context="module">
+  import { checkboxLoader } from '../utils'
+  const isReady = checkboxLoader()
+</script>
+
 <script>
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/checkbox.min.css'
 
-  import { onMount as onMounted } from 'svelte'
+  import { createEventDispatcher, onMount as onMounted } from 'svelte'
   import { classNames, css } from '../../utils'
-  import { JQueryLazyLoader, CheckboxLoader } from '../loaders'
-  import { checkbox } from '../module'
+  import { checkbox } from '../utils'
 
   let _class = ''
   export { _class as class }
@@ -20,9 +24,11 @@
   export let onMount
 
   const executer = checkbox(settings)
+  const dispatch = createEventDispatcher();
 
   onMounted(() => {
     onMount?.($executer)
+    dispatch('mount', $executer)
   })
 
   export function toggle() {
@@ -124,24 +130,26 @@
   export function canUncheck() {
     return executer.module('can uncheck')
   }
+
+  export function ready(){
+    return isReady
+  }
 </script>
 
-<JQueryLazyLoader>
-  <CheckboxLoader>
-    <div
-      bind:this="{$executer}"
-      use:css="{style}"
-      class="{classNames(
-        _class,
-        'ui',
-        type,
-        state,
-        { fitted, inverted },
-        'checkbox'
-      )}"
-    >
-      <input type="checkbox" name="" />
-      <slot />
-    </div>
-  </CheckboxLoader>
-</JQueryLazyLoader>
+{#await isReady then value}
+  <div
+    bind:this="{$executer}"
+    use:css="{style}"
+    class="{classNames(
+      _class,
+      'ui',
+      type,
+      state,
+      { fitted, inverted },
+      'checkbox'
+    )}"
+  >
+    <input type="checkbox" name="" />
+    <slot />
+  </div>
+{/await}

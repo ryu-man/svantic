@@ -1,6 +1,7 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import { Style } from '../../style'
 import { Component } from '../../component'
+import type { MountEvent } from '../../common'
 
 interface ProgressProps extends Component{
   color?: string

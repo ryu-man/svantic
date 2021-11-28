@@ -1,6 +1,7 @@
 import type { EasingType, TransitionType } from '../../transition'
 import type { Color } from '../../variations'
-export default interface ToastSettings {
+
+export interface ToastSettings {
   /** Sets where the toast can be displayed. Can be top right, top center, top left, bottom right, bottom center and bottom left */
   position?: 'top' | 'right'
   /** Define the class of notification. Can be any existing color definition or info, success, warning and error. If ui message is used in className.toast option (see below), this option can hold any supported class of the message component */

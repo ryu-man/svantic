@@ -1,3 +1,8 @@
+<script context="module">
+  import { dimmerLoader, modalLoader } from '../utils'
+  const isReady = Promise.all([dimmerLoader(), modalLoader()])
+</script>
+
 <script>
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
@@ -5,10 +10,9 @@
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/modal.min.css'
 
-  import { onMount as onMounted } from 'svelte'
+  import { createEventDispatcher, onMount as onMounted } from 'svelte'
   import { classNames, css } from '../../utils'
-  import { JQueryLazyLoader, ModalLoader } from '../loaders'
-  import { modal } from '../module'
+  import { modal } from '../utils'
 
   let _class = ''
   export { _class as class }
@@ -23,10 +27,11 @@
   export let onMount
 
   const executer = modal(settings)
+  const dispatch = createEventDispatcher();
 
   onMounted(() => {
     onMount?.($executer)
-    console.log(executer)
+    dispatch('mount', $executer)
   })
 
   $: executer.setSettings(settings)
@@ -99,22 +104,24 @@
     executer.module('set active')
     return this
   }
+
+  export function ready(){
+    return isReady
+  }
 </script>
 
-<JQueryLazyLoader>
-  <ModalLoader>
-    <div
-      bind:this="{$executer}"
-      use:css="{style}"
-      class="{classNames(
-        _class,
-        'ui',
-        { basic, active, overlay, fullscreen, inverted },
-        size,
-        'modal'
-      )}"
-    >
-      <slot />
-    </div>
-  </ModalLoader>
-</JQueryLazyLoader>
+{#await isReady then value}
+  <div
+    bind:this="{$executer}"
+    use:css="{style}"
+    class="{classNames(
+      _class,
+      'ui',
+      { basic, active, overlay, fullscreen, inverted },
+      size,
+      'modal'
+    )}"
+  >
+    <slot />
+  </div>
+{/await}

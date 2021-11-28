@@ -3,7 +3,9 @@
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/image.min.css'
+
   import { css, register, classNames } from '../../utils'
+  import { createEventDispatcher } from 'svelte'
 
   export let src = ''
   export let alt = ''
@@ -22,10 +24,17 @@
   export let style = {}
   let _class = ''
   export { _class as class }
+
+  const dispatch = createEventDispatcher()
+
+  function init(node) {
+    dispatch('mount', node)
+  }
 </script>
 
 <img
   use:css="{style}"
+  use:init
   class:space
   class="{classNames(
     _class,

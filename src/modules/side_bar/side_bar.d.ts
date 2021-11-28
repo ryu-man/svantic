@@ -1,7 +1,10 @@
-import { SvelteComponentTyped } from 'svelte/internal'
+import type { SvelteComponentTyped } from 'svelte/internal'
 import type { Attach, Wide } from '../../variations'
-import Module from '../module'
-import SidebarSettings from './settings'
+import type { Module } from '../utils'
+import type { SidebarSettings } from './settings'
+import type { MountEvent } from '../../common'
+import type Item from './item.svelte'
+import type Pusher from './Pusher.svelte'
 
 interface SidebarProps extends Module<SidebarSettings> {
   wide?: Wide
@@ -10,11 +13,15 @@ interface SidebarProps extends Module<SidebarSettings> {
   direction?: Attach
   inverted?: boolean
   vertical?: boolean
+  menu?: boolean
 }
 /**
  * @description Svantic Sidebar
  */
 declare class Sidebar extends SvelteComponentTyped<SidebarProps> {
+  static Item: new () => Item
+  static Pusher: new () => Pusher
+
   /**
    *@description 	Attaches sidebar action to given selector. Default event if none specified is toggle
    */
@@ -74,5 +81,7 @@ declare class Sidebar extends SvelteComponentTyped<SidebarProps> {
    *@description 	Returns vendor prefixed transition end event
    */
   getTransitionEvent(): Promise<any>
+
+  ready(): Promise<void>
 }
 export default Sidebar

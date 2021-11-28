@@ -1,6 +1,6 @@
 <script>
-  import { css } from '../../utils'
   import { onMount as onMounted } from 'svelte'
+  import { css } from '../../utils'
 
   let _class
   export let data
@@ -8,16 +8,13 @@
   export let active = false
   export let style
   export { _class as class }
-  export let settings = {}
-  export let executer
-
-  executer.setSettings(settings)
+  export let node
 
   onMounted(() => {})
 </script>
 
 <div
-  bind:this="{$executer}"
+  bind:this="{node}"
   use:css="{style}"
   class:center
   class:active

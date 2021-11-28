@@ -1,13 +1,17 @@
+<script context="module">
+  import { accordionLoader } from '../utils'
+  const isReady = accordionLoader()
+</script>
+
 <script>
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/accordion.min.css'
 
-  import { onMount as onMounted } from 'svelte'
+  import { createEventDispatcher, onMount as onMounted } from 'svelte'
   import { classNames, css } from '../../utils'
-  import { JQueryLazyLoader, AccordionLoader } from '../loaders'
-  import { accordion } from '../module'
+  import { accordion } from '../utils'
 
   let _class = ''
   export let fluid = false
@@ -22,9 +26,11 @@
   export let onMount
 
   const executer = accordion(settings)
+  const dispatch = createEventDispatcher()
 
   onMounted(() => {
     onMount?.($executer)
+    dispatch('mount', $executer)
   })
 
   export function refresh() {
@@ -51,28 +57,30 @@
     executer.module('toggle', index)
     return executer.module
   }
+
+  export function ready(){
+    return isReady
+  }
 </script>
 
-<JQueryLazyLoader>
-  <AccordionLoader>
-    <div
-      bind:this="{$executer}"
-      use:css="{style}"
-      class="{classNames(
-        _class,
-        'ui',
-        {
-          vertical,
-          fluid,
-          following,
-          styled,
-          inverted
-        },
-        'accordion',
-        { text, menu }
-      )}"
-    >
-      <slot />
-    </div>
-  </AccordionLoader>
-</JQueryLazyLoader>
+{#await isReady then value}
+  <div
+    bind:this="{$executer}"
+    use:css="{style}"
+    class="{classNames(
+      _class,
+      'ui',
+      {
+        vertical,
+        fluid,
+        following,
+        styled,
+        inverted
+      },
+      'accordion',
+      { text, menu }
+    )}"
+  >
+    <slot />
+  </div>
+{/await}

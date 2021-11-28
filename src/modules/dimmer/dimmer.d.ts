@@ -1,7 +1,8 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import { Align } from '../../variations'
-import Module from '../module'
+import {Module} from '../utils'
 import DimmerSettings from './settings'
+import type { MountEvent } from '../../common'
 
 declare type Shade = 'medium' | 'light' | 'very light'
 declare type Partial = 'bottom' | 'center' | 'top'
@@ -127,5 +128,7 @@ declare class Dimmer extends SvelteComponentTyped<DimmerProps> {
    *@description 	Sets a dimmer as disabled
    */
   setDisabled(): void
+
+  ready(): Promise<void>
 }
 export default Dimmer

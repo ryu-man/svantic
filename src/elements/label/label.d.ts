@@ -45,9 +45,9 @@ interface LabelProps extends Component {
  * Vomantic Label
  */
 declare class Label extends SvelteComponentTyped<LabelProps> {
-  static tag: new () => Tag
-  static ribbon: new () => Ribbon
-  static link: new () => Link
-  static detail: new () => Detail
+  static Tag: new () => Tag
+  static Ribbon: new () => Ribbon
+  static Rink: new () => Link
+  static Detail: new () => Detail
 }
 export default Label

@@ -1,10 +1,14 @@
-import { SvelteComponentTyped } from 'svelte/internal'
-import type { Component } from '../../component'
+import type { SvelteComponentTyped } from 'svelte/internal'
+import type { MountEvent, SvanticProps } from '../../common'
 
-export interface DropdownDividerProps extends Component {
-}
+type DropdownDividerProps = SvanticProps & {}
+
+type DropdownDividerEvents = SvanticEvents & {}
 /**
- * @escription Svantic DropdownDivider
+ * @description Svantic DropdownDivider
  */
-declare class DropdownDivider extends SvelteComponentTyped<DropdownDividerProps> {}
+declare class DropdownDivider extends SvelteComponentTyped<
+  DropdownDividerProps,
+  DropdownDividerEvents
+> {}
 export default DropdownDivider

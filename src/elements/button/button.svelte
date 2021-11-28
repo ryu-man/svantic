@@ -3,8 +3,10 @@
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/button.min.css'
-  import { classNames, css, register } from '../../utils'
+
+  import { classNames, css } from '../../utils'
   import Icon from '../icon'
+  import { createEventDispatcher } from 'svelte'
 
   let _class = ''
   export { _class as class }
@@ -33,7 +35,6 @@
   export let tabIndex
   export let as = 'div'
   export let style = {}
-  export let on = {}
 
   $: emphasis = primary
     ? 'primary'
@@ -43,20 +44,17 @@
     ? 'tertiary'
     : ''
 
+  const dispatch = createEventDispatcher()
+
   /**
    *
    * @param {HTMLElement} node
    */
   function init(node) {
-    css(node, style)
+    dispatch('mount', node)
+
     if (tabIndex !== undefined && tabIndex !== null) {
       node.tabIndex = tabIndex
-    }
-    const unregister = register(node, on)
-    return {
-      destroy() {
-        unregister()
-      }
     }
   }
 
@@ -90,18 +88,14 @@
 </script>
 
 {#if as === 'button'}
-  <button use:init on:click class="{classProp}">
+  <button use:css="{style}" use:init on:click class="{classProp}">
     {#if typeof icon === 'string'}
       <Icon name="{icon}" />
     {/if}
     <slot />
   </button>
 {:else}
-  <div
-    use:init
-    on:click
-    class="{classProp}"
-  >
+  <div use:init on:click class="{classProp}">
     {#if typeof icon === 'string'}
       <Icon name="{icon}" />
     {/if}

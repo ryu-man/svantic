@@ -1,14 +1,17 @@
-import { SvelteComponentTyped } from 'svelte/internal'
+import type { SvelteComponentTyped } from 'svelte/internal'
 import type { Loading, Attach, Size, Speed, Wide } from '../../variations'
 
-import Module from '../module'
-import Settings from './settings'
+import type { Module } from '../utils'
+import type Settings from './settings'
 
-import Header from './header.svelte'
-import Menu from './menu.svelte'
-import Item from './item.svelte'
-import Divider from './divider.svelte'
-import Text from './text.svelte'
+import type Header from './header.svelte'
+import type Menu from './menu.svelte'
+import type Item from './item.svelte'
+import type Divider from './divider.svelte'
+import type Text from './text.svelte'
+
+import type { MountEvent } from '../../common'
+
 // declare type Type =
 //   | 'selection'
 //   | 'search'
@@ -65,10 +68,16 @@ export interface DropdownProps extends Module<Settings> {
   secondary?: boolean
   scrolling?: boolean
 }
+
+type DropdownEvents = MountEvent<HTMLDivElement | HTMLSelectElement>
+
 /**
  * @description Svantic Dropdown
  */
-declare class Dropdown extends SvelteComponentTyped<DropdownProps> {
+declare class Dropdown extends SvelteComponentTyped<
+  DropdownProps,
+  DropdownEvents
+> {
   static Select: new () => Dropdown
   static Header: new () => Header
   static Divider: new () => Divider
@@ -274,6 +283,8 @@ declare class Dropdown extends SvelteComponentTyped<DropdownProps> {
    *@description 	Returns placeholder text
    */
   getPlaceholderText(): Promise<string>
+
+  ready(): Promise<void>
 }
 
 export default Dropdown

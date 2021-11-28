@@ -1,6 +1,6 @@
 import type { EasingType } from '../../transition'
 
-export default interface AccordionSettings {
+export interface AccordionSettings {
   /** Only allow one section open at a time */
   exclusive: boolean
   /** Event on title that will cause accordion to open */

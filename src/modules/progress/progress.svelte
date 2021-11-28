@@ -1,13 +1,17 @@
+<script context="module">
+  import { progressLoader } from '../utils'
+  const isReady = progressLoader()
+</script>
+
 <script>
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/progress.min.css'
 
-  import { onMount as onMounted } from 'svelte'
+  import { createEventDispatcher, onMount as onMounted } from 'svelte'
   import { classNames, css } from '../../utils'
-  import { JQueryLazyLoader, ProgressLoader } from '../loaders'
-  import { progress } from '../module'
+  import { progress } from '../utils'
 
   let _class
   export { _class as class }
@@ -31,13 +35,15 @@
   export let settings = {}
 
   const executer = progress(settings)
+  const dispatch = createEventDispatcher();
 
   onMounted(() => {
     onMount?.($executer)
+    dispatch('mount', $executer)
   })
 
   $: executer.setSettings(settings)
-  
+
   export function setPercent(percent) {
     executer.module('set percent', percent)
     return this
@@ -172,36 +178,38 @@
     executer.module('remove error')
     return this
   }
+
+  export function ready(){
+    return isReady
+  }
 </script>
 
-<JQueryLazyLoader>
-  <ProgressLoader>
-    <div
-      bind:this="{$executer}"
-      use:css="{style}"
-      data-value="{value}"
-      data-total="{total}"
-      class="{classNames(
-        _class,
-        'ui',
-        speed,
-        size,
-        color,
-        {
-          indicating,
-          disabled,
-          error,
-          warning,
-          success,
-          active,
-          inverted,
-          attached,
-          indeterminate
-        },
-        'progress'
-      )}"
-    >
-      <slot />
-    </div>
-  </ProgressLoader>
-</JQueryLazyLoader>
+{#await isReady then value}
+  <div
+    bind:this="{$executer}"
+    use:css="{style}"
+    data-value="{value}"
+    data-total="{total}"
+    class="{classNames(
+      _class,
+      'ui',
+      speed,
+      size,
+      color,
+      {
+        indicating,
+        disabled,
+        error,
+        warning,
+        success,
+        active,
+        inverted,
+        attached,
+        indeterminate
+      },
+      'progress'
+    )}"
+  >
+    <slot />
+  </div>
+{/await}

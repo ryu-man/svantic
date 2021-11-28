@@ -49,7 +49,7 @@ declare class Button extends SvelteComponentTyped<
   ButtonProps,
   { click: MouseEvent }
 > {
-  static content: new () => Content
-  static or: new () => Or
+  static Content: new () => Content
+  static Or: new () => Or
 }
 export default Button

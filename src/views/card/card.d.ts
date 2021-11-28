@@ -18,9 +18,12 @@ interface CardProps extends Component {
     stackable?: boolean;
     doubling?: boolean;
 }
+type CardEvents = {
+    mount: CustomEvent<HTMLDivElement>
+  }
 /**
- * Vomantic Card
+ * Svantic Card
  */
-declare class Card extends SvelteComponentTyped<CardProps> {
+declare class Card extends SvelteComponentTyped<CardProps, CardEvents> {
 }
 export default Card;

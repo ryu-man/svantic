@@ -1,6 +1,7 @@
 import { SvelteComponentTyped } from 'svelte/internal'
-import Module from '../module'
+import {Module} from '../utils'
 import EmbedSettings from './settings'
+import type { MountEvent } from '../../common'
 
 interface EmbedProps extends Module<EmbedSettings> {
   active?: boolean
@@ -77,5 +78,7 @@ declare class Embed extends SvelteComponentTyped<EmbedProps> {
    *@description 	Destroys instance and removes all events
    */
   destroy(): void
+
+  ready(): Promise<void>
 }
 export default Embed

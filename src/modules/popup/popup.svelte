@@ -1,13 +1,26 @@
+<script context="module">
+  import { transitionLoader, popupLoader } from '../utils'
+  const isReady = Promise.all([popupLoader(), transitionLoader()])
+</script>
+
 <script>
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/popup.min.css'
 
-  import { JQueryLazyLoader, PopupLoader } from '../loaders'
+  import { popup } from '../utils/module'
+import { createEventDispatcher, onMount } from 'svelte';
 
   export let settings = {}
 
   let exec
+
+  const executer = popup(settings)
+  const dispatch = createEventDispatcher();
+
+  onMount(()=>{
+    dispatch('mount')
+  })
 
   export function show() {
     exec('show')
@@ -66,16 +79,17 @@
     exec('remove popup')
     return this
   }
+
+  export function ready(){
+    return isReady
+  }
 </script>
 
-<JQueryLazyLoader>
-  <PopupLoader>
-    <slot
-      popup="{(node) => {
-        exec = (...args) => jQuery(node).popup(...args)
-        exec(settings)
-        return jQuery(node).popup(settings)
-      }}"
-    />
-  </PopupLoader>
-</JQueryLazyLoader>
+{#await isReady then value}
+  <slot
+    popup="{(node) => {
+      $executer = node
+      return executer.module
+    }}"
+  />
+{/await}

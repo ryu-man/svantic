@@ -1,10 +1,12 @@
 import { SvelteComponentTyped } from 'svelte/internal'
-import Module from '../module'
+import { Module } from '../utils'
 import ModalSettings from './settings'
 import Header from './header'
 import Content from './content'
 import Actions from './actions'
 import Description from './description.svelte'
+import type { MountEvent } from '../../common'
+
 interface ModalProps extends Module<ModalSettings> {
   size?: string
   basic?: boolean
@@ -17,10 +19,10 @@ interface ModalProps extends Module<ModalSettings> {
  * @escription Svantic Modal
  */
 declare class Modal extends SvelteComponentTyped<ModalProps> {
-  static header: new () => Header
-  static content: new () => Content
-  static actions: new () => Actions
-  static description: new () => Description
+  static Header: new () => Header
+  static Content: new () => Content
+  static Actions: new () => Actions
+  static Description: new () => Description
 
   /**
    *@description 	Shows the modal
@@ -81,5 +83,7 @@ declare class Modal extends SvelteComponentTyped<ModalProps> {
    *@description 	Sets modal to active
    */
   setActive(): void
+
+  ready(): Promise<void>
 }
 export default Modal

@@ -1,5 +1,6 @@
 <script>
-  import { register, css, classNames } from '../../utils'
+  import { createEventDispatcher } from 'svelte'
+  import { css, classNames } from '../../utils'
 
   let _class = ''
   export { _class as class }
@@ -12,23 +13,18 @@
   export let floating = false
   export let circular = false
   export let inverted = false
-  export let on = {}
   export let style = {}
 
-  function init(node) {
-    css(node, style)
-    const unregister = register(node, on)
+  const dispatch = createEventDispatcher()
 
-    return {
-      destroy() {
-        unregister()
-      }
-    }
+  function init(node) {
+    dispatch('mount', node)
   }
 </script>
 
 <!-- svelte-ignore a11y-missing-attribute -->
 <a
+  use:css="{style}"
   use:init
   class="{classNames(
     _class,

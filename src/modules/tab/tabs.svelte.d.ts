@@ -1,7 +1,8 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import Tab from './tab.svellte'
-import Module from '../module'
+import {Module} from '../utils'
 import TabularMenuSettings from './settings'
+import type { MountEvent } from '../../common'
 
 interface TabularMenuProps extends Module<TabularMenuSettings> {
   attached?: string
@@ -16,4 +17,6 @@ export const key: symbol
  */
 export default class TabularMenu extends SvelteComponentTyped<TabularMenuProps> {
   static Tab: new () => Tab
+
+  ready(): Promise<void>
 }

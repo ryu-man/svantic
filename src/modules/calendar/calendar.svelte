@@ -1,3 +1,12 @@
+<script context="module">
+  import { dropdownLoader, dimmerLoader, calendarLoader } from '../utils'
+  const isReady = Promise.all([
+    dimmerLoader(),
+    dropdownLoader(),
+    calendarLoader()
+  ])
+</script>
+
 <script>
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
@@ -9,10 +18,9 @@
   import '../../../semantic/dist/components/popup.min.css'
   import '../../../semantic/dist/components/calendar.min.css'
 
-  import { onMount as onMounted } from 'svelte'
+  import { createEventDispatcher, onMount as onMounted } from 'svelte'
   import { css } from '../../utils'
-  import { JQueryLazyLoader, CalendarLoader } from '../loaders'
-  import { calendar } from '../module'
+  import { calendar } from '../utils'
 
   let _class = ''
   export let icon = 'left'
@@ -23,9 +31,11 @@
   export let onMount
 
   const executer = calendar(settings)
-
+  const dispatch = createEventDispatcher();
+  
   onMounted(() => {
     onMount?.($executer)
+    dispatch('mount', $executer)
   })
 
   export function refresh() {
@@ -105,22 +115,24 @@
     executer.module('set max date', date)
     return this
   }
+
+  export function ready(){
+    return isReady
+  }
 </script>
 
-<JQueryLazyLoader>
-  <CalendarLoader>
-    <div
-      bind:this="{$executer}"
-      use:css="{style}"
-      class="{_class} ui calendar"
-      class:disabled
-    >
-      <div class="ui input {icon + ' icon'}">
-        <slot>
-          <i class="calendar icon"></i>
-        </slot>
-        <input type="text" placeholder="Date/Time" />
-      </div>
+{#await isReady then value}
+  <div
+    bind:this="{$executer}"
+    use:css="{style}"
+    class="{_class} ui calendar"
+    class:disabled
+  >
+    <div class="ui input {icon + ' icon'}">
+      <slot>
+        <i class="calendar icon"></i>
+      </slot>
+      <input type="text" placeholder="Date/Time" />
     </div>
-  </CalendarLoader>
-</JQueryLazyLoader>
+  </div>
+{/await}

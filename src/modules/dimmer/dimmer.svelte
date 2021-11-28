@@ -1,3 +1,8 @@
+<script context="module">
+  import { dimmerLoader } from '../utils'
+  const isReady = dimmerLoader()
+</script>
+
 <script>
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
@@ -5,7 +10,6 @@
   import '../../../semantic/dist/components/dimmer.min.css'
 
   import { css, classNames } from '../../utils'
-  import { JQueryLazyLoader, DimmerLoader } from '../loaders'
 
   let _class = ''
   export { _class as class }
@@ -128,23 +132,25 @@
     exec('set disabled')
     return this
   }
+
+  export function ready(){
+    return isReady
+  }
 </script>
 
-<JQueryLazyLoader>
-  <DimmerLoader>
-    <div
-      use:module="{settings}"
-      class="{classNames(
-        _class,
-        'ui',
-        shades,
-        partial,
-        state,
-        { inverted, page, active, disabled, aligned },
-        'dimmer'
-      )}"
-    >
-      <slot />
-    </div>
-  </DimmerLoader>
-</JQueryLazyLoader>
+{#await isReady then value}
+  <div
+    use:module="{settings}"
+    class="{classNames(
+      _class,
+      'ui',
+      shades,
+      partial,
+      state,
+      { inverted, page, active, disabled, aligned },
+      'dimmer'
+    )}"
+  >
+    <slot />
+  </div>
+{/await}

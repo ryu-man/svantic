@@ -1,7 +1,8 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import { Color, Size } from '../../variations'
-import Module from '../module'
+import {Module} from '../utils'
 import SliderSettings from './settings'
+import type { MountEvent } from '../../common'
 
 declare type Type = 'range'
 declare type State = 'disabled'
@@ -46,6 +47,8 @@ declare class Slider extends SvelteComponentTyped<SliderProps> {
    *@description Set the current range slider values
    */
   setRangeValue(fromValue: any, toValue: any): void
+
+  ready(): Promise<void>
 }
 
 export default Slider

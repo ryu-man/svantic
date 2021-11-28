@@ -1,4 +1,4 @@
-export default interface PopupSettings {
+export interface PopupSettings {
   // Can specify a DOM element that should be used as the popup. This is useful for including a pre-formatted popup.
   popup: boolean
   // Whether all other popups should be hidden when this popup is opened

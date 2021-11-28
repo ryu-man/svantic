@@ -1,16 +1,34 @@
+<script context="module">
+  import { popupLoader } from '../utils'
+  const isReady = popupLoader()
+</script>
+
 <script>
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/embed.min.css'
 
+  import { createEventDispatcher, onMount as onMounted } from 'svelte'
+
   import { css } from '../../utils'
-  import { JQueryLazyLoader, EmbedLoader } from '../loaders'
+  import { embed } from '../utils'
 
   let _class = ''
   export { _class as class }
   export let style = {}
   export let data = {}
+  export let onMount = (_) => {}
+
+  export let settings = {}
+
+  const executer = embed(settings)
+  const dispatch = createEventDispatcher();
+
+  onMounted(() => {
+    onMount?.($executer)
+    dispatch('mount', $executer)
+  })
 
   let _data = {
     source: '',
@@ -19,78 +37,64 @@
     ...data
   }
 
-  /**
-   * @type {SemanticUI.EmbedSettings.Param}
-   */
-   export let settings = {}
-
-/**
- * @type {SemanticUI.Embed}
- */
-let exec
-function module(node, settings) {
-  css(node, style)
-
-  exec = (args) => jQuery(node).embed(args)
-  exec(settings)
-}
-
   export function change(source, id, url) {
-    exec('change', source, id, url)
+    executer.module('change', source, id, url)
     return this
   }
 
   export function reset() {
-    exec('reset')
+    executer.module('reset')
     return this
   }
 
   export function show() {
-    exec('show')
+    executer.module('show')
     return this
   }
 
   export function hide() {
-    exec('hide')
+    executer.module('hide')
     return this
   }
 
   export function getId() {
-    return exec('get id')
+    return executer.module('get id')
   }
 
   export function getPlaceholder() {
-    return exec('get placeholder')
+    return executer.module('get placeholder')
   }
 
   export function getSources() {
-    return exec('get sources')
+    return executer.module('get sources')
   }
 
   export function getType() {
-    return exec('get type')
+    return executer.module('get type')
   }
 
   export function getUrl() {
-    return exec('get url')
+    return executer.module('get url')
   }
 
   export function hasPlaceholder() {
-    return exec('has placeholder')
+    return executer.module('has placeholder')
+  }
+
+  export function ready(){
+    return isReady
   }
 </script>
 
-<JQueryLazyLoader>
-  <EmbedLoader>
-    <div
-      use:module="{settings}"
-      use:css="{style}"
-      class="{_class} ui embed"
-      data-source="{_data.source}"
-      data-id="{_data.id}"
-      data-placeholder="{_data.placeholder}"
-    >
-      <slot />
-    </div>
-  </EmbedLoader>
-</JQueryLazyLoader>
+{#await isReady then value}
+  <div
+    bind:this="{$executer}"
+    use:css="{style}"
+    class="{_class} ui embed"
+    data-source="{_data.source}"
+    data-id="{_data.id}"
+    data-placeholder="{_data.placeholder}"
+  >
+    <slot />
+  </div>
+{/await}

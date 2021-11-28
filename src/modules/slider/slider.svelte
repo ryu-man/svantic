@@ -1,14 +1,18 @@
+<script context="module">
+  import { sliderLoader } from '../utils'
+  const isReady = sliderLoader()
+</script>
+
 <script>
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/slider.min.css'
 
-  import { onMount as onMounted } from 'svelte'
+  import { createEventDispatcher, onMount as onMounted } from 'svelte'
   import { css, classNames } from '../../utils'
-  import JQueryLazyLoader from '../loaders/JQueryLazyLoader.svelte'
-  import SliderLoader from '../loaders/SliderLoader.svelte'
-  import { slider } from '../module'
+  import { slider } from '../utils'
+  
   let _class
   export { _class as class }
   export let size = ''
@@ -26,9 +30,11 @@
   export let onMount
 
   const executer = slider(settings)
+  const dispatch = createEventDispatcher();
 
   onMounted(() => {
     onMount?.($executer)
+    dispatch('mount', $executer)
   })
 
   export function getValue() {
@@ -52,26 +58,28 @@
     executer.module('set rangeValue', fromValue, toValue)
     return this
   }
+
+  export function ready(){
+    return isReady
+  }
 </script>
 
-<JQueryLazyLoader>
-  <SliderLoader>
-    <div
-      bind:this="{$executer}"
-      use:css={style}
-      class:inverted
-      class:reversed
-      class:vertical
-      class="{classNames(
-        _class,
-        'ui',
-        color,
-        size,
-        { disabled, aligned, labeled, ticked, range },
-        'slider'
-      )}"
-    >
-      <slot />
-    </div>
-  </SliderLoader>
-</JQueryLazyLoader>
+{#await isReady then value}
+  <div
+    bind:this="{$executer}"
+    use:css="{style}"
+    class:inverted
+    class:reversed
+    class:vertical
+    class="{classNames(
+      _class,
+      'ui',
+      color,
+      size,
+      { disabled, aligned, labeled, ticked, range },
+      'slider'
+    )}"
+  >
+    <slot />
+  </div>
+{/await}

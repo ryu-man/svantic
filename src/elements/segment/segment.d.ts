@@ -1,6 +1,7 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import { Float, Align, Attach, Color } from '../../variations'
 import { Component } from '../../component'
+import Group from './segments'
 
 interface SegmentProps extends Component {
   raised?: boolean
@@ -30,7 +31,10 @@ interface SegmentProps extends Component {
   container?: boolean
 }
 /**
- * Vomantic Segment
+ * Segment
  */
-declare class Segment extends SvelteComponentTyped<SegmentProps> {}
+declare class Segment extends SvelteComponentTyped<SegmentProps> {
+  static Group: new () => Group
+}
+
 export default Segment

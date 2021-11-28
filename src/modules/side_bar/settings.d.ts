@@ -1,6 +1,6 @@
 import type { EasingType, TransitionType } from '../../transition'
 
-export default interface SidebarSettings {
+export interface SidebarSettings {
   /** Context which sidebar will appear inside */
   context?: HTMLElement
   /** Whether multiple sidebars can be open at once */

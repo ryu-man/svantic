@@ -1,6 +1,6 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import { Style } from '../../style'
-import Module from '../module'
+import {Module} from '../utils'
 import PopupSettings from './settings'
 import Header from './header'
 
@@ -93,5 +93,7 @@ declare class Popup extends SvelteComponentTyped<PopupProps> {
    *@description 	Removes popup from the page
    */
   removePopup(): void
+
+  ready(): Promise<void>
 }
 export default Popup

@@ -4,7 +4,8 @@
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/segment.min.css'
 
-  import { classNames, css, register } from '../../utils'
+  import { classNames, css } from '../../utils'
+import { createEventDispatcher } from 'svelte';
 
   let _class = ''
   export { _class as class }
@@ -35,10 +36,17 @@
   export let dimmed = false
   export let container = false
   export let style = {}
+
+  const dispatch = createEventDispatcher()
+
+  function init(node) {
+    dispatch('mount', node)
+  }
 </script>
 
 <div
   use:css="{style}"
+  use:init
   class="{classNames(
     _class,
     'ui',

@@ -1,4 +1,6 @@
 <script>
+  import { createEventDispatcher } from 'svelte'
+
   import { css, classNames } from '../../utils'
 
   let _class = ''
@@ -11,10 +13,17 @@
   export let size
   export let width
   export let style = {}
+
+  const dispatch = createEventDispatcher()
+
+  function init(node) {
+    dispatch('mount', node)
+  }
 </script>
 
 <div
   use:css="{style}"
+  use:init
   class="{classNames(
     _class,
     'ui',

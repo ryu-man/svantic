@@ -1,7 +1,8 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import { Color, Size } from '../../variations'
-import Module from '../module'
+import {Module} from '../utils'
 import RatingSettings from './settings'
+import type { MountEvent } from '../../common'
 
 interface RatingProps extends Module<RatingSettings> {
   icon?: string
@@ -39,4 +40,6 @@ export default class Rating extends SvelteComponentTyped<RatingProps> {
    *@description 	Clears current rating
    */
   clearRating(): void
+
+  ready(): Promise<void>
 }

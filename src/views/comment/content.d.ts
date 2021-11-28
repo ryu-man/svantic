@@ -1,7 +1,11 @@
-import type { SvelteComponentTyped } from "svelte";
-import type { Component } from "../../component";
+import type { SvelteComponentTyped } from 'svelte'
+import type { Component } from '../../component'
 
-interface ContentProps extends Component{}
+interface ContentProps extends Component {}
+
+type ContentEvents = {
+  mount: CustomEvent<HTMLDivElement>
+}
 
 /**
  * @description Comment content
@@ -11,4 +15,7 @@ interface ContentProps extends Component{}
  *      </Comment.content>
  * </Comment>
  */
-export default class Content extends SvelteComponentTyped<ContentProps>{}
+export default class Content extends SvelteComponentTyped<
+  ContentProps,
+  ContentEvents
+> {}

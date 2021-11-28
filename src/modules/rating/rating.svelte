@@ -1,13 +1,17 @@
+<script context="module">
+  import { ratingLoader } from '../utils'
+  const isReady = ratingLoader()
+</script>
+
 <script>
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/rating.min.css'
 
-  import { onMount as onMounted } from 'svelte'
+  import { createEventDispatcher, onMount as onMounted } from 'svelte'
   import { classNames, css } from '../../utils'
-  import { JQueryLazyLoader, RatingLoader } from '../loaders'
-  import { rating as ratingModule } from '../module'
+  import { rating as ratingModule } from '../utils'
 
   let _class
   export let style
@@ -22,9 +26,11 @@
   export let onMount
 
   const executer = ratingModule(settings)
+  const dispatch = createEventDispatcher();
 
   onMounted(() => {
     onMount?.($executer)
+    dispatch('mount', $executer)
   })
 
   export function setRating(rating) {
@@ -46,17 +52,19 @@
   export function clearRating() {
     return executer.module('close rating')
   }
+
+  export function ready(){
+    return isReady
+  }
 </script>
 
-<JQueryLazyLoader>
-  <RatingLoader>
-    <div
-      bind:this="{$executer}"
-      use:css="{style}"
-      class:disabled
-      class="{classNames('ui', color, size, { icon }, 'rating', _class)}"
-      data-rating="{rating}"
-      data-max-rating="{maxRating}"
-    ></div>
-  </RatingLoader>
-</JQueryLazyLoader>
+{#await isReady then value}
+  <div
+    bind:this="{$executer}"
+    use:css="{style}"
+    class:disabled
+    class="{classNames('ui', color, size, { icon }, 'rating', _class)}"
+    data-rating="{rating}"
+    data-max-rating="{maxRating}"
+  ></div>
+{/await}

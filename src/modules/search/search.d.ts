@@ -1,7 +1,8 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import type { Align, Speed, Loading } from '../../variations'
-import Module from '../module'
+import {Module} from '../utils'
 import SearchSettings from './settings'
+import type { MountEvent } from '../../common'
 
 declare type State = 'disabled'
 interface SearchProps extends Module<SearchSettings> {
@@ -118,5 +119,7 @@ declare class Search extends SvelteComponentTyped<SearchProps> {
    *@description 	Generates results using parser specified by settings.template
    */
   generateResults(response: any): void
+
+  ready(): Promise<void>
 }
 export default Search

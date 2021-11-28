@@ -1,14 +1,17 @@
+<script context="module">
+  import { sidebarLoader } from '../utils'
+  const isReady = sidebarLoader()
+</script>
+
 <script>
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/sidebar.min.css'
 
-  import { onMount as onMounted } from 'svelte'
+  import { createEventDispatcher, onMount as onMounted } from 'svelte'
   import { css, classNames } from '../../utils'
-  import JQueryLazyLoader from '../loaders/JQueryLazyLoader.svelte'
-  import SidebarLoader from '../loaders/SidebarLoader.svelte'
-  import { sidebar } from '../module'
+  import { sidebar } from '../utils'
 
   let _class
   export { _class as class }
@@ -18,14 +21,17 @@
   export let direction = ''
   export let inverted = false
   export let vertical = false
+  export let menu = false
   export let style
   export let settings = {}
   export let onMount
 
   const executer = sidebar(settings)
+  const dispatch = createEventDispatcher()
 
   onMounted(() => {
     onMount?.($executer)
+    dispatch('mount', $executer)
   })
 
   export function attachEvents(selector, event) {
@@ -83,24 +89,24 @@
   export function getTransitionEvent() {
     return executer.module('get transition event')
   }
+
+  export function ready() {
+    return isReady
+  }
 </script>
 
-<JQueryLazyLoader>
-  <SidebarLoader>
-    <div
-      bind:this="{$executer}"
-      use:css="{style}"
-      class:inverted
-      class:vertical
-      class="{classNames(
-        _class,
-        'ui',
-        direction,
-        { wide, visible, dimmed },
-        'sidebar'
-      )}"
-    >
-      <slot />
-    </div>
-  </SidebarLoader>
-</JQueryLazyLoader>
+{#await isReady then value}
+  <div
+    bind:this="{$executer}"
+    use:css="{style}"
+    class="{classNames(
+      _class,
+      'ui',
+      direction,
+      { wide, visible, dimmed, inverted, vertical, menu },
+      'sidebar'
+    )}"
+  >
+    <slot />
+  </div>
+{/await}

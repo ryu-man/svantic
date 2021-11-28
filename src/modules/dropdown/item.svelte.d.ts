@@ -1,5 +1,6 @@
 import type { Component } from '../../component'
 import { SvelteComponentTyped } from 'svelte/internal'
+import type { MountEvent } from '../../common'
 
 export interface DropdownMenuItemProps extends Component {
   value?: string

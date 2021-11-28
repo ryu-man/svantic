@@ -1,14 +1,18 @@
+<script context="module">
+  import { searchLoader } from '../utils'
+  const isReady = searchLoader()
+</script>
+
 <script>
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/search.min.css'
 
-  import { onMount as onMounted } from 'svelte'
+  import { createEventDispatcher, onMount as onMounted } from 'svelte'
   import { css, classNames } from '../../utils'
-  import JQueryLazyLoader from '../loaders/JQueryLazyLoader.svelte'
-  import SearchLoader from '../loaders/SearchLoader.svelte'
-  import { search } from '../module'
+  import { search } from '../utils'
+
   let _class
   export let disabled = false
   export let speed = ''
@@ -23,14 +27,16 @@
   export let scrolling = false
   export let style
   export { _class as class }
-  export let placeholder = ""
+  export let placeholder = ''
   export let settings = {}
   export let onMount
 
   const executer = search(settings)
+  const dispatch = createEventDispatcher();
 
   onMounted(() => {
     onMount?.($executer)
+    dispatch('mount', $executer)
   })
 
   export function query(callback) {
@@ -122,35 +128,37 @@
     executer.module('generate results', response)
     return this
   }
+
+  export function ready(){
+    return isReady
+  }
 </script>
 
-<JQueryLazyLoader>
-  <SearchLoader>
-    <div
-      bind:this="{$executer}"
-      use:css="{style}"
-      class="{classNames(
-        _class,
-        'ui',
-        animation,
-        speed,
-        { disabled, category, fluid, local, long, scrolling, loading, aligned },
-        'search'
-      )}"
-    >
-      <input
-        class="prompt"
-        type="text"
-        {placeholder}
-        on:change
-        on:input
-        on:keyup
-        on:keydown
-        on:keypress
-        on:focus
-        on:blur
-      /> 
-      <div class="results"></div>
-    </div>
-  </SearchLoader>
-</JQueryLazyLoader>
+{#await isReady then value}
+  <div
+    bind:this="{$executer}"
+    use:css="{style}"
+    class="{classNames(
+      _class,
+      'ui',
+      animation,
+      speed,
+      { disabled, category, fluid, local, long, scrolling, loading, aligned },
+      'search'
+    )}"
+  >
+    <input
+      class="prompt"
+      type="text"
+      placeholder="{placeholder}"
+      on:change
+      on:input
+      on:keyup
+      on:keydown
+      on:keypress
+      on:focus
+      on:blur
+    />
+    <div class="results"></div>
+  </div>
+{/await}

@@ -1,3 +1,8 @@
+<script context="module">
+  import { stickyLoader } from '../utils'
+  const isReady = stickyLoader()
+</script>
+
 <script>
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
@@ -5,7 +10,6 @@
   import '../../../semantic/dist/components/sticky.min.css'
 
   import { classNames, css } from '../../utils'
-  import { StickyLoader, JQueryLazyLoader } from '../loaders'
 
   let _class
   export { _class as class }
@@ -33,14 +37,12 @@
   }
 </script>
 
-<JQueryLazyLoader>
-  <StickyLoader>
-    <div
-      use:css="{style}"
-      use:module="{settings}"
-      class="{classNames(_class, 'ui sticky')}"
-    >
-      <slot />
-    </div>
-  </StickyLoader>
-</JQueryLazyLoader>
+{#await isReady then value}
+  <div
+    use:css="{style}"
+    use:module="{settings}"
+    class="{classNames(_class, 'ui sticky')}"
+  >
+    <slot />
+  </div>
+{/await}

@@ -1,4 +1,5 @@
 <script>
+  import { createEventDispatcher } from 'svelte'
   import { classNames, css } from '../../utils'
 
   let _class = ''
@@ -10,10 +11,17 @@
   export let tag = false
   export let circular = false
   export let inverted = false
+
+  const dispatch = createEventDispatcher()
+
+  function init(node) {
+    dispatch('mount', node)
+  }
 </script>
 
 <div
   use:css="{style}"
+  use:init
   class:basic
   class:tag
   class:circular

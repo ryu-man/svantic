@@ -1,8 +1,8 @@
 import type { SvelteComponentTyped } from 'svelte'
 import type { Size } from 'src/variations'
-import type { Component } from "../../component";
+import type { Component } from '../../component'
 
-interface CommentsProps extends Component{
+interface CommentsProps extends Component {
   // Comments can be collapsed, or hidden from view
   collapsed?: boolean
   // A comment list can be threaded to showing the relationship between conversations
@@ -15,6 +15,10 @@ interface CommentsProps extends Component{
   inverted?: boolean
 }
 
+type CommentEvents = {
+  mount: CustomEvent<HTMLDivElement>
+}
+
 /**
  * @description A basic list of comments
  * @example
@@ -22,4 +26,7 @@ interface CommentsProps extends Component{
  *    <Comment></Comment>
  * </Comments>
  */
-export default class Comments extends SvelteComponentTyped<CommentsProps> {}
+export default class Comments extends SvelteComponentTyped<
+  CommentsProps,
+  CommentEvents
+> {}
