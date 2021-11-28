@@ -1,1 +1,1 @@
-export { default as Message } from './message.svelte'
+export { default } from './message.svelte'

@@ -1,7 +1,10 @@
 import { default as Menu } from './menu.svelte'
 import { default as Item } from './item.svelte'
 
-Menu.item = Item
+export function init() {
+    // @ts-ignore
+    Menu.item = Item
+}
 
-export {Menu, Item}
+export { Item }
 export default Menu

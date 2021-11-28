@@ -1,5 +1,9 @@
-import { default as Statistics } from './statistics'
-import { default as Statistic } from './statistic'
+import { default as Statistics } from './statistics.svelte'
+import { default as Statistic } from './statistic.svelte'
+import { default as Label } from './label.svelte'
+import { default as Value } from './value.svelte'
 
-export { Statistic, Statistics }
+export function init()
+
+export { Statistics as Group, Label, Value }
 export default Statistic

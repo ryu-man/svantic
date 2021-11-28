@@ -1,2 +1,2 @@
-export { default } from './checkbox.svelte'
+export { default } from './checkbox'
 export { default as CheckboxSettings } from './settings'

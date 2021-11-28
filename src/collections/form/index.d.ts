@@ -1,3 +1,9 @@
-export { default as Form } from "./form";
-export { default as Field } from "./field";
-export { default as Fields } from "./fields";
+import { default as Form } from './form'
+import { default as Field } from './field'
+import { default as Fields } from './fields'
+
+export function init(): void
+
+export { Field, Fields }
+
+export default Form

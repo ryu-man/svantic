@@ -4,7 +4,9 @@ import { default as Content } from './content.svelte'
 import { default as Or } from './or.svelte'
 
 export function init() {
+    // @ts-ignore
     Button.Content = Content
+    // @ts-ignore
     Button.Or = Or
 }
 

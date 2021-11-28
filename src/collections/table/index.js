@@ -6,12 +6,20 @@ import { default as Row } from './row.svelte'
 import { default as Cell } from './cell.svelte'
 import { default as HCell } from './hcell.svelte'
 
-Table.header = Header
-Table.body = Body
-Table.footer = Footer
-Table.row = Row
-Table.cell = Cell
-Table.hcell = HCell
+export function init() {
+    // @ts-ignore
+    Table.Header = Header
+    // @ts-ignore
+    Table.Body = Body
+    // @ts-ignore
+    Table.Footer = Footer
+    // @ts-ignore
+    Table.Row = Row
+    // @ts-ignore
+    Table.Cell = Cell
+    // @ts-ignore
+    Table.Hcell = HCell
+}
 
-export { Table, Body, Cell, HCell, Footer, Header, Row }
+export { Body, Cell, HCell, Footer, Header, Row }
 export default Table

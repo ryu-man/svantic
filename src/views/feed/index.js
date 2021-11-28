@@ -5,13 +5,13 @@ import { default as ExtraImages } from './extra_images.svelte'
 import { default as ExtraText } from './extra_text.svelte'
 import { default as Label } from './label.svelte'
 
-Feed.label = Label
-Feed.content = Content
-Feed.date = Date
-Feed.extra = {
-    text: ExtraText,
-    images: ExtraImages
+export function init() {
+    Feed.Label = Label
+    Feed.Content = Content
+    Feed.Date = Date
+    Feed.ExtraText = ExtraText
+    Feed.ExtraImages = ExtraImages
 }
 
-export { Feed,Content,Date,ExtraImages,ExtraText,Label }
+export { Content, Date, ExtraImages, ExtraText, Label }
 export default Feed

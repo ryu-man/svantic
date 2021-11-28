@@ -6,10 +6,15 @@ import { default as Detail } from './detail.svelte'
 import { default as Group } from './labels.svelte'
 
 export function init() {
+    // @ts-ignore
     Label.Tag = Tag
+    // @ts-ignore
     Label.Ribbon = Ribbon
+    // @ts-ignore
     Label.Link = Link
+    // @ts-ignore
     Label.Detail = Detail
+    // @ts-ignore
     Label.Group = Group
 }
 

@@ -3,7 +3,8 @@ import { default as Item } from './item.svelte'
 
 
 export function init() {
-    List.item = Item
+    // @ts-ignore
+    List.Item = Item
 }
 
 export { Item }

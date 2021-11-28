@@ -8,5 +8,5 @@ import {default as Sub} from './sub.svelte'
 
 export function init()
 
-export { Header, H1, H2, H3, H4, H5, Sub }
+export { H1, H2, H3, H4, H5, Sub }
 export default Header

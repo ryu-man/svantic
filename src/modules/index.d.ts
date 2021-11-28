@@ -36,7 +36,7 @@ export { default as Rating } from './rating'
 
 export { default as Search } from './search'
 
-export { default as Sidebar } from './side_bar'
+export { default as Sidebar, Pusher, init as initSidebar } from './side_bar'
 
 export { default as Slider } from './slider'
 
