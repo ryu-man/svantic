@@ -41,6 +41,7 @@ export {
 export {
   Accordion,
   Calendar,
+  Checkbox,
   Dimmer,
   Dropdown,
   Embed,
@@ -55,6 +56,7 @@ export {
   Toast,
   AccordionController,
   CalendarController,
+  CheckboxController,
   DimmerController,
   DropdownController,
   EmbedController,
