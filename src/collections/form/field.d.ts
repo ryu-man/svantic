@@ -1,20 +1,21 @@
-import { SvelteComponentTyped} from 'svelte/internal';
-import { Style } from '../../style';
-import { Wide } from '../../variations';
-import { Component } from '../../component';
-declare type State = 'info' | 'warning' | 'error' | 'success' | 'disabled';
-interface FieldProps extends Component {
-    class?: string;
-    style?: Style;
-    state?: State;
-    wide?: Wide;
-    inline?: boolean;
-    disabled?: boolean;
-    required?: boolean;
+import { SvelteComponentTyped } from 'svelte/internal'
+import { Wide } from '../../variations'
+import type { MountEvent, SvanticEvents, SvanticProps } from '../../common'
+
+declare type State = 'info' | 'warning' | 'error' | 'success' | 'disabled'
+
+type FieldProps = SvanticProps & {
+  state?: State
+  wide?: Wide
+  inline?: boolean
+  disabled?: boolean
+  required?: boolean
 }
+
+type FieldEvents = MountEvent<HTMLDivElement>
+
 /**
- * Vomantic Field
+ * @description Form field
  */
-declare class Field extends SvelteComponentTyped<FieldProps> {
-}
-export default Field;
+declare class Field extends SvelteComponentTyped<FieldProps, FieldEvents> {}
+export default Field

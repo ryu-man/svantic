@@ -3,9 +3,9 @@
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/icon.min.css'
-  
+
   import { css, classNames } from '../../utils'
-import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher } from 'svelte'
 
   export let name = ''
   export let size = ''

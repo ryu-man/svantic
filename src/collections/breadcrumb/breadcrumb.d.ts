@@ -1,32 +1,25 @@
-import { SvelteComponentTyped} from 'svelte/internal';
-import type { Style } from '../../style';
-import type { Component } from '../../component';
+import type { SvelteComponentTyped } from 'svelte/internal'
+import type { Style } from '../../style'
+import type { Component } from '../../component'
+import type { MountEvent, SvanticProps } from '../../common'
 import Section from './section'
 import Divider from './divider'
+import type { Size } from 'src/variations'
 
-interface BreadcrumbProps extends Component {
-    class?: string;
-    active?: boolean;
-    disabled?: boolean;
-    fluid?: boolean;
-    circular?: boolean;
-    loading?: boolean;
-    primary?: boolean;
-    secondary?: boolean;
-    compact?: boolean;
-    basic?: boolean;
-    toggle?: boolean;
-    positive?: boolean;
-    negative?: boolean;
-    tertiary?: boolean;
-    inverted?: boolean;
-    icon?: boolean;
-    style?: Style;
+type BreadcrumbProps = SvanticProps & {
+  size?: Size
+  inverted?: boolean
 }
+
+type BreadcrumbEvents = MountEvent<HTMLDivElement>
+
 /**
- * Vomantic Breadcrumb
+ * @description Breadcrumb
  */
-export default class Breadcrumb extends SvelteComponentTyped<BreadcrumbProps> {
-    static section:new ()=>Section
-    static divider: new ()=>Divider
+export default class Breadcrumb extends SvelteComponentTyped<
+  BreadcrumbProps,
+  BreadcrumbEvents
+> {
+  static Section: new () => Section
+  static Divider: new () => Divider
 }

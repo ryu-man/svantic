@@ -26,6 +26,7 @@
   export let height = ''
   export let column
   export let menuDirection = ''
+  export let multiple
   export let link = false
   export let item = false
   export let long = false
@@ -37,7 +38,6 @@
   export let selection = false
   export let search = false
   export let clearable = false
-  export let multiple = false
   export let floating = false
   export let labeled = false
   export let icon = false
@@ -46,11 +46,12 @@
   export let pointing = false
   export let simple = false
   export let onMount
+  export let as = 'div'
 
   export let settings = {}
 
   const executer = dropdown(settings)
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher()
 
   onMounted(() => {
     onMount?.($executer)
@@ -242,52 +243,61 @@
     return executer.module('get placeholder')
   }
 
-  export function ready(){
+  export function ready() {
     return isReady
   }
+
+  $: classnames = classNames(
+    _class,
+    'ui',
+    height,
+    column,
+    speed,
+    wide,
+    size,
+    menuDirection,
+    {
+      link,
+      item,
+      long,
+      fluid,
+      label,
+      compact,
+      scrolling,
+      inverted,
+      active,
+      disabled,
+      loading,
+      error,
+      selection,
+      multiple: multiple === '' || multiple,
+      search,
+      clearable,
+      floating,
+      labeled,
+      icon,
+      button,
+      inline,
+      pointing,
+      simple
+    },
+    'dropdown'
+  )
 </script>
 
 {#await isReady then value}
-  <div
-    bind:this="{$executer}"
-    use:css="{style}"
-    class="{classNames(
-      _class,
-      'ui',
-      height,
-      column,
-      speed,
-      wide,
-      size,
-      menuDirection,
-      {
-        link,
-        item,
-        long,
-        fluid,
-        label,
-        compact,
-        scrolling,
-        inverted,
-        active,
-        disabled,
-        loading,
-        error,
-        selection,
-        search,
-        clearable,
-        multiple,
-        floating,
-        labeled,
-        icon,
-        button,
-        inline,
-        pointing,
-        simple
-      },
-      'dropdown'
-    )}"
-  >
-    <slot />
-  </div>
+  {#if as === 'div'}
+    <div bind:this="{$executer}" use:css="{style}" class="{classnames}">
+      <slot />
+    </div>
+  {:else}
+    <select
+      bind:this="{$executer}"
+      use:css="{style}"
+      multiple="{multiple}"
+      class="{classnames}"
+    >
+      <slot />
+    </select>
+  {/if}
 {/await}

@@ -41,6 +41,7 @@ export interface ButtonProps extends Component {
   loading?: boolean | Loading
   tabIndex?: number
   as?: 'div' | 'button'
+  type?: 'submit' | 'reset' | 'button' | 'menu'
 }
 /**
  * @description Svantic Button

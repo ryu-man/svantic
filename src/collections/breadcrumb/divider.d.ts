@@ -1,12 +1,11 @@
-import { SvelteComponentTyped} from 'svelte/internal';
-import type { Style } from '../../style';
-import type { Component } from '../../component'
+import type { SvelteComponentTyped } from 'svelte/internal'
+import type { SvanticProps } from '../../common'
 
-interface DividerProps extends Component {
-    class?: string;
-    style?: Style;
+type DividerProps = SvanticProps & {
+    active?: boolean
 }
+
 /**
- * Vomantic Divider
+ * @description Breadcrumb divider
  */
 export default class Divider extends SvelteComponentTyped<DividerProps> {}

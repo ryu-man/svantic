@@ -1,9 +1,8 @@
 import { SvelteComponentTyped } from 'svelte/internal'
-import {Module} from '../utils'
+import { Module } from '../utils'
 import CheckboxSettings from './settings'
 import type { MountEvent } from '../../common'
 
-declare type Type = 'radio' | 'slider' | 'toggle'
 declare type State = 'read-only' | 'checked' | 'disabled'
 
 interface CheckboxProps extends Module<CheckboxSettings> {
@@ -13,6 +12,9 @@ interface CheckboxProps extends Module<CheckboxSettings> {
   state?: State
   fitted?: boolean
   inverted?: boolean
+  radio?: boolean
+  toggle?: boolean
+  slider?: boolean
 }
 /**
  * @description Svantic Checkbox
@@ -21,7 +23,7 @@ declare class Checkbox extends SvelteComponentTyped<CheckboxProps> {
   /**
    * @description 	Switches a checkbox from current state
    */
-  toggle(): void
+  toggleCheckbox(): void
 
   /**
    * @description 	Set a checkbox state to checked

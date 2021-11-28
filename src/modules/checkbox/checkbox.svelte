@@ -21,17 +21,21 @@
   export let state = ''
   export let fitted = false
   export let inverted = false
+  export let radio = false
+  export let toggle = false
+  export let slider = false
+  export let name
   export let onMount
 
   const executer = checkbox(settings)
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher()
 
   onMounted(() => {
     onMount?.($executer)
     dispatch('mount', $executer)
   })
 
-  export function toggle() {
+  export function toggleCheckbox() {
     executer.module('toggle')
     return this
   }
@@ -131,7 +135,7 @@
     return executer.module('can uncheck')
   }
 
-  export function ready(){
+  export function ready() {
     return isReady
   }
 </script>
@@ -143,13 +147,12 @@
     class="{classNames(
       _class,
       'ui',
-      type,
       state,
-      { fitted, inverted },
+      { fitted, inverted, radio, slider, toggle },
       'checkbox'
     )}"
   >
-    <input type="checkbox" name="" />
+    <input type="{radio ? 'radio' : 'checkbox'}" name="{name}" />
     <slot />
   </div>
 {/await}

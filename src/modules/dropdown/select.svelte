@@ -25,6 +25,7 @@
   export let height = ''
   export let column
   export let menuDirection = ''
+  export let multiple
   export let link = false
   export let item = false
   export let long = false
@@ -36,7 +37,6 @@
   export let selection = false
   export let search = false
   export let clearable = false
-  export let multiple = false
   export let floating = false
   export let labeled = false
   export let icon = false

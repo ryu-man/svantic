@@ -34,6 +34,7 @@
   export let loading
   export let tabIndex
   export let as = 'div'
+  export let type
   export let style = {}
 
   $: emphasis = primary
@@ -87,15 +88,15 @@
   )
 </script>
 
-{#if as === 'button'}
-  <button use:css="{style}" use:init on:click class="{classProp}">
+{#if as === 'button' || type}
+  <button use:css="{style}" use:init on:click class="{classProp}" type="{type}">
     {#if typeof icon === 'string'}
       <Icon name="{icon}" />
     {/if}
     <slot />
   </button>
 {:else}
-  <div use:init on:click class="{classProp}">
+  <div use:css="{style}" use:init on:click class="{classProp}">
     {#if typeof icon === 'string'}
       <Icon name="{icon}" />
     {/if}

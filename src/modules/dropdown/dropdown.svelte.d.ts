@@ -30,10 +30,11 @@ import type { MountEvent } from '../../common'
 declare type Height = 'long' | 'very long'
 
 export interface DropdownProps extends Module<Settings> {
+  as?: 'div' | 'select'
   selection?: boolean
   search?: boolean
   clearable?: boolean
-  multiple?: boolean
+  multiple?: string | boolean
   floating?: boolean
   labeled?: boolean
   icon?: boolean
