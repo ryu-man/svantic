@@ -2,7 +2,7 @@
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/checkbox.min.css'
-  import { classNames, css } from '../../utils'
+  import { classNames, css, register } from '../../utils'
   import Controller from './controller'
 
   let _class = ''
