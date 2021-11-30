@@ -1,6 +1,6 @@
 {
   "name": "svantic",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "main": "./src/index.js",
   "module": "./src/index.js",
   "svelte": "./src/index.js",
@@ -40,7 +40,7 @@
     "validate": "svelte-check",
     "pretty": "prettier --write \"src/**/*.{svelte,js,ts}\"",
     "test": "jest",
-    "build:fomantic": "gulp build -f node_modules/fomantic-ui/gulpfile.js"
+    "build:fomantic": "cd node_modules/fomantic-ui && gulp install && gulp build"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.12.11",
