@@ -72,6 +72,7 @@ export {
   AccordionContent,
   AccordionTitle,
   Calendar,
+  Checkbox,
   Dimmer,
   Dimmable,
   Dropdown,
