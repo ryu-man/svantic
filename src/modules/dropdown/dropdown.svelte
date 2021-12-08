@@ -18,6 +18,7 @@
   export let style = {}
   export let size = ''
   export let wide = ''
+  export let basic = false
   export let active = false
   export let disabled = false
   export let loading
@@ -279,14 +280,15 @@
       button,
       inline,
       pointing,
-      simple
+      simple,
+      basic
     },
     'dropdown'
   )
 </script>
 
 {#await isReady then value}
-  {#if as === 'div'}
+  {#if as === 'div' && !selection}
     <div bind:this="{$executer}" use:css="{style}" class="{classnames}">
       <slot />
     </div>
