@@ -11,10 +11,10 @@ interface InputProps extends Component {
   color?: Color
   state?: State
   speed?: Speed
-  size?: Size
-  icon?: Float
-  labeled?: Float
-  action?: Float
+  size?: Size | boolean
+  icon?: Float | boolean
+  labeled?: Float | boolean
+  action?: Float | boolean
   animation?: Loading
   basic?: boolean
   fluid?: boolean
