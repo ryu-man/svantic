@@ -6,14 +6,14 @@ export {
 } from './accordion'
 
 export {
-    default as Dropdown,
-    Divider as DropdownDivider,
-    Header as DropdownHeader,
-    Item as DropdownItem,
-    Menu as DropdownMenu,
-    Select,
-    Text as DropwdownText,
-    init as initDropdown
+  default as Dropdown,
+  Divider as DropdownDivider,
+  Header as DropdownHeader,
+  Item as DropdownItem,
+  Menu as DropdownMenu,
+  Select,
+  Text as DropdownText,
+  init as initDropdown
 } from './dropdown'
 
 export {

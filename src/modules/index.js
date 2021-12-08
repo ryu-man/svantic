@@ -12,7 +12,7 @@ export {
     Item as DropdownItem,
     Menu as DropdownMenu,
     Select,
-    Text as DropwdownText,
+    Text as DropdownText,
     init as initDropdown
 } from './dropdown'
 

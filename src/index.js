@@ -80,7 +80,7 @@ export {
   DropdownHeader,
   DropdownMenu,
   DropdownItem,
-  DropwdownText,
+  DropdownText,
   Select,
   Embed,
   Modal,
