@@ -52,24 +52,26 @@
   )}"
 >
   <slot />
-  <input
-    use:setType
-    placeholder="{placeholder}"
-    min="{min}"
-    max="{max}"
-    minlength="{minLength}"
-    maxlength="{maxLength}"
-    pattern="{pattern}"
-    bind:value
-    on:focus
-    on:focusin
-    on:focusout
-    on:blur
-    on:input
-    on:change
-    on:keydown
-    on:keypress
-    on:keyup
-  />
+  <slot name="input">
+    <input
+      use:setType
+      placeholder="{placeholder}"
+      min="{min}"
+      max="{max}"
+      minlength="{minLength}"
+      maxlength="{maxLength}"
+      pattern="{pattern}"
+      bind:value
+      on:focus
+      on:focusin
+      on:focusout
+      on:blur
+      on:input
+      on:change
+      on:keydown
+      on:keypress
+      on:keyup
+    />
+  </slot>
   <slot name="after" />
 </div>
