@@ -32,10 +32,9 @@
   }
 </script>
 
-<img
+<div
   use:css="{style}"
   use:init
-  class:space
   class="{classNames(
     _class,
     'ui',
@@ -55,7 +54,7 @@
     },
     'image'
   )}"
-  src="{src}"
-  alt="{alt}"
-/>
-<slot />
+>
+  <slot />
+  <img src="{src}" alt="{alt}" />
+</div>
