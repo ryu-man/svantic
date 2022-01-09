@@ -1,7 +1,7 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import { Style } from '../../style'
 import { Attach, Color, Size, Speed } from '../../variations'
-import {Module} from '../utils'
+import { Module } from '../utils'
 import ProgressSettings from './settings'
 import type { MountEvent } from '../../common'
 
@@ -38,6 +38,10 @@ interface ProgressProps extends Module<ProgressSettings> {
  * @description Svantic Progress
  */
 export default class Progress extends SvelteComponentTyped<ProgressProps> {
+  static Bar: new () => Bar
+  static Multiple: new () => Multiple
+  static Label: new () => Label
+
   setPercent(percent: number): this
 
   setProgress(value: number): this
