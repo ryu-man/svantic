@@ -1,16 +1,5 @@
-<script context="module">
-  import { dropdownLoader, transitionLoader } from '../utils'
-  const isReady = Promise.all([transitionLoader(), dropdownLoader()])
-</script>
-
 <script>
-  import '../../../semantic/dist/components/site.min.css'
-  import '../../../semantic/dist/components/reset.min.css'
-  import '../../../semantic/dist/components/transition.min.css'
-
-  import { createEventDispatcher, onMount as onMounted } from 'svelte'
-  import { css, classNames } from '../../utils'
-  import { dropdown } from '../utils'
+  import Dropdown from './dropdown.svelte'
 
   let _class = ''
   export { _class as class }
@@ -49,241 +38,191 @@
 
   export let settings = {}
 
-  const executer = dropdown(settings)
-  const dispatch = createEventDispatcher();
-
-  onMounted(() => {
-    onMount?.($executer)
-    dispatch('mount', $executer)
-  })
-
-  $: executer.setSettings(settings)
+  let instance
 
   /*********************************************************************************************/
   export function setSettings(settings) {
-    executer.setSettings(settings)
+    instance.setSettings(settings)
     return this
   }
 
   export function setupMenu(values) {
-    executer.module('setup menu', values)
+    instance.module('setup menu', values)
     return this
   }
 
   export function changeValues(values) {
-    executer.module('change values', values)
+    instance.module('change values', values)
     return this
   }
 
   export function refresh() {
-    executer.module('refresh')
+    instance.module('refresh')
     return this
   }
 
   export function toggle() {
-    executer.module('toggle')
+    instance.module('toggle')
     return this
   }
 
   export function show(callback = () => {}, preventFocus = true) {
-    executer.module('show', callback, preventFocus)
+    instance.module('show', callback, preventFocus)
     return this
   }
 
   export function hide(callback, preventBlur) {
-    executer.module('hide', callback, preventBlur)
+    instance.module('hide', callback, preventBlur)
     return this
   }
 
   export function clear(preventChangeTrigger) {
-    executer.module('clear', preventChangeTrigger)
+    instance.module('clear', preventChangeTrigger)
     return this
   }
 
   export function hideOthers() {
-    executer.module('hide others')
+    instance.module('hide others')
     return this
   }
 
   export function restoreDefaults(preventChangeTrigger) {
-    executer.module('restore defaults', preventChangeTrigger)
+    instance.module('restore defaults', preventChangeTrigger)
     return this
   }
 
   export function restoreDefaultText() {
-    executer.module('restore default')
+    instance.module('restore default')
     return this
   }
 
   export function restorePlaceholderText() {
-    executer.module('restore placeholder')
+    instance.module('restore placeholder')
     return this
   }
 
   export function restoreDefaultValue() {
-    executer.module('restore default')
+    instance.module('restore default')
     return this
   }
 
   export function saveDefaults() {
-    executer.module('save defaults')
+    instance.module('save defaults')
     return this
   }
 
   export function setSelected(...args) {
-    executer.module('set selected', ...args)
+    instance.module('set selected', ...args)
     return this
   }
 
   export function removeSelected(value) {
-    executer.module('remove selected', value)
+    instance.module('remove selected', value)
     return this
   }
 
   export function setExactly(...args) {
-    executer.module('set exactly', ...args)
+    instance.module('set exactly', ...args)
     return this
   }
 
   export function setText(text) {
-    executer.module('set text', text)
+    instance.module('set text', text)
     return this
   }
 
   export function setValue(value, text, $selected, preventChangeTrigger) {
-    executer.module('set value', value, text, $selected, preventChangeTrigger)
+    instance.module('set value', value, text, $selected, preventChangeTrigger)
     return this
   }
 
   export function getText() {
-    return executer.module('get text')
+    return instance.module('get text')
   }
 
   export function getValue() {
-    return executer.module('get value')
+    return instance.module('get value')
   }
 
   export function getItem(value) {
-    return executer.module('get item', value)
+    return instance.module('get item', value)
   }
 
   export function bindTouchEvents() {
-    executer.module('bind touch')
+    instance.module('bind touch')
     return this
   }
 
   export function bindMouseEvents() {
-    executer.module('bind mouse')
+    instance.module('bind mouse')
     return this
   }
 
   export function bindIntent() {
-    executer.module('bind intent')
+    instance.module('bind intent')
     return this
   }
 
   export function unbindIntent() {
-    executer.module('unbind intent')
+    instance.module('unbind intent')
     return this
   }
 
   export function determineEventInModule() {
-    executer.module('determine eventInModule')
+    instance.module('determine eventInModule')
     return this
   }
 
   export function determineSelectAction(text, value) {
-    executer.module('determine select', text, value)
+    instance.module('determine select', text, value)
     return this
   }
 
   export function setActive() {
-    executer.module('set active')
+    instance.module('set active')
     return this
   }
 
   export function setVisible() {
-    executer.module('set visible')
+    instance.module('set visible')
     return this
   }
 
   export function removeActive() {
-    executer.module('remove active')
+    instance.module('remove active')
     return this
   }
 
   export function removeVisible() {
-    executer.module('remove visible')
+    instance.module('remove visible')
     return this
   }
 
   export function isSelection() {
-    return executer.module('is selection')
+    return instance.module('is selection')
   }
 
   export function isAnimated() {
-    return executer.module('is animated')
+    return instance.module('is animated')
   }
 
   export function isVisible() {
-    return executer.module('is visible')
+    return instance.module('is visible')
   }
 
   export function isHidden() {
-    return executer.module('is hidden')
+    return instance.module('is hidden')
   }
 
   export function getDefaultText() {
-    return executer.module('get default')
+    return instance.module('get default')
   }
 
   export function getPlaceholderText() {
-    return executer.module('get placeholder')
+    return instance.module('get placeholder')
   }
 </script>
 
-{#await isReady then value}
-  <select
-    bind:this="{$executer}"
-    use:css="{style}"
-    multiple="{multiple}"
-    class="{classNames(
-      _class,
-      'ui',
-      height,
-      column,
-      speed,
-      wide,
-      size,
-      menuDirection,
-      {
-        link,
-        item,
-        long,
-        fluid,
-        label,
-        compact,
-        scrolling,
-        inverted,
-        active,
-        disabled,
-        loading,
-        error,
-        selection,
-        search,
-        clearable,
-        multiple,
-        floating,
-        labeled,
-        icon,
-        button,
-        inline,
-        pointing,
-        simple
-      },
-      'dropdown'
-    )}"
-  >
-    <slot />
-  </select>
-{/await}
+<Dropdown bind:this={instance} as="select" {...$$restProps}>
+  <slot />
+</Dropdown>
