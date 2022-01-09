@@ -4,7 +4,7 @@ interface Duration {
   show?: number
   hide?: number
 }
-export interface DimmerSettings {
+export default interface DimmerSettings {
   // Whether dimmers should use flex or legacy positioning
   useFlex: boolean
   // Specify a variation to add when generating dimmer, like inverted

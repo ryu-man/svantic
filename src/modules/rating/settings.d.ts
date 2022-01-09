@@ -1,2 +1,1 @@
-export interface RatingSettings {
-}
+export default interface RatingSettings {}

@@ -1,5 +1,5 @@
 import type { SvelteComponentTyped } from 'svelte'
-import {Size } from '../../variations'
+import { Size } from '../../variations'
 
 type Unite =
   | 'rectangle'
@@ -31,4 +31,7 @@ interface AdProps {
   dataText?: string
   size?: Size
 }
-export default class Ad extends SvelteComponentTyped<AdProps> {}
+type AdEvents = {
+  mount: CustomEvent<HTMLDivElement>
+}
+export default class Ad extends SvelteComponentTyped<AdProps, AdEvents> {}

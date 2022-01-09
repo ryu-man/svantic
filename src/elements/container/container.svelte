@@ -2,7 +2,9 @@
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/container.min.css'
-  import { css, register, classNames } from '../../utils'
+
+  import { css, classNames } from '../../utils'
+  import { createEventDispatcher } from 'svelte'
 
   let _class = ''
   export { _class as class }
@@ -10,20 +12,16 @@
   export let aligned
   export let fluid = false
   export let justified = false
-  export let on = {}
+
+  const dispatch = createEventDispatcher()
 
   function init(node) {
-    css(node, style)
-    const unregister = register(node, on)
-    return {
-      destroy() {
-        unregister()
-      }
-    }
+    dispatch('mount', node)
   }
 </script>
 
 <div
+  use:css="{style}"
   use:init
   class="{classNames(_class, 'ui', { justified, fluid, aligned }, 'container')}"
 >

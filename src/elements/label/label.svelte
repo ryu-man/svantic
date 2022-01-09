@@ -4,7 +4,8 @@
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/label.min.css'
 
-  import { css, register, classNames } from '../../utils'
+  import { css, classNames } from '../../utils'
+  import { createEventDispatcher } from 'svelte'
 
   let _class = ''
   export { _class as class }
@@ -23,22 +24,18 @@
   export let corner = false
   export let pointing = false
   export let image = false
-  
-  export let on = {}
+
   export let style = {}
 
+  const dispatch = createEventDispatcher()
+
   function init(node) {
-    css(node, style)
-    const unregister = register(node, on)
-    return {
-      destroy() {
-        unregister()
-      }
-    }
+    dispatch('mount', node)
   }
 </script>
 
 <div
+  use:css="{style}"
   use:init
   class="{classNames(
     _class,

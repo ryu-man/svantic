@@ -1,2 +1,2 @@
-export { default as Search } from "./search";
-export { default as SearchController } from "./controller";
+export { default } from './search'
+export { default as SearchSettings } from './settings'

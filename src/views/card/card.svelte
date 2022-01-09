@@ -3,6 +3,7 @@
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/card.min.css'
   import { classNames, css, register } from '../../utils'
+import { createEventDispatcher } from 'svelte';
 
   let _class
   export let link = ''
@@ -17,20 +18,16 @@
   export let doubling = false
   export let stackable = false
   export let horizontal = false
-  export let on = {}
   export let style
   export { _class as class }
 
   let attrs = {}
   link && (attrs = { href: link })
 
+  const dispatch = createEventDispatcher();
+  
   function init(node) {
-    const unregister = register(node, on)
-    return {
-      destroy() {
-        unregister()
-      }
-    }
+    dispatch('mount', node)
   }
 </script>
 

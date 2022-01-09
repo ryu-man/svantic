@@ -1,35 +1,48 @@
+<script context="module">
+  import { stickyLoader } from '../utils'
+  const isReady = stickyLoader()
+</script>
+
 <script>
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/sticky.min.css'
-  import Controller from './controller'
+
   import { classNames, css } from '../../utils'
 
   let _class
   export { _class as class }
   export let style
+
+  /**
+   * @type {SemanticUI.DropdownSettings.Param}
+   */
   export let settings = {}
-  export let onMount
 
+  /**
+   * @type {SemanticUI.Dropdown}
+   */
+  let exec
   function module(node, settings) {
-    const controller = new Controller(node, settings)
-    onMount?.(controller)
+    css(node, style)
 
-    return {
-      // the node has been removed from the DOM
-      destroy() {
-        controller.destroy()
-        controller = null
-      }
-    }
+    /**
+     * @type {JQueryStatic}
+     */
+    const jQuery = window['JQuery']
+
+    exec = (args) => jQuery(node).sticky(args)
+    exec(settings)
   }
 </script>
 
-<div
-  use:css="{style}"
-  use:module="{settings}"
-  class="{classNames(_class, 'ui sticky')}"
->
-  <slot />
-</div>
+{#await isReady then value}
+  <div
+    use:css="{style}"
+    use:module="{settings}"
+    class="{classNames(_class, 'ui sticky')}"
+  >
+    <slot />
+  </div>
+{/await}

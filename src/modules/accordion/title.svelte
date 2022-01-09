@@ -1,12 +1,19 @@
 <script>
-  import { classNames, css } from '../../utils'
+    import { createEventDispatcher } from 'svelte';
+    import { classNames, css } from '../../utils'
+  
+    let _class
+    export { _class as class }
+    export let style
+    export let active = false
 
-  let _class
-  export { _class as class }
-  export let style
-  export let active = false
-</script>
+    const dispatch = createEventDispatcher()
 
-<div use:css="{style}" class="{classNames(_class, { active }, 'title')}">
-  <slot />
-</div>
+  function init(node) {
+    dispatch('mount', node)
+  }
+  </script>
+  
+  <div use:css="{style}" use:init class="{classNames(_class, { active }, 'title')}">
+    <slot />
+  </div>

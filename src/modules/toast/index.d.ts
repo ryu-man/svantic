@@ -1,2 +1,2 @@
-export {default as Toast} from './toast.svelte'
-export {default as ToastController} from './controller'
+export { default } from './toast.svelte'
+export { default as ToastSettings } from './settings'

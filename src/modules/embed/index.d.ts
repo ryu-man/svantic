@@ -1,2 +1,2 @@
-export { default as Embed } from "./embed";
-export { default as EmbedController } from "./controller";
+export { default } from "./embed";
+export { EmbedSettings } from './settings'

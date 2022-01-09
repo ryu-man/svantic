@@ -11,14 +11,21 @@ import type Text from './text'
 import type Actions from './actions'
 
 interface CommentProps extends Component {}
-export default class Comment extends SvelteComponentTyped<CommentProps> {
-  static avatar: new () => Avatar
-  static author: new () => Author
-  static content: new () => Content
-  static date: new () => Date
-  static meta: new () => Meta
-  static rating: new () => Rating
-  static reply: new () => Reply
-  static text: new () => Text
-  static actions: new () => Actions
+
+type CommentEvents = {
+  mount: CustomEvent<HTMLDivElement>
+}
+export default class Comment extends SvelteComponentTyped<
+  CommentProps,
+  CommentEvents
+> {
+  static Avatar: new () => Avatar
+  static Author: new () => Author
+  static Content: new () => Content
+  static Date: new () => Date
+  static Meta: new () => Meta
+  static Rating: new () => Rating
+  static Reply: new () => Reply
+  static Text: new () => Text
+  static Actions: new () => Actions
 }

@@ -6,5 +6,7 @@ import { default as H4 } from './h4.svelte'
 import { default as H5 } from './h5.svelte'
 import {default as Sub} from './sub.svelte'
 
-export { Header, H1, H2, H3, H4, H5, Sub }
+export function init()
+
+export { H1, H2, H3, H4, H5, Sub }
 export default Header

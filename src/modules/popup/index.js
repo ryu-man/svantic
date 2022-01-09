@@ -1,8 +1,11 @@
-export { default as PopupController } from './controller'
 import { default as Popup } from './popup.svelte'
 import { default as Header } from './header.svelte'
+import { default as Body } from './Body.svelte'
 
-Popup.Header = Header
+export function init() {
+    Popup.Header = Header
+    Popup.Body = Body
+}
 
-export { Popup, Header }
+export { Header, Body }
 export default Popup

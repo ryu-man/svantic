@@ -1,12 +1,13 @@
 import { SvelteComponentTyped} from 'svelte/internal';
-import type { Style } from '../../style';
+import { Style } from '../../style';
+import type { MountEvent } from '../../common'
 
 interface HeaderProps {
     class?: string;
     style?: Style;
 }
 /**
- * Vomantic Popup
+ * @description SVantic PopupHeader
  */
 declare class Header extends SvelteComponentTyped<HeaderProps> {
 }

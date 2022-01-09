@@ -1,7 +1,8 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import { Style } from '../../style'
 import { Component } from '../../component'
-import type { Icons } from '../icon/icon'
+import type { Icons } from '../icon/icon.svelte'
+import type Group from './steps'
 
 declare type State = 'completed' | 'active' | 'disabled'
 interface StepProps extends Component {
@@ -10,10 +11,12 @@ interface StepProps extends Component {
   disabled?: boolean
   link?: boolean
   href?: string
-  as?: 'div'|'a'
+  as?: 'div' | 'a'
   icon?: Icons
 }
 /**
- * Vomantic Step
+ * Step
  */
-export default class Step extends SvelteComponentTyped<StepProps> {}
+export default class Step extends SvelteComponentTyped<StepProps> {
+  static Group: new () => Group
+}

@@ -1,7 +1,11 @@
 import { default as List } from './list.svelte'
 import { default as Item } from './item.svelte'
 
-List.item = Item
 
-export { List, Item }
+export function init() {
+    // @ts-ignore
+    List.Item = Item
+}
+
+export { Item }
 export default List

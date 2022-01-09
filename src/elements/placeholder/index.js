@@ -4,10 +4,17 @@ import { default as Image } from './image.svelte'
 import { default as Paragraph } from './paragragh.svelte'
 import { default as Line } from './line.svelte'
 
-Placeholder.Header = Header
-Placeholder.Image = Image
-Placeholder.Paragraph = Paragraph
-Placeholder.Line = Line
+export function init(){
+    // @ts-ignore
+    Placeholder.Header = Header
+    // @ts-ignore
+    Placeholder.Image = Image
+    // @ts-ignore
+    Placeholder.Paragraph = Paragraph
+    // @ts-ignore
+    Placeholder.Line = Line
+}
 
-export { Placeholder, Header, Image, Paragraph, Line }
+export { Header, Image, Paragraph, Line }
+
 export default Placeholder

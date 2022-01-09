@@ -1,2 +1,2 @@
-export { default as Slider } from "./slider";
-export { default as SliderController } from "./controller";
+export { default } from "./slider";
+export { default as SliderSettings} from './settings'

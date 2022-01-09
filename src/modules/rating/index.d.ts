@@ -1,2 +1,2 @@
-export { default as Rating } from "./rating";
-export { default as RatingController } from "./controller";
+export { default } from "./rating";
+export {default as RatingSettings} from './settings'

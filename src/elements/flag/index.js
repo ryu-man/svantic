@@ -1,1 +1,1 @@
-export {default as Flag} from './flag.svelte'
+export { default } from './flag.svelte'

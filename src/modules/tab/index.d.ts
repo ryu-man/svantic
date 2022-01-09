@@ -1,7 +1,8 @@
-import { default as TabMenu } from './tabular_menu'
-import { default as Tab } from './tab'
-import { default as Item } from './item'
-import {default as TabController} from './controller'
+import { default as Tabs } from './tabs.svelte'
+import { default as Tab } from './tab.svelte'
+import { default as TabSettings } from './settings'
 
-export { TabMenu, Tab, Item, TabController }
-export default TabMenu
+export function init()
+
+export { Tab, TabsSettings }
+export default Tabs

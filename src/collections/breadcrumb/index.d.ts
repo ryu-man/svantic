@@ -1,3 +1,8 @@
-export { default as Breadcrumb } from "./breadcrumb";
-export { default as Section } from "./section";
-export { default as Divider } from "./divider";
+import { default as Breadcrumb } from './breadcrumb'
+import { default as Section } from './section'
+import { default as Divider } from './divider'
+
+export function init() : void
+
+export { Section, Divider }
+export default Breadcrumb

@@ -1,7 +1,11 @@
 import type { SvelteComponentTyped } from 'svelte'
-import type { Component } from "../../component";
+import type { Component } from '../../component'
 
-interface ReplyProps extends Component{}
+interface ReplyProps extends Component {}
+
+type ReplyEvents = {
+  mount: CustomEvent<HTMLDivElement>
+}
 
 /**
  * @description Comment Reply from
@@ -12,4 +16,7 @@ interface ReplyProps extends Component{}
         </Button>
     </Comment.reply>
  */
-export default class Reply extends SvelteComponentTyped<ReplyProps> {}
+export default class Reply extends SvelteComponentTyped<
+  ReplyProps,
+  ReplyEvents
+> {}

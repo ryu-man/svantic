@@ -1,10 +1,17 @@
+<script context="module">
+  import { ratingLoader } from '../utils'
+  const isReady = ratingLoader()
+</script>
+
 <script>
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/rating.min.css'
-  import { css } from '../../utils'
-  import Controller from './controller'
+
+  import { createEventDispatcher, onMount as onMounted } from 'svelte'
+  import { classNames, css } from '../../utils'
+  import { rating as ratingModule } from '../utils'
 
   let _class
   export let style
@@ -18,27 +25,46 @@
   export let settings = {}
   export let onMount
 
-  function module(node, settings) {
-    // the node has been mounted in the DOM
-    css(style)
+  const executer = ratingModule(settings)
+  const dispatch = createEventDispatcher();
 
-    let controller = new Controller(node, settings)
-    onMount?.(controller)
+  onMounted(() => {
+    onMount?.($executer)
+    dispatch('mount', $executer)
+  })
 
-    return {
-      // the node has been removed from the DOM
-      destroy() {
-        controller.destroy()
-        controller = null
-      }
-    }
+  export function setRating(rating) {
+    return executer.module('set rating', rating)
+  }
+
+  export function getRating() {
+    return executer.module('get rating')
+  }
+
+  export function disable() {
+    return executer.module('disable')
+  }
+
+  export function enable() {
+    return executer.module('enable')
+  }
+
+  export function clearRating() {
+    return executer.module('close rating')
+  }
+
+  export function ready(){
+    return isReady
   }
 </script>
 
-<div
-  use:module="{settings}"
-  class:disabled
-  class="{color} {size} ui rating {_class}"
-  data-rating="{rating}"
-  data-max-rating="{maxRating}"
-></div>
+{#await isReady then value}
+  <div
+    bind:this="{$executer}"
+    use:css="{style}"
+    class:disabled
+    class="{classNames('ui', color, size, { icon }, 'rating', _class)}"
+    data-rating="{rating}"
+    data-max-rating="{maxRating}"
+  ></div>
+{/await}

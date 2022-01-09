@@ -1,2 +1,1 @@
-export { default as Sticky } from "./sticky";
-export { default as StickyController } from "./sticky";
+export { default } from "./sticky";

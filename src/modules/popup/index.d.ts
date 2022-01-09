@@ -1,6 +1,9 @@
-export { default as PopupController } from './controller'
 import { default as Popup } from './popup.svelte'
 import { default as Header } from './header.svelte'
+import { default as Body } from './Body.svelte'
+export { PopupSettings } from './settings'
 
-export { Popup, Header }
+export function init()
+
+export { Header, Body }
 export default Popup

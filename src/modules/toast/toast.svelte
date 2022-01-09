@@ -1,10 +1,17 @@
+<script context="module">
+  import { toastLoader } from '../utils'
+  const isReady = toastLoader()
+</script>
+
 <script>
   import '../../../semantic/dist/components/site.min.css'
   import '../../../semantic/dist/components/reset.min.css'
   import '../../../semantic/dist/components/transition.min.css'
   import '../../../semantic/dist/components/toast.min.css'
-  import { classNames, css, register } from '../../utils'
-  import Controller from './controller'
+
+  import { createEventDispatcher, onMount as onMounted } from 'svelte'
+  import { classNames, css } from '../../utils'
+  import { toast } from '../utils'
 
   let _class
   export { _class as class }
@@ -12,33 +19,58 @@
   export let color = ''
   export let icon = false
   export let style
-  export let on = {}
   export let settings = {}
-  export let onMount
+  export let onMount = (_) => {}
 
-  function module(node, settings) {
-    // the node has been mounted in the DOM
-    css(node, style)
+  const executer = toast(settings)
+  const dispatch = createEventDispatcher();
 
-    const unregister = register(node, on)
+  onMounted(() => {
+    onMount($executer)
+    dispatch('mount', $executer)
+  })
 
-    let controller = new Controller(node, settings)
-    onMount?.(controller)
+  /*********************************************************************************************/
 
-    return {
-      // the node has been removed from the DOM
-      destroy() {
-        unregister()
-        controller.destroy()
-        controller = null
-      }
-    }
+  export function setSettings(settings) {
+    executer.module(settings)
+    return this
+  }
+
+  export function animatePause() {
+    executer.module('animate pause')
+    return this
+  }
+
+  export function animateContinue() {
+    executer.module('animate continue')
+    return this
+  }
+
+  export function close() {
+    executer.module('close')
+    return this
+  }
+
+  export function getToasts() {
+    return executer.module('get toasts')
+  }
+
+  export function getRemainingTime() {
+    return executer.module('get remainingTime')
+  }
+
+  export function ready(){
+    return isReady
   }
 </script>
 
-<div
-  use:module="{settings}"
-  class="{classNames(_class, 'ui', { icon }, color, type)}"
->
-  <slot />
-</div>
+{#await isReady then value}
+  <div
+    bind:this="{$executer}"
+    use:css="{style}"
+    class="{classNames(_class, 'ui', { icon }, color, type)}"
+  >
+    <slot />
+  </div>
+{/await}

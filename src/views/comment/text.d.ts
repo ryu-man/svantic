@@ -1,6 +1,10 @@
-import type { SvelteComponentTyped } from "svelte";
-import type { Component } from "../../component";
+import type { SvelteComponentTyped } from 'svelte'
+import type { Component } from '../../component'
 
-interface TextProps extends Component{}
+interface TextProps extends Component {}
 
-export default class Text extends SvelteComponentTyped<TextProps>{}
+type TextEvents = {
+  mount: CustomEvent<HTMLDivElement>
+}
+
+export default class Text extends SvelteComponentTyped<TextProps, TextEvents> {}

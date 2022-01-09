@@ -1,5 +1,6 @@
 import { Component } from '../../component'
 import { SvelteComponentTyped } from 'svelte'
+import type Content from './content'
 
 type Type = 'fade'|'move'|'rotate'
 type Direction = 'up'|'down'|'left'|'right'
@@ -14,4 +15,6 @@ interface RevealProps extends Component {
 /**
  * Vomantic Reveal
  */
-export default class Reveal extends SvelteComponentTyped<RevealProps> {}
+export default class Reveal extends SvelteComponentTyped<RevealProps> {
+    static Content: new () => Content
+}

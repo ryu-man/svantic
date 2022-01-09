@@ -1,10 +1,8 @@
-import type { SvelteComponentTyped } from "svelte";
-import type { Module } from "../module";
-import Controller from './controller'
+import { SvelteComponentTyped } from 'svelte'
+import {Module} from '../utils'
 import Settings from './settings'
+import type { MountEvent } from '../../common'
 
-interface StickyProps extends Module<Controller, Settings>{
+interface StickyProps extends Module<Settings> {}
 
-}
-
-export default class Sticky extends SvelteComponentTyped<StickyProps>{}
+export default class Sticky extends SvelteComponentTyped<StickyProps> {}

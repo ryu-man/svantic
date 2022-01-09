@@ -1,3 +1,5 @@
-export { default as Dimmer } from "./dimmer";
-export { default as Dimmable } from "./dimmable";
-export { default as DimmerController } from "./controller";
+import { default as Dimmer } from './dimmer.svelte'
+import { default as Dimmable } from './dimmable.svelte'
+
+export { Dimmable }
+export default Dimmer

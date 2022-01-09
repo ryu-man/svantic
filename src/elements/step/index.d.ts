@@ -1,2 +1,6 @@
-export { default as Step } from './step'
-export { default as Steps } from './steps'
+import { default as Step } from './step'
+export { default as Group } from './steps'
+
+export function init()
+
+export default Step

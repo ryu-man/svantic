@@ -10,19 +10,21 @@ import { default as Reply } from './reply.svelte'
 import { default as Text } from './text.svelte'
 import { default as Actions } from './actions.svelte'
 
-Comment.avatar = Avatar
-Comment.author = Author
-Comment.content = Content
-Comment.date = Date
-Comment.meta = Meta
-Comment.rating = Rating
-Comment.reply = Reply
-Comment.text = Text
-Comment.actions = Actions
+export function init() {
+  Comment.Avatar = Avatar
+  Comment.Author = Author
+  Comment.Content = Content
+  Comment.Date = Date
+  Comment.Meta = Meta
+  Comment.Rating = Rating
+  Comment.Reply = Reply
+  Comment.Text = Text
+  Comment.Actions = Actions
+  Comment.Group = Comments
+}
 
 export {
-  Comment,
-  Comments,
+  Comments as Group,
   Avatar,
   Author,
   Content,
@@ -33,4 +35,5 @@ export {
   Text,
   Actions
 }
+
 export default Comment

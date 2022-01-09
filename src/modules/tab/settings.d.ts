@@ -1,4 +1,4 @@
-export interface TabularMenuSettings {
+export default interface TabularMenuSettings {
   /**
    * @description Whether tab should load remote content as same url as history
    */

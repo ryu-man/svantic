@@ -1,2 +1,1 @@
-export {default as Sticky} from './sticky.svelte'
-export {default as StickyController} from './controller'
+export { default } from './sticky.svelte'

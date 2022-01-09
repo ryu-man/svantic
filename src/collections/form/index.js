@@ -2,8 +2,13 @@ import { default as Form } from './form.svelte'
 import { default as Field } from './field.svelte'
 import { default as Fields } from './fields.svelte'
 
- Form.field = Field
- Form.fields = Fields
+export function init() {
+    // @ts-ignore
+    Form.Field = Field
+    // @ts-ignore
+    Form.Fields = Fields
+}
 
- export {Form, Field, Fields}
- export default Form
+export { Field, Fields }
+
+export default Form

@@ -1,6 +1,13 @@
-import type { SvelteComponentTyped } from "svelte";
-import type { Component } from "../../component";
+import type { SvelteComponentTyped } from 'svelte'
+import type { Component } from '../../component'
 
-interface RatingProps extends Component{}
+interface RatingProps extends Component {}
 
-export default class Rating extends SvelteComponentTyped<RatingProps>{}
+type RatingEvents = {
+  mount: CustomEvent<HTMLDivElement>
+}
+
+export default class Rating extends SvelteComponentTyped<
+  RatingProps,
+  RatingEvents
+> {}

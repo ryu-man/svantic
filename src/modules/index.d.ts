@@ -1,16 +1,59 @@
-export { Dropdown, DropdownController } from './dropdown'
-export { Modal, ModalController } from './modal'
-export { Bar, Progress, ProgressController } from './progress'
-export { Rating, RatingController } from './rating'
-export { Search, SearchController } from './search'
-export { Sidebar, SidebarController } from './side_bar'
-export { Slider, SliderController } from './slider'
-export { Toast,ToastController } from './toast'
-export { Accordion, AccordionController } from './accordion'
-export { Dimmable, Dimmer, DimmerController } from './dimmer'
-export { Embed, EmbedController } from './embed'
-export { Popup, PopupController } from './popup'
-export {TabMenu, TabController} from './tab'
-export {Calendar, CalendarController} from './calendar'
-export {Checkbox, CheckboxController} from './checkbox'
-export {Sticky, StickyController} from './sticky'
+export {
+    default as Accordion,
+    Content as AccordionContent,
+    Title as AccordionTitle,
+    init as initAccordion
+} from './accordion'
+
+export {
+  default as Dropdown,
+  Divider as DropdownDivider,
+  Header as DropdownHeader,
+  Item as DropdownItem,
+  Menu as DropdownMenu,
+  Select,
+  Text as DropdownText,
+  init as initDropdown
+} from './dropdown'
+
+export {
+    default as Modal,
+    Actions as ModalActions,
+    Content as ModalContent,
+    Header as ModalHeader,
+    Description as ModalDescription,
+    init as initModal
+} from './modal'
+
+export {
+    default as Progress,
+    Bar as ProgressBar,
+    Multiple as ProgressMultiple,
+    init as initProgress
+} from './progress'
+
+export { default as Rating } from './rating'
+
+export { default as Search } from './search'
+
+export { default as Sidebar, Pusher, init as initSidebar } from './side_bar'
+
+export { default as Slider } from './slider'
+
+export { default as Toast } from './toast'
+
+export { default as Dimmer, Dimmable } from './dimmer'
+
+export { default as Embed } from './embed'
+
+export { default as Popup, Header as PopupHeader, init as initPopup } from './popup'
+
+export { default as Tabs, Tab, init as initTabs } from './tab'
+
+export { default as Calendar } from './calendar'
+
+export { default as Checkbox } from './checkbox'
+
+export { default as Sticky } from './sticky'
+
+export { controllable, Controllable } from './utils'

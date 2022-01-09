@@ -18,7 +18,7 @@ interface RangeProps extends Component {
     icon?: boolean;
 }
 /**
- * Vomantic Range
+ * Range
  */
 declare class Range extends SvelteComponentTyped<RangeProps> {
 }
