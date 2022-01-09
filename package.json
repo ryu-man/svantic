@@ -1,84 +1,75 @@
 {
-  "name": "svantic",
-  "version": "0.2.0",
-  "main": "./src/index.js",
-  "module": "./src/index.js",
-  "svelte": "./src/index.js",
-  "types": "./src/index.d.ts",
-  "description": "A set of Fomantic-UI components for Svelte framework",
-  "homepage": "https://github.com/ryu-man/svantic#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ryu-man/svantic.git"
-  },
-  "author": "ryu-man",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ryu-man/svantic/issues"
-  },
-  "keywords": [
-    "html",
-    "css",
-    "ui",
-    "framework",
-    "svelte",
-    "component",
-    "fomantic",
-    "semantic"
-  ],
-  "files": [
-    "src",
-    "semantic/dist/components/**/*.min.*"
-  ],
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview",
-    "validate": "svelte-check",
-    "pretty": "prettier --write \"src/**/*.{svelte,js,ts}\"",
-    "test": "jest",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "build:fomantic": "cd node_modules/fomantic-ui && gulp install && gulp build"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.14.5",
-    "@babel/preset-env": "^7.14.2",
-    "@storybook/addon-actions": "^6.3.7",
-    "@storybook/addon-essentials": "^6.3.7",
-    "@storybook/addon-links": "^6.3.7",
-    "@storybook/addon-svelte-csf": "^1.1.0",
-    "@storybook/builder-webpack5": "^6.3.7",
-    "@storybook/manager-webpack5": "^6.3.7",
-    "@storybook/svelte": "^6.3.7",
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.22",
-    "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/svelte": "^3.0.0",
-    "@types/jest": "^27.0.1",
-    "@types/jquery": "^3.5.6",
-    "@types/semantic-ui": "^2.2.7",
-    "babel-jest": "^27.0.6",
-    "babel-loader": "^8.2.2",
-    "fomantic-ui": "^2.8.7",
-    "gulp": "^4.0.2",
-    "jest": "^27.0.6",
-    "sirv": "^1.0.12",
-    "storybook-builder-vite": "^0.0.12",
-    "svelte": "^3.42.1",
-    "svelte-check": "^2.2.4",
-    "svelte-jester": "^2.0.1",
-    "svelte-layouts": "^0.9.5",
-    "svelte-loader": "^3.1.2",
-    "svelte-preprocess": "^4.7.4",
-    "vite": "^2.5.3"
-  },
-  "dependencies": {
-    "jquery": "^3.5.1"
-  },
-  "peerDependencies": {
-    "jquery": "^3.5.1"
-  }
+	"name": "svantic",
+	"version": "0.2.0",
+	"main": "./src/index.js",
+	"module": "./src/index.js",
+	"svelte": "./src/index.js",
+	"types": "./src/index.d.ts",
+	"description": "A set of Fomantic-UI components for Svelte framework",
+	"homepage": "https://github.com/ryu-man/svantic#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ryu-man/svantic.git"
+	},
+	"author": "ryu-man",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ryu-man/svantic/issues"
+	},
+	"keywords": [
+		"html",
+		"css",
+		"ui",
+		"framework",
+		"svelte",
+		"component",
+		"fomantic",
+		"semantic"
+	],
+	"files": [
+		"src",
+		"semantic/dist/components/**/*.min.*"
+	],
+	"scripts": {
+		"dev": "svelte-kit dev",
+		"build": "svelte-kit build",
+		"package": "svelte-kit package",
+		"preview": "svelte-kit preview",
+		"check": "svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
+		"storybook": "start-storybook -p 6006",
+		"build-storybook": "build-storybook",
+		"build:fomantic": "cd node_modules/fomantic-ui && gulp install && gulp build"
+	},
+	"devDependencies": {
+		"@storybook/addon-actions": "^6.3.7",
+		"@storybook/addon-essentials": "^6.3.7",
+		"@storybook/addon-links": "^6.3.7",
+		"@storybook/addon-svelte-csf": "^1.1.0",
+		"@storybook/builder-webpack5": "^6.3.7",
+		"@storybook/manager-webpack5": "^6.3.7",
+		"@storybook/svelte": "^6.3.7",
+		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/kit": "next",
+		"@typescript-eslint/eslint-plugin": "^4.31.1",
+		"@typescript-eslint/parser": "^4.31.1",
+		"@types/jquery": "^3.5.6",
+		"@types/semantic-ui": "^2.2.7",
+		"eslint": "^7.32.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-svelte3": "^3.2.1",
+		"fomantic-ui": "^2.8.7",
+		"gulp": "^4.0.2",
+		"prettier": "^2.4.1",
+		"prettier-plugin-svelte": "^2.4.0",
+		"svelte": "^3.44.0",
+		"svelte-check": "^2.2.6",
+		"svelte-layouts": "^0.9.5",
+		"svelte-preprocess": "^4.9.4",
+		"tslib": "^2.3.1",
+		"typescript": "^4.4.3"
+	},
+	"type": "module"
 }

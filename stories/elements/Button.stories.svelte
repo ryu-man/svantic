@@ -1,10 +1,10 @@
 <script>
   import { Meta, Story } from '@storybook/addon-svelte-csf'
   import { Centerize } from '../components'
-  import * as Button from '../../src/elements/button'
-  import Label from '../../src/elements/label'
-  import Icon from '../../src/elements/icon'
-  import Segment from '../../src/elements/segment'
+  import * as Button from '../../src/lib/elements/button'
+  import Label from '../../src/lib/elements/label'
+  import Icon from '../../src/lib/elements/icon'
+  import Segment from '../../src/lib/elements/segment'
   import { Row, Col } from 'svelte-layouts'
 </script>
 

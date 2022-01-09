@@ -1,7 +1,7 @@
 <script>
   import { Meta, Story } from '@storybook/addon-svelte-csf'
-  import Popup, { Header, Body } from '../../src/modules/popup'
-  import Button from '../../src/elements/button'
+  import Popup, { Header, Body } from '../../src/lib/modules/popup'
+  import Button from '../../src/lib/elements/button'
   import { Centerize } from '../components'
 
   /**

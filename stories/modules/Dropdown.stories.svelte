@@ -1,8 +1,8 @@
 <script>
   import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
   import { Centerize } from '../components'
-  import * as Dropdown from '../../src/modules/dropdown'
-  import { Icon } from '../../src/elements'
+  import * as Dropdown from '../../src/lib/modules/dropdown'
+  import { Icon } from '../../src/lib/elements'
 </script>
 
 <Meta title="Modules/Dropdown" component="{Dropdown}" argTypes={{}}/>

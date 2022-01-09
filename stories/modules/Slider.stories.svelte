@@ -1,6 +1,6 @@
 <script>
   import { Meta, Story } from '@storybook/addon-svelte-csf'
-  import Slider from '../../src/modules/slider'
+  import Slider from '../../src/lib/modules/slider'
 
   /**
    * @type {Slider}

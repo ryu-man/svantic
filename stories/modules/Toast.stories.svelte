@@ -1,7 +1,7 @@
 <script>
   import { Meta, Story } from '@storybook/addon-svelte-csf'
-  import Toast from '../../src/modules/toast'
-  import Button from '../../src/elements/button'
+  import Toast from '../../src/lib/modules/toast'
+  import Button from '../../src/lib/elements/button'
 
   /**
    * @type {Toast}

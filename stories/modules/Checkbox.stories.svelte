@@ -1,6 +1,6 @@
 <script>
   import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-  import Checkbox from '../../src/modules/checkbox'
+  import Checkbox from '../../src/lib/modules/checkbox'
 </script>
 
 <Meta title="Modules/Checkbox" component="{Checkbox}" argTypes="{{}}" />

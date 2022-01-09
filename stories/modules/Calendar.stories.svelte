@@ -1,6 +1,6 @@
 <script>
   import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-  import Calendar from '../../src/modules/calendar'
+  import Calendar from '../../src/lib/modules/calendar'
   import { Centerize } from '../components'
 
 </script>

@@ -1,8 +1,8 @@
 <script>
   import { Meta, Story } from '@storybook/addon-svelte-csf'
-  import * as Accordion from '../../src/modules/accordion'
-  import Segment from '../../src/elements/segment'
-  import Icon from '../../src/elements/icon'
+  import * as Accordion from '../../src/lib/modules/accordion'
+  import Segment from '../../src/lib/elements/segment'
+  import Icon from '../../src/lib/elements/icon'
 </script>
 
 <Meta title="Modules/Accordion" component="{Accordion.default}" />

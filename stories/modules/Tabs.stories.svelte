@@ -1,6 +1,6 @@
 <script>
   import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-  import * as Tabs from '../../src/modules/tab'
+  import * as Tabs from '../../src/lib/modules/tab'
 </script>
 
 <Meta title="Modules/Tabs" component="{Tabs.default}" argTypes="{{}}" />

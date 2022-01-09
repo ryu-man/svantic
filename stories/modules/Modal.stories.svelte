@@ -1,9 +1,9 @@
 <script>
   import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
   import { Centerize } from '../components'
-  import * as Modal from '../../src/modules/modal'
-  import Button from '../../src/elements/button'
-  import Icon from '../../src/elements/icon'
+  import * as Modal from '../../src/lib/modules/modal'
+  import Button from '../../src/lib/elements/button'
+  import Icon from '../../src/lib/elements/icon'
 
   /**
    * @type {Modal.default}

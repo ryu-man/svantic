@@ -1,6 +1,6 @@
 <script>
     import { Meta, Story } from '@storybook/addon-svelte-csf'
-    import Sidebar from '../../src/modules/side_bar'
+    import Sidebar from '../../src/lib/modules/side_bar'
   
     /**
      * @type {Sidebar}

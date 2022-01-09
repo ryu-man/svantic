@@ -1,6 +1,6 @@
 <script>
     import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-    import {Breadcrumb} from "../../src/collections";
+    import {Breadcrumb} from "../../src/lib/collections";
   </script>
   
   <Meta

@@ -1,6 +1,6 @@
 <script>
   import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-  import { Form, Fields, Field } from '../../src/collections'
+  import { Form, Fields, Field } from '../../src/lib/collections'
 
 </script>
 

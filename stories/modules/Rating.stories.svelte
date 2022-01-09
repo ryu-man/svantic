@@ -1,6 +1,6 @@
 <script>
     import { Meta, Story } from '@storybook/addon-svelte-csf'
-    import Rating from '../../src/modules/rating'
+    import Rating from '../../src/lib/modules/rating'
   
     /**
      * @type {Rating}

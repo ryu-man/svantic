@@ -1,6 +1,6 @@
 <script>
   import { Meta, Story } from '@storybook/addon-svelte-csf'
-  import Embed from '../../src/modules/embed'
+  import Embed from '../../src/lib/modules/embed'
 
   /**
    * @type {Embed}

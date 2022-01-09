@@ -1,6 +1,6 @@
 <script>
     import { Meta, Story } from '@storybook/addon-svelte-csf'
-    import Sticky from '../../src/modules/sticky'
+    import Sticky from '../../src/lib/modules/sticky'
   
     /**
      * @type {Sticky}

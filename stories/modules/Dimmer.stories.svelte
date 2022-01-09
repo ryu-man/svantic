@@ -1,7 +1,7 @@
 <script>
     import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-    import Dimmer from '../../src/modules/dimmer'
-    // import Dimmer from '../../src/modules/dimmer'
+    import Dimmer from '../../src/lib/modules/dimmer'
+    // import Dimmer from '../../src/lib/modules/dimmer'
   </script>
   
   <Meta title="Modules/Dimmer" component="{Dimmer}" argTypes="{{}}" />

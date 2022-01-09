@@ -1,6 +1,6 @@
 <script>
   import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-  import * as Progress from '../../src/modules/progress'
+  import * as Progress from '../../src/lib/modules/progress'
   import { Centerize } from '../components'
 
   /**
