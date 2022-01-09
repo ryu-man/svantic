@@ -25,6 +25,31 @@ declare class Accordion extends SvelteComponentTyped<
   static Title: new () => Title
   static Content: new () => Content
 
+  /**
+   *@description 	Refreshes all cached selectors and data
+   */
+  refresh(): void
+
+  /**
+   *@description 	Opens accordion content at index
+   */
+  open(index: number): void
+
+  /**
+   *@description 	Closes accordion content that are not active
+   */
+  closeOthers(): void
+
+  /**
+   *@description 	Closes accordion content at index
+   */
+  close(index: number): void
+
+  /**
+   *@description 	Toggles accordion content at index
+   */
+  toggle(index: number): void
+
   ready(): Promise<void>
 }
 export default Accordion
