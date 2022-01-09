@@ -1,28 +1,31 @@
 import { writable } from 'svelte/store'
 
-const getExecutor = (type) => (jQuerySelection) => (...args) => jQuerySelection[type]?.(...args)
+const getModule = (type, selection) => (...args) => selection[type]?.(...args)
 
 export function module(type, settings = {}) {
     const { set, subscribe } = writable()
-    const executor = getExecutor(type)
 
-    let jQuerySelection
+    let selection
     let module
-    let moduleSettings = settings
+    let _settings = settings
 
     return {
         set: (value) => {
-            module = executor(jQuerySelection = jQuery(value))
-            console.log(moduleSettings)
-            module(moduleSettings)
+            module = getModule(type, selection = jQuery(value))
+            module(_settings)
             set(value)
         },
         subscribe: subscribe,
-        selection: () => jQuerySelection,
-        module: (...args) => module(...args),
+        selection: () => selection,
+        module: (...args) => {
+            if (args.length) {
+                module(...args)
+            }
+            return module
+        },
         setSettings: async (settings) => {
             if (!module) return
-            module(moduleSettings = settings)
+            module(_settings = settings)
         }
     }
 }
