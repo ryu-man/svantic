@@ -15,7 +15,8 @@ export {
   stickyLoader,
   tabLoader,
   toastLoader,
-  transitionLoader
+  transitionLoader,
+  load
 } from './loaders'
 
 export {

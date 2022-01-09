@@ -1,22 +1,23 @@
 export {
-    accordionLoader,
-    calendarLoader,
-    checkboxLoader,
-    dimmerLoader,
-    dropdownLoader,
-    embedLoader,
-    modalLoader,
-    popupLoader,
-    progressLoader,
-    ratingLoader,
-    searchLoader,
-    sidebarLoader,
-    sliderLoader,
-    stickyLoader,
-    tabLoader,
-    toastLoader,
-    transitionLoader
-  } from './loaders'
+  accordionLoader,
+  calendarLoader,
+  checkboxLoader,
+  dimmerLoader,
+  dropdownLoader,
+  embedLoader,
+  modalLoader,
+  popupLoader,
+  progressLoader,
+  ratingLoader,
+  searchLoader,
+  sidebarLoader,
+  sliderLoader,
+  stickyLoader,
+  tabLoader,
+  toastLoader,
+  transitionLoader,
+  load
+} from './loaders'
   
   export {
     accordion,
