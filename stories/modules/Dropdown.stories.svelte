@@ -5,11 +5,11 @@
   import { Icon } from '../../src/elements'
 </script>
 
-<Meta title="Modules/Dropdown" component="{Dropdown}" argTypes="{{}}" />
+<Meta title="Modules/Dropdown" component="{Dropdown}" argTypes={{}}/>
 
 <Centerize>
-  <Template let:args>
-    <Dropdown.default selection {...args}>
+  <Story name="dropdown">
+    <Dropdown.default selection>
       <Icon name="dropdown" />
       <Dropdown.Text>Select a language</Dropdown.Text>
       <Dropdown.Menu>
@@ -19,27 +19,8 @@
         <Dropdown.Item>German</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown.default>
-  </Template>
+  </Story>
 </Centerize>
-
-<Story
-  name="Primary"
-  args="{{
-    primary: true
-  }}"
-/>
-<Story
-  name="Secondary"
-  args="{{
-    secondary: true
-  }}"
-/>
-<Story
-  name="Tertiary"
-  args="{{
-    tertiary: true
-  }}"
-/>
 
 <style>
   :global(#root) {

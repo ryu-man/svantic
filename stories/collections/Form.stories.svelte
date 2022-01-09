@@ -5,7 +5,7 @@
 </script>
 
 <Meta
-  title="Example/Form"
+  title="Colections/Form"
   component="{Form}"
   argTypes="{{
     label: { control: 'text' },
