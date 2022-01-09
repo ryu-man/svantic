@@ -1,9 +1,12 @@
+declare type LoaderType = 'dropdown'
 
-declare type LoaderType = "dropdown"
+declare type Loader = (type: LoaderType) => Promise<void>
 
-const loader : (type:LoaderType) => Promise<void>
+const loader: Loader
 
 export default loader
+
+export const load: (...args: Loader[]) => Promise<void[]>
 
 export const dropdownLoader: () => Promise<void>
 
