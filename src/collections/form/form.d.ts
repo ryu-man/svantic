@@ -11,6 +11,7 @@ type FormProps = SvanticProps & {
   size?: Size
   inverted?: boolean
   equal?: boolean
+  fluid?: boolean
 }
 
 type FormEvents = MountEvent<HTMLFormElement>

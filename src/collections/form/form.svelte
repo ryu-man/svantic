@@ -13,6 +13,7 @@
   export let size
   export let inverted = false
   export let equal = false
+  export let fluid = false
 
   const dispatch = createEventDispatcher()
 
@@ -28,7 +29,7 @@
   class="{classNames(
     _class,
     'ui',
-    { 'equal width': equal, inverted },
+    { 'equal width': equal, inverted, fluid },
     state,
     size,
     'form'
