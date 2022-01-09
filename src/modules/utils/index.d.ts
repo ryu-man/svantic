@@ -1,3 +1,10 @@
+import { Writable } from 'svelte/store'
+
+export type Controllable<T> = Omit<Writable<T>, 'update'>
+export const controllable: <T>(
+  callback?: (controller: T) => void
+) => Controllable<T>
+
 export {
   accordionLoader,
   calendarLoader,
@@ -18,21 +25,20 @@ export {
   transitionLoader,
   load
 } from './loaders'
-  
-  export {
-    accordion,
-    calendar,
-    checkbox,
-    dropdown,
-    modal,
-    progress,
-    rating,
-    search,
-    sidebar,
-    slider,
-    tab,
-    toast,
-    embed,
-    Module
-  } from './module'
-  
+
+export {
+  accordion,
+  calendar,
+  checkbox,
+  dropdown,
+  modal,
+  progress,
+  rating,
+  search,
+  sidebar,
+  slider,
+  tab,
+  toast,
+  embed,
+  Module
+} from './module'

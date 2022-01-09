@@ -1,5 +1,3 @@
-export { controllerStore } from './controllerStore'
-
 export function css(node, style = {}) {
   const stylesheet = node.style
   Object.entries(style).forEach((elem) => {

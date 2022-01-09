@@ -1,3 +1,19 @@
+import { writable } from 'svelte/store'
+
+export const controllable = (callback = (_) => { }) => {
+  const { set, subscribe } = writable(callback)
+
+  return {
+    set: (val) => {
+      set(val)
+      val?.ready?.()?.then?.(() => {
+        callback?.(val)
+      })
+    },
+    subscribe
+  }
+}
+
 export {
   accordionLoader,
   calendarLoader,
@@ -34,3 +50,5 @@ export {
   toast,
   embed
 } from './module'
+
+

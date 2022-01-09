@@ -55,3 +55,5 @@ export { default as Calendar } from './calendar'
 export { default as Checkbox } from './checkbox'
 
 export { default as Sticky } from './sticky'
+
+export { controllable, Controllable } from './utils'

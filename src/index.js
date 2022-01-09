@@ -108,7 +108,8 @@ export {
   initPopup,
   initProgress,
   initTabs,
-  initSidebar
+  initSidebar,
+  controllable
 } from './modules'
 
 export {
@@ -125,5 +126,3 @@ export {
   initComment,
   initItem
 } from './views'
-
-export { controllerStore } from './utils'
