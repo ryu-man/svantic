@@ -1,6 +1,6 @@
 <script context="module">
-  import { dropdownLoader, transitionLoader } from '../utils'
-  const isReady = Promise.all([transitionLoader(), dropdownLoader()])
+  import { dropdownLoader, transitionLoader, load } from '../utils'
+  const isReady = load(transitionLoader, dropdownLoader)
 </script>
 
 <script>
@@ -288,7 +288,7 @@
 </script>
 
 {#await isReady then value}
-  {#if as === 'div' && !selection}
+  {#if as === 'div'}
     <div bind:this="{$executer}" use:css="{style}" class="{classnames}">
       <slot />
     </div>
