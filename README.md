@@ -79,47 +79,75 @@ Add svantic and modify `src/App.svelte` file in the following way
   import { Button } from 'svantic'
 </script>
 
-<button>Hello world</button>
+<Button>Hello world</button>
 ```
 
 ```html
 <script>
     // import modules
-    import { Dropdown, Icon } from 'svantic';
+    import { Dropdown, initDropdown, controllable, Icon } from 'svantic';
+
+    // call this function if you want to use Module.SubModule syntax, ex: Dropdown.Item
+    initDropdown()
+
+    const dropdownController = controllable(controller=>{
+      // called when the module is mounted and ready
+      // access the controller and manupilate dropdown
+    })
+
 
 </script>
 
-// Every module have two props: onMount{function} and setting{object}
-
-// onMount function: allows control module behaviors
+// onMount: allows control module behaviors
 // settings: pass module settings
-<Dropdown selection onMount={(controller) => {}} settings={{}}>
+<Dropdown 
+  bind:this={$dropdownController} 
+  onMount={(domElem) => {}} 
+  settings={{}}
+  selection >
 	<Icon name="caret down" />
-	<Dropdown.text>Select language</Dropdown.text>
-	<Dropdown.menu>
-		<Dropdown.item>English</Dropdown.item>
-		<Dropdown.item>Arabic</Dropdown.item>
-		<Dropdown.item>Spanish</Dropdown.item>
-		<Dropdown.item>German</Dropdown.item>
-	</Dropdown.menu>
+	<Dropdown.Text>Select language</Dropdown.Text>
+	<Dropdown.Menu>
+		<Dropdown.Item>English</Dropdown.Item>
+		<Dropdown.Item>Arabic</Dropdown.Item>
+		<Dropdown.Item>Spanish</Dropdown.Item>
+		<Dropdown.Item>German</Dropdown.Item>
+	</Dropdown.Menu>
 </Dropdown>
 ```
 
-...then start [Rollup](https://rollupjs.org/)
+Another way to use Module.SubModule syntax
 
-```bash
-npm run dev
+```html
+<script>
+    import { Icon } from 'svantic'
+    import * as Dropdown from 'svantic/modules/dropdown';
+</script>
+
+<Dropdown.default selection >
+	<Icon name="caret down" />
+	<Dropdown.Text>Select language</Dropdown.Text>
+	<Dropdown.Menu>
+		<Dropdown.Item>English</Dropdown.Item>
+		<Dropdown.Item>Arabic</Dropdown.Item>
+		<Dropdown.Item>Spanish</Dropdown.Item>
+		<Dropdown.Item>German</Dropdown.Item>
+	</Dropdown.Menu>
+</Dropdown.default>
 ```
+**Breaking Change**
 
-Navigate to [localhost:5000](http://localhost:5000)
+- onMount prop: allows acces to the top level dom elem instead of module controller
+
+- module controller: to controll a module you use bind:this={varname} on the component to save an instance of its controller
+
+- controllable store is a reactive store that allows subscribtion to a module and execute a callback 
 
 ## Development
 
 1. Clone this repo: `git clone https://github.com/ryu-man/svantic.git`
 2. Install dependencies: `npm i`
 3. Start building fomantic: `npm run build:fomantic`
-4. Start the automated build: `npm run build`
-5. Open url that console prints in your browser
 
 ## License
 
