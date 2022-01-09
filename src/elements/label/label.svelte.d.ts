@@ -1,10 +1,10 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import type { Attach, Align, Color, Size } from '../../variations'
 import type { DOMEvents, Component } from '../../component'
-import Tag from './tag'
-import Ribbon from './ribbon'
-import Link from './link'
-import type Detail from './detail'
+import Tag from './tag.svelte'
+import Ribbon from './ribbon.svelte'
+import Link from './link.svelte'
+import type Detail from './detail.svelte'
 
 declare type Type =
   | 'ribbon'
