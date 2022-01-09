@@ -8,6 +8,7 @@
   export let color = ''
   export let icon = false
   export let vertical = false
+  export let stackable = false
   export let labeled
   export let basic = false
   export let size
@@ -27,7 +28,7 @@
   class="{classNames(
     _class,
     'ui',
-    { icon, vertical, basic, labeled },
+    { icon, vertical, stackable, basic, labeled },
     color,
     size,
     width,

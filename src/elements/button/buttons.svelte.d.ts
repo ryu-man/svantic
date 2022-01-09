@@ -5,7 +5,8 @@ interface ButtonsProps extends Component {
   color?: Color
   icon?: boolean
   vertical?: boolean
-  labeled?: boolean|Float
+  stackable?: boolean
+  labeled?: boolean | Float
   basic?: boolean
   size?: Size
   width?: Wide
