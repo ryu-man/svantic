@@ -18,7 +18,7 @@ interface InputProps extends Component {
   animation?: Loading
   basic?: boolean
   fluid?: boolean
-  corner?: boolean
+  corner?: boolean | Float
   inverted?: boolean
   transparent?: boolean
 
