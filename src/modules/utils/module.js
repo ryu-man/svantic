@@ -26,6 +26,12 @@ export function module(type, settings = {}) {
         setSettings: async (settings) => {
             if (!module) return
             module(_settings = settings)
+        },
+        settings: (...args) => {
+            if (args.length) {
+                module?.(_settings = args[0])
+            }
+            return _settings
         }
     }
 }

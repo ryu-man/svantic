@@ -29,7 +29,12 @@ type ModuleStore<K> = {
   ) => Unsubscriber
   selection: JQuery.Selector
   module: (...args) => any
+  /**
+   * @deprecated
+   */
   setSettings: (settings: K) => void
+  settings: (settings: K) => void
+  settings: () => K
 }
 
 type ModuleSettings = {
