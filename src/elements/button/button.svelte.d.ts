@@ -15,13 +15,16 @@ declare type Social =
   | 'google'
   | 'twitter'
   | 'facebook'
+  | 'google plus'
+  | 'whatsapp'
+  | 'telegram'
 
 export interface ButtonProps extends Component {
   size?: Size
   color?: Color
   state?: State
   social?: Social
-  floated?: Float
+  floated?: boolean | Float
   labeled?: boolean | Float
   attached?: Attach
   animated?: true | 'fade' | 'vertical'
@@ -37,11 +40,13 @@ export interface ButtonProps extends Component {
   primary?: boolean
   secondary?: boolean
   tertiary?: boolean
-  disable?: boolean
+  disabled?: boolean
+  active?: boolean
   loading?: boolean | Loading
   tabIndex?: number
   as?: 'div' | 'button'
   type?: 'submit' | 'reset' | 'button' | 'menu'
+  tabIndex?: number
 }
 /**
  * @description Svantic Button

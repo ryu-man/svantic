@@ -31,6 +31,7 @@
   export let tertiary = false
   export let animated
   export let disabled = false
+  export let active = false
   export let loading
   export let tabIndex
   export let as = 'div'
@@ -73,6 +74,7 @@
       basic,
       inverted,
       disabled,
+      active,
       floated,
       attached,
       animated,
