@@ -1,6 +1,4 @@
 <script context="module">
-  import { sidebarLoader } from '../utils'
-  const isReady = sidebarLoader()
 </script>
 
 <script>
@@ -8,11 +6,11 @@
   import '../../../../semantic/dist/components/reset.min.css'
   import '../../../../semantic/dist/components/transition.min.css'
   import '../../../../semantic/dist/components/sidebar.min.css'
-
+  
   import { createEventDispatcher, onMount as onMounted } from 'svelte'
   import { css, classNames } from '../../utils'
   import { sidebar } from '../utils'
-
+  
   let _class
   export { _class as class }
   export let wide = ''
@@ -90,12 +88,8 @@
     return executer.module('get transition event')
   }
 
-  export function ready() {
-    return isReady
-  }
 </script>
 
-{#await isReady then value}
   <div
     bind:this="{$executer}"
     use:css="{style}"
@@ -109,4 +103,3 @@
   >
     <slot />
   </div>
-{/await}

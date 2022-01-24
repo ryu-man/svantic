@@ -1,6 +1,4 @@
 <script context="module">
-  import { sliderLoader } from '../utils'
-  const isReady = sliderLoader()
 </script>
 
 <script>
@@ -8,7 +6,7 @@
   import '../../../../semantic/dist/components/reset.min.css'
   import '../../../../semantic/dist/components/transition.min.css'
   import '../../../../semantic/dist/components/slider.min.css'
-
+  
   import { createEventDispatcher, onMount as onMounted } from 'svelte'
   import { css, classNames } from '../../utils'
   import { slider } from '../utils'
@@ -59,12 +57,8 @@
     return this
   }
 
-  export function ready(){
-    return isReady
-  }
 </script>
 
-{#await isReady then value}
   <div
     bind:this="{$executer}"
     use:css="{style}"
@@ -82,4 +76,3 @@
   >
     <slot />
   </div>
-{/await}

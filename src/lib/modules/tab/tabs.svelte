@@ -1,9 +1,5 @@
 <script context="module">
-  import { tabLoader } from '../utils'
-
   export const key = Symbol()
-
-  const isReady = tabLoader()
 </script>
 
 <script>
@@ -11,14 +7,14 @@
   import '../../../../semantic/dist/components/reset.min.css'
   import '../../../../semantic/dist/components/transition.min.css'
   import '../../../../semantic/dist/components/tab.min.css'
-
+  
   import { createEventDispatcher, onMount as onMounted } from 'svelte'
   import { classNames, css } from '../../utils'
   import { writable } from 'svelte/store'
   import { setContext, tick } from 'svelte'
   import { tab } from '../utils'
   import Item from './item.svelte'
-
+  
   let _class
   export { _class as class }
   export let attached = ''
@@ -77,12 +73,8 @@
     return executor.module('cache remove', path)
   }
 
-  export function ready(){
-    return isReady
-  }
 </script>
 
-{#await isReady then value}
   <div
     use:css="{style}"
     class="{classNames(
@@ -104,4 +96,3 @@
     {/each}
   </div>
   <slot />
-{/await}

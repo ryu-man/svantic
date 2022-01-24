@@ -1,6 +1,4 @@
 <script context="module">
-  import { dropdownLoader, transitionLoader, load } from '../utils'
-  const isReady = load(transitionLoader, dropdownLoader)
 </script>
 
 <script>
@@ -8,7 +6,7 @@
   import '../../../../semantic/dist/components/reset.min.css'
   import '../../../../semantic/dist/components/transition.min.css'
   import '../../../../semantic/dist/components/dropdown.min.css'
-
+  
   import { createEventDispatcher, onMount as onMounted } from 'svelte'
   import { css, classNames } from '../../utils'
   import { dropdown } from '../utils'
@@ -287,7 +285,6 @@
   )
 </script>
 
-{#await isReady then value}
   {#if as === 'div'}
     <div bind:this="{$executer}" use:css="{style}" class="{classnames}">
       <slot />
@@ -302,4 +299,3 @@
       <slot />
     </select>
   {/if}
-{/await}

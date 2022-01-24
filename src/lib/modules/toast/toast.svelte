@@ -1,6 +1,4 @@
 <script context="module">
-  import { toastLoader } from '../utils'
-  const isReady = toastLoader()
 </script>
 
 <script>
@@ -8,7 +6,7 @@
   import '../../../../semantic/dist/components/reset.min.css'
   import '../../../../semantic/dist/components/transition.min.css'
   import '../../../../semantic/dist/components/toast.min.css'
-
+  
   import { createEventDispatcher, onMount as onMounted } from 'svelte'
   import { classNames, css } from '../../utils'
   import { toast } from '../utils'
@@ -60,12 +58,8 @@
     return executer.module('get remainingTime')
   }
 
-  export function ready(){
-    return isReady
-  }
 </script>
 
-{#await isReady then value}
   <div
     bind:this="{$executer}"
     use:css="{style}"
@@ -73,4 +67,3 @@
   >
     <slot />
   </div>
-{/await}

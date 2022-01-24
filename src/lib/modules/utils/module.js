@@ -1,8 +1,10 @@
 import { writable } from 'svelte/store'
+import { transitionLoader, dropdownLoader, modalLoader, progressLoader, dimmerLoader, toastLoader, tabLoader, sliderLoader, sidebarLoader, searchLoader, ratingLoader, checkboxLoader, calendarLoader, accordionLoader, embedLoader, popupLoader } from './loaders'
+
 
 const getModule = (type, selection) => (...args) => selection[type]?.(...args)
 
-export function module(type, settings = {}) {
+export function module(type, settings = {}, ...args) {
     const { set, subscribe } = writable()
 
     let selection
@@ -10,7 +12,11 @@ export function module(type, settings = {}) {
     let _settings = settings
 
     return {
-        set: (value) => {
+        set: async (value) => {
+            if (!window?.['jQuery']?.[type]) {
+                await Promise.all(args.map(m => m()))
+            }
+
             module = getModule(type, selection = jQuery(value))
             module(_settings)
             set(value)
@@ -36,30 +42,30 @@ export function module(type, settings = {}) {
     }
 }
 
-export const dropdown = (settings) => module('dropdown', settings)
+export const dropdown = (settings) => module('dropdown', settings, transitionLoader, dropdownLoader)
 
-export const modal = (settings) => module('modal', settings)
+export const modal = (settings) => module('modal', settings, transitionLoader, dimmerLoader, modalLoader)
 
-export const progress = (settings) => module('progress', settings)
+export const progress = (settings) => module('progress', settings, progressLoader)
 
-export const toast = (settings) => module('toast', settings)
+export const toast = (settings) => module('toast', settings, toastLoader)
 
-export const tab = (settings) => module('tab', settings)
+export const tab = (settings) => module('tab', settings, tabLoader)
 
-export const slider = (settings) => module('slider', settings)
+export const slider = (settings) => module('slider', settings, sliderLoader)
 
-export const sidebar = (settings) => module('sidebar', settings)
+export const sidebar = (settings) => module('sidebar', settings, sidebarLoader)
 
-export const search = (settings) => module('search', settings)
+export const search = (settings) => module('search', settings, searchLoader)
 
-export const rating = (settings) => module('rating', settings)
+export const rating = (settings) => module('rating', settings, ratingLoader)
 
-export const checkbox = (settings) => module('checkbox', settings)
+export const checkbox = (settings) => module('checkbox', settings, checkboxLoader)
 
-export const calendar = (settings) => module('calendar', settings)
+export const calendar = (settings) => module('calendar', settings, dimmerLoader, dropdownLoader,  calendarLoader)
 
-export const accordion = (settings) => module('accordion', settings)
+export const accordion = (settings) => module('accordion', settings, accordionLoader)
 
-export const embed = (settings) => module('embed', settings)
+export const embed = (settings) => module('embed', settings, popupLoader, embedLoader)
 
-export const popup = (settings) => module('popup', settings)
+export const popup = (settings) => module('popup', settings, transitionLoader, popupLoader)

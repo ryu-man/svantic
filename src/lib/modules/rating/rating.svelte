@@ -1,6 +1,4 @@
 <script context="module">
-  import { ratingLoader } from '../utils'
-  const isReady = ratingLoader()
 </script>
 
 <script>
@@ -8,7 +6,7 @@
   import '../../../../semantic/dist/components/reset.min.css'
   import '../../../../semantic/dist/components/transition.min.css'
   import '../../../../semantic/dist/components/rating.min.css'
-
+  
   import { createEventDispatcher, onMount as onMounted } from 'svelte'
   import { classNames, css } from '../../utils'
   import { rating as ratingModule } from '../utils'
@@ -53,12 +51,8 @@
     return executer.module('close rating')
   }
 
-  export function ready(){
-    return isReady
-  }
 </script>
 
-{#await isReady then value}
   <div
     bind:this="{$executer}"
     use:css="{style}"
@@ -67,4 +61,3 @@
     data-rating="{rating}"
     data-max-rating="{maxRating}"
   ></div>
-{/await}

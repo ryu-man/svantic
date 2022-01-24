@@ -1,6 +1,4 @@
 <script context="module">
-  import { stickyLoader } from '../utils'
-  const isReady = stickyLoader()
 </script>
 
 <script>
@@ -8,7 +6,7 @@
   import '../../../../semantic/dist/components/reset.min.css'
   import '../../../../semantic/dist/components/transition.min.css'
   import '../../../../semantic/dist/components/sticky.min.css'
-
+  
   import { classNames, css } from '../../utils'
 
   let _class
@@ -37,7 +35,6 @@
   }
 </script>
 
-{#await isReady then value}
   <div
     use:css="{style}"
     use:module="{settings}"
@@ -45,4 +42,3 @@
   >
     <slot />
   </div>
-{/await}
