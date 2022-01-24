@@ -1,21 +1,8 @@
-const loadJQ = async () => {
-    let jq = window['jQuery'] ?? window['$']
-    if (jq) return jq
+const loader = async (type) => import(`../../../../semantic/dist/components/${type}.min`)
 
-    jq = (await import('jquery')).default
-    window['jQuery'] = jq
-    window['$'] = jq
-    return jq
-}
-
-const loader = async (type) => {
-    await loadJQ()
-
-    return import(`../../../../semantic/dist/components/${type}.min`)
-}
 export default loader
 
-export const load = (...args) => Promise.all(args.map(fn => fn()))
+export const load = (...args) => Promise.all(args.map(fn  => fn()))
 
 export const dropdownLoader = () => loader('dropdown')
 
