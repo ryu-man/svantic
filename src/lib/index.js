@@ -126,3 +126,5 @@ export {
   initComment,
   initItem
 } from './views'
+
+export { JQuery } from './common'

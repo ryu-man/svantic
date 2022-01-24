@@ -1,3 +1,5 @@
+export { default as JQuery } from './JQuery.svelte'
+
 declare type Style = {
   [key in keyof CSSStyleDeclaration]?: string
 }
