@@ -51,6 +51,9 @@
     return executer.module('close rating')
   }
 
+  export function ready() {
+    return executer.ready
+  }
 </script>
 
   <div

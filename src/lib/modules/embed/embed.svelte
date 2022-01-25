@@ -78,6 +78,10 @@
 	export function hasPlaceholder() {
 		return executer.module('has placeholder');
 	}
+
+	export function ready() {
+		return executer.ready;
+	}
 </script>
 
 <div

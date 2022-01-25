@@ -88,6 +88,9 @@
     return executer.module('get transition event')
   }
 
+  export function ready() {
+    return executer.ready
+  }
 </script>
 
   <div

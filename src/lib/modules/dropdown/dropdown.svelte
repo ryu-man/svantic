@@ -243,7 +243,7 @@
   }
 
   export function ready() {
-    return isReady
+    return executer.ready
   }
 
   $: classnames = classNames(

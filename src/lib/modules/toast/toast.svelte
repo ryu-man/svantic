@@ -58,6 +58,9 @@
     return executer.module('get remainingTime')
   }
 
+  export function ready() {
+    return executer.ready
+  }
 </script>
 
   <div

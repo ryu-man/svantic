@@ -133,6 +133,10 @@
 	export function canUncheck() {
 		return executer.module('can uncheck');
 	}
+
+	export function ready() {
+    return executer.ready
+  }
 </script>
 
 <div

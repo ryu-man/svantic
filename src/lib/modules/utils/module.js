@@ -12,28 +12,34 @@ export function module(type, settings = {}, ...args) {
     let _settings = settings
 
     return {
-        set: async (value) => {
-            if (!window?.['jQuery']?.[type]) {
-                await Promise.all(args.map(m => m()))
-            }
+        get ready() {
+            return new Promise(async resolve => {
+                if (!window?.['jQuery']?.[type]) {
+                    await Promise.all(args.map(m => m()))
+                }
+                resolve()
+            })
+        },
 
+        async set(value) {
+            await this.ready
             module = getModule(type, selection = jQuery(value))
             module(_settings)
             set(value)
         },
         subscribe: subscribe,
         selection: () => selection,
-        module: (...args) => {
+        module(...args) {
             if (args.length) {
                 module(...args)
             }
             return module
         },
-        setSettings: async (settings) => {
+        async setSettings(settings) {
             if (!module) return
             module(_settings = settings)
         },
-        settings: (...args) => {
+        settings(...args) {
             if (args.length) {
                 module?.(_settings = args[0])
             }
@@ -62,7 +68,7 @@ export const rating = (settings) => module('rating', settings, ratingLoader)
 
 export const checkbox = (settings) => module('checkbox', settings, checkboxLoader)
 
-export const calendar = (settings) => module('calendar', settings, dimmerLoader, dropdownLoader,  calendarLoader)
+export const calendar = (settings) => module('calendar', settings, dimmerLoader, dropdownLoader, calendarLoader)
 
 export const accordion = (settings) => module('accordion', settings, accordionLoader)
 

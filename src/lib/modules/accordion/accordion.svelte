@@ -55,6 +55,10 @@
 		executer.module('toggle', index);
 		return executer.module;
 	}
+
+	export function ready() {
+		return executer.ready;
+	}
 </script>
 
 <div

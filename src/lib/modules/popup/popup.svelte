@@ -77,6 +77,10 @@
 		exec('remove popup');
 		return this;
 	}
+
+	export function ready() {
+		return executer.ready;
+	}
 </script>
 
 <slot

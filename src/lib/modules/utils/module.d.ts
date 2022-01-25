@@ -34,7 +34,8 @@ type ModuleStore<K> = {
    */
   setSettings: (settings: K) => void
   settings: (settings: K) => void
-  settings: () => K
+  settings: () => K,
+  ready: Promise<any>
 }
 
 type ModuleSettings = {

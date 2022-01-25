@@ -73,6 +73,9 @@
     return executor.module('cache remove', path)
   }
 
+  export function ready() {
+    return executer.ready
+  }
 </script>
 
   <div

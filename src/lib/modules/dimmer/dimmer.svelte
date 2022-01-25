@@ -130,6 +130,10 @@
 		exec('set disabled');
 		return this;
 	}
+
+	export function ready() {
+		return exec.ready;
+	}
 </script>
 
 <div

@@ -109,6 +109,10 @@
 		executer.module('set max date', date);
 		return this;
 	}
+
+	export function ready() {
+		return executer.ready;
+	}
 </script>
 
 <div bind:this={$executer} use:css={style} class="{_class} ui calendar" class:disabled>

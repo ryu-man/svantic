@@ -102,6 +102,10 @@
 		executer.module('set active');
 		return this;
 	}
+
+	export function ready() {
+		return executer.ready;
+	}
 </script>
 
 <div
