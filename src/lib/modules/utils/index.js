@@ -1,16 +1,22 @@
 import { writable } from 'svelte/store'
 
 export const controllable = (callback = (_) => { }) => {
+  let value
   const { set, subscribe } = writable(callback)
 
   return {
-    set: (val) => {
-      set(val)
+    set(val) {
+      let value = val
       val?.ready?.()?.then?.(() => {
         callback?.(val)
       })
+      set(val)
     },
-    subscribe
+    subscribe,
+    get value() {
+      return value
+    }
+
   }
 }
 

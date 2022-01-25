@@ -1,6 +1,8 @@
 import { Writable } from 'svelte/store'
 
-export type Controllable<T> = Omit<Writable<T>, 'update'>
+export type Controllable<T> = Omit<Writable<T>, 'update'> & {
+  value: T
+}
 export const controllable: <T>(
   callback?: (controller: T) => void
 ) => Controllable<T>
