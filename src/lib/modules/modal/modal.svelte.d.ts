@@ -1,9 +1,9 @@
 import { SvelteComponentTyped } from 'svelte/internal'
 import { Module } from '../utils'
 import ModalSettings from './settings'
-import Header from './header'
-import Content from './content'
-import Actions from './actions'
+import Header from './header.svelte.svelte'
+import Content from './content.svelte'
+import Actions from './actions.svelte'
 import Description from './description.svelte'
 import type { MountEvent } from '../../common'
 
