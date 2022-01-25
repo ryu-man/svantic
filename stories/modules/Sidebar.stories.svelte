@@ -1,7 +1,8 @@
 <script>
     import { Meta, Story } from '@storybook/addon-svelte-csf'
     import Sidebar from '../../src/lib/modules/side_bar'
-  
+  	import JQuery from '../../src/lib/common/JQuery.svelte';
+
     /**
      * @type {Sidebar}
      */
@@ -11,6 +12,8 @@
   <Meta title="Modules/Sidebar" component="{Sidebar}" />
   
   <Story name="Solo" let:args>
-    <Sidebar {...args} bind:this="{controller}" />
+    <JQuery>
+      <Sidebar {...args} bind:this="{controller}" />
+    </JQuery>
   </Story>
   
