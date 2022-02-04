@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store'
-import { transitionLoader, dropdownLoader, modalLoader, progressLoader, dimmerLoader, toastLoader, tabLoader, sliderLoader, sidebarLoader, searchLoader, ratingLoader, checkboxLoader, calendarLoader, accordionLoader, embedLoader, popupLoader } from './loaders'
+import { transitionLoader, dropdownLoader, modalLoader, progressLoader, dimmerLoader, toastLoader, tabLoader, sliderLoader, sidebarLoader, searchLoader, ratingLoader, checkboxLoader, calendarLoader, accordionLoader, embedLoader, popupLoader, load } from './loaders'
 
 
 const getFunction = (type, selection) => (...args) => selection[type]?.(...args)
@@ -17,7 +17,7 @@ export function module(type, settings = {}, ...args) {
 
     const loadScript = new Promise(async resolve => {
         if (!window?.['jQuery']?.[type]) {
-            await Promise.all(args.map(m => m()))
+            await load(...args)
         }
         resolve()
     })
