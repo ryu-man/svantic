@@ -1,7 +1,7 @@
 <script>
-  import '../../../../semantic/dist/components/site.min.css'
-  import '../../../../semantic/dist/components/reset.min.css'
-  import '../../../../semantic/dist/components/header.min.css'
+  import '../../semantic/dist/components/site.min.css'
+  import '../../semantic/dist/components/reset.min.css'
+  import '../../semantic/dist/components/header.min.css'
 
   import { css, classNames } from '../../utils'
   import { createEventDispatcher } from 'svelte'

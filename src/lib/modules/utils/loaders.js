@@ -1,4 +1,4 @@
-const loader = async (type) => import(`../../../../semantic/dist/components/${type}.min`)
+const loader = async (type) => import(`../../semantic/dist/components/${type}.min`)
 
 export default loader
 

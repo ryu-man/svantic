@@ -2,10 +2,10 @@
 </script>
 
 <script>
-  import '../../../../semantic/dist/components/site.min.css'
-  import '../../../../semantic/dist/components/reset.min.css'
-  import '../../../../semantic/dist/components/transition.min.css'
-  import '../../../../semantic/dist/components/dropdown.min.css'
+  import '../../semantic/dist/components/site.min.css'
+  import '../../semantic/dist/components/reset.min.css'
+  import '../../semantic/dist/components/transition.min.css'
+  import '../../semantic/dist/components/dropdown.min.css'
   
   import { createEventDispatcher, onMount as onMounted } from 'svelte'
   import { css, classNames } from '../../utils'

@@ -1,5 +1,5 @@
 <script>
-  import '../../../../semantic/dist/components/sticky.css'
+  import '../../semantic/dist/components/sticky.css'
 
   import { createEventDispatcher } from 'svelte'
   import { css, classNames } from '../../utils'
