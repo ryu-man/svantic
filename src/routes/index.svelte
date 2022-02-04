@@ -11,6 +11,7 @@
 		ModalHeader,
 		ModalContent,
 		ModalActions,
+		Search,
 		JQuery,
 		controllable
 	} from 'svantic';
@@ -47,4 +48,8 @@
 			<Button>Save</Button>
 		</ModalActions>
 	</Modal>
+
+	<Search >
+
+	</Search>
 </JQuery>
