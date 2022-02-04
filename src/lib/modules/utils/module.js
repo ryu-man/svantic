@@ -15,7 +15,7 @@ export function module(type, settings = {}, ...args) {
         _resolve = resolve
     })
 
-    const loadScript = new Promise(async resolve => {
+    const init = new Promise(async resolve => {
         if (!window?.['jQuery']?.[type]) {
             await load(...args)
         }
@@ -25,7 +25,7 @@ export function module(type, settings = {}, ...args) {
 
     return {
         async set(value) {
-            await loadScript
+            await init
             _module = getFunction(type, _selection = jQuery(value))
             _module(_settings)
             _resolve()
