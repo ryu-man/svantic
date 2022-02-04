@@ -69,6 +69,16 @@ output: {
 
 ```
 
+**Breaking Change**
+
+- onMount prop: allows acces to the top level dom elem instead of module controller
+
+- module controller: to controll a module you use bind:this={varname} on the component to save an instance of its controller
+
+- controllable store is a reactive store that allows subscribtion to a module and execute a callback when the component is mounted
+  
+- Svantic component used to load global scripts ans stylesheets, must mounted on the top level of the app 
+
 ## Usage
 
 Add svantic and modify `src/App.svelte` file in the following way
@@ -76,72 +86,71 @@ Add svantic and modify `src/App.svelte` file in the following way
 ```html
 <script>
   // import any components you want
-  import { Button } from 'svantic'
+  import { Button, Svantic } from 'svantic'
 </script>
-
-<Button>Hello world</button>
+<Svantic>
+  <Button>Hello world</Button>
+</Svantic>
 ```
 
 ```html
 <script>
     // import modules
-    import { Dropdown, initDropdown, controllable, Icon } from 'svantic';
+    import { Dropdown, initDropdown, controllable, Icon, Svantic } from 'svantic';
 
     // call this function if you want to use Module.SubModule syntax, ex: Dropdown.Item
     initDropdown()
 
     const dropdownController = controllable(controller=>{
-      // called when the module is mounted and ready
+      // called when the component is mounted and ready
       // access the controller and manupilate dropdown
     })
 
 
 </script>
 
-// onMount: allows control module behaviors
-// settings: pass module settings
-<Dropdown 
-  bind:this={$dropdownController} 
-  onMount={(domElem) => {}} 
-  settings={{}}
-  selection >
-	<Icon name="caret down" />
-	<Dropdown.Text>Select language</Dropdown.Text>
-	<Dropdown.Menu>
-		<Dropdown.Item>English</Dropdown.Item>
-		<Dropdown.Item>Arabic</Dropdown.Item>
-		<Dropdown.Item>Spanish</Dropdown.Item>
-		<Dropdown.Item>German</Dropdown.Item>
-	</Dropdown.Menu>
-</Dropdown>
+// mount Svantic component on the top level of the app
+<Svantic>
+  // onMount: allows control module behaviors
+  // settings: pass module settings
+  <Dropdown 
+    bind:this={$dropdownController} 
+    onMount={(domElem) => {}} 
+    settings={{}}
+    selection >
+    <Icon name="caret down" />
+    <Dropdown.Text>Select language</Dropdown.Text>
+    <Dropdown.Menu>
+      <Dropdown.Item>English</Dropdown.Item>
+      <Dropdown.Item>Arabic</Dropdown.Item>
+      <Dropdown.Item>Spanish</Dropdown.Item>
+      <Dropdown.Item>German</Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
+</Svantic>
 ```
 
 Another way to use Module.SubModule syntax
 
 ```html
 <script>
-    import { Icon } from 'svantic'
+    import { Icon, Svantic } from 'svantic'
     import * as Dropdown from 'svantic/modules/dropdown';
 </script>
 
-<Dropdown.default selection >
-	<Icon name="caret down" />
-	<Dropdown.Text>Select language</Dropdown.Text>
-	<Dropdown.Menu>
-		<Dropdown.Item>English</Dropdown.Item>
-		<Dropdown.Item>Arabic</Dropdown.Item>
-		<Dropdown.Item>Spanish</Dropdown.Item>
-		<Dropdown.Item>German</Dropdown.Item>
-	</Dropdown.Menu>
-</Dropdown.default>
+<Svantic>
+  <Dropdown.default selection >
+    <Icon name="caret down" />
+    <Dropdown.Text>Select language</Dropdown.Text>
+    <Dropdown.Menu>
+      <Dropdown.Item>English</Dropdown.Item>
+      <Dropdown.Item>Arabic</Dropdown.Item>
+      <Dropdown.Item>Spanish</Dropdown.Item>
+      <Dropdown.Item>German</Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown.default>
+</Svantic>
 ```
-**Breaking Change**
-
-- onMount prop: allows acces to the top level dom elem instead of module controller
-
-- module controller: to controll a module you use bind:this={varname} on the component to save an instance of its controller
-
-- controllable store is a reactive store that allows subscribtion to a module and execute a callback 
 
 ## Development
 
