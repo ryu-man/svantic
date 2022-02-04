@@ -27,7 +27,21 @@
 		"semantic"
 	],
 	"files": [
-		"src",
+		"collections",
+		"common",
+		"elements",
+		"modules",
+		"utils",
+		"views",
+		".gitignore",
+		"index.js",
+		"index.d.ts",
+		"README.md",
+		"components.d.ts",
+		"events.d.ts",
+		"style.d.ts",
+		"transition.d.ts",
+		"variation.d.ts",
 		"semantic/dist/components/**/*.min.*"
 	],
 	"scripts": {
