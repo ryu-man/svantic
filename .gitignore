@@ -4,6 +4,7 @@
 /example/
 /semantic/
 /package
+/src/lib/semantic
 .todo
 .DS_Store
 .todo
