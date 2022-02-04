@@ -10,7 +10,10 @@ export function module(type, settings = {}, ...args) {
     let _selection
     let _module
     let _settings = settings
-    let _ready
+    let _resolve = (_) => { }
+    let _ready = new Promise((resolve) => {
+        _resolve = resolve
+    })
 
     const loadScript = new Promise(async resolve => {
         if (!window?.['jQuery']?.[type]) {
@@ -21,13 +24,11 @@ export function module(type, settings = {}, ...args) {
 
 
     return {
-        set(value) {
-            _ready = new Promise(async resolve => {
-                await loadScript
-                _module = getFunction(type, _selection = jQuery(value))
-                _module(_settings)
-                resolve()
-            })
+        async set(value) {
+            await loadScript
+            _module = getFunction(type, _selection = jQuery(value))
+            _module(_settings)
+            _resolve()
 
             set(value)
         },
