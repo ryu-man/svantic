@@ -7,6 +7,7 @@ const getFunction = (type, selection) => (...args) => selection[type]?.(...args)
 export function module(type, settings = {}, ...args) {
     const { set, subscribe } = writable()
 
+    let _value
     let _selection
     let _module
     let _settings = settings
@@ -28,6 +29,7 @@ export function module(type, settings = {}, ...args) {
             await init
             _module = getFunction(type, _selection = jQuery(value))
             _module(_settings)
+            _value = value
             _resolve()
 
             set(value)
@@ -57,6 +59,9 @@ export function module(type, settings = {}, ...args) {
                 _module?.(_settings = args[0])
             }
             return _settings
+        },
+        get value() {
+            return _value
         }
     }
 }
