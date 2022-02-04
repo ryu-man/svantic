@@ -1,6 +1,4 @@
 <script>
-  import '../../semantic/dist/components/site.min.css'
-  import '../../semantic/dist/components/reset.min.css'
   import '../../semantic/dist/components/transition.min.css'
   import '../../semantic/dist/components/shape.min.css'
 

@@ -13,18 +13,19 @@
 		ModalActions,
 		Search,
 		JQuery,
+		Svantic,
 		controllable
 	} from 'svantic';
 
 	let showModal = false;
 
 	const modalController = controllable((controller) => {
-		console.log("show modal")
+		console.log('show modal');
 		controller.show();
 	});
 </script>
 
-<JQuery>
+<Svantic>
 	<h1>Welcome to SvelteKit</h1>
 	<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 	<Button on:click={() => (showModal = !showModal)}>open modal</Button>
@@ -49,7 +50,5 @@
 		</ModalActions>
 	</Modal>
 
-	<Search >
-
-	</Search>
-</JQuery>
+	<Search />
+</Svantic>

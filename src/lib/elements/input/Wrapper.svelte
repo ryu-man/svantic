@@ -1,6 +1,4 @@
 <script>
-  import '../../semantic/dist/components/site.min.css'
-  import '../../semantic/dist/components/reset.min.css'
   import '../../semantic/dist/components/input.min.css'
   import { classNames, css } from '../../utils'
   import { createEventDispatcher } from 'svelte'

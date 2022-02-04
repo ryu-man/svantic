@@ -127,4 +127,4 @@ export {
   initItem
 } from './views'
 
-export { JQuery } from './common'
+export { JQuery, Svantic } from './common'
