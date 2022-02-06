@@ -7,13 +7,13 @@
     Button,
     Segment,
     Divider
-  } from '../../src/elements'
+  } from '../../src/lib/elements'
   import {
     Dropdown,
     DropdownMenu,
     DropdownItem,
     DropdownText
-  } from '../../src/modules'
+  } from '../../src/lib/modules'
   import { Centerize } from '../components'
 </script>
 

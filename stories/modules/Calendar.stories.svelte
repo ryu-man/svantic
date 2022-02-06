@@ -1,17 +1,12 @@
 <script>
   import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-  import Calendar from '../../src/modules/calendar'
+  import Calendar from '../../src/lib/modules/calendar'
   import { Centerize } from '../components'
+	import JQuery from '../../src/lib/common/JQuery.svelte';
 
 </script>
 
 <Meta title="Modules/Calendar" component="{Calendar}" argTypes="{{}}" />
-
-<Centerize>
-  <Template let:args>
-    <Calendar {...args}/>
-  </Template>
-</Centerize>
 
 <Story
   name="Primary"
@@ -23,4 +18,9 @@
     }
   }}"
   args="{{}}"
-/>
+  let:args
+>
+  <JQuery>
+    <Calendar {...args}/>
+  </JQuery>
+</Story>

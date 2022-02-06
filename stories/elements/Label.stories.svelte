@@ -1,9 +1,9 @@
 <script>
   import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-  import * as Label from '../../src/elements/label'
-  import Icon from '../../src/elements/icon'
-  import Image from '../../src/elements/image'
-  import Form from '../../src/collections/form'
+  import * as Label from '../../src/lib/elements/label'
+  import Icon from '../../src/lib/elements/icon'
+  import Image from '../../src/lib/elements/image'
+  import Form from '../../src/lib/collections/form'
   import { Centerize } from '../components'
   import { Row } from 'svelte-layouts'
 </script>
