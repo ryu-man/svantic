@@ -69,15 +69,48 @@ output: {
 
 ```
 
-**Breaking Change**
+## Breaking Change
 
-- onMount prop: allows acces to the top level dom elem instead of module controller
 
-- module controller: to controll a module you use bind:this={varname} on the component to save an instance of its controller
+### Svantic component
+ used to load global scripts and stylesheets, must mounted on the top level of the app
 
-- controllable store is a reactive store that allows subscribtion to a module and execute a callback when the component is mounted
+ ```html
+ <script>
+  import { Svantic, ... } from 'svantic'
+</script>
+
+// 
+<Svantic>
+  ...
+</Svantic>
+ ```
+
+### onMount prop
+allows acces to the top level dom elem instead of module controller
+
+### module controller
+to controll a module you use bind:this={varname} on the component to save an instance of its controller
+
+### controllable store
+is a reactive store that allows subscribtion to a module and execute a callback when the component is mounted
+```html
+<script>
+    // import modules
+    import { Dropdown, controllable, Svantic } from 'svantic';
+
+    const dropdownController = controllable(controller=>{
+      // do something
+    })
+</script>
+
+<Svantic>
+  <Dropdown bind:this={$dropdownController}>
+      // ...
+  </Dropdown>
+</Svantic>
+```
   
-- Svantic component used to load global scripts ans stylesheets, must mounted on the top level of the app 
 
 ## Usage
 
@@ -88,10 +121,13 @@ Add svantic and modify `src/App.svelte` file in the following way
   // import any components you want
   import { Button, Svantic } from 'svantic'
 </script>
+
 <Svantic>
   <Button>Hello world</Button>
 </Svantic>
 ```
+
+or
 
 ```html
 <script>
