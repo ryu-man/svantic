@@ -37,11 +37,11 @@
 		"index.js",
 		"index.d.ts",
 		"README.md",
-		"components.d.ts",
+		"component.d.ts",
 		"events.d.ts",
 		"style.d.ts",
 		"transition.d.ts",
-		"variation.d.ts",
+		"variations.d.ts",
 		"semantic/dist/components/**/*.min.*"
 	],
 	"scripts": {
