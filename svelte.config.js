@@ -23,12 +23,6 @@ const config = {
 					semantic: path.resolve('./src/lib/semantic/dist/components')
 				}
 			},
-			optimizeDeps: {
-				exclude: ['fomatic-ui', 'jquery']
-			},
-			ssr: {
-				noExternal: ['fomatic-ui', 'jquery']
-			},
 			server: {
 				fs: [".."]
 			}
