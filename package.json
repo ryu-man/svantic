@@ -76,6 +76,7 @@
 		"eslint-plugin-svelte3": "^3.2.1",
 		"fomantic-ui": "^2.8.7",
 		"gulp": "^4.0.2",
+		"jquery": "^3.6.0",
 		"prettier": "^2.4.1",
 		"prettier-plugin-svelte": "^2.4.0",
 		"svelte": "^3.44.0",
@@ -85,6 +86,9 @@
 		"svelte2tsx": "^0.5.2",
 		"tslib": "^2.3.1",
 		"typescript": "^4.4.3"
+	},
+	"peerDependencies": {
+		"jquery": "^3.6.0"
 	},
 	"type": "module"
 }
