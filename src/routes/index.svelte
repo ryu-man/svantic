@@ -14,6 +14,7 @@
 		Search,
 		JQuery,
 		Svantic,
+		Icon,
 		controllable
 	} from 'svantic';
 
@@ -25,11 +26,12 @@
 	});
 </script>
 
-<Svantic>
+<Svantic jquery={import('jquery')}>
 	<h1>Welcome to SvelteKit</h1>
 	<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 	<Button on:click={() => (showModal = !showModal)}>open modal</Button>
 	<Dropdown selection>
+		<Icon name="caret down" />
 		<DropdownText>Select from the list</DropdownText>
 		<DropdownMenu>
 			<DropdownItem>Ara</DropdownItem>
