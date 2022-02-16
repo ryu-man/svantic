@@ -42,7 +42,11 @@
 		"style.d.ts",
 		"transition.d.ts",
 		"variations.d.ts",
-		"semantic/dist/components/**/*.min.*"
+		"semantic/dist/components/*.js",
+		"!semantic/dist/components/*.min.js",
+		"semantic/dist/components/*.css",
+		"!semantic/dist/components/*.min.css",
+		"semantic/dist/themes/default"
 	],
 	"scripts": {
 		"dev": "svelte-kit dev",
