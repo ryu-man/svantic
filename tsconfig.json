@@ -26,7 +26,9 @@
 			"$lib": ["src/lib"],
 			"$lib/*": ["src/lib/*"],
 			"svantic": ["src/lib"],
-			"svantic/*": ["src/lib/*"]
+			"svantic/*": ["src/lib/*"],
+			"semantic": ["src/lib/semantic/dist/components"],
+			"semantic/*": ["src/lib/semantic/dist/components/*"]
 		}
 	},
 	"include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte"]

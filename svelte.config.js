@@ -19,8 +19,15 @@ const config = {
 		vite: {
 			resolve: {
 				alias: {
-					svantic: path.resolve('./src/lib')
+					svantic: path.resolve('./src/lib'),
+					semantic: path.resolve('./src/lib/semantic/dist/components')
 				}
+			},
+			optimizeDeps: {
+				exclude: ['fomatic-ui', 'jquery']
+			},
+			ssr: {
+				noExternal: ['fomatic-ui', 'jquery']
 			},
 			server: {
 				fs: [".."]
