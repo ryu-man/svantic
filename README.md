@@ -81,7 +81,7 @@ output: {
 </script>
 
 // 
-<Svantic>
+<Svantic jquery={import('jquery')>
   ...
 </Svantic>
  ```
@@ -104,7 +104,7 @@ is a reactive store that allows subscribtion to a module and execute a callback 
     })
 </script>
 
-<Svantic>
+<Svantic jquery={import('jquery')>
   <Dropdown bind:this={$dropdownController}>
       // ...
   </Dropdown>
@@ -122,7 +122,7 @@ Add svantic and modify `src/App.svelte` file in the following way
   import { Button, Svantic } from 'svantic'
 </script>
 
-<Svantic>
+<Svantic jquery={import('jquery')>
   <Button>Hello world</Button>
 </Svantic>
 ```
@@ -146,7 +146,7 @@ or
 </script>
 
 // mount Svantic component on the top level of the app
-<Svantic>
+<Svantic jquery={import('jquery')>
   // onMount: allows control module behaviors
   // settings: pass module settings
   <Dropdown 
@@ -174,7 +174,7 @@ Another way to use Module.SubModule syntax
     import * as Dropdown from 'svantic/modules/dropdown';
 </script>
 
-<Svantic>
+<Svantic jquery={import('jquery')>
   <Dropdown.default selection >
     <Icon name="caret down" />
     <Dropdown.Text>Select language</Dropdown.Text>
