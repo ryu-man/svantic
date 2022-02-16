@@ -21,9 +21,9 @@
 
 ```bash
 # npm
-npm install svantic
+npm install jquery svantic
 # yarn
-yarn add svantic
+yarn add jquery svantic
 ```
 
 ## Quick start with new project
