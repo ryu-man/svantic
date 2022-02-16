@@ -1,39 +1,53 @@
-const loader = async (type) => import(`../../semantic/dist/components/${type}.min`)
 
-export default loader
+export const load = (...args) => Promise.all(args.map(fn => fn()))
 
-export const load = (...args) => Promise.all(args.map(fn  => fn()))
+// @ts-ignore
+export const dropdownLoader = () => import('../../semantic/dist/components/dropdown')
 
-export const dropdownLoader = () => loader('dropdown')
+// @ts-ignore
+export const modalLoader = () => import('../../semantic/dist/components/modal')
 
-export const modalLoader = () => loader('modal')
+// @ts-ignore
+export const progressLoader = () => import('../../semantic/dist/components/progress')
 
-export const progressLoader = () => loader('progress')
+// @ts-ignore
+export const toastLoader = () => import('../../semantic/dist/components/toast')
 
-export const toastLoader = () => loader('toast')
+// @ts-ignore
+export const tabLoader = () => import('../../semantic/dist/components/tab')
 
-export const tabLoader = () => loader('tab')
+// @ts-ignore
+export const sliderLoader = () => import('../../semantic/dist/components/slider')
 
-export const sliderLoader = () => loader('slider')
+// @ts-ignore
+export const sidebarLoader = () => import('../../semantic/dist/components/sidebar')
 
-export const sidebarLoader = () => loader('sidebar')
+// @ts-ignore
+export const searchLoader = () => import('../../semantic/dist/components/search')
 
-export const searchLoader = () => loader('search')
+// @ts-ignore
+export const ratingLoader = () => import('../../semantic/dist/components/rating')
 
-export const ratingLoader = () => loader('rating')
+// @ts-ignore
+export const checkboxLoader = () => import('../../semantic/dist/components/checkbox')
 
-export const checkboxLoader = () => loader('checkbox')
+// @ts-ignore
+export const calendarLoader = () => import('../../semantic/dist/components/calendar')
 
-export const calendarLoader = () => loader('calendar')
+// @ts-ignore
+export const accordionLoader = () => import('../../semantic/dist/components/accordion')
 
-export const accordionLoader = () => loader('accordion')
+// @ts-ignore
+export const transitionLoader = () => import('../../semantic/dist/components/transition')
 
-export const transitionLoader = () => loader('transition')
+// @ts-ignore
+export const dimmerLoader = () => import('../../semantic/dist/components/dimmer')
 
-export const dimmerLoader = () => loader('dimmer')
+// @ts-ignore
+export const embedLoader = () => import('../../semantic/dist/components/embed')
 
-export const embedLoader = () => loader('embed')
+// @ts-ignore
+export const popupLoader = () => import('../../semantic/dist/components/popup')
 
-export const popupLoader = () => loader('popup')
-
-export const stickyLoader = () => loader('sticky')
+// @ts-ignore
+export const stickyLoader = () => import('../../semantic/dist/components/sticky')
