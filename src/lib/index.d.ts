@@ -1,5 +1,7 @@
 export {
   Breadcrumb,
+  BreadcrumbDivider,
+  BreadcrumbSection,
   Form,
   Field,
   Fields,
@@ -7,8 +9,20 @@ export {
   Row,
   Column,
   Menu,
+  MenuItem,
   Message,
-  Table
+  Table,
+  TableBody,
+  TableCell,
+  TableHCell,
+  TableHeader,
+  TableRow,
+  TableFooter,
+  initBreadcrumb,
+  initForm,
+  initGrid,
+  initMenu,
+  initTable
 } from './collections'
 
 export {
@@ -82,7 +96,6 @@ export {
   DropdownItem,
   DropdownText,
   Select,
-  Checkbox,
   Embed,
   Modal,
   ModalActions,
@@ -110,8 +123,7 @@ export {
   initProgress,
   initTabs,
   initSidebar,
-  controllable,
-  Controllable
+  controllable
 } from './modules'
 
 export {
