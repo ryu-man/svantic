@@ -1,10 +1,10 @@
-import type { default as Table } from './table'
-import type { default as Header } from './header'
-import type { default as Body } from './body'
-import type { default as Footer } from './footer'
-import type { default as Row } from './row'
-import type { default as Cell } from './cell'
-import type { default as HCell } from './hcell'
+import { default as Table } from './table'
+import { default as Header } from './header'
+import { default as Body } from './body'
+import { default as Footer } from './footer'
+import { default as Row } from './row'
+import { default as Cell } from './cell'
+import { default as HCell } from './hcell'
 
 export function init(): void
 
