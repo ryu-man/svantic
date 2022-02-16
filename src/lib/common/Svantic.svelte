@@ -5,12 +5,12 @@
 
 	import { onMount } from 'svelte';
 
-	export let jquery = true;
+	export let jquery = import('jquery');
 
 	const ready = new Promise((resolve) => {
 		onMount(async () => {
 			if (jquery) {
-				await import('jquery').then((jq) => {
+				await jquery.then((jq) => {
 					window['jQuery'] = jq.default;
 					window['$'] = jq.default;
 				});
