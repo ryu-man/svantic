@@ -1,5 +1,5 @@
 <script>
-  import '../../semantic/dist/components/reveal.min.css'
+  import '../../semantic/dist/components/reveal.css'
   
   import { classNames, css } from '../../utils'
   import { createEventDispatcher } from 'svelte'

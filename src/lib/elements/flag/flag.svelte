@@ -1,6 +1,6 @@
 <script>
-  import '../../semantic/dist/components/transition.min.css'
-  import '../../semantic/dist/components/flag.min.css'
+  import '../../semantic/dist/components/transition.css'
+  import '../../semantic/dist/components/flag.css'
   import { classNames, css } from '../../utils'
 import { createEventDispatcher } from 'svelte';
 

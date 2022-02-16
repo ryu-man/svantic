@@ -1,5 +1,5 @@
 <script>
-  import '../../semantic/dist/components/grid.min.css'
+  import '../../semantic/dist/components/grid.css'
   import { classNames } from '../../utils'
 
   export let equal = false

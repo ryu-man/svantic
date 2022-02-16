@@ -2,9 +2,9 @@
 </script>
 
 <script>
-	import '../../semantic/dist/components/site.min.css';
-	import '../../semantic/dist/components/reset.min.css';
-	import '../../semantic/dist/components/popup.min.css';
+	import '../../semantic/dist/components/site.css';
+	import '../../semantic/dist/components/reset.css';
+	import '../../semantic/dist/components/popup.css';
 
 	import { popup } from '../utils/module';
 	import { createEventDispatcher, onMount } from 'svelte';

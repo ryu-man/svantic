@@ -2,8 +2,8 @@
 </script>
 
 <script>
-  import '../../semantic/dist/components/transition.min.css'
-  import '../../semantic/dist/components/search.min.css'
+  import '../../semantic/dist/components/transition.css'
+  import '../../semantic/dist/components/search.css'
   
   import { createEventDispatcher, onMount as onMounted } from 'svelte'
   import { css, classNames } from '../../utils'

@@ -1,6 +1,6 @@
 <script>
-  import '../../semantic/dist/components/transition.min.css'
-  import '../../semantic/dist/components/button.min.css'
+  import '../../semantic/dist/components/transition.css'
+  import '../../semantic/dist/components/button.css'
 
   import { classNames, css } from '../../utils'
   import Icon from '../icon'

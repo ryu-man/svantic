@@ -1,5 +1,5 @@
 <script>
-  import '../../semantic/dist/components/statistic.min.css'
+  import '../../semantic/dist/components/statistic.css'
 
   import { css, classNames } from '../../utils'
   import { createEventDispatcher } from 'svelte'

@@ -1,5 +1,5 @@
 <script>
-  import '../../semantic/dist/components/rail.min.css'
+  import '../../semantic/dist/components/rail.css'
 
   import { css, classNames } from '../../utils'
   import { createEventDispatcher } from 'svelte'

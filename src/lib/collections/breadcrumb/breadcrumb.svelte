@@ -1,5 +1,5 @@
 <script>
-  import '../../semantic/dist/components/breadcrumb.min.css'
+  import '../../semantic/dist/components/breadcrumb.css'
 
   import { classNames, css } from '../../utils'
   import { createEventDispatcher } from 'svelte'

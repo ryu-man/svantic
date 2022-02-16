@@ -1,5 +1,5 @@
 <script>
-  import '../../semantic/dist/components/feed.min.css'
+  import '../../semantic/dist/components/feed.css'
 
   import { classNames, css } from '../../utils'
   import { createEventDispatcher } from 'svelte'

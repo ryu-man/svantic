@@ -1,5 +1,5 @@
 <script>
-  import '../../semantic/dist/components/menu.min.css'
+  import '../../semantic/dist/components/menu.css'
 
   import { classNames, css } from '../../utils'
 

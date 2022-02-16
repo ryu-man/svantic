@@ -2,9 +2,9 @@
 </script>
 
 <script>
-	import '../../semantic/dist/components/site.min.css';
-	import '../../semantic/dist/components/reset.min.css';
-	import '../../semantic/dist/components/checkbox.min.css';
+	import '../../semantic/dist/components/site.css';
+	import '../../semantic/dist/components/reset.css';
+	import '../../semantic/dist/components/checkbox.css';
 
 	import { createEventDispatcher, onMount as onMounted } from 'svelte';
 	import { classNames, css } from '../../utils';

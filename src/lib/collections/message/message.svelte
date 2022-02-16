@@ -1,5 +1,5 @@
 <script>
-  import '../../semantic/dist/components/message.min.css'
+  import '../../semantic/dist/components/message.css'
   import { classNames, css } from '../../utils'
 
   let _class = ''

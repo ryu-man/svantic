@@ -2,15 +2,15 @@
 </script>
 
 <script>
-	import '../../semantic/dist/components/site.min.css';
-	import '../../semantic/dist/components/reset.min.css';
-	import '../../semantic/dist/components/grid.min.css';
-	import '../../semantic/dist/components/icon.min.css';
-	import '../../semantic/dist/components/input.min.css';
-	import '../../semantic/dist/components/transition.min.css';
-	import '../../semantic/dist/components/table.min.css';
-	import '../../semantic/dist/components/popup.min.css';
-	import '../../semantic/dist/components/calendar.min.css';
+	import '../../semantic/dist/components/site.css';
+	import '../../semantic/dist/components/reset.css';
+	import '../../semantic/dist/components/grid.css';
+	import '../../semantic/dist/components/icon.css';
+	import '../../semantic/dist/components/input.css';
+	import '../../semantic/dist/components/transition.css';
+	import '../../semantic/dist/components/table.css';
+	import '../../semantic/dist/components/popup.css';
+	import '../../semantic/dist/components/calendar.css';
 
 	import { createEventDispatcher, onMount as onMounted } from 'svelte';
 	import { css } from '../../utils';

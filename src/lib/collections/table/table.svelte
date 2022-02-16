@@ -1,5 +1,5 @@
 <script>
-  import '../../semantic/dist/components/table.min.css'
+  import '../../semantic/dist/components/table.css'
   import { css, classNames } from '../../utils'
 
   let _class = ''

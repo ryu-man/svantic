@@ -2,8 +2,8 @@
 </script>
 
 <script>
-  import '../../semantic/dist/components/transition.min.css'
-  import '../../semantic/dist/components/sticky.min.css'
+  import '../../semantic/dist/components/transition.css'
+  import '../../semantic/dist/components/sticky.css'
   
   import { classNames, css } from '../../utils'
 

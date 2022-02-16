@@ -3,8 +3,8 @@
 </script>
 
 <script>
-  import '../../semantic/dist/components/transition.min.css'
-  import '../../semantic/dist/components/tab.min.css'
+  import '../../semantic/dist/components/transition.css'
+  import '../../semantic/dist/components/tab.css'
   
   import { createEventDispatcher, onMount as onMounted } from 'svelte'
   import { classNames, css } from '../../utils'
